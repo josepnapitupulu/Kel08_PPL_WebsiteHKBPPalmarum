@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('layouts.master');
+    return view('layouts.formSearch.dashbord');
 });
 Route::get('/pelayan', function () {
     return view('layouts.formSearch.pelayan');
