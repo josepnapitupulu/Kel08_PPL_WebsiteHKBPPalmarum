@@ -39,31 +39,31 @@
                 <div class="card-body">
                   <div class="form-group">
                     <label for="exampleInputEmail1">Nama Lengkap</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nama Lengkap">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputPassword1">Alamat</label>
-                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Alamat">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Tanggal Pernikahan</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                    <input type="date" class="form-control" id="exampleInputEmail1" placeholder="Tanggal Pernikahan">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Nama Ayah</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nama Ayah">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Akta Kelahiran</label>
-                    <input type="file" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                    <input type="file" class="form-control" id="exampleInputEmail1" placeholder="Akta Kelahiran">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Suart Sidi</label>
-                    <input type="file" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                    <input type="file" class="form-control" id="exampleInputEmail1" placeholder="Suart Sidi">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Keterangan</label>
-                    <textarea type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter email"></textarea>
+                    <textarea type="text" class="form-control" id="exampleInputEmail1" placeholder="Keterangan"></textarea>
                   </div>
                 </div>
                 <!-- /.card-body -->

@@ -60,23 +60,23 @@
                       </div>
                       <div class="form-group">
                         <label for="exampleInputPassword1">Nama Ayah Mempelai Laki-Laki</label>
-                        <input type="text" class="form-control" id="exampleInputText" placeholder="Tanggal Nikah">
+                        <input type="text" class="form-control" id="exampleInputText" placeholder="Nama Ayah">
                       </div>
                       <div class="form-group">
                         <label for="exampleInputPassword1">Nama Ibu Mempelai Laki-Laki</label>
-                        <input type="text" class="form-control" id="exampleInputText" placeholder="Tanggal Nikah">
+                        <input type="text" class="form-control" id="exampleInputText" placeholder="Nama Ibu">
                       </div>
                       <div class="form-group">
                         <label for="exampleInputPassword1">Akta Kelahiran Mempelai Laki-Laki</label>
-                        <input type="file" class="form-control" id="exampleInputText" placeholder="Tanggal Nikah">
+                        <input type="file" class="form-control" id="exampleInputText" placeholder="Akta Kelahiran">
                       </div>
                       <div class="form-group">
                         <label for="exampleInputPassword1">Surat Sidi Mempelai Laki-Laki</label>
-                        <input type="file" class="form-control" id="exampleInputText" placeholder="Tanggal Nikah">
+                        <input type="file" class="form-control" id="exampleInputText" placeholder="Surat Sidi">
                       </div>
                       <div class="form-group">
                         <label for="exampleInputPassword1">Keterangan</label>
-                        <input type="text" class="form-control" id="exampleInputText" placeholder="Tanggal Nikah">
+                        <input type="text" class="form-control" id="exampleInputText" placeholder="Keterangan">
                       </div>
                       <button class="btn btn-primary" onclick="stepper.next()">Next</button>
                     </div>
@@ -91,27 +91,27 @@
                       </div>
                       <div class="form-group">
                         <label for="exampleInputPassword1">Tanggal Martumpol</label>
-                        <input type="text" class="form-control" id="exampleInputText" placeholder="Tanggal Nikah">
+                        <input type="text" class="form-control" id="exampleInputText" placeholder="Tanggal Martumpol">
                       </div>
                       <div class="form-group">
                         <label for="exampleInputPassword1">Nama Ayah Mempelai Perempuan</label>
-                        <input type="text" class="form-control" id="exampleInputText" placeholder="Tanggal Nikah">
+                        <input type="text" class="form-control" id="exampleInputText" placeholder="Nama Ayah">
                       </div>
                       <div class="form-group">
                         <label for="exampleInputPassword1">Nama Ibu Mempelai Perempuan</label>
-                        <input type="text" class="form-control" id="exampleInputText" placeholder="Tanggal Nikah">
+                        <input type="text" class="form-control" id="exampleInputText" placeholder="Nama Ibu">
                       </div>
                       <div class="form-group">
                         <label for="exampleInputPassword1">Akta Kelahiran Mempelai Perempuan</label>
-                        <input type="file" class="form-control" id="exampleInputText" placeholder="Tanggal Nikah">
+                        <input type="file" class="form-control" id="exampleInputText" placeholder="Akta Kelahiran">
                       </div>
                       <div class="form-group">
                         <label for="exampleInputPassword1">Surat Sidi Mempelai Perempuan</label>
-                        <input type="file" class="form-control" id="exampleInputText" placeholder="Tanggal Nikah">
+                        <input type="file" class="form-control" id="exampleInputText" placeholder="Surat Sidi">
                       </div>
                       <div class="form-group">
                         <label for="exampleInputPassword1">Keterangan</label>
-                        <input type="text" class="form-control" id="exampleInputText" placeholder="Tanggal Nikah">
+                        <input type="text" class="form-control" id="exampleInputText" placeholder="Keterangan">
                       </div>
                       <button class="btn btn-primary" onclick="stepper.previous()">Previous</button>
                       <button type="submit" class="btn btn-warning">Ubah</button>

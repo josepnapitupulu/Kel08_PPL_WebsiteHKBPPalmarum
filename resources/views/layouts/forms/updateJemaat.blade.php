@@ -39,35 +39,35 @@
                 <div class="card-body">
                 <div class="form-group">
                     <label for="exampleInputEmail1">Nama Jemaat</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nama Jemaat">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputPassword1">Pendidikan</label>
-                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Pendidikan">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Bidang Pendidikan</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Bidang Pendidikan">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Pekerjaan</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Pekerjaan">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Gereja</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Gereja">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Distrik</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Distrik">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Alamat</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Alamat">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Wijk</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Wijk">
                   </div>
                 </div>
                 <!-- /.card-body -->
