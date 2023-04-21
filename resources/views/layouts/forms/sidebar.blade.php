@@ -45,21 +45,63 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{asset('AdminLTE-3.2.0')}}/index.html" class="nav-link">
+                <a href="/ibadah" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard v1</p>
+                  <p>Ibadah</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{asset('AdminLTE-3.2.0')}}/index2.html" class="nav-link">
+                <a href="/jemaat" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard v2</p>
+                  <p>Jemaat</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{asset('AdminLTE-3.2.0')}}/index3.html" class="nav-link">
+                <a href="/baptis" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard v3</p>
+                  <p>Baptis</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/kegiatan" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Kegiatan</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/keluarga" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Keluarga</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/martumpol" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Martumpol</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/pelayan" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Pelayan</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/pernikahan" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Nikah</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/rpp" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>RPP</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/sidi" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Sidi</p>
                 </a>
               </li>
             </ul>
@@ -70,56 +112,61 @@
               <p>
                 Pendaftaran
                 <i class="fas fa-angle-left right"></i>
-                <span class="badge badge-info right">6</span>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{asset('AdminLTE-3.2.0')}}/layout/top-nav.html" class="nav-link">
+                <a href="/daftarBaptis" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Top Navigation</p>
+                  <p>Baptis</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{asset('AdminLTE-3.2.0')}}/layout/top-nav-sidebar.html" class="nav-link">
+                <a href="/daftarIbadah" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Top Navigation + Sidebar</p>
+                  <p>Ibadah</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{asset('AdminLTE-3.2.0')}}/layout/boxed.html" class="nav-link">
+                <a href="/daftarJemaat" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Boxed</p>
+                  <p>Jemaat</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{asset('AdminLTE-3.2.0')}}/layout/fixed-sidebar.html" class="nav-link">
+                <a href="/daftarKegiatan" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Fixed Sidebar</p>
+                  <p>Kegiatan</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{asset('AdminLTE-3.2.0')}}/layout/fixed-sidebar-custom.html" class="nav-link">
+                <a href="/daftarMartumpol" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Fixed Sidebar <small>+ Custom Area</small></p>
+                  <p>Martumpol</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{asset('AdminLTE-3.2.0')}}/layout/fixed-topnav.html" class="nav-link">
+                <a href="/daftarPelayan" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Fixed Navbar</p>
+                  <p>Pelayan</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{asset('AdminLTE-3.2.0')}}/layout/fixed-footer.html" class="nav-link">
+                <a href="/daftarPernikahan" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Fixed Footer</p>
+                  <p>Pernikahan</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{asset('AdminLTE-3.2.0')}}/layout/collapsed-sidebar.html" class="nav-link">
+                <a href="/daftarRpp" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Collapsed Sidebar</p>
+                  <p>RPP</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/daftarSidi" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Sidi</p>
                 </a>
               </li>
             </ul>

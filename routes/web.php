@@ -12,6 +12,9 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/content', function () {
+    return view('layouts.master');
+});
 
 Route::get('/', function () {
     return view('layouts.formSearch.dashbord');
@@ -138,4 +141,22 @@ Route::get('/updateKeluarga', function () {
 });
 Route::get('/detailKeluarga', function () {
     return view('layouts.forms.detailKeluarga');
+});
+Route::get('/uproveBaptis', function () {
+    return view('layouts.forms.uproveBaptis');
+});
+Route::get('/uproveJemaat', function () {
+    return view('layouts.forms.uproveBJemaat');
+});
+Route::get('/uproveKeluarga', function () {
+    return view('layouts.forms.uproveKeluarga');
+});
+Route::get('/uproveMartumpol', function () {
+    return view('layouts.forms.uproveMartumpol');
+});
+Route::get('/uprovePernikahan', function () {
+    return view('layouts.forms.uprovePernikahan');
+});
+Route::get('/uproveSidi', function () {
+    return view('layouts.forms.uproveSidi');
 });
