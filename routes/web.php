@@ -160,3 +160,24 @@ Route::get('/uprovePernikahan', function () {
 Route::get('/uproveSidi', function () {
     return view('layouts.forms.uproveSidi');
 });
+
+
+//user
+Route::get('/daftarMartumpolUser', function () {
+    return view('layouts.user.daftarMartumpol');
+});
+Route::get('/daftarBaptisUser', function () {
+    return view('layouts.user.daftarBaptis');
+});
+Route::get('/daftarJemaatUser', function () {
+    return view('layouts.user.daftarJemaat');
+});
+Route::get('/daftarNikahUser', function () {
+    return view('layouts.user.daftarNikah');
+});
+Route::get('/daftarPindahUser', function () {
+    return view('layouts.user.daftarPindah');
+});
+Route::get('/daftarSidiUser', function () {
+    return view('layouts.user.daftarSidi');
+});
