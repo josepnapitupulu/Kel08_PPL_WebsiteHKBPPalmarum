@@ -18,20 +18,24 @@
                     <h3 class="card-title" id="textHeader">Pemasukan</h3>
                   </div><br>
                   <div class="col">
-  <div class="row">
-    <div class="card-body">
-        <label for="example-select">Kategori Pemasukan</label>
-          <select class="form-control" id="example-select">
-              <option value="1">Sekolah Minggu</option>
-              <option value="2">Minggu Siang</option>
-              <option value="3">Minggu Sore</option>
-          </select>
-        </div>
-  </div> 
-    <div class="card-footer">
-        <button type="cancel" class="btn btn-success">  Cari </button>
-    </div>
-</div>  
+                <div class="row">
+                  <div class="card-body">
+                      <label for="example-select">Kategori Pemasukan</label>
+                        <select class="form-control" id="example-select">
+                            <option value="1">Persembahan Mingguan</option>
+                            <option value="2">Ucapan Syukur</option>
+                            <option value="3">Persembahan Keluarga</option>
+                            <option value="4">Sumbangan</option>
+                            <option value="5">Pembangunan</option>
+                            <option value="6">Pengembangan Pelayanan</option>
+                            <option value="7">Lelang</option>
+                        </select>
+                      </div>
+                </div> 
+                  <div class="card-footer">
+                      <button type="cancel" class="btn btn-success">  Cari </button>
+                  </div>
+              </div>  
                   <!-- /.card-header -->
                   <div class="card-body">
                     <table id="example1" class="table table-bordered table-striped">

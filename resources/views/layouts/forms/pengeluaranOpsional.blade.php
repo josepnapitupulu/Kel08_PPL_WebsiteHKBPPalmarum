@@ -16,17 +16,17 @@
                     <h3 class="card-title" id="textHeader">Pengeluaran Operasional</h3>
                   </div><br>
                   <div class="col">
-  <div class="row">
-    <div class="card-body">
-        <label for="example-select">Jenis Pengeluaran Operasional</label>
-          <select class="form-control" id="example-select">
-              <option value="1">Example 1</option>
-              <option value="2">Example 2</option>
-              <option value="3">Example 3</option>
-          </select>
-        </div>
-  </div>
-</div>  
+                  <div class="row">
+                    <div class="card-body">
+                        <label for="example-select">Jenis Pengeluaran Operasional</label>
+                          <select class="form-control" id="example-select">
+                            <option value="1">Operasional Gereja</option>
+                            <option value="2">Kegiatan Gereja</option>
+                            <option value="3">Pembangunan</option>
+                          </select>
+                        </div>
+                  </div>
+                </div>  
                   <!-- /.card-header -->
                   <div class="card-body">
                     <table id="example1" class="table table-bordered table-striped">

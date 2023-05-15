@@ -37,7 +37,7 @@
                with font-awesome or any other icon font library -->
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon"><img src="icon/search2.png" alt=""></i>
+              <i class="nav-icon"><img src="/icon/search2.png" alt=""></i>
               <p>
                 Detail
                 <i class="right fas fa-angle-left"></i>
@@ -108,7 +108,7 @@
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i><img src="icon/tambah2.png" alt=""></i>
+              <i><img src="/icon/tambah2.png" alt=""></i>
               <p>
                 Pendaftaran
                 <i class="fas fa-angle-left right"></i>
@@ -208,7 +208,7 @@
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i><img src="icon/money.png" alt=""></i>
+              <i><img src="/icon/money.png" alt=""></i>
               <p>
                 Keuangan
                 <i class="fas fa-angle-left right"></i>

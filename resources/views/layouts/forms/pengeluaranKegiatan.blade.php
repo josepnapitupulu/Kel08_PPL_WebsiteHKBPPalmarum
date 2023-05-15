@@ -17,21 +17,21 @@
                   <div class="card-header" style="height:6rem;">
                     <h3 class="card-title" id="textHeader">Pengeluaran</h3>
                   </div><br>
-<div class="col">
-  <div class="row">
-    <div class="card-body">
-        <label for="example-select">Kategori Pemasukan</label>
-          <select class="form-control" id="example-select">
-              <option value="1">Example</option>
-              <option value="2">EXAMPLE</option>
-              <option value="3">Example</option>
-          </select>
-        </div>
-  </div>
-  <div class="card-footer">
-        <button type="cancel" class="btn btn-success">  Cari </button>
-    </div>
-</div>  
+                <div class="col">
+                  <div class="row">
+                    <div class="card-body">
+                        <label for="example-select">Kategori Pemasukan</label>
+                          <select class="form-control" id="example-select">
+                            <option value="1">Operasional Gereja</option>
+                            <option value="2">Kegiatan Gereja</option>
+                            <option value="3">Pembangunan</option>
+                          </select>
+                        </div>
+                  </div>
+                  <div class="card-footer">
+                        <button type="cancel" class="btn btn-success">  Cari </button>
+                    </div>
+                </div>  
                   <!-- /.card-header -->
                   <div class="card-body">
                     <thead>

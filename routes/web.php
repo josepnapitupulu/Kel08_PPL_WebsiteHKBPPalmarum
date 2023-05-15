@@ -64,10 +64,34 @@ Route::prefix('admin')->middleware(['isAdmin', 'auth'])->group(function(){
     Route::get('/updateBaptis', [App\Http\Controllers\baptisController::class, 'edit'])->name('updateBaptis');
     Route::get('/detailBaptis', [App\Http\Controllers\baptisController::class, 'create'])->name('detailBaptis');
 
-    Route::get('/kelaurag', [App\Http\Controllers\kelauragController::class, 'index'])->name('kelaurag');
-    Route::get('/daftarKeluarga', [App\Http\Controllers\kelauragController::class, 'store'])->name('daftarKeluarga');
-    Route::get('/updateKeluarga', [App\Http\Controllers\kelauragController::class, 'edit'])->name('updateKeluarga');
-    Route::get('/detailKeluarga', [App\Http\Controllers\kelauragController::class, 'create'])->name('detailKeluarga');
+    Route::get('/kelauraga', [App\Http\Controllers\kelauragaController::class, 'index'])->name('kelauraga');
+    Route::get('/daftarKeluarga', [App\Http\Controllers\kelauragaController::class, 'store'])->name('daftarKeluarga');
+    Route::get('/updateKeluarga', [App\Http\Controllers\kelauragaController::class, 'edit'])->name('updateKeluarga');
+    Route::get('/detailKeluarga', [App\Http\Controllers\kelauragaController::class, 'create'])->name('detailKeluarga');
+
+    Route::get('/pemasukan', [App\Http\Controllers\pemasukanController::class, 'index'])->name('pemasukan');
+    Route::get('/pemasukanLelang', [App\Http\Controllers\pemasukanController::class, 'index2'])->name('pemasukanLelang');
+    Route::get('/pemasukanLelang2', [App\Http\Controllers\pemasukanController::class, 'index3'])->name('pemasukanLelang2');
+    Route::get('/pemasukanPembangunan', [App\Http\Controllers\pemasukanController::class, 'index4'])->name('pemasukanPembangunan');
+    Route::get('/pemasukanPengembanganPelayanan', [App\Http\Controllers\pemasukanController::class, 'index5'])->name('pemasukanPengembanganPelayanan');
+    Route::get('/pemasukanPengembanganPelayanan2', [App\Http\Controllers\pemasukanController::class, 'index6'])->name('pemasukanPengembanganPelayanan2');
+    Route::get('/pemasukanPersembahan', [App\Http\Controllers\pemasukanController::class, 'index7'])->name('pemasukanPersembahan');
+    Route::get('/pemasukanPersembahan2', [App\Http\Controllers\pemasukanController::class, 'index8'])->name('pemasukanPersembahan2');
+    Route::get('/pemasukanPersembahanKeluarga2', [App\Http\Controllers\pemasukanController::class, 'index9'])->name('pemasukanPersembahanKeluarga2');
+    Route::get('/pemasukanSumbangan', [App\Http\Controllers\pemasukanController::class, 'index10'])->name('pemasukanSumbangan');
+    Route::get('/pemasukanSumbangan2', [App\Http\Controllers\pemasukanController::class, 'index11'])->name('pemasukanSumbangan2');
+    Route::get('/pemasukanPembangunan2', [App\Http\Controllers\pemasukanController::class, 'index12'])->name('pemasukanPembangunan2');
+    Route::get('/pemasukanUcapanSyukur', [App\Http\Controllers\pemasukanController::class, 'index13'])->name('pemasukanUcapanSyukur');
+    Route::get('/pemasukanUcapanSyukur2', [App\Http\Controllers\pemasukanController::class, 'index14'])->name('pemasukanUcapanSyukur2');
+    Route::get('/kategoriPemasukan', [App\Http\Controllers\pemasukanController::class, 'index15'])->name('kategoriPemasukan');
+    Route::get('/kategoriPemasukan2', [App\Http\Controllers\pemasukanController::class, 'index16'])->name('kategoriPemasukan2');
+
+    Route::get('/pengeluaran', [App\Http\Controllers\pengeluaranController::class, 'index'])->name('pengeluaran');
+    Route::get('/pengeluaranKegiatan', [App\Http\Controllers\pengeluaranController::class, 'index2'])->name('pengeluaranKegiatan');
+    Route::get('/pengeluaranOpsional', [App\Http\Controllers\pengeluaranController::class, 'index3'])->name('pengeluaranOpsional');
+    Route::get('/pengeluaranPembangunan', [App\Http\Controllers\pengeluaranController::class, 'index4'])->name('pengeluaranPembangunan');
+    Route::get('/kategoriPengeluaran', [App\Http\Controllers\pengeluaranController::class, 'index5'])->name('kategoriPengeluaran');
+    Route::get('/kategoriPengeluaran2', [App\Http\Controllers\pengeluaranController::class, 'index6'])->name('kategoriPengeluaran2');
 
     // Route::get('/daftarSidih', function () {
     //     return view('layouts.forms.daftarSidih');

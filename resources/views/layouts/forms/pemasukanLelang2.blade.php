@@ -14,9 +14,13 @@
         <div class="card-body">
             <label for="example-select">Kategori </label>
               <select class="form-control" id="example-select">
-                  <option value="1">awdawda</option>
-                  <option value="2">awdwadwaM</option>
-                  <option value="3">awdawdad</option>
+                  <option value="1">Pemasukan Lelang</option>
+                  <option value="2">Pemasukan Pengembangan Pelayanan</option>
+                  <option value="3">Pemasukan Uang Pembangunan</option>
+                  <option value="4">Pemasukan Sumbangan</option>
+                  <option value="5">Pemasukan Persembahan Keluarga</option>
+                  <option value="6">Pemasukan Ucapan Syukur</option>
+                  <option value="7">Pemasukan Persembahan Mingguan</option>
               </select>
             </div>
       </div> 
@@ -71,9 +75,9 @@
       
       <div class="row">
         <div class="col-12">      
-          <button type="button" class="btn btn-success float-right"> Edit
+          <button type="button" class="btn btn-warning float-right"> Edit
           </button>
-          <button type="button" class="btn btn-warning float-right" style="margin-right: 5px;">
+          <button type="button" class="btn btn-default float-right" style="margin-right: 5px;">
             Cancel
           </button>
         </div>
