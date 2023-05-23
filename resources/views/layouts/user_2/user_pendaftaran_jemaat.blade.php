@@ -45,40 +45,72 @@
             </h1>
             <form>
               <div class="form-group">
-                <label for="name">Nama lengkap</label>
+                <label for="name">Nama Depan</label>
                 <input type="text" id="name" name="name" placeholder="Masukkan nama lengkap anda" />
               </div>    
               <div class="form-group">
-                <label for="name">Tanggal lahirt</label>
+                <label for="name">Nama Belakang</label>
                 <input type="text" id="name" name="name" placeholder="Masukkan tanggal lahir anda" />
               </div>
               <div class="form-group">
-                <label for="name">Jenis kelamin</label>
+                <label for="name">Gelar Depan</label>
                 <input type="text" id="name" name="name" placeholder="" />
               </div>
               <div class="form-group">
-                <label for="name">Gelar</label>
+                <label for="name">Gelar Belakang</label>
                 <input type="text" id="name" name="name" placeholder="Masukkan gelar anda" />
               </div>
               <div class="form-group">
-                <label for="name">Alamat</label>
+                <label for="name">Tempat Lahir</label>
                 <input type="text" id="name" name="name" placeholder="Masukkan alamat anda" />
               </div>
               <div class="form-group">
-                <label for="name">Golongan darah anda</label>
-                <input type="text" id="name" name="name" placeholder="Masukkan gelar anda" />
+                <label for="name">Tanggal Lahir</label>
+                <input type="date" id="name" name="name" placeholder="Masukkan gelar anda" />
               </div>
               <div class="form-group">
-                <label for="name">Nomor handphone</label>
-                <input type="text" id="name" name="name" placeholder="Masukkan nomor handphone anda yang masih aktif" />
+                <label for="name">Golongan Darah</label>
+                <input type="text" id="name" name="name" placeholder="Masukkan Golongan Darah anda yang masih aktif" />
               </div>
               <div class="form-group">
-                <label for="name">Tanggal baptis</label>
+                <label for="name">Jenis Kelamin</label>
                 <input type="text" id="name" name="name" placeholder="Masukkan tanggal baptis" />
               </div>
               <div class="form-group">
-                <label for="name">Tanggal Sidi</label>
+                <label for="name">No Telepon</label>
                 <input type="text" id="name" name="name" placeholder="Masukkan tanggal sidi anda" />
+              </div>
+              <div class="form-group">
+                <label for="name">Alamat</label>
+                <input type="text" id="name" name="name" placeholder="Masukkan Gelar Anda" />
+              </div>
+              <div class="form-group">
+                <label for="name">Status Keluarga</label>
+                <input type="text" id="name" name="name" placeholder="Masukkan Gelar Anda" />
+              </div>
+              <div class="form-group">
+                <label for="name">Pekerjaan</label>
+                <input type="text" id="name" name="name" placeholder="Masukkan Gelar Anda" />
+              </div>
+              <div class="form-group">
+                <label for="name">Pekerjaan Lainnya</label>
+                <input type="text" id="name" name="name" placeholder="Masukkan Gelar Anda" />
+              </div>
+              <div class="form-group">
+                <label for="name">Bidang Pendidikan</label>
+                <input type="text" id="name" name="name" placeholder="Masukkan Gelar Anda" />
+              </div>
+              <div class="form-group">
+                <label for="name">Pendidikan Terakhir</label>
+                <input type="text" id="name" name="name" placeholder="Masukkan Gelar Anda" />
+              </div>
+              <div class="form-group">
+                <label for="name">Bidang Pendidikan Lainnya</label>
+                <input type="text" id="name" name="name" placeholder="Masukkan Gelar Anda" />
+              </div>
+              <div class="form-group">
+                <label for="name">Foto</label>
+                <input type="file" id="name" name="name" placeholder="Masukkan Gelar Anda" />
               </div>
               <div class="form-group">
                 <label for="name">Keterangan</label>

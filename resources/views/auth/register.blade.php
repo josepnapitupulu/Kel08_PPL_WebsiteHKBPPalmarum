@@ -22,7 +22,8 @@
                 
                 
                 
-                <form action="#" method="post" {{ route('register') }}>
+                <form action="{{ route('register') }}" method="post" >
+                  @csrf
                   <div class="form-group first">
                     <label for="name">{{ __('Name') }}</label>
                     <input type="text" class="form-control"  id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>

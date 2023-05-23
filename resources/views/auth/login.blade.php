@@ -21,8 +21,8 @@
                 
                 
                 
-                <form action="#" method="post" action="{{ route('login') }}">
-           
+                <form method="POST" action="{{ route('login') }}">
+                @csrf
 
                   <div class="form-group first">
                     <label for="email">{{ __('Email Address') }}</label>
@@ -72,13 +72,14 @@
                     </a>
                   </div>
                   <div class="mb-4" style="text-align: center;">
-                    <p class="mb-4">belum mempunyai account?  <a href="#" style="color: #3F486C; text-decoration: none;">Klik disini</a>
-                    <p class="mb-4">lupa password anda??  <a href="#" style="color: #3F486C; text-decoration: none;">Klik disini</a>
-                  </div>
-
-              
-                  
-              
+                    <p class="mb-4">belum mempunyai account?  <a href="{{ route('register') }}" style="color: #3F486C; text-decoration: none;">{{ __('register ') }} Klik disini</a>
+                    <p class="mb-4">lupa password anda?? 
+                      @if (Route::has('password.request'))
+                        <a class="btn btn-link" href="{{ route('password.request') }} style="color: #3F486C; text-decoration: none;"">
+                          {{ __('Forgot Your Password? ') }}Klik disini
+                        </a>
+                      @endif\
+                  </div>   
                 </form>
               </div>
             </div>

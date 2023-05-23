@@ -45,28 +45,48 @@
             </h1>
             <form>
               <div class="form-group">
-                <label for="name">Nama Keluarga</label>
+                <label for="name">Nama Lengkap Mempelai Laki-Laki</label>
                 <input type="text" id="name" name="name" placeholder="Masukkan nama keluarga anda" />
               </div>    
               <div class="form-group">
-                <label for="name">Wijk</label>
-                <input type="text" id="name" name="name" placeholder="Masukkan wijk" />
+                <label for="name">Nama Ayah Mempelai Laki-Laki</label>
+                <input type="text" id="name" name="name" placeholder="Masukkan Nama Ayah Mempelai Laki-Laki" />
               </div>
               <div class="form-group">
-                <label for="name">Nomor handphone</label>
-                <input type="text" id="name" name="name" placeholder="Masukkan nomor handphone anda" />
+                <label for="name">Nama Ibu Mempelai Laki-Laki</label>
+                <input type="text" id="name" name="name" placeholder="Masukkan Nama Ibu Mempelai Laki-Laki anda" />
               </div>
               <div class="form-group">
-                <label for="name">Alamat</label>
-                <input type="text" id="name" name="name" placeholder="Masukkan alamat anda" />
+                <label for="name">Nama Lengkap Mempelai Perempuan</label>
+                <input type="text" id="name" name="name" placeholder="Masukkan Nama Lengkap Mempelai Perempuan anda" />
               </div>
               <div class="form-group">
-                <label for="name">Info Anggota Keluarga yang akan Menikah dan Pasangan</label>
+                <label for="name">Nama Ayah Mempelai Perempuan</label>
                 <input type="text" id="name" name="name" placeholder="(cth: Jefri Manalu/Pria/1 mei 1999 dengan Sinta Siagian/Wanita/2 juni 1999)" />
               </div>
               <div class="form-group">
-                <label for="name">Wijk</label>
-                <input type="text" id="name" name="name" placeholder="Masukkan Wijk" />
+                <label for="name">Nama Ibu Mempelai Perempuan</label>
+                <input type="text" id="name" name="name" placeholder="Masukkan Nama Ibu Mempelai Perempuan" />
+              </div>
+              <div class="form-group">
+                <label for="name">Tanggal Martumpol</label>
+                <input type="text" id="name" name="name" placeholder="Masukkan Tanggal Martumpol" />
+              </div>
+              <div class="form-group">
+                <label for="name">Nama Gereja Martumpol</label>
+                <input type="text" id="name" name="name" placeholder="Masukkan Nama Gereja Martumpol" />
+              </div>
+              <div class="form-group">
+                <label for="name">Tanggal Warta Pemberkatan</label>
+                <input type="text" id="name" name="name" placeholder="Masukkan Tanggal Warta Pemberkatan" />
+              </div>
+              <div class="form-group">
+                <label for="name">Nama Gereja Pemberkatan</label>
+                <input type="text" id="name" name="name" placeholder="Masukkan Nama Gereja Pemberkatan" />
+              </div>
+              <div class="form-group">
+                <label for="name">Tanggal Pemberkatan</label>
+                <input type="text" id="name" name="name" placeholder="Masukkan Tanggal Pemberkatan" />
               </div>
               <div style="text-align: right; margin-top: 40px;">
                  <input type="submit" value="Submit"/>

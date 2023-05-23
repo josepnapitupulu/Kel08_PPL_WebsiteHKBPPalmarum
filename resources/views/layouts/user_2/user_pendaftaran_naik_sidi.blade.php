@@ -64,15 +64,23 @@
                 <input type="text" id="name" name="name" placeholder="Masukkan Alamat Anda" />
               </div>
               <div class="form-group">
-                <label for="name">Wijk</label>
+                <label for="name">Tempat Lahir</label>
                 <input type="text" id="name" name="name" placeholder="Masukkan Wijk" />
               </div>
               <div class="form-group">
-                <label for="name">Email</label>
-                <input type="text" id="email" name="name" placeholder="Masukkan Email Anda" />
+                <label for="name">Tanggal Lahir</label>
+                <input type="date" id="email" name="name" placeholder="Masukkan Email Anda" />
               </div>
               <div class="form-group">
-                <label for="name">No Handphone</label>
+                <label for="name">Asal gereja</label>
+                <input type="text" id="name" name="name" placeholder="Masukkan NomorHandphone Anda" />
+              </div>
+              <div class="form-group">
+                <label for="name">Nama Pendeta</label>
+                <input type="text" id="name" name="name" placeholder="Masukkan NomorHandphone Anda" />
+              </div>
+              <div class="form-group">
+                <label for="name">Keterangan</label>
                 <input type="text" id="name" name="name" placeholder="Masukkan NomorHandphone Anda" />
               </div>
               <!-- upload foto -->

@@ -46,28 +46,24 @@
             </h1>
             <form>
               <div class="form-group">
-                <label for="name">Nama Anggota keluarga yang pindah</label>
+                <label for="name">ID Jemaat</label>
                 <input type="text" id="name" name="name" placeholder="Asexxxx , bxxxxx, Cxxxxx" />
               </div>    
               <div class="form-group">
-                <label for="name">Wijk</label>
+                <label for="name">Tanggal Pindah</label>
                 <input type="text" id="name" name="name" placeholder="Masukkan wijk" />
               </div>
               <div class="form-group">
-                <label for="name">Alamat Baru</label>
+                <label for="name">Gereja Tujuan</label>
                 <input type="text" id="name" name="name" placeholder=" cnth :Jl. Ahmad Yani No. 25, Kelurahan Kebonwaru, Kecamatan Bogor Selatan, Kota Bogor, Jawa Barat, Indonesia 16134" />
               </div>
               <div class="form-group">
-                <label for="name">Nama Gereja</label>
+                <label for="name">Nama Gereja Non-HKBP</label>
                 <input type="text" id="name" name="name" placeholder="cnth : Gereja Katedral Jakarta Jl. Katedral No. 7B Jakarta Pusat 10110 Indonesia" />
               </div>
               <div class="form-group">
-                <label for="name">Info Anggota Keluarga yang akan Menikah dan Pasangan</label>
+                <label for="name">Tanggal Warta</label>
                 <input type="text" id="name" name="name" placeholder="(cth: Jefri Manalu/Pria/1 mei 1999 dengan Sinta Siagian/Wanita/2 juni 1999)" />
-              </div>
-              <div class="form-group">
-                <label for="name">Wijk</label>
-                <input type="text" id="name" name="name" placeholder="Masukkan Wijk" />
               </div>
               <div style="text-align: right; margin-top: 40px;">
                  <input type="submit" value="Submit"/>

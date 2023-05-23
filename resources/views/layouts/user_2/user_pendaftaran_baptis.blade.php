@@ -46,19 +46,43 @@
             </h1>
             <form>
               <div class="form-group">
-                <label for="name">Nama lengkap anak</label>
+                <label for="name">Nama lengkap</label>
                 <input type="text" id="name" name="name" placeholder="Masukkan nama lengkap yang akan di baptis" />
               </div>    
               <div class="form-group">
-                <label for="name">Tanggal lahir</label>
+                <label for="name">Nama Ayah</label>
                 <input type="text" id="name" name="name" placeholder="Masukkan tanggal lahir yang akan di baptis" />
               </div>
               <div class="form-group">
-                <label for="name">Nama Ayah</label>
+                <label for="name">Nama Ibu</label>
                 <input type="text" id="name" name="name" placeholder="Masukkan nama ibu" />
               </div>
               <div class="form-group">
-                <label for="name">Nama Ibu</label>
+                <label for="name">Tempat Lahir</label>
+                <input type="text" id="name" name="name" placeholder="Masukkan nama ibu" />
+              </div>
+              <div class="form-group">
+                <label for="name">Tanggal Lahir</label>
+                <input type="text" id="name" name="name" placeholder="Masukkan nama ibu" />
+              </div>
+              <div class="form-group">
+                <label for="name">Alamat</label>
+                <input type="text" id="name" name="name" placeholder="Masukkan nama ibu" />
+              </div>
+              <div class="form-group">
+                <label for="name">Asal Gereja</label>
+                <input type="text" id="name" name="name" placeholder="Masukkan nama ibu" />
+              </div>
+              <div class="form-group">
+                <label for="name">Nama Pendeta</label>
+                <input type="text" id="name" name="name" placeholder="Masukkan nama ibu" />
+              </div>
+              <div class="form-group">
+                <label for="name">File Baptis</label>
+                <input type="file" id="name" name="name" placeholder="Masukkan nama ibu" />
+              </div>
+              <div class="form-group">
+                <label for="name">Keterangan</label>
                 <input type="text" id="name" name="name" placeholder="Masukkan nama ibu" />
               </div>
               <div style="text-align: right; margin-top: 40px;">

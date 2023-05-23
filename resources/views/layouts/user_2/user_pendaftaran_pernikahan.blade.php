@@ -46,32 +46,16 @@
             </h1>
             <form>
               <div class="form-group">
-                <label for="name">Nama Lengkap</label>
+                <label for="name">Tanggal Pernikahan</label>
                 <input type="text" id="name" name="name" placeholder="Masukkan Nama Lengkap Anda" />
               </div>    
               <div class="form-group">
-                <label for="name">Alamat</label>
+                <label for="name">Nama Gereja Non-HKBP</label>
                 <input type="text" id="name" name="name" placeholder="Masukkan Alamat Anda" />
               </div>
               <div class="form-group">
-                <label for="name">Tanggal Rencana Pernikahan</label>
+                <label for="name">Keterangan</label>
                 <input type="text" id="name" name="name" placeholder="Tanggaal Rencana Pernikahan" />
-              </div>
-              <div class="form-group">
-                <label for="name">Nama Wali Ayah/Ibu</label>
-                <input type="text" id="name" name="name" placeholder="Nama Wali Ayah/Ibu" />
-              </div>
-             
-              <!-- upload foto -->
-              <div class="form-group foto_1">
-                <label for="foto">Upload Foto</label>
-                <input type="file" id="foto" name="foto">
-                <span>Drag and drop file here or click to upload <br> Ukuran foto harus .png</span>
-              </div>
-              <!-- upload foto -->
-               <div class="form-group">
-                <label for="name">Keterangan Lainnya</label>
-                <input type="text" id="name" name="name" placeholder="................................................................" />
               </div>
               <div style="text-align: right; margin-top: 40px;">
                  <input type="submit" value="Submit"/>
