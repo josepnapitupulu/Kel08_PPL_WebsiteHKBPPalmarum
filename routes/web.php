@@ -64,10 +64,15 @@ Route::prefix('admin')->middleware(['isAdmin', 'auth'])->group(function(){
     Route::get('/updateBaptis', [App\Http\Controllers\baptisController::class, 'edit'])->name('updateBaptis');
     Route::get('/detailBaptis', [App\Http\Controllers\baptisController::class, 'create'])->name('detailBaptis');
 
-    Route::get('/kelauraga', [App\Http\Controllers\kelauragaController::class, 'index'])->name('kelauraga');
-    Route::get('/daftarKeluarga', [App\Http\Controllers\kelauragaController::class, 'store'])->name('daftarKeluarga');
-    Route::get('/updateKeluarga', [App\Http\Controllers\kelauragaController::class, 'edit'])->name('updateKeluarga');
-    Route::get('/detailKeluarga', [App\Http\Controllers\kelauragaController::class, 'create'])->name('detailKeluarga');
+    Route::get('/keluarga', [App\Http\Controllers\keluargaController::class, 'index'])->name('keluarga');
+    Route::get('/daftarKeluarga', [App\Http\Controllers\keluargaController::class, 'store'])->name('daftarKeluarga');
+    Route::get('/updateKeluarga', [App\Http\Controllers\keluargaController::class, 'edit'])->name('updateKeluarga');
+    Route::get('/detailKeluarga', [App\Http\Controllers\keluargaController::class, 'create'])->name('detailKeluarga');
+
+    Route::get('/pindah', [App\Http\Controllers\pindahController::class, 'index'])->name('pindah');
+    Route::get('/daftarPindah', [App\Http\Controllers\pindahController::class, 'store'])->name('daftarPindah');
+    Route::get('/updatePindah', [App\Http\Controllers\pindahController::class, 'edit'])->name('updatePindah');
+    Route::get('/detailPindah', [App\Http\Controllers\pindahController::class, 'create'])->name('detailPindah');
 
     Route::get('/pemasukan', [App\Http\Controllers\pemasukanController::class, 'index'])->name('pemasukan');
     Route::get('/pemasukanLelang', [App\Http\Controllers\pemasukanController::class, 'index2'])->name('pemasukanLelang');
@@ -232,25 +237,55 @@ Route::prefix('admin')->middleware(['isAdmin', 'auth'])->group(function(){
 
 
 //user
-Route::get('/daftarMartumpolUser', function () {
-    return view('layouts.user.daftarMartumpol');
-});
-Route::get('/daftarBaptisUser', function () {
-    return view('layouts.user.daftarBaptis');
-});
-Route::get('/daftarJemaatUser', function () {
-    return view('layouts.user.daftarJemaat');
-});
-Route::get('/daftarNikahUser', function () {
-    return view('layouts.user.daftarNikah');
-});
-Route::get('/daftarPindahUser', function () {
-    return view('layouts.user.daftarPindah');
-});
-Route::get('/daftarSidiUser', function () {
-    return view('layouts.user.daftarSidi');
-});
+// Route::get('/daftarMartumpolUser', function () {
+//     return view('layouts.user.daftarMartumpol');
+// });
+// Route::get('/daftarBaptisUser', function () {
+//     return view('layouts.user.daftarBaptis');
+// });
+// Route::get('/daftarJemaatUser', function () {
+//     return view('layouts.user.daftarJemaat');
+// });
+// Route::get('/daftarNikahUser', function () {
+//     return view('layouts.user.daftarNikah');
+// });
+// Route::get('/daftarPindahUser', function () {
+//     return view('layouts.user.daftarPindah');
+// });
+// Route::get('/daftarSidiUser', function () {
+//     return view('layouts.user.daftarSidi');
+// });
+//  user user user user
+Route::get('/daftarMartumpolUser', [App\Http\Controllers\userController::class, 'index'])->name('martumpolUser');
+Route::get('/daftarBaptisUser', [App\Http\Controllers\userController::class, 'index2'])->name('baptisUser');
+Route::get('/daftarJemaatUser', [App\Http\Controllers\userController::class, 'index3'])->name('jemaatUser');
+Route::get('/daftarNikahUser', [App\Http\Controllers\userController::class, 'index4'])->name('nikahUser');
+Route::get('/daftarPindahUser', [App\Http\Controllers\userController::class, 'index5'])->name('pindahUser');
+Route::get('/daftarSidiUser', [App\Http\Controllers\userController::class, 'index6'])->name('sidiUser');
+Route::get('/', [App\Http\Controllers\userController::class, 'index7'])->name('homeUser');
 
+
+// Route::get('/daftarMartumpolUser', function () {
+//     return view('layouts.user_2.user_pendaftaran_martumpol');
+// });
+// Route::get('/daftarBaptisUser', function () {
+//     return view('layouts.user_2.user_pendaftaran_baptis');
+// });
+// Route::get('/daftarJemaatUser', function () {
+//     return view('layouts.user_2.user_pendaftaran_jemaat');
+// });
+// Route::get('/daftarNikahUser', function () {
+//     return view('layouts.user_2.user_pendaftaran_pernikahan');
+// });
+// Route::get('/daftarPindahUser', function () {
+//     return view('layouts.user_2.user_pindah');
+// });
+// Route::get('/daftarSidiUser', function () {
+//     return view('layouts.user_2.user_pendaftaran_naik_sidi');
+// });
+// Route::get('/', function () {
+//     return view('layouts.user_2.userHome');
+// });
 
 Auth::routes();
 

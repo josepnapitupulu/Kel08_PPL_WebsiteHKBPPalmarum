@@ -7,8 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pendaftaran Jemaat HKBP Palmarum</title>
-    <link rel="stylesheet" href="../styles/styles.css">
     
+    <link rel="stylesheet" href="{{asset('Style')}}/style2.css">
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
     
 </head>
@@ -27,7 +27,7 @@
 
         <div class="card">
             <div class="image-container">
-              <img class="foto_sidi" src="{{ asset('image/jemaat.jpg') }}" alt="gambar">
+              <img class="foto_sidi" src="{{asset('Style')}}/image/jemaat.jpg" alt="gambar">
             </div>
             <div class="text-container">
               <h3>Judul</h3>
@@ -103,7 +103,7 @@
     </main>
     <footer>
        <div class="footer_1">
-        <img src="{{ asset('image/logo_putih.png') }}" alt="Foto">
+        <img src="{{ asset('Style') }}/image/logo_putih.png" alt="Foto">
             <div class="teks">
             <h1>
                 PALMARUM
@@ -119,7 +119,7 @@
        </div>
 	
 	</footer>
-  <script src="{{ asset('js/style.js') }}"></script>
+  <script src="{{asset('Style')}}/style.js"></script>
    
 </body>
 </html>

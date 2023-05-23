@@ -31,48 +31,57 @@
                       <th>Nama</th>
                       <th>Status</th>
                       <th>Keterangan</th>
+                      <th colspan="2"><center>Action</center></th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
                       <td>1.</td>
                       <td>Update software</td>
+                      <td></td>
+                      <td></td>
                       <td>
-                        <div class="progress progress-xs">
-                          <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
-                        </div>
+                        <button class="btn btn-warning"><i class="bi bi-pencil-square"></i></button>
                       </td>
-                      <td><span class="badge bg-danger">55%</span></td>
+                      <td>
+                        <button class="btn btn-danger"><i class="bi bi-trash3-fill"></i></button>
+                      </td>
                     </tr>
                     <tr>
                       <td>2.</td>
                       <td>Clean database</td>
+                      <td></td>
+                      <td></td>
                       <td>
-                        <div class="progress progress-xs">
-                          <div class="progress-bar bg-warning" style="width: 70%"></div>
-                        </div>
+                        <button class="btn btn-warning"><i class="bi bi-pencil-square"></i></button>
                       </td>
-                      <td><span class="badge bg-warning">70%</span></td>
+                      <td>
+                        <button class="btn btn-danger"><i class="bi bi-trash3-fill"></i></button>
+                      </td>
                     </tr>
                     <tr>
                       <td>3.</td>
                       <td>Cron job running</td>
+                      <td></td>
+                      <td></td>
                       <td>
-                        <div class="progress progress-xs progress-striped active">
-                          <div class="progress-bar bg-primary" style="width: 30%"></div>
-                        </div>
+                        <button class="btn btn-warning"><i class="bi bi-pencil-square"></i></button>
                       </td>
-                      <td><span class="badge bg-primary">30%</span></td>
+                      <td>
+                        <button class="btn btn-danger"><i class="bi bi-trash3-fill"></i></button>
+                      </td>
                     </tr>
                     <tr>
                       <td>4.</td>
                       <td>Fix and squish bugs</td>
+                      <td></td>
+                      <td></td>
                       <td>
-                        <div class="progress progress-xs progress-striped active">
-                          <div class="progress-bar bg-success" style="width: 90%"></div>
-                        </div>
+                        <button class="btn btn-warning"><i class="bi bi-pencil-square"></i></button>
                       </td>
-                      <td><span class="badge bg-success">90%</span></td>
+                      <td>
+                        <button class="btn btn-danger"><i class="bi bi-trash3-fill"></i></button>
+                      </td>
                     </tr>
                   </tbody>
                 </table>

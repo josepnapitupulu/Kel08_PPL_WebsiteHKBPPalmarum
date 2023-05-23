@@ -38,20 +38,16 @@
               <form>
                 <div class="card-body">
                   <div class="form-group">
-                    <label for="exampleInputEmail1">Nama Jemaat</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nama Jemaat">
+                    <label for="exampleInputEmail1">ID Jemaat</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="ID Jemaat">
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputPassword1">Tanggal Lahir</label>
-                    <input type="date" class="form-control" id="exampleInputPassword1" placeholder="Tanggal Lahir">
+                    <label for="exampleInputPassword1">Jenis RPP</label>
+                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Jenis RPP">
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputEmail1">Nama Pelanggaran</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nama Pelanggaran">
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Manopoti Dosa</label>
-                    <input type="" class="form-control" id="exampleInputEmail1" placeholder="Manopoti Dosa">
+                    <label for="exampleInputEmail1">Tanggal Warta RPP</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Tanggal Warta RPP">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Keterangan</label>

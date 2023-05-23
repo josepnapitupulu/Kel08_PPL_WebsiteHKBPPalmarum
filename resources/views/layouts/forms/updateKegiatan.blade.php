@@ -47,7 +47,7 @@
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Jadwal Kegiatan</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Jadwal Kegiatan">
+                    <input type="date" class="form-control" id="exampleInputEmail1" placeholder="Jadwal Kegiatan">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Lokasi Kegiatan</label>
@@ -61,7 +61,7 @@
 
                 <div class="card-footer">
                   <button type="submit" class="btn btn-outline-dark btn-lg ml-3 float-right">Cancel</button>
-                  <button type="submit" class="btn btn-warning btn-lg float-right">Create</button>
+                  <button type="submit" class="btn btn-warning btn-lg float-right">Update</button>
                 </div>
               </form>
             </div>

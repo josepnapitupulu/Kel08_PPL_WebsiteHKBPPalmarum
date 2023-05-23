@@ -27,19 +27,15 @@
                       <td>------</td>
                     </tr>
                     <tr>
-                      <td>Nama Jemaat</td>
+                      <td>Nama Lengkap</td>
                       <td>------</td>
                     </tr>
                     <tr>
-                      <td>Tanggal Lahir</td>
+                      <td>Tanggal Warta</td>
                       <td>------</td>
                     </tr>
                     <tr>
-                      <td>Nama Pelanggaran</td>
-                      <td>------</td>
-                    </tr>
-                    <tr>
-                      <td>Manopoti Dosa</td>
+                      <td>Jenis RPP</td>
                       <td>------</td>
                     </tr>
                     <tr>

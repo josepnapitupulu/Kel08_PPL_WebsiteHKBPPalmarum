@@ -47,7 +47,7 @@
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Jadwal Kegiatan</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Jadwal Kegiatan">
+                    <input type="date" class="form-control" id="exampleInputEmail1" placeholder="Jadwal Kegiatan">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Lokasi Kegiatan</label>

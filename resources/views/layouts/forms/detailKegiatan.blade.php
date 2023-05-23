@@ -43,10 +43,6 @@
                       <td>------</td>
                     </tr>
                     <tr>
-                      <td>Jenis Status</td>
-                      <td>------</td>
-                    </tr>
-                    <tr>
                       <td>Keterangan</td>
                       <td>------</td>
                     </tr>

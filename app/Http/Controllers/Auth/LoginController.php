@@ -35,7 +35,7 @@ class LoginController extends Controller
         if($user->role == '1'){
             return redirect()->route('dashbord');
         }else{
-            return redirect()->route('home');
+            return redirect()->route('homeUser');
         }
     }
 
@@ -44,7 +44,7 @@ class LoginController extends Controller
 
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        return redirect()->route('home');
+        return redirect()->route('homeUser');
     }
 
     /**

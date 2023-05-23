@@ -35,10 +35,6 @@
                       <td>------</td>
                     </tr>
                     <tr>
-                      <td>Bidang Pendidikan</td>
-                      <td>------</td>
-                    </tr>
-                    <tr>
                       <td>Pekerjaan</td>
                       <td>------</td>
                     </tr>
@@ -47,7 +43,7 @@
                       <td>------</td>
                     </tr>
                     <tr>
-                      <td>Jenis Status</td>
+                      <td>Alamat</td>
                       <td>------</td>
                     </tr>
                     <tr>

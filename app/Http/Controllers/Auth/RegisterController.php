@@ -35,7 +35,7 @@ class RegisterController extends Controller
         if($user->role == '1'){
             return redirect()->route('dashbord');
         }else{
-            return redirect()->route('home');
+            return redirect()->route('homeUser');
         }
     }
 

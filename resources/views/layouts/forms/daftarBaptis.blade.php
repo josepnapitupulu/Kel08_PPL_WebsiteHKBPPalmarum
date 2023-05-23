@@ -35,33 +35,92 @@
               </div><br>
               <!-- /.card-header -->
               <!-- form start -->
-              <form>
-                <div class="card-body">
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Nama Lengkap Anak</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nama Lengkap Anak">
+              <div class="card-body">
+                <form>
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <!-- text input -->
+                      <div class="form-group">
+                        <label>ID Register Jemaat</label>
+                        <input type="text" class="form-control" placeholder="ID Register">
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <label>Alamat</label>
+                        <input type="text" class="form-control" placeholder="Alamat">
+                      </div>
+                    </div>
                   </div>
-                  <div class="form-group">
-                    <label for="exampleInputPassword1">Tanggal Lahir</label>
-                    <input type="date" class="form-control" id="exampleInputPassword1" placeholder="Tanggal Lahir">
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <!-- text input -->
+                      <div class="form-group">
+                        <label>Nama Lengkap</label>
+                        <input type="text" class="form-control" placeholder="Nama Lengkap">
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <label>Tanggal Baptis</label>
+                        <input type="date" class="form-control" placeholder="Tanggal Baptis">
+                      </div>
+                    </div>
                   </div>
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Tanggal Baptis</label>
-                    <input type="date" class="form-control" id="exampleInputEmail1" placeholder="Tanggal Baptis">
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <!-- text input -->
+                      <div class="form-group">
+                        <label>Nama Ayah</label>
+                        <input type="text" class="form-control" placeholder="Nama Ayah">
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <label>Asal Gereja</label>
+                        <input type="text" class="form-control" placeholder="Asal Gereja">
+                      </div>
+                    </div>
                   </div>
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Nama Ayah</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nama Ayah">
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <!-- textarea -->
+                      <div class="form-group">
+                        <label>Nama Ibu</label>
+                        <input type="text" class="form-control" placeholder="Nama Ibu">
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <label>Nama Pendeta</label>
+                        <input type="text" class="form-control" placeholder="Nama Pendeta">
+                      </div>
+                    </div>
                   </div>
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Nama Ibu</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nama Ibu">
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <!-- textarea -->
+                      <div class="form-group">
+                        <label>Tempat Lahir</label>
+                        <input type="text" class="form-control" placeholder="Tempat Lahir">
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <label>Keterangan</label>
+                        <textarea class="form-control" rows="3" placeholder="keterangan"></textarea>
+                      </div>
+                    </div>
                   </div>
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Wijk</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Wijk">
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <!-- textarea -->
+                      <div class="form-group">
+                        <label>Tanggal Lahir</label>
+                        <input type="date" class="form-control" placeholder="Tanggal Lahir">
+                      </div>
+                    </div>
                   </div>
-                </div>
                 <!-- /.card-body -->
 
                 <div class="card-footer">

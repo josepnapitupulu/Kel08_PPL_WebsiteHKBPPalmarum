@@ -23,15 +23,15 @@
                   </thead>
                   <tbody>
                     <tr>
-                      <td>Nama Jemaat</td>
+                      <td>Nama</td>
                       <td>------</td>
                     </tr>
                     <tr>
-                      <td>Pendidikan</td>
+                      <td>Tempat Tanggal Lahir</td>
                       <td>------</td>
                     </tr>
                     <tr>
-                      <td>Bidang Pendidikan</td>
+                      <td>Jenis Kelamin</td>
                       <td>------</td>
                     </tr>
                     <tr>
@@ -39,11 +39,19 @@
                       <td>------</td>
                     </tr>
                     <tr>
-                      <td>Gereja</td>
+                      <td>Status Keluarga</td>
                       <td>------</td>
                     </tr>
                     <tr>
-                      <td>Distrik</td>
+                      <td>Pendidikan</td>
+                      <td>------</td>
+                    </tr>
+                    <tr>
+                      <td>Pekerjaan</td>
+                      <td>------</td>
+                    </tr>
+                    <tr>
+                      <td>Golongan Darah</td>
                       <td>------</td>
                     </tr>
                     <tr>
@@ -51,15 +59,11 @@
                       <td>------</td>
                     </tr>
                     <tr>
-                      <td>Wijk</td>
+                      <td>No Telepon</td>
                       <td>------</td>
                     </tr>
                     <tr>
-                      <td>Status</td>
-                      <td>------</td>
-                    </tr>
-                    <tr>
-                      <td>Jenis Status</td>
+                      <td>Keterangan</td>
                       <td>------</td>
                     </tr>
                     <tr>

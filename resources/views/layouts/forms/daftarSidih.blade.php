@@ -17,14 +17,14 @@
                     <div class="col-sm-6">
                       <!-- text input -->
                       <div class="form-group">
-                        <label>Id Jemaat</label>
-                        <input type="text" class="form-control" placeholder="id jemaat">
+                        <label>Nama Lengkap</label>
+                        <input type="text" class="form-control" placeholder="Nama Lengkap">
                       </div>
                     </div>
                     <div class="col-sm-6">
                       <div class="form-group">
-                        <label>Tanggal Sidih</label>
-                        <input type="text" class="form-control" placeholder="tanggal sidih" disabled>
+                        <label>Alamat</label>
+                        <input type="text" class="form-control" placeholder="Alamat">
                       </div>
                     </div>
                   </div>
@@ -32,14 +32,14 @@
                     <div class="col-sm-6">
                       <!-- text input -->
                       <div class="form-group">
-                        <label>Nama Lengkap</label>
-                        <input type="text" class="form-control" placeholder="nama lengkap">
+                        <label>Nama Ayah</label>
+                        <input type="text" class="form-control" placeholder="Nama Ayah">
                       </div>
                     </div>
                     <div class="col-sm-6">
                       <div class="form-group">
                         <label>Asal Gereja</label>
-                        <input type="text" class="form-control" placeholder="asal gereja" disabled>
+                        <input type="text" class="form-control" placeholder="Asal Gereja">
                       </div>
                     </div>
                   </div>
@@ -47,14 +47,14 @@
                     <div class="col-sm-6">
                       <!-- text input -->
                       <div class="form-group">
-                        <label>Tanggal Lahir</label>
-                        <input type="text" class="form-control" placeholder="tanggal lahir">
+                        <label>Nama Ibu</label>
+                        <input type="text" class="form-control" placeholder="Nama Ibu">
                       </div>
                     </div>
                     <div class="col-sm-6">
                       <div class="form-group">
                         <label>Nama Pendeta</label>
-                        <input type="text" class="form-control" placeholder="nama pendeta" disabled>
+                        <input type="text" class="form-control" placeholder="Nama Pendeta">
                       </div>
                     </div>
                   </div>
@@ -62,14 +62,29 @@
                     <div class="col-sm-6">
                       <!-- textarea -->
                       <div class="form-group">
-                        <label>Alamat</label>
-                        <input type="text" class="form-control" placeholder="alamat" disabled>
+                        <label>Tempat Lahir</label>
+                        <input type="text" class="form-control" placeholder="Tempat Lahir">
                       </div>
                     </div>
                     <div class="col-sm-6">
                       <div class="form-group">
                         <label>Keterangan</label>
-                        <textarea class="form-control" rows="3" placeholder="keterangan" disabled></textarea>
+                        <textarea class="form-control" rows="3" placeholder="keterangan"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <!-- textarea -->
+                      <div class="form-group">
+                        <label>Tanggal Lahir</label>
+                        <input type="date" class="form-control" placeholder="Tanggal Lahir">
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <label>File Baptis</label>
+                        <input type="file" class="form-control" placeholder="File Baptis">
                       </div>
                     </div>
                   </div>

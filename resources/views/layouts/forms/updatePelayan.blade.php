@@ -42,31 +42,27 @@
                     <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nama Pelayan">
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputPassword1">Tahbisan</label>
-                    <input type="date" class="form-control" id="exampleInputPassword1" placeholder="Tahbisan">
+                    <label for="exampleInputEmail1">ID Jemaat</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="ID Jemaat">
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputEmail1">Pendidikan</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Pendidikan">
+                    <label for="exampleInputPassword1">Tanggal Tahbisan</label>
+                    <input type="date" class="form-control" id="exampleInputPassword1" placeholder="Tanggal Tahbisan">
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputEmail1">Bidang Pendidikan</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Bidang Pendidikan">
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Pekerjaan</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Pekerjaan">
+                    <label for="exampleInputEmail1">Tanggal Akhir Jawatan</label>
+                    <input type="date" class="form-control" id="exampleInputEmail1" placeholder="Tanggal Akhir Jawatan">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Keterangan</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Keterangan">
+                    <textarea type="text" class="form-control" id="exampleInputEmail1" placeholder="Keterangan"></textarea>
                   </div>
                 </div>
                 <!-- /.card-body -->
 
                 <div class="card-footer">
                   <button type="submit" class="btn btn-outline-dark btn-lg ml-3 float-right">Cancel</button>
-                  <button type="submit" class="btn btn-warning btn-lg float-right">Create</button>
+                  <button type="submit" class="btn btn-warning btn-lg float-right">Edit</button>
                 </div>
               </form>
             </div>

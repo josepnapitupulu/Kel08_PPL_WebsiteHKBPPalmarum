@@ -42,12 +42,8 @@
                     <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nama Jenis">
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputPassword1">Tanggal Ibadah</label>
-                    <input type="date" class="form-control" id="exampleInputPassword1" placeholder="Tanggal Ibadah">
-                  </div>
-                  <div class="form-group">
                     <label for="exampleInputEmail1">Waktu Ibadah</label>
-                    <input type="time" class="form-control" id="exampleInputEmail1" placeholder="Waktu Ibadah">
+                    <input type="datetime-local" class="form-control" id="exampleInputEmail1" placeholder="Waktu Ibadah">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Pelayan Ibadah</label>
@@ -66,7 +62,7 @@
 
                 <div class="card-footer">
                   <button type="submit" class="btn btn-outline-dark btn-lg ml-3 float-right">Cancel</button>
-                  <button type="submit" class="btn btn-warning btn-lg float-right">Create</button>
+                  <button type="submit" class="btn btn-warning btn-lg float-right">Edit</button>
                 </div>
               </form>
             </div>

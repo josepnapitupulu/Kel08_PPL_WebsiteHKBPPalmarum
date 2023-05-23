@@ -31,15 +31,23 @@
                       <td>------</td>
                     </tr>
                     <tr>
+                      <td>Nama Ayah</td>
+                      <td>------</td>
+                    </tr>
+                    <tr>
+                      <td>Nama Ibu</td>
+                      <td>------</td>
+                    </tr>
+                    <tr>
+                      <td>Tempat Lahir</td>
+                      <td>------</td>
+                    </tr>
+                    <tr>
                       <td>Tanggal Lahir</td>
                       <td>------</td>
                     </tr>
                     <tr>
                       <td>Alamat</td>
-                      <td>------</td>
-                    </tr>
-                    <tr>
-                      <td>Tanggal Sidi</td>
                       <td>------</td>
                     </tr>
                     <tr>
@@ -52,6 +60,10 @@
                     </tr>
                     <tr>
                       <td>Keterangan</td>
+                      <td>------</td>
+                    </tr>
+                    <tr>
+                      <td>File Baptis</td>
                       <td>------</td>
                     </tr>
                     <tr>

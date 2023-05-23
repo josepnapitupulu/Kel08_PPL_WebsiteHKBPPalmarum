@@ -27,10 +27,6 @@
                       <td>------</td>
                     </tr>
                     <tr>
-                      <td>Tanggal Ibadah</td>
-                      <td>------</td>
-                    </tr>
-                    <tr>
                       <td>Waktu Ibadah</td>
                       <td>------</td>
                     </tr>

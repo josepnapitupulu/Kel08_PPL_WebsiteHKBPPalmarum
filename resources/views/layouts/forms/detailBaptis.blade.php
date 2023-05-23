@@ -23,11 +23,15 @@
                   </thead>
                   <tbody>
                     <tr>
-                      <td>Nama Lengkap Anak</td>
+                      <td>ID Baptis</td>
                       <td>------</td>
                     </tr>
                     <tr>
-                      <td>Tanggal Lahir</td>
+                      <td>Nama Lengkap</td>
+                      <td>------</td>
+                    </tr>
+                    <tr>
+                      <td>Tempat/Tanggal Lahir</td>
                       <td>------</td>
                     </tr>
                     <tr>
@@ -43,7 +47,7 @@
                       <td>------</td>
                     </tr>
                     <tr>
-                      <td>Wijk</td>
+                      <td>Keterangan</td>
                       <td>------</td>
                     </tr>
                     <tr>

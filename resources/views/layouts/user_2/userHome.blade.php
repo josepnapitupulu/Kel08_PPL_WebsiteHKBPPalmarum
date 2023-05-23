@@ -1,4 +1,3 @@
-@include('layouts.user_2.style')
 @include('layouts.user_2.navbar')
 
 <!DOCTYPE html>
@@ -8,14 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+
+    <link rel="stylesheet" href="{{asset('Style')}}/style2.css">
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
 
-  
 
-
-    <style>
-        
-    </style>
 </head>
 <body>
     <header class="hero">
@@ -28,7 +24,7 @@
     </header>
     <div class="foto-container">
         <div class="foto-item">
-          <img src="{{ asset('image/sintua.jpg') }}" alt="Foto">
+          <img src="{{ asset('Style')}}/image/sintua.jpg" alt="Foto">
 
 
           <p class="foto-text">INI EPHORUS <br> n publishing and graphic design, Lorem ipsum is a placeholder 
@@ -40,7 +36,7 @@
                   the form of a webpag </p>           
         </div>
         <div class="foto-item">
-          <img src="{{ asset('image/sintua.jpg') }}" alt="Foto">
+          <img src="{{ asset('Style') }}/image/sintua.jpg" alt="Foto">
             <p class="foto-text">INI EPHORUS <br> n publishing and graphic design, Lorem ipsum is a placeholder 
                   text commonly used to demonstrate the visual form of a 
                   document or a typeface without relying on meaningful content. 
@@ -49,7 +45,7 @@
                    process called greeking, which allows designers to consider
                     the form of a webpag </p>           
           </div> <div class="foto-item">
-            <img src="{{ asset('image/sintua.jpg') }}" alt="Foto">
+            <img src="{{ asset('Style') }}/image/sintua.jpg" alt="Foto">
             <p class="foto-text">INI EPHORUS <br> n publishing and graphic design, Lorem ipsum is a placeholder 
                   text commonly used to demonstrate the visual form of a 
                   document or a typeface without relying on meaningful content. 
@@ -65,7 +61,7 @@
     </div>  
       <div class="card">
         <div class="image-container">
-          <img src="{{ asset('image/sintua.jpg') }}" alt="Foto" class="round-image" style="  width: 500px;
+          <img src="{{ asset('Style') }}/image/sintua.jpg" alt="Foto" class="round-image" style="  width: 500px;
           height: 500px;
           border-radius: 50%;
           overflow: hidden;
@@ -115,7 +111,6 @@
 		</div>
 	  </div>@include('layouts.user_2.footer')
 </body>
-
-<script src="{{ asset('js/style.js') }}"></script>
+<script src="{{asset('Style')}}/style.js"></script>
 
 </html>
