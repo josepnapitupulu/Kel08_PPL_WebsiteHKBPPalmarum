@@ -43,88 +43,84 @@
             <h1 style="align-items: center; text-align: center; padding-right: 200px;"> <span style="display:inline-block; border-bottom: 1px solid black; width: 100px; margin-right: 10px; margin-bottom: 9px;">
                 </span>Pendaftaran Jemaat HKBP Palmarum<strong><span style="display:inline-block; border-bottom: 1px solid black; width: 100px; margin-left: 10px; margin-bottom: 9px;"></span></strong>
             </h1>
-            <form>
+            <form method="post" action="{{route('registrasiJemaat')}}">
+              @csrf
+              @method('POST')
               <div class="form-group">
                 <label for="name">Nama Depan</label>
-                <input type="text" id="name" name="name" placeholder="Masukkan nama lengkap anda" />
+                <input type="text" id="name" name="nama_depan" placeholder="Masukkan nama lengkap anda" />
               </div>    
               <div class="form-group">
                 <label for="name">Nama Belakang</label>
-                <input type="text" id="name" name="name" placeholder="Masukkan tanggal lahir anda" />
+                <input type="text" id="name" name="nama_belakang" placeholder="Masukkan tanggal lahir anda" />
               </div>
               <div class="form-group">
                 <label for="name">Gelar Depan</label>
-                <input type="text" id="name" name="name" placeholder="" />
+                <input type="text" id="name" name="gelar_depan" placeholder="" />
               </div>
               <div class="form-group">
                 <label for="name">Gelar Belakang</label>
-                <input type="text" id="name" name="name" placeholder="Masukkan gelar anda" />
+                <input type="text" id="name" name="gelar_belakang" placeholder="Masukkan gelar anda" />
               </div>
               <div class="form-group">
                 <label for="name">Tempat Lahir</label>
-                <input type="text" id="name" name="name" placeholder="Masukkan alamat anda" />
+                <input type="text" id="name" name="tempat_lahir" placeholder="Masukkan alamat anda" />
               </div>
               <div class="form-group">
                 <label for="name">Tanggal Lahir</label>
-                <input type="date" id="name" name="name" placeholder="Masukkan gelar anda" />
+                <input type="date" id="name" name="tanggal_lahir" placeholder="Masukkan gelar anda" />
               </div>
               <div class="form-group">
                 <label for="name">Golongan Darah</label>
-                <input type="text" id="name" name="name" placeholder="Masukkan Golongan Darah anda yang masih aktif" />
+                <input type="text" id="name" name="gol_darah" placeholder="Masukkan Golongan Darah anda yang masih aktif" />
               </div>
               <div class="form-group">
                 <label for="name">Jenis Kelamin</label>
-                <input type="text" id="name" name="name" placeholder="Masukkan tanggal baptis" />
+                <input type="text" id="name" name="jenis_kelamin" placeholder="Masukkan tanggal baptis" />
               </div>
               <div class="form-group">
                 <label for="name">No Telepon</label>
-                <input type="text" id="name" name="name" placeholder="Masukkan tanggal sidi anda" />
+                <input type="text" id="name" name="no_telepon" placeholder="Masukkan tanggal sidi anda" />
               </div>
               <div class="form-group">
                 <label for="name">Alamat</label>
-                <input type="text" id="name" name="name" placeholder="Masukkan Gelar Anda" />
+                <input type="text" id="name" name="alamat" placeholder="Masukkan Gelar Anda" />
               </div>
               <div class="form-group">
                 <label for="name">Status Keluarga</label>
-                <input type="text" id="name" name="name" placeholder="Masukkan Gelar Anda" />
+                <input type="text" id="name" name="id_hub_keluarga" placeholder="Masukkan Gelar Anda" />
               </div>
               <div class="form-group">
-                <label for="name">Pekerjaan</label>
-                <input type="text" id="name" name="name" placeholder="Masukkan Gelar Anda" />
-              </div>
-              <div class="form-group">
-                <label for="name">Pekerjaan Lainnya</label>
-                <input type="text" id="name" name="name" placeholder="Masukkan Gelar Anda" />
-              </div>
-              <div class="form-group">
-                <label for="name">Bidang Pendidikan</label>
-                <input type="text" id="name" name="name" placeholder="Masukkan Gelar Anda" />
+                <label for="name">Status</label>
+                <input type="text" id="name" name="id_status_pernikahan" placeholder="Masukkan Gelar Anda" />
               </div>
               <div class="form-group">
                 <label for="name">Pendidikan Terakhir</label>
-                <input type="text" id="name" name="name" placeholder="Masukkan Gelar Anda" />
+                <input type="text" id="name" name="id_pendidikan" placeholder="Masukkan Gelar Anda" />
+              </div>
+              <div class="form-group">
+                <label for="name">Bidang Pendidikan</label>
+                <input type="text" id="name" name="id_bidang_pendidikan" placeholder="Masukkan Gelar Anda" />
               </div>
               <div class="form-group">
                 <label for="name">Bidang Pendidikan Lainnya</label>
-                <input type="text" id="name" name="name" placeholder="Masukkan Gelar Anda" />
+                <input type="text" id="name" name="id_bidang_pendidikan_lain" placeholder="Masukkan Gelar Anda" />
               </div>
               <div class="form-group">
-                <label for="name">Foto</label>
-                <input type="file" id="name" name="name" placeholder="Masukkan Gelar Anda" />
+                <label for="name">Pekerjaan</label>
+                <input type="text" id="name" name="id_pekerjaan" placeholder="Masukkan Gelar Anda" />
+              </div>
+              <div class="form-group">
+                <label for="name">Pekerjaan Lainnya</label>
+                <input type="text" id="name" name="nama_pekerjaan_lain" placeholder="Masukkan Gelar Anda" />
               </div>
               <div class="form-group">
                 <label for="name">Keterangan</label>
-                <input type="text" id="name" name="name" placeholder="Masukkan Gelar Anda" />
-              </div>
-              <!-- upload foto -->
-              <div class="form-group foto_1">
-                <label for="foto">Foto Jemaat</label>
-                <input type="file" id="foto" name="foto">
-                <span>Drag and drop file here or click to upload <br> Ukuran foto harus .png</span>
+                <input type="text" id="name" name="keterangan" placeholder="Masukkan Gelar Anda" />
               </div>
               <!-- upload foto -->  
               <div style="text-align: right; margin-top: 40px;">
-                 <input type="submit" value="Submit"/>
+                 <button type="submit">Daftar</button>
               </div>
              
             </form>

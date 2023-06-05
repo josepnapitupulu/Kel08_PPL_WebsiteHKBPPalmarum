@@ -43,60 +43,51 @@
             <h1 style="align-items: center; text-align: center; padding-right: 200px;"> <span style="display:inline-block; border-bottom: 1px solid black; width: 100px; margin-right: 10px; margin-bottom: 9px;">
                 </span>Pendaftaran Martumpol HKBP Palmarum<strong><span style="display:inline-block; border-bottom: 1px solid black; width: 100px; margin-left: 10px; margin-bottom: 9px;"></span></strong>
             </h1>
-            <form>
+            <form method="post" action="{{route('registrasiMartumpol')}}">
+              @csrf
+              @method('POST')
               <div class="form-group">
                 <label for="name">Nama Lengkap Mempelai Laki-Laki</label>
-                <input type="text" id="name" name="name" placeholder="Masukkan nama keluarga anda" />
+                <input type="text" id="name" name="nama_gereja_laki" placeholder="Masukkan nama keluarga anda" />
               </div>    
               <div class="form-group">
                 <label for="name">Nama Ayah Mempelai Laki-Laki</label>
-                <input type="text" id="name" name="name" placeholder="Masukkan Nama Ayah Mempelai Laki-Laki" />
+                <input type="text" id="name" name="nama_ayah_laki" placeholder="Masukkan Nama Ayah Mempelai Laki-Laki" />
               </div>
               <div class="form-group">
                 <label for="name">Nama Ibu Mempelai Laki-Laki</label>
-                <input type="text" id="name" name="name" placeholder="Masukkan Nama Ibu Mempelai Laki-Laki anda" />
+                <input type="text" id="name" name="nama_ibu_laki" placeholder="Masukkan Nama Ibu Mempelai Laki-Laki anda" />
+              </div>
+              <div class="form-group">
+                <label for="name">Gereja Mempelai Laki-Laki</label>
+                <input type="text" id="name" name="nama_gereja_laki" placeholder="Masukkan Nama Ibu Mempelai Laki-Laki anda" />
               </div>
               <div class="form-group">
                 <label for="name">Nama Lengkap Mempelai Perempuan</label>
-                <input type="text" id="name" name="name" placeholder="Masukkan Nama Lengkap Mempelai Perempuan anda" />
+                <input type="text" id="name" name="id_jemaat_perempuan" placeholder="Masukkan Nama Lengkap Mempelai Perempuan anda" />
               </div>
               <div class="form-group">
                 <label for="name">Nama Ayah Mempelai Perempuan</label>
-                <input type="text" id="name" name="name" placeholder="(cth: Jefri Manalu/Pria/1 mei 1999 dengan Sinta Siagian/Wanita/2 juni 1999)" />
+                <input type="text" id="name" name="nama_ayah_perempuan" placeholder="(cth: Jefri Manalu/Pria/1 mei 1999 dengan Sinta Siagian/Wanita/2 juni 1999)" />
               </div>
               <div class="form-group">
                 <label for="name">Nama Ibu Mempelai Perempuan</label>
-                <input type="text" id="name" name="name" placeholder="Masukkan Nama Ibu Mempelai Perempuan" />
+                <input type="text" id="name" name="nama_ibu_perempuan" placeholder="Masukkan Nama Ibu Mempelai Perempuan" />
               </div>
               <div class="form-group">
-                <label for="name">Tanggal Martumpol</label>
-                <input type="text" id="name" name="name" placeholder="Masukkan Tanggal Martumpol" />
+                <label for="name">Gereja Mempelai Perempuan</label>
+                <input type="text" id="name" name="nama_gereja_perempuan" placeholder="Masukkan Nama Gereja Martumpol" />
               </div>
               <div class="form-group">
-                <label for="name">Nama Gereja Martumpol</label>
-                <input type="text" id="name" name="name" placeholder="Masukkan Nama Gereja Martumpol" />
-              </div>
-              <div class="form-group">
-                <label for="name">Tanggal Warta Pemberkatan</label>
-                <input type="text" id="name" name="name" placeholder="Masukkan Tanggal Warta Pemberkatan" />
-              </div>
-              <div class="form-group">
-                <label for="name">Nama Gereja Pemberkatan</label>
-                <input type="text" id="name" name="name" placeholder="Masukkan Nama Gereja Pemberkatan" />
-              </div>
-              <div class="form-group">
-                <label for="name">Tanggal Pemberkatan</label>
-                <input type="text" id="name" name="name" placeholder="Masukkan Tanggal Pemberkatan" />
+                <label for="name">Keterangan</label>
+                <input type="text" id="name" name="keterangan" placeholder="Masukkan Nama Gereja Martumpol" />
               </div>
               <div style="text-align: right; margin-top: 40px;">
-                 <input type="submit" value="Submit"/>
+                <button type="submit">Daftar</button>
               </div>
              
             </form>
           </div>
-          
-          
- 
     </main>
     <footer>
        <div class="footer_1">

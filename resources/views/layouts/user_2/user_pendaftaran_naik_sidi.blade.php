@@ -46,55 +46,49 @@
         </h1>
 
      
-            <form>
+            <form method="post" action="{{route('registrasiSidi')}}">
+              @csrf
+              @method('post')
               <div class="form-group">
                 <label for="name">Nama Lengkap</label>
-                <input type="text" id="name" name="name" placeholder="Masukkan Nama Lengkap Anda" />
+                <input type="text" id="name" name="nama_lengkap" placeholder="Pilih Nama Lengkap Anda" />
               </div>
               <div class="form-group">
                 <label for="name">Nama Ayah</label>
-                <input type="text" id="nama Ayah" name="name" placeholder="Masukkan Nama Ayah" />
+                <input type="text" id="nama Ayah" name="nama_ayah" placeholder="Masukkan Nama Ayah Anda" />
               </div>     
               <div class="form-group">
                 <label for="name">Nama Ibu</label>
-                <input type="text" id="name" name="name" placeholder="Masukkan Nama Ibu A" />
-              </div>
-              <div class="form-group">
-                <label for="name">Alamat</label>
-                <input type="text" id="name" name="name" placeholder="Masukkan Alamat Anda" />
+                <input type="text" id="name" name="nama_ibu" placeholder="Masukkan Nama Ibu Anda" />
               </div>
               <div class="form-group">
                 <label for="name">Tempat Lahir</label>
-                <input type="text" id="name" name="name" placeholder="Masukkan Wijk" />
+                <input type="text" id="name" name="tempat_lahir" placeholder="Masukkan Tempat Lahir Anda" />
               </div>
               <div class="form-group">
                 <label for="name">Tanggal Lahir</label>
-                <input type="date" id="email" name="name" placeholder="Masukkan Email Anda" />
+                <input type="date" id="name" name="tanggal_lahir" placeholder="Masukkan Tanggal Lahir Anda" />
               </div>
               <div class="form-group">
-                <label for="name">Asal gereja</label>
-                <input type="text" id="name" name="name" placeholder="Masukkan NomorHandphone Anda" />
+                <label for="name">Nama Gereja Non-HKBP</label>
+                <input type="text" id="name" name="nama_gereja_non_hkbp" placeholder="Asal gereja Non HKBP" />
               </div>
               <div class="form-group">
-                <label for="name">Nama Pendeta</label>
-                <input type="text" id="name" name="name" placeholder="Masukkan NomorHandphone Anda" />
+                <label for="name">Status Keluarga</label>
+                <input type="text" id="name" name="id_hub_keluarga" placeholder="Asal gereja Non HKBP" />
               </div>
+              <!-- <div class="form-group">
+                <label for="name">Alamat</label>
+                <input type="text" id="name" name="alamat" placeholder="Masukkan Alamat Anda" />
+              </div> -->
               <div class="form-group">
                 <label for="name">Keterangan</label>
-                <input type="text" id="name" name="name" placeholder="Masukkan NomorHandphone Anda" />
+                <input type="text" id="name" name="keterangan" placeholder="Masukkan NomorHandphone Anda" />
               </div>
               <!-- upload foto -->
-              <div class="form-group foto_1">
-                <label for="foto">Upload Foto</label>
-                <input type="file" id="foto" name="foto">
-                <span>Drag and drop file here or click to upload <br> Ukuran foto harus .png</span>
-              </div>
-              <!-- upload foto -->
-              
               <div style="text-align: right; margin-top: 40px;">
-                 <input type="submit" value="Submit"/>
+                <button type="submit">Daftar</button>
               </div>
-             
             </form>
           </div>
           
