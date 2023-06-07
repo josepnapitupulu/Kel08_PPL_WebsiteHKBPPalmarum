@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Http;
+use Alert;
 
 class userController extends Controller
 {
@@ -35,6 +36,8 @@ class userController extends Controller
             // 'alamat' => $request->get('alamat'),
         ]);
     
+        Alert::success('Martumpol', 'Registrasi Berhasil');
+        
         if ($response->failed()) {
             return back()->withErrors(['message' => 'error when create Baptis data']);
         }
@@ -60,6 +63,8 @@ class userController extends Controller
             'keterangan' => $request->get('keterangan'),
         ]);
     
+        Alert::success('Baptis', 'Registrasi Berhasil');
+
         if ($response->failed()) {
             return back()->withErrors(['message' => 'error when create Baptis data']);
         }
@@ -93,6 +98,8 @@ class userController extends Controller
             'alamat' => $request->get('alamat'),
             'keterangan' => $request->get('keterangan')
         ]);
+
+        Alert::success('Jemaat', 'Registrasi Berhasil');
     
         if ($response->failed()) {
             return back()->withErrors(['message' => 'error when create Baptis data']);
@@ -126,6 +133,8 @@ class userController extends Controller
             'nama_ibu_perempuan' => $request->get('nama_ibu_perempuan'),
             'keterangan' => $request->get('keterangan')
         ]);
+
+        Alert::success('Nikah', 'Registrasi Berhasil');
     
         if ($response->failed()) {
             return back()->withErrors(['message' => 'error when create Baptis data']);
@@ -153,6 +162,8 @@ class userController extends Controller
             'nama_gereja' => $request->get('nama_gereja'),
             'keterangan' => $request->get('keterangan')
         ]);
+
+        Alert::success('Jemaat Pindah', 'Registrasi Berhasil');
     
         if ($response->failed()) {
             return back()->withErrors(['message' => 'error when create Baptis data']);
@@ -185,6 +196,8 @@ class userController extends Controller
             'keterangan' => $request->get('keterangan')
             // 'alamat' => $request->get('alamat'),
         ]);
+
+        Alert::success('Sidi', 'Registrasi Berhasil');
     
         if ($response->failed()) {
             return back()->withErrors(['message' => 'error when create Baptis data']);
@@ -197,8 +210,9 @@ class userController extends Controller
     {
         $pelayan['pelayans'] = Http::get('http://127.0.0.1:8070/api/pelayan')->collect();
         $jadwal['jadwals'] = Http::get('http://127.0.0.1:8070/api/jadwal')->collect();
+        $kegiatan['kegiatans'] = Http::get('http://127.0.0.1:8070/api/kegiatan')->collect();
 
-        $data = array_merge($pelayan, $jadwal);
+        $data = array_merge($pelayan, $jadwal, $kegiatan);
 
         return view('layouts.user_2.userHome', $data);
     }

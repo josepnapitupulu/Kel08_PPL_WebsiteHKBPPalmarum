@@ -29,7 +29,7 @@
       @foreach($pelayans as $data)
         <div class="foto-item">
             <img src="{{ asset('Style')}}/image/sintua.jpg" alt="Foto">
-            <h3 value="{{$data['id_jemaat']}}"></h3>
+            <h1 class="foto-text">{{$data['nama_lengkap']}}</h1>
             <h3 class="foto-text">Jabatan : {{$data['jabatan']}}</h3>
             <h4 class="foto-text">Tanggal Tahbisan : {{$data['tanggal_tahbisan']}}</h4>
             <p class="foto-text">{{$data['keterangan']}}</p>          
@@ -127,41 +127,46 @@
           @endforeach
         </div>
       </div>
-       <div class="jadwal">
-	
-		<div class="schedule-slider">
-		  <div class="schedule-item">
-			<h2>Minggu Pagi</h2>
-			<p>09.00 - Ibadah Raya</p>
-			<p>11.00 - Kebaktian Sekolah Minggu</p>
-		  </div>
-		  <div class="schedule-item">
-			<h2>Minggu Sore</h2>
-			<p>16.00 - Ibadah Raya</p>
-		  </div>
-		  <div class="schedule-item">
-			<h2>Senin</h2>
-			<p>19.00 - Doa Bersama</p>
-		  </div>
-		  <div class="schedule-item">
-			<h2>Kamis</h2>
-			<p>19.00 - Komsel</p>
-		  </div>
-          <div class="schedule-item">
-			<h2>Kamis</h2>
-			<p>19.00 - Komsel</p>
-		  </div>
-          <div class="schedule-item">
-			<h2>Kamis</h2>
-			<p>19.00 - Komsel</p>
-		  </div>
-          <div class="schedule-item">
-			<h2>Kamis</h2>
-			<p>19.00 - Komsel</p>
-		  </div>
-
-		</div>
-	  </div>@include('layouts.user_2.footer')
+      <div class="judul_1">
+        <h1>Kegiatan-Kegiatan Gereja</h1>
+        <div class="jadwal">
+          <div class="schedule-slider">
+            @foreach($kegiatans as $data)
+            <div class="schedule-item">
+              <h2><center>{{$data['nama_jenis_kegiatan']}}</center></h2>
+              <p>tanggal : {{$data['tanggal_kegiatan']}}</p>
+              <p>waktu : {{$data['waktu_kegiatan']}}</p>
+              <p>Lokasi : {{$data['lokasi_kegiatan']}}</p>
+              <p>deskripsi : {{$data['keterangan']}}</p>
+            </div>
+            @endforeach
+            <!-- <div class="schedule-item">
+            <h2>Minggu Sore</h2>
+            <p>16.00 - Ibadah Raya</p>
+            </div>
+            <div class="schedule-item">
+            <h2>Senin</h2>
+            <p>19.00 - Doa Bersama</p>
+            </div>
+            <div class="schedule-item">
+            <h2>Kamis</h2>
+            <p>19.00 - Komsel</p>
+            </div>
+                <div class="schedule-item">
+            <h2>Kamis</h2>
+            <p>19.00 - Komsel</p>
+            </div>
+                <div class="schedule-item">
+            <h2>Kamis</h2>
+            <p>19.00 - Komsel</p>
+            </div>
+                <div class="schedule-item">
+            <h2>Kamis</h2>
+            <p>19.00 - Komsel</p>
+            </div> -->
+        </div>
+      </div>
+      </div>@include('layouts.user_2.footer')
 </body>
 <script src="{{asset('Style')}}/style.js"></script>
 
