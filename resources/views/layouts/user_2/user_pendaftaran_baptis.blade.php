@@ -10,6 +10,10 @@
     
     <link rel="stylesheet" href="{{asset('Style')}}/style2.css">
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+
+    <!-- Scripts -->
+    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     
 </head>
 <body>
@@ -23,7 +27,7 @@
     </header>
     <main>
     
-      
+      <h1>Pendaftaran Baptis HKBP Palmarum</h1>
 
         <div class="card">
             <div class="image-container">
@@ -42,53 +46,71 @@
           
           <div class="card_1">
             <h1 style="align-items: center; text-align: center; padding-right: 200px;"> <span style="display:inline-block; border-bottom: 1px solid black; width: 100px; margin-right: 10px; margin-bottom: 9px;">
-                </span>Jemaat Pindah HKBP Palmarum<strong><span style="display:inline-block; border-bottom: 1px solid black; width: 100px; margin-left: 10px; margin-bottom: 9px;"></span></strong>
+                </span>Baptis HKBP Palmarum<strong><span style="display:inline-block; border-bottom: 1px solid black; width: 100px; margin-left: 10px; margin-bottom: 9px;"></span></strong>
             </h1>
-            <form>
+            <form method="post" action="{{route('registrasiBaptis')}}">
+              @csrf
+              @method('post')
               <div class="form-group">
                 <label for="name">Nama lengkap</label>
-                <input type="text" id="name" name="name" placeholder="Masukkan nama lengkap yang akan di baptis" />
+                <input type="text" id="name" name="nama_lengkap" placeholder="Masukkan nama lengkap yang akan di baptis" />
               </div>    
               <div class="form-group">
                 <label for="name">Nama Ayah</label>
-                <input type="text" id="name" name="name" placeholder="Masukkan tanggal lahir yang akan di baptis" />
+                <input type="text" id="name" name="nama_ayah" placeholder="Masukkan tanggal lahir yang akan di baptis" />
               </div>
               <div class="form-group">
                 <label for="name">Nama Ibu</label>
-                <input type="text" id="name" name="name" placeholder="Masukkan nama ibu" />
+                <input type="text" id="name" name="nama_ibu" placeholder="Masukkan nama ibu" />
               </div>
               <div class="form-group">
                 <label for="name">Tempat Lahir</label>
-                <input type="text" id="name" name="name" placeholder="Masukkan nama ibu" />
+                <input type="text" id="name" name="tempat_lahir" placeholder="Masukkan tempat lahir" />
               </div>
               <div class="form-group">
                 <label for="name">Tanggal Lahir</label>
-                <input type="text" id="name" name="name" placeholder="Masukkan nama ibu" />
+                <input type="date" id="name" name="tanggal_lahir" placeholder="Masukkan tanggal lahir" />
+              </div>
+              <div class="form-group">
+                <label for="name">Jenis Kelamin</label>
+                <input type="text" id="name" name="jenis_kelamin" placeholder="Masukkan alamat" />
               </div>
               <div class="form-group">
                 <label for="name">Alamat</label>
-                <input type="text" id="name" name="name" placeholder="Masukkan nama ibu" />
-              </div>
-              <div class="form-group">
-                <label for="name">Asal Gereja</label>
-                <input type="text" id="name" name="name" placeholder="Masukkan nama ibu" />
-              </div>
-              <div class="form-group">
-                <label for="name">Nama Pendeta</label>
-                <input type="text" id="name" name="name" placeholder="Masukkan nama ibu" />
-              </div>
-              <div class="form-group">
-                <label for="name">File Baptis</label>
-                <input type="file" id="name" name="name" placeholder="Masukkan nama ibu" />
+                <input type="text" id="name" name="alamat" placeholder="Masukkan alamat" />
               </div>
               <div class="form-group">
                 <label for="name">Keterangan</label>
-                <input type="text" id="name" name="name" placeholder="Masukkan nama ibu" />
+                <input type="text" id="name" name="keterangan" placeholder="Masukkan nama ibu" />
               </div>
               <div style="text-align: right; margin-top: 40px;">
-                 <input type="submit" value="Submit"/>
+                 <input type="submit" onclick="contoh()" value="daftar"/>
               </div>
-             
+              <script type="text/javascript">
+
+                    function contoh() {
+
+                      swal({
+
+                            title: "Berhasil!",
+
+                            text: "Pop-up berhasil ditampilkan",
+
+                            icon: "success",
+
+                            button: true
+
+                        });
+
+                    }
+
+                </script>
+
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+
+                  integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+
+                    crossorigin="anonymous"></script>
             </form>
           </div>
           

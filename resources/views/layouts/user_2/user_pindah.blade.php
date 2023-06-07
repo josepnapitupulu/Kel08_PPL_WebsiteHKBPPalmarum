@@ -10,6 +10,10 @@
 
     <link rel="stylesheet" href="{{asset('Style')}}/style2.css">
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+
+    <!-- Scripts -->
+    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     
 </head>
 <body>
@@ -23,7 +27,7 @@
     </header>
     <main>
     
-      
+    <h1>Pendaftaran Pindah HKBP Palmarum</h1>
 
         <div class="card">
             <div class="image-container">
@@ -44,31 +48,44 @@
             <h1 style="align-items: center; text-align: center; padding-right: 200px;"> <span style="display:inline-block; border-bottom: 1px solid black; width: 100px; margin-right: 10px; margin-bottom: 9px;">
                 </span>Jemaat Pindah HKBP Palmarum<strong><span style="display:inline-block; border-bottom: 1px solid black; width: 100px; margin-left: 10px; margin-bottom: 9px;"></span></strong>
             </h1>
-            <form>
+            <form method="post" action="{{route('registrasiPindah')}}">
+              @csrf
+              @method('POST')
               <div class="form-group">
-                <label for="name">ID Jemaat</label>
-                <input type="text" id="name" name="name" placeholder="Asexxxx , bxxxxx, Cxxxxx" />
-              </div>    
+                <label for="name">Nama Jemaat</label>
+                <!-- <input type="text" id="name" name="id_jemaat" placeholder="Asexxxx , bxxxxx, Cxxxxx" /> -->
+                <select name="id_jemaat">
+                  <option value="">Pilih Nama Anda Sebagai Mempelai Laki-Laki</option>
+                  @foreach($jemaats as $data)
+                    <option value="{{$data['id_jemaat']}}">{{$data['nama_depan']}}&nbsp{{$data['nama_belakang']}}</option>
+                  @endforeach
+                </select>
+              </div> 
+              <div class="form-group">
+                <label for="name">Nama Keluarga</label>
+                <!-- <input type="text" id="name" name="id_registrasi" placeholder="Asexxxx , bxxxxx, Cxxxxx" /> -->
+                <select name="id_registrasi">
+                  <option value="">Pilih Nama Anda Sebagai Mempelai Laki-Laki</option>
+                  @foreach($namKeluargas as $data)
+                    <option value="{{$data['id_registrasi']}}">{{$data['nama_keluarga']}}</option>
+                  @endforeach
+                </select>
+              </div>  
               <div class="form-group">
                 <label for="name">Tanggal Pindah</label>
-                <input type="text" id="name" name="name" placeholder="Masukkan wijk" />
+                <input type="date" id="name" name="tgl_pindah" placeholder="Masukkan wijk" />
               </div>
               <div class="form-group">
                 <label for="name">Gereja Tujuan</label>
-                <input type="text" id="name" name="name" placeholder=" cnth :Jl. Ahmad Yani No. 25, Kelurahan Kebonwaru, Kecamatan Bogor Selatan, Kota Bogor, Jawa Barat, Indonesia 16134" />
+                <input type="text" id="name" name="nama_gereja" placeholder="cnth : Gereja Katedral Jakarta Jl. Katedral No. 7B Jakarta Pusat 10110 Indonesia" />
               </div>
               <div class="form-group">
-                <label for="name">Nama Gereja Non-HKBP</label>
-                <input type="text" id="name" name="name" placeholder="cnth : Gereja Katedral Jakarta Jl. Katedral No. 7B Jakarta Pusat 10110 Indonesia" />
-              </div>
-              <div class="form-group">
-                <label for="name">Tanggal Warta</label>
-                <input type="text" id="name" name="name" placeholder="(cth: Jefri Manalu/Pria/1 mei 1999 dengan Sinta Siagian/Wanita/2 juni 1999)" />
+                <label for="name">Keterangan</label>
+                <input type="text" id="name" name="keterangan" placeholder="(cth: Jefri Manalu/Pria/1 mei 1999 dengan Sinta Siagian/Wanita/2 juni 1999)" />
               </div>
               <div style="text-align: right; margin-top: 40px;">
-                 <input type="submit" value="Submit"/>
+                 <input type="submit" value="daftar"/>
               </div>
-             
             </form>
           </div>
           

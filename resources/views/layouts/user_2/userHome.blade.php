@@ -9,9 +9,12 @@
     <title>Home</title>
 
     <link rel="stylesheet" href="{{asset('Style')}}/style2.css">
+    <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
-
+    <!-- Scripts -->
+    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 <body>
     <header class="hero">
@@ -23,37 +26,16 @@
         </div>
     </header>
     <div class="foto-container">
+      @foreach($pelayans as $data)
         <div class="foto-item">
-          <img src="{{ asset('Style')}}/image/sintua.jpg" alt="Foto">
-
-
-          <p class="foto-text">INI EPHORUS <br> n publishing and graphic design, Lorem ipsum is a placeholder 
-                text commonly used to demonstrate the visual form of a 
-                document or a typeface without relying on meaningful content. 
-                Lorem ipsum may be used as a placeholder before final copy is 
-                available. It is also used to temporarily replace text in a
-                 process called greeking, which allows designers to consider
-                  the form of a webpag </p>           
+            <img src="{{ asset('Style')}}/image/sintua.jpg" alt="Foto">
+            <h3 value="{{$data['id_jemaat']}}"></h3>
+            <h3 class="foto-text">Jabatan : {{$data['jabatan']}}</h3>
+            <h4 class="foto-text">Tanggal Tahbisan : {{$data['tanggal_tahbisan']}}</h4>
+            <p class="foto-text">{{$data['keterangan']}}</p>          
         </div>
-        <div class="foto-item">
-          <img src="{{ asset('Style') }}/image/sintua.jpg" alt="Foto">
-            <p class="foto-text">INI EPHORUS <br> n publishing and graphic design, Lorem ipsum is a placeholder 
-                  text commonly used to demonstrate the visual form of a 
-                  document or a typeface without relying on meaningful content. 
-                  Lorem ipsum may be used as a placeholder before final copy is 
-                  available. It is also used to temporarily replace text in a
-                   process called greeking, which allows designers to consider
-                    the form of a webpag </p>           
-          </div> <div class="foto-item">
-            <img src="{{ asset('Style') }}/image/sintua.jpg" alt="Foto">
-            <p class="foto-text">INI EPHORUS <br> n publishing and graphic design, Lorem ipsum is a placeholder 
-                  text commonly used to demonstrate the visual form of a 
-                  document or a typeface without relying on meaningful content. 
-                  Lorem ipsum may be used as a placeholder before final copy is 
-                  available. It is also used to temporarily replace text in a
-                   process called greeking, which allows designers to consider
-                    the form of a webpag </p>           
-          </div>
+        @endforeach 
+
         <!-- Tambahkan lebih banyak foto di sini jika diperlukan -->
       </div>
     <div class="judul_1">
@@ -61,20 +43,87 @@
     </div>  
       <div class="card">
         <div class="image-container">
-          <img src="{{ asset('Style') }}/image/sintua.jpg" alt="Foto" class="round-image" style="  width: 500px;
+          <img src="{{ asset('Style') }}/image/gereja.jpg" alt="Foto" class="round-image" style="  width: 500px;
           height: 500px;
           border-radius: 50%;
           overflow: hidden;
           margin: 20px;">
         </div>
         <div class="text-container">
-          <h3>HKBP Palmarum</h3>
-          <p>Teks deskripsi mengenai card.</p>
+          <h3>HKBP Palmarum</h3><br>
+          <p>HKBP Palmarum merupakan tempat ibadah yang berlokasi di Stadion Tarutung, Hutatoruan VI, Kec. Tarutung, 
+            Kabupaten Tapanuli Utara, Sumatera Utara 22411. Dimana HKBP Palmarum ini merupakan sebuah resort 
+            yang sudah cukup besar, yang mana pendeta dari gereja ini adalah Martin Gultom. Awal mula didirikannya 
+            Gereja ini didirikan karena adanya pergumulan dari antar jemaat.  </p>
         </div>
       </div>
       <div class="judul_1">
         <h1>Jadwal Ibadah</h1>
-    </div>
+        <div class="">
+          <h3>Acara Minggu</h3>
+          
+          <table table class="aesthetic-table" border="1">
+            <tr>
+              <td>BERNYANYI</td>
+             
+            </tr>
+            <tr>
+              <td>VOTUM  – INTROITUS – DOA PEMBUKA</td>
+              
+            </tr>
+            <tr>
+              <td>BERNYANYI</td>
+             
+            </tr>
+            <tr>
+              <td>HUKUM TAURAT</td>
+              
+            </tr>
+            <tr>
+              <td>BERNYANYI</td>
+              
+            </tr>
+            <tr>
+              <td>PENGAKUAN  DOSA</td>
+              
+            </tr>
+            <tr>
+              <td>BERNYANYI</td>
+              
+            </tr>
+            <tr>
+              <td>EPISTEL</td>
+              
+            </tr>
+            <tr>
+              <td>BERNYANYI</td>
+              
+            </tr>
+            <tr>
+              <td>PENGAKUAN IMAN</td>
+            
+            </tr>
+           
+            <tr>
+              <td>BERNYANYI</td>
+              
+            </tr>
+            <tr>
+              <td>KHOTBAH</td>
+              
+            </tr>
+            <tr>
+              <td>BERNYANYI</td>
+              
+            </tr>
+            <tr>
+              <td>DOA PENUTUP – BERKAT</td>
+              
+            </tr>
+          </table>
+          
+        </div>
+      </div>
        <div class="jadwal">
 	
 		<div class="schedule-slider">

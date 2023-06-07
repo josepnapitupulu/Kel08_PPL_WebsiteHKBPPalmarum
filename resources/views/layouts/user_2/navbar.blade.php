@@ -7,26 +7,60 @@
             <a href="/" target="_blank">HOME</a>
         </li>
         <li>
-            <a href="/daftarSidiUser" target="blank">SIDI</a>
+            <a href="{{route('sidiUser')}}">SIDI</a>
         </li>
         <li>
-            <a href="/daftarNikahUser">PERNIKAHAN</a>
+            <a href="{{route('nikahUser')}}">PERNIKAHAN</a>
         </li>
         <li>
-            <a href="/daftarJemaatUser">JEMAAT</a>
+            <a href="{{route('jemaatUser')}}">JEMAAT</a>
         </li>
         <li>
-            <a href="/daftarMartumpolUser">MARTUMPOL</a>
+            <a href="{{route('martumpolUser')}}">MARTUMPOL</a>
         </li>
         <li>
-            <a href="/daftarPindahUser">PINDAH</a>
+            <a href="{{route('pindahUser')}}">PINDAH</a>
         </li>
         <li>
-            <a href="/daftarBaptisUser">BAPTIS</a>
+            <a href="{{route('baptisUser')}}">BAPTIS</a>
         </li>
-        <li>
+        <!-- <li>
             <a href="/login" target="blank">LOGIN</a>
+        </li> -->
+    </ul>
+    <ul class="list-name">
+        <!-- Authentication Links -->
+        @guest
+        @if (Route::has('login'))
+        <li class="nav-item">
+            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
         </li>
+        @endif
+
+        @if (Route::has('register'))
+        <li class="nav-item">
+            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+        </li>
+        @endif
+        @else
+        <li class="list-name">
+            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                {{ Auth::user()->name }}
+            </a>&nbsp&nbsp&nbsp&nbsp&nbsp
+
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <a class="dropdown-item" href="{{ route('logout') }}"
+                    onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();">
+                    {{ __('Logout') }}
+                </a>
+
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                @csrf
+                </form>
+            </div>
+        </li>
+        @endguest
     </ul>
     
     <ion-icon class="burger-bar" name="list-outline"></ion-icon>
@@ -35,22 +69,22 @@
             <a href="/" target="_blank">HOME</a>
         </li>
         <li>
-            <a href="/daftarSidiUser" target="blank">SIDI</a>
+            <a href="{{route('sidiUser')}}" target="blank">SIDI</a>
         </li>
         <li>
-            <a href="/daftarNikahUser">PERNIKAHAN</a>
+            <a href="{{route('nikahUser')}}">PERNIKAHAN</a>
         </li>
         <li>
-            <a href="/daftarJemaatUser">JEMAAT</a>
+            <a href="{{route('jemaatUser')}}">JEMAAT</a>
         </li>
         <li>
-            <a href="/daftarMartumpolUser">MARTUMPOL</a>
+            <a href="{{route('martumpolUser')}}">MARTUMPOL</a>
         </li>
         <li>
-            <a href="/daftarPindahUser">PINDAH</a>
+            <a href="{{route('pindahUser')}}">PINDAH</a>
         </li>
         <li>
-            <a href="/daftarBaptisUser">BAPTIS</a>
+            <a href="{{route('baptisUser')}}">BAPTIS</a>
         </li>
         <li>
             <a href="/login" target="blank">LOGIN</a>

@@ -36,7 +36,8 @@
               <!-- /.card-header -->
               <!-- form start -->
               <div class="card-body">
-                <form>
+                <form action="" method="post">
+                  @csrf
                   <div class="row">
                     <div class="col-sm-6">
                       <!-- text input -->

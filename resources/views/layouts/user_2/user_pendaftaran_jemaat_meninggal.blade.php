@@ -10,6 +10,10 @@
 
     <link rel="stylesheet" href="{{asset('Style')}}/style2.css">
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+
+    <!-- Scripts -->
+    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     
 </head>
 <body>
@@ -22,6 +26,7 @@
         </div>
     </header>
     <main>
+    <h1>Pendaftaran Baptis HKBP Palmarum</h1>
        <div class="card">
             <div class="image-container">
               <img class="foto_sidi" src="{{asset('Style')}}//image/meninggal.jpeg" alt="gambar">
@@ -42,7 +47,7 @@
             </h1>
             <form>
               <div class="form-group">
-                <label for="name">Nama lengkap & Nama pamggilan</label>
+                <label for="name">Nama lengkap</label>
                 <input type="text" id="name" name="name" placeholder="Masukkan nama dan nama panggilan beliau " />
               </div>    
               <div class="form-group">
@@ -66,7 +71,7 @@
                 <input type="text" id="name" name="name" placeholder="Masukkan Wijk" />
               </div>
               <div style="text-align: right; margin-top: 40px;">
-                 <input type="submit" value="Submit"/>
+                 <input type="submit" value="daftar"/>
               </div>
              
             </form>

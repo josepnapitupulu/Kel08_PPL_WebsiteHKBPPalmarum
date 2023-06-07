@@ -105,6 +105,23 @@ Route::prefix('admin')->middleware(['isAdmin', 'auth'])->group(function(){
     Route::get('/kategoriPengeluaran', [App\Http\Controllers\pengeluaranController::class, 'index5'])->name('kategoriPengeluaran');
     Route::get('/kategoriPengeluaran2', [App\Http\Controllers\pengeluaranController::class, 'index6'])->name('kategoriPengeluaran2');
 
+
+    Route::get('/sentralisasi', [App\Http\Controllers\sentralisasiController::class, 'index'])->name('sentralisasi');
+    Route::get('/detailSentralisasi', [App\Http\Controllers\sentralisasiController::class, 'index2'])->name('detailSentralisasi');
+
+    Route::get('/kategoriAnggaran', [App\Http\Controllers\anggaranController::class, 'index'])->name('kategoriMataAnggaran');
+    Route::get('/detailKategoriAnggaran', [App\Http\Controllers\anggaranController::class, 'index2'])->name('detailKategoriMataAnggaran');
+    Route::get('/matsAnggaran', [App\Http\Controllers\anggaranController::class, 'index3'])->name('mataAnggaran');
+    Route::get('/detailMataAnggaran', [App\Http\Controllers\anggaranController::class, 'index4'])->name('detailMataAnggaran');
+
+    Route::get('/headTransaksi', [App\Http\Controllers\transaksiController::class, 'index'])->name('headTransaksi');
+    Route::get('/detailHeadTransaksi', [App\Http\Controllers\transaksiController::class, 'index2'])->name('detailHeadTransaksi');
+    Route::get('/detailTransaksi', [App\Http\Controllers\transaksiController::class, 'index3'])->name('detailTransaksi');
+    Route::get('/headTransaksiDetail', [App\Http\Controllers\transaksiController::class, 'index4'])->name('headTransaksiDetail');
+
+    Route::get('/persembahanIbadah', [App\Http\Controllers\persembahanController::class, 'index'])->name('persembahanIbadah');
+    Route::get('/persembahanJemaat', [App\Http\Controllers\persembahanController::class, 'index'])->name('persembahanJemaat');
+
     // Route::get('/daftarSidih', function () {
     //     return view('layouts.forms.daftarSidih');
     // });
@@ -128,98 +145,14 @@ Route::prefix('admin')->middleware(['isAdmin', 'auth'])->group(function(){
     Route::get('/detailPernikahanPerempuan', function () {
         return view('layouts.forms.detailPernikahanPerempuan');
     });
+    Route::get('/detailSentralisasi' , function () {
+        return view('layouts.forms.detailSentralisasi');
+    });
 
 
-    // Route::get('/updatePernikahan', function () {
-    //     return view('layouts.forms.updatePernikahan');
-    // });
-    // Route::get('/pernikahan', function () {
-    //     return view('layouts.formSearch.pernikahan');
-    // });
-    // Route::get('/jemaat', function () {
-    //     return view('layouts.formSearch.jemaat');
-    // });
-    // Route::get('/daftarJemaat', function () {
-    //     return view('layouts.forms.daftarJemaat');
-    // });
-    // Route::get('/updateJemaat', function () {
-    //     return view('layouts.forms.updateJemaat');
-    // });
-    // Route::get('/detailJemaat', function () {
-    //     return view('layouts.forms.detailJemaat');
-    // });
-    // Route::get('/kegiatan', function () {
-    //     return view('layouts.formSearch.kegiatan');
-    // });
-    // Route::get('/daftarKegiatan', function () {
-    //     return view('layouts.forms.daftarKegiatan');
-    // });
-    // Route::get('/updateKegiatan', function () {
-    //     return view('layouts.forms.updateKegiatan');
-    // });
-    // Route::get('/detailKegiatan', function () {
-    //     return view('layouts.forms.detailKegiatan');
-    // });
-    // Route::get('/ibadah', function () {
-    //     return view('layouts.formSearch.ibadah');
-    // });
-    // Route::get('/daftarIbadah', function () {
-    //     return view('layouts.forms.daftarIbadah');
-    // });
-    // Route::get('/updateIbadah', function () {
-    //     return view('layouts.forms.updateIbadah');
-    // });
-    // Route::get('/detailIbadah', function () {
-    //     return view('layouts.forms.detailIbadah');
-    // });
-    // Route::get('/baptis', function () {
-    //     return view('layouts.formSearch.baptis');
-    // });
-    // Route::get('/daftarBaptis', function () {
-    //     return view('layouts.forms.daftarBaptis');
-    // });
-    // Route::get('/updateBaptis', function () {
-    //     return view('layouts.forms.updateBaptis');
-    // });
-    // Route::get('/detailBaptis', function () {
-    //     return view('layouts.forms.detailBaptis');
-    // });
-    // Route::get('/martumpol', function () {
-    //     return view('layouts.formSearch.martumpol');
-    // });
-    // Route::get('/daftarMartumpol', function () {
-    //     return view('layouts.forms.daftarMartumpol');
-    // });
-    // Route::get('/updateMartumpol', function () {
-    //     return view('layouts.forms.updateMartumpol');
-    // });
-    // Route::get('/detailMartumpol', function () {
-    //     return view('layouts.forms.detailMartumpol');
-    // });
-    // Route::get('/rpp', function () {
-    //     return view('layouts.formSearch.rpp');
-    // });
-    // Route::get('/daftarRpp', function () {
-    //     return view('layouts.forms.daftarRpp');
-    // });
-    // Route::get('/updateRpp', function () {
-    //     return view('layouts.forms.updateRpp');
-    // });
-    // Route::get('/detailRpp', function () {
-    //     return view('layouts.forms.detailRpp');
-    // });
-    // Route::get('/keluarga', function () {
-    //     return view('layouts.formSearch.keluarga');
-    // });
-    // Route::get('/daftarKeluarga', function () {
-    //     return view('layouts.forms.daftarKeluarga');
-    // });
-    // Route::get('/updateKeluarga', function () {
-    //     return view('layouts.forms.updateKeluarga');
-    // });
-    // Route::get('/detailKeluarga', function () {
-    //     return view('layouts.forms.detailKeluarga');
-    // });
+
+
+
     Route::get('/uproveBaptis', function () {
         return view('layouts.forms.uproveBaptis');
     });
@@ -235,40 +168,25 @@ Route::prefix('admin')->middleware(['isAdmin', 'auth'])->group(function(){
     Route::get('/uprovePernikahan', function () {
         return view('layouts.forms.uprovePernikahan');
     });
-    Route::get('/uproveSidi', function () {
+    Route::get('x', function () {
         return view('layouts.forms.uproveSidi');
     });
     
 });
 
-
-
-//user
-// Route::get('/daftarMartumpolUser', function () {
-//     return view('layouts.user.daftarMartumpol');
-// });
-// Route::get('/daftarBaptisUser', function () {
-//     return view('layouts.user.daftarBaptis');
-// });
-// Route::get('/daftarJemaatUser', function () {
-//     return view('layouts.user.daftarJemaat');
-// });
-// Route::get('/daftarNikahUser', function () {
-//     return view('layouts.user.daftarNikah');
-// });
-// Route::get('/daftarPindahUser', function () {
-//     return view('layouts.user.daftarPindah');
-// });
-// Route::get('/daftarSidiUser', function () {
-//     return view('layouts.user.daftarSidi');
-// });
 //  user user user user
-Route::get('/daftarMartumpolUser', [App\Http\Controllers\userController::class, 'index'])->name('martumpolUser');
-Route::get('/daftarBaptisUser', [App\Http\Controllers\userController::class, 'index2'])->name('baptisUser');
-Route::get('/daftarJemaatUser', [App\Http\Controllers\userController::class, 'index3'])->name('jemaatUser');
-Route::get('/daftarNikahUser', [App\Http\Controllers\userController::class, 'index4'])->name('nikahUser');
-Route::get('/daftarPindahUser', [App\Http\Controllers\userController::class, 'index5'])->name('pindahUser');
-Route::get('/daftarSidiUser', [App\Http\Controllers\userController::class, 'index6'])->name('sidiUser');
+Route::get('/aksesMartumpolUser', [App\Http\Controllers\userController::class, 'index'])->name('martumpolUser');
+Route::post('/daftarMartumpolUser', [App\Http\Controllers\userController::class, 'daftarMartumpol'])->name('registrasiMartumpol');
+Route::get('/aksesBaptisUser', [App\Http\Controllers\userController::class, 'index2'])->name('baptisUser');
+Route::post('/daftarBaptisUser', [App\Http\Controllers\userController::class, 'daftarBaptis'])->name('registrasiBaptis');
+Route::get('/aksesJemaatUser', [App\Http\Controllers\userController::class, 'index3'])->name('jemaatUser');
+Route::post('/daftarJemaatUser', [App\Http\Controllers\userController::class, 'daftarJemaat'])->name('registrasiJemaat');
+Route::get('/aksesNikahUser', [App\Http\Controllers\userController::class, 'index4'])->name('nikahUser');
+Route::post('/daftarNikahUser', [App\Http\Controllers\userController::class, 'daftarNikah'])->name('registrasiNikah');
+Route::get('/aksesPindahUser', [App\Http\Controllers\userController::class, 'index5'])->name('pindahUser');
+Route::get('/daftarPindahUser', [App\Http\Controllers\userController::class, 'daftarPindah'])->name('registrasiPindah');
+Route::get('/aksesSidiUser', [App\Http\Controllers\userController::class, 'index6'])->name('sidiUser');
+Route::post('/daftarSidiUser', [App\Http\Controllers\userController::class, 'daftarSidi'])->name('registrasiSidi');
 Route::get('/', [App\Http\Controllers\userController::class, 'index7'])->name('homeUser');
 
 
