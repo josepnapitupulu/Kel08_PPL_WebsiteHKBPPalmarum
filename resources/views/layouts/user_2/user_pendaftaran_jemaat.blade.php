@@ -10,6 +10,13 @@
     
     <link rel="stylesheet" href="{{asset('Style')}}/style2.css">
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+
+    <!-- Scripts -->
+    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+
+
     
 </head>
 <body>
@@ -23,7 +30,7 @@
     </header>
     <main>
     
-      
+    <h1>Pendaftaran Jemaat HKBP Palmarum</h1>
 
         <div class="card">
             <div class="image-container">
@@ -43,9 +50,9 @@
             <h1 style="align-items: center; text-align: center; padding-right: 200px;"> <span style="display:inline-block; border-bottom: 1px solid black; width: 100px; margin-right: 10px; margin-bottom: 9px;">
                 </span>Pendaftaran Jemaat HKBP Palmarum<strong><span style="display:inline-block; border-bottom: 1px solid black; width: 100px; margin-left: 10px; margin-bottom: 9px;"></span></strong>
             </h1>
-            <form method="post" action="{{route('registrasiJemaat')}}">
+            <form  method="post" action="{{route('registrasiJemaat')}}">
               @csrf
-              @method('POST')
+              @method('post')
               <div class="form-group">
                 <label for="name">Nama Depan</label>
                 <input type="text" id="name" name="nama_depan" placeholder="Masukkan nama lengkap anda" />
@@ -88,7 +95,13 @@
               </div>
               <div class="form-group">
                 <label for="name">Status Keluarga</label>
-                <input type="text" id="name" name="id_hub_keluarga" placeholder="Masukkan Gelar Anda" />
+                <!-- <input type="text" id="name" name="id_hub_keluarga" placeholder="Masukkan Gelar Anda" /> -->
+                <select name="id_hub_keluarga">
+                  <option value="">Pilih Status Hubungan Keluarga Anda</option>
+                  @foreach($keluargas as $data)
+                    <option value="{{$data['id_hub_keluarga']}}">{{$data['nama_hub_keluarga']}}</option>
+                  @endforeach
+                </select>
               </div>
               <div class="form-group">
                 <label for="name">Status</label>
@@ -96,19 +109,33 @@
               </div>
               <div class="form-group">
                 <label for="name">Pendidikan Terakhir</label>
-                <input type="text" id="name" name="id_pendidikan" placeholder="Masukkan Gelar Anda" />
+                <!-- <input type="text" id="name" name="id_pendidikan" placeholder="Masukkan Gelar Anda" /> -->
+                <select name="id_pendidikan">
+                  <option value="">Pilih Pendidikan Terakhir Anda</option>
+                  @foreach($pendidikans as $data)
+                    <option value="{{$data['id_pendidikan']}}">{{$data['pendidikan']}}</option>
+                  @endforeach
+                </select>
               </div>
               <div class="form-group">
                 <label for="name">Bidang Pendidikan</label>
-                <input type="text" id="name" name="id_bidang_pendidikan" placeholder="Masukkan Gelar Anda" />
-              </div>
-              <div class="form-group">
-                <label for="name">Bidang Pendidikan Lainnya</label>
-                <input type="text" id="name" name="id_bidang_pendidikan_lain" placeholder="Masukkan Gelar Anda" />
+                <!-- <input type="text" id="name" name="id_bidang_pendidikan" placeholder="Masukkan Gelar Anda" /> -->
+                <select name="id_bidang_pendidikan">
+                  <option value="">Pilih Bidang Pendidikan Anda</option>
+                  @foreach($bidangPendidikans as $data)
+                    <option value="{{$data['id_bidang_pendidikan']}}">{{$data['nama_bidang_pendidikan']}}</option>
+                  @endforeach
+                </select>
               </div>
               <div class="form-group">
                 <label for="name">Pekerjaan</label>
-                <input type="text" id="name" name="id_pekerjaan" placeholder="Masukkan Gelar Anda" />
+                <!-- <input type="text" id="name" name="id_pekerjaan" placeholder="Masukkan Gelar Anda" /> -->
+                <select name="id_pekerjaan">
+                  <option value="">Pilih Pekerjaan Anda</option>
+                  @foreach($pekerjaans as $data)
+                    <option value="{{$data['id_pekerjaan']}}">{{$data['pekerjaan']}}</option>
+                  @endforeach
+                </select>
               </div>
               <div class="form-group">
                 <label for="name">Pekerjaan Lainnya</label>
@@ -120,7 +147,7 @@
               </div>
               <!-- upload foto -->  
               <div style="text-align: right; margin-top: 40px;">
-                 <button type="submit">Daftar</button>
+                 <input type="submit" value="daftar"/>
               </div>
              
             </form>

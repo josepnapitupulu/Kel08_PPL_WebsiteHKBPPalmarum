@@ -11,6 +11,10 @@
     
     <link rel="stylesheet" href="{{asset('Style')}}/style2.css">
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+
+    <!-- Scripts -->
+    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     
 </head>
 <body>
@@ -24,7 +28,7 @@
     </header>
     <main>
     
-      
+    <h1>Pendaftaran Nikah HKBP Palmarum</h1>
 
         <div class="card">
             <div class="image-container">
@@ -48,8 +52,18 @@
               @csrf
               @method('POST')
               <div class="form-group">
+                <label for="name">Nama Mempelai Laki</label>
+                <!-- <input type="text" id="name" name="id_jemaat_laki" placeholder="Masukkan Nama Lengkap Anda" /> -->
+                <select name="id_jemaat_laki">
+                  <option value="">Pilih Nama Anda Sebagai Mempelai Laki-Laki</option>
+                  @foreach($jemaats as $data)
+                    <option value="{{$data['id_jemaat']}}">{{$data['nama_depan']}}&nbsp{{$data['nama_belakang']}}</option>
+                  @endforeach
+                </select>
+              </div>
+              <div class="form-group">
                 <label for="name">Tanggal Martumpol</label>
-                <input type="text" id="name" name="tgl_martumpol" placeholder="Masukkan Nama Lengkap Anda" />
+                <input type="date" id="name" name="tgl_martumpol" placeholder="Masukkan Nama Lengkap Anda" />
               </div>    
               <div class="form-group">
                 <label for="name">Nama Gereja Martumpol</label>
@@ -57,7 +71,7 @@
               </div>
               <div class="form-group">
                 <label for="name">Tanggal Pemberkatan</label>
-                <input type="text" id="name" name="tgl_pemberkatan" placeholder="Masukkan Alamat Anda" />
+                <input type="date" id="name" name="tgl_pemberkatan" placeholder="Masukkan Alamat Anda" />
               </div>
               <div class="form-group">
                 <label for="name">Nama Gereja Pemberkatan</label>
@@ -76,23 +90,23 @@
                 <input type="text" id="name" name="nama_ibu_laki" placeholder="Masukkan Alamat Anda" />
               </div>
               <div class="form-group">
-                <label for="name">Nama Gereja Mempelai Laki-Laki</label>
+                <label for="name">Nama Gereja Mempelai Perempuan</label>
                 <input type="text" id="name" name="nama_gereja_perempuan" placeholder="Masukkan Alamat Anda" />
               </div>
               <div class="form-group">
-                <label for="name">Nama Ayah Mempelai Laki-Laki</label>
+                <label for="name">Nama Ayah Mempelai Perempuan</label>
                 <input type="text" id="name" name="nama_ayah_perempuan" placeholder="Masukkan Alamat Anda" />
               </div>
               <div class="form-group">
-                <label for="name">Nama Ibu Mempelai Laki-Laki</label>
+                <label for="name">Nama Ibu Mempelai Perempuan</label>
                 <input type="text" id="name" name="nama_ibu_perempuan" placeholder="Masukkan Alamat Anda" />
               </div>
               <div class="form-group">
                 <label for="name">Keterangan</label>
-                <input type="text" id="name" name="name" placeholder="Tanggaal Rencana Pernikahan" />
+                <input type="text" id="name" name="keterangan" placeholder="Tanggaal Rencana Pernikahan" />
               </div>
               <div style="text-align: right; margin-top: 40px;">
-                <button type="submit">Daftar</button>
+                 <input type="submit" value="daftar"/>
               </div>
              
             </form>

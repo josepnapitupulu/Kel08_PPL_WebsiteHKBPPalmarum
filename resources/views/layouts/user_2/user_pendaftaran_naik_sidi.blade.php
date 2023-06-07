@@ -11,6 +11,10 @@
     
     <link rel="stylesheet" href="{{asset('Style')}}/style2.css">
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+
+    <!-- Scripts -->
+    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     
 </head>
 <body>
@@ -24,7 +28,7 @@
     </header>
     <main>
     
-        <h1>Sidi HKBP Palmarum</h1>
+        <h1>Pendaftaran Sidi HKBP Palmarum</h1>
 
         <div class="card">
             <div class="image-container">
@@ -70,24 +74,36 @@
                 <input type="date" id="name" name="tanggal_lahir" placeholder="Masukkan Tanggal Lahir Anda" />
               </div>
               <div class="form-group">
+                <label for="name">Gereja</label>
+                <!-- <input type="date" id="name" name="id_gereja_sidi" placeholder="Masukkan Tanggal Lahir Anda" /> -->
+                <select name="id_gereja_sidi">
+                  <option value="">Pilih Gereja Anda</option>
+                  @foreach($gerejas as $data)
+                    <option value="{{$data['id_gereja']}}">{{$data['nama_gereja']}}</option>
+                  @endforeach
+                </select>
+              </div>
+              <div class="form-group">
                 <label for="name">Nama Gereja Non-HKBP</label>
                 <input type="text" id="name" name="nama_gereja_non_hkbp" placeholder="Asal gereja Non HKBP" />
               </div>
               <div class="form-group">
                 <label for="name">Status Keluarga</label>
-                <input type="text" id="name" name="id_hub_keluarga" placeholder="Asal gereja Non HKBP" />
+                <!-- <input type="text" id="name" name="id_hub_keluarga" placeholder="Asal gereja Non HKBP" /> -->
+                <select name="id_hub_keluarga">
+                  <option value="">Pilih Status Didalam Keluarga</option>
+                  @foreach($keluargas as $data)
+                    <option value="{{$data['id_hub_keluarga']}}">{{$data['nama_hub_keluarga']}}</option>
+                  @endforeach
+                </select>
               </div>
-              <!-- <div class="form-group">
-                <label for="name">Alamat</label>
-                <input type="text" id="name" name="alamat" placeholder="Masukkan Alamat Anda" />
-              </div> -->
               <div class="form-group">
                 <label for="name">Keterangan</label>
                 <input type="text" id="name" name="keterangan" placeholder="Masukkan NomorHandphone Anda" />
               </div>
               <!-- upload foto -->
               <div style="text-align: right; margin-top: 40px;">
-                <button type="submit">Daftar</button>
+                 <input type="submit" value="daftar"/>
               </div>
             </form>
           </div>

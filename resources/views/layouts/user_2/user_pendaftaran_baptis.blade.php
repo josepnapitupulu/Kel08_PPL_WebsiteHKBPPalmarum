@@ -10,6 +10,10 @@
     
     <link rel="stylesheet" href="{{asset('Style')}}/style2.css">
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+
+    <!-- Scripts -->
+    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     
 </head>
 <body>
@@ -23,7 +27,7 @@
     </header>
     <main>
     
-      
+      <h1>Pendaftaran Baptis HKBP Palmarum</h1>
 
         <div class="card">
             <div class="image-container">
@@ -79,7 +83,34 @@
                 <label for="name">Keterangan</label>
                 <input type="text" id="name" name="keterangan" placeholder="Masukkan nama ibu" />
               </div>
-              <button type="submit" style="text-align: right; margin-top: 40px;">Daftar</button>
+              <div style="text-align: right; margin-top: 40px;">
+                 <input type="submit" onclick="contoh()" value="daftar"/>
+              </div>
+              <script type="text/javascript">
+
+                    function contoh() {
+
+                      swal({
+
+                            title: "Berhasil!",
+
+                            text: "Pop-up berhasil ditampilkan",
+
+                            icon: "success",
+
+                            button: true
+
+                        });
+
+                    }
+
+                </script>
+
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+
+                  integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+
+                    crossorigin="anonymous"></script>
             </form>
           </div>
           

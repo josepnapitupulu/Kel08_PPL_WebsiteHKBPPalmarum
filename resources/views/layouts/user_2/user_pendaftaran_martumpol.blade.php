@@ -10,6 +10,10 @@
 
     <link rel="stylesheet" href="{{asset('Style')}}/style2.css">
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+
+    <!-- Scripts -->
+    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     
 </head>
 <body>
@@ -23,7 +27,7 @@
     </header>
     <main>
     
-      
+    <h1>Pendaftaran Martumpol HKBP Palmarum</h1>
 
         <div class="card">
             <div class="image-container">
@@ -48,7 +52,13 @@
               @method('POST')
               <div class="form-group">
                 <label for="name">Nama Lengkap Mempelai Laki-Laki</label>
-                <input type="text" id="name" name="nama_gereja_laki" placeholder="Masukkan nama keluarga anda" />
+                <!-- <input type="text" id="name" name="id_jemaat_laki" placeholder="Masukkan nama keluarga anda" /> -->
+                <select name="id_jemaat_laki">
+                  <option value="">Pilih Nama Anda Sebagai Mempelai Laki-Laki</option>
+                  @foreach($jemaats as $data)
+                    <option value="{{$data['id_jemaat']}}">{{$data['nama_depan']}}&nbsp{{$data['nama_belakang']}}</option>
+                  @endforeach
+                </select>
               </div>    
               <div class="form-group">
                 <label for="name">Nama Ayah Mempelai Laki-Laki</label>
@@ -64,7 +74,13 @@
               </div>
               <div class="form-group">
                 <label for="name">Nama Lengkap Mempelai Perempuan</label>
-                <input type="text" id="name" name="id_jemaat_perempuan" placeholder="Masukkan Nama Lengkap Mempelai Perempuan anda" />
+                <!-- <input type="text" id="name" name="id_jemaat_perempuan" placeholder="Masukkan Nama Lengkap Mempelai Perempuan anda" /> -->
+                <select name="id_jemaat_perempuan">
+                  <option value="">Pilih Nama Anda Sebagai Mempelai Perempuan</option>
+                  @foreach($jemaats as $data)
+                    <option value="{{$data['id_jemaat']}}">{{$data['nama_depan']}}&nbsp{{$data['nama_belakang']}}</option>
+                  @endforeach
+                </select>
               </div>
               <div class="form-group">
                 <label for="name">Nama Ayah Mempelai Perempuan</label>
@@ -83,9 +99,8 @@
                 <input type="text" id="name" name="keterangan" placeholder="Masukkan Nama Gereja Martumpol" />
               </div>
               <div style="text-align: right; margin-top: 40px;">
-                <button type="submit">Daftar</button>
+                 <input type="submit" value="daftar"/>
               </div>
-             
             </form>
           </div>
     </main>
