@@ -21,8 +21,10 @@ Route::prefix('admin')->middleware(['isAdmin', 'auth'])->group(function(){
 
     Route::get('/pelayan', [App\Http\Controllers\pelayanController::class, 'index'])->name('pelayan');
     Route::get('/daftarPelayan', [App\Http\Controllers\pelayanController::class, 'store'])->name('daftarPelayan');
-    Route::get('/updatePelayan', [App\Http\Controllers\pelayanController::class, 'edit'])->name('updatePelayan');
-    Route::get('/detailPelayan', [App\Http\Controllers\pelayanController::class, 'create'])->name('detailPelayan');
+    Route::post('/createPelayan', [App\Http\Controllers\pelayanController::class, 'create'])->name('createPelayan');
+    Route::post('/updatePelayan', [App\Http\Controllers\pelayanController::class, 'update'])->name('updatePelayan');
+    Route::get('/edit/{id}', [App\Http\Controllers\pelayanController::class, 'edit'])->name('editPelayan');
+    Route::get('/detailPelayan/{id}', [App\Http\Controllers\pelayanController::class, 'showDetails'])->name('detailPelayan');
 
     Route::get('/sidi', [App\Http\Controllers\sidiController::class, 'index'])->name('sidi');
     Route::get('/daftarSidih', [App\Http\Controllers\sidiController::class, 'store'])->name('daftarSidi');
@@ -31,8 +33,13 @@ Route::prefix('admin')->middleware(['isAdmin', 'auth'])->group(function(){
 
     Route::get('/rpp', [App\Http\Controllers\rppController::class, 'index'])->name('rpp');
     Route::get('/daftarRpp', [App\Http\Controllers\rppController::class, 'store'])->name('daftarRpp');
-    Route::get('/updateRpp', [App\Http\Controllers\rppController::class, 'edit'])->name('updateRpp');
-    Route::get('/detailRpp', [App\Http\Controllers\rppController::class, 'create'])->name('detailRpp');
+    Route::post('/createRpp', [App\Http\Controllers\rppController::class, 'create'])->name('createRpp');
+    Route::get('/editRpp/{id}', [App\Http\Controllers\rppController::class, 'edit'])->name('editRpp');
+    Route::post('/updateRpp', [App\Http\Controllers\rppController::class, 'update'])->name('updateRpp');
+    Route::get('/detailRpp/{id}', [App\Http\Controllers\rppController::class, 'showDetails'])->name('detailRpp');
+    Route::get('/deleteRpp/{id}', [App\Http\Controllers\rppController::class, 'destroy'])->name('deleteRpp');
+
+
 
     Route::get('/pernikahan', [App\Http\Controllers\pernikahanController::class, 'index'])->name('pernikahan');
     Route::get('/daftarPernikahan', [App\Http\Controllers\pernikahanController::class, 'store'])->name('daftarPernikahan');
