@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Http;
-use Alert;
+// use Alert;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class userController extends Controller
 {
@@ -62,13 +63,11 @@ class userController extends Controller
             'alamat' => $request->get('alamat'),
             'keterangan' => $request->get('keterangan'),
         ]);
-    
-        Alert::success('Baptis', 'Registrasi Berhasil');
 
         if ($response->failed()) {
             return back()->withErrors(['message' => 'error when create Baptis data']);
         }
-    
+        Alert::success('Baptis', 'Registrasi Berhasil');
         return redirect()->route('baptisUser');
     }
 

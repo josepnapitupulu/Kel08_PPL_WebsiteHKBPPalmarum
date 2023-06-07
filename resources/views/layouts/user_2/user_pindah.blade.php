@@ -1,5 +1,6 @@
 @include('layouts.user_2.style')
 @include('layouts.user_2.navbar')
+@include('sweetalert::alert')
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,7 +23,7 @@
         <p>Jemaat Pindah HKBP Palmarum</p>
         
         <div class="mouse">
-            <ion-icon name="arrow-down-circle-outline"></ion-icon>
+          <button><ion-icon name="arrow-down-circle-outline" id="scrollButton"></ion-icon></button>
         </div>
     </header>
     <main>
@@ -44,7 +45,7 @@
 
           </div>
           
-          <div class="card_1">
+          <div class="card_1" id="targetElement">
             <h1 style="align-items: center; text-align: center; padding-right: 200px;"> <span style="display:inline-block; border-bottom: 1px solid black; width: 100px; margin-right: 10px; margin-bottom: 9px;">
                 </span>Jemaat Pindah HKBP Palmarum<strong><span style="display:inline-block; border-bottom: 1px solid black; width: 100px; margin-left: 10px; margin-bottom: 9px;"></span></strong>
             </h1>
@@ -73,15 +74,15 @@
               </div>  
               <div class="form-group">
                 <label for="name">Tanggal Pindah</label>
-                <input type="date" id="name" name="tgl_pindah" placeholder="Masukkan wijk" />
+                <input type="date" id="name" name="tgl_pindah" placeholder="Masukkan rencana tanggal pindah" required/>
               </div>
               <div class="form-group">
                 <label for="name">Gereja Tujuan</label>
-                <input type="text" id="name" name="nama_gereja" placeholder="cnth : Gereja Katedral Jakarta Jl. Katedral No. 7B Jakarta Pusat 10110 Indonesia" />
+                <input type="text" id="name" name="nama_gereja" placeholder="cnth : Gereja Katedral Jakarta Jl. Katedral No. 7B Jakarta Pusat 10110 Indonesia" required/>
               </div>
               <div class="form-group">
                 <label for="name">Keterangan</label>
-                <input type="text" id="name" name="keterangan" placeholder="(cth: Jefri Manalu/Pria/1 mei 1999 dengan Sinta Siagian/Wanita/2 juni 1999)" />
+                <input type="text" id="name" name="keterangan" placeholder="Masukkan keterangan jika dibutuhkan" />
               </div>
               <div style="text-align: right; margin-top: 40px;">
                  <input type="submit" value="daftar"/>
@@ -111,6 +112,21 @@
 	
 	</footer>
   <script src="{{asset('Style')}}/style.js"></script>
-   
+  <script>
+    var scrollButton = document.getElementById('scrollButton');
+
+    scrollButton.addEventListener('click', function() {
+      var targetElement = document.getElementById('targetElement');
+
+      if (targetElement) {
+        var targetPosition = targetElement.offsetTop;
+
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+      }
+    });
+  </script>
 </body>
 </html>

@@ -1,5 +1,6 @@
 @include('layouts.user_2.style')
 @include('layouts.user_2.navbar')
+@include('sweetalert::alert')
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,7 +24,7 @@
         <p>Pendaftaran Naik Sidi HKBP Palmarum</p>
         
         <div class="mouse">
-            <ion-icon name="arrow-down-circle-outline"></ion-icon>
+          <button><ion-icon name="arrow-down-circle-outline" id="scrollButton"></ion-icon></button> 
         </div>
     </header>
     <main>
@@ -32,7 +33,7 @@
 
         <div class="card">
             <div class="image-container">
-              <img class="foto_sidi" src=".{{ asset('Style') }}/image/sidi.JPG" alt="gambar">
+              <img class="foto_sidi" src="{{ asset('Style') }}/image/sidi.JPG" alt="gambar">
             </div>
             <div class="text-container">
               <h3>Judul</h3>
@@ -44,7 +45,7 @@
             </div>
           </div>
           
-          <div class="card_1">
+          <div class="card_1" id="targetElement">
             <h1 style="align-items: center; text-align: center; padding-right: 200px;"> <span style="display:inline-block; border-bottom: 1px solid black; width: 50px; margin-right: 10px; margin-bottom: 9px;">
             </span>Pendaftaran Sidi HKBP Palmarum<strong><span style="display:inline-block; border-bottom: 1px solid black; width: 50px; margin-left: 10px; margin-bottom: 9px;"></span></strong>
         </h1>
@@ -55,23 +56,23 @@
               @method('post')
               <div class="form-group">
                 <label for="name">Nama Lengkap</label>
-                <input type="text" id="name" name="nama_lengkap" placeholder="Pilih Nama Lengkap Anda" />
+                <input type="text" id="name" name="nama_lengkap" placeholder="Masukkan Nama Lengkap Anda" required/>
               </div>
               <div class="form-group">
                 <label for="name">Nama Ayah</label>
-                <input type="text" id="nama Ayah" name="nama_ayah" placeholder="Masukkan Nama Ayah Anda" />
+                <input type="text" id="nama Ayah" name="nama_ayah" placeholder="Masukkan Nama Ayah Anda" required/>
               </div>     
               <div class="form-group">
                 <label for="name">Nama Ibu</label>
-                <input type="text" id="name" name="nama_ibu" placeholder="Masukkan Nama Ibu Anda" />
+                <input type="text" id="name" name="nama_ibu" placeholder="Masukkan Nama Ibu Anda" required/>
               </div>
               <div class="form-group">
                 <label for="name">Tempat Lahir</label>
-                <input type="text" id="name" name="tempat_lahir" placeholder="Masukkan Tempat Lahir Anda" />
+                <input type="text" id="name" name="tempat_lahir" placeholder="Masukkan Tempat Lahir Anda" required/>
               </div>
               <div class="form-group">
                 <label for="name">Tanggal Lahir</label>
-                <input type="date" id="name" name="tanggal_lahir" placeholder="Masukkan Tanggal Lahir Anda" />
+                <input type="date" id="name" name="tanggal_lahir" placeholder="Masukkan Tanggal Lahir Anda" required/>
               </div>
               <div class="form-group">
                 <label for="name">Gereja</label>
@@ -85,7 +86,7 @@
               </div>
               <div class="form-group">
                 <label for="name">Nama Gereja Non-HKBP</label>
-                <input type="text" id="name" name="nama_gereja_non_hkbp" placeholder="Asal gereja Non HKBP" />
+                <input type="text" id="name" name="nama_gereja_non_hkbp" placeholder="Masukkan asal gereja Non HKBP" required/>
               </div>
               <div class="form-group">
                 <label for="name">Status Keluarga</label>
@@ -99,7 +100,7 @@
               </div>
               <div class="form-group">
                 <label for="name">Keterangan</label>
-                <input type="text" id="name" name="keterangan" placeholder="Masukkan NomorHandphone Anda" />
+                <input type="text" id="name" name="keterangan" placeholder="Masukkan keterangan yang terkait" />
               </div>
               <!-- upload foto -->
               <div style="text-align: right; margin-top: 40px;">
@@ -130,6 +131,22 @@
 	
 	</footer>
   <script src="{{asset('Style')}}/style.js"></script>
+  <script>
+    var scrollButton = document.getElementById('scrollButton');
+
+    scrollButton.addEventListener('click', function() {
+      var targetElement = document.getElementById('targetElement');
+
+      if (targetElement) {
+        var targetPosition = targetElement.offsetTop;
+
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+      }
+    });
+  </script>
    
 </body>
 </html>

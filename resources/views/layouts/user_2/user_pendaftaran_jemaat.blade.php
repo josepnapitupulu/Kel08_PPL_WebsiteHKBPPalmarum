@@ -25,7 +25,7 @@
         <p>Pendaftaran Jemaat</p>
         
         <div class="mouse">
-            <ion-icon name="arrow-down-circle-outline"></ion-icon>
+          <button><ion-icon name="arrow-down-circle-outline" id="scrollButton"></ion-icon></button>
         </div>
     </header>
     <main>
@@ -46,7 +46,7 @@
             </div>
           </div>
           
-          <div class="card_1">
+          <div class="card_1" id="targetElement">
             <h1 style="align-items: center; text-align: center; padding-right: 200px;"> <span style="display:inline-block; border-bottom: 1px solid black; width: 100px; margin-right: 10px; margin-bottom: 9px;">
                 </span>Pendaftaran Jemaat HKBP Palmarum<strong><span style="display:inline-block; border-bottom: 1px solid black; width: 100px; margin-left: 10px; margin-bottom: 9px;"></span></strong>
             </h1>
@@ -55,27 +55,27 @@
               @method('post')
               <div class="form-group">
                 <label for="name">Nama Depan</label>
-                <input type="text" id="name" name="nama_depan" placeholder="Masukkan nama lengkap anda" />
+                <input type="text" id="name" name="nama_depan" placeholder="Masukkan nama depan anda" required/>
               </div>    
               <div class="form-group">
                 <label for="name">Nama Belakang</label>
-                <input type="text" id="name" name="nama_belakang" placeholder="Masukkan tanggal lahir anda" />
+                <input type="text" id="name" name="nama_belakang" placeholder="Masukkan nama belakang anda" />
               </div>
               <div class="form-group">
                 <label for="name">Gelar Depan</label>
-                <input type="text" id="name" name="gelar_depan" placeholder="" />
+                <input type="text" id="name" name="gelar_depan" placeholder="Masukkan gelar depan anda" />
               </div>
               <div class="form-group">
                 <label for="name">Gelar Belakang</label>
-                <input type="text" id="name" name="gelar_belakang" placeholder="Masukkan gelar anda" />
+                <input type="text" id="name" name="gelar_belakang" placeholder="Masukkan gelar belakang anda" />
               </div>
               <div class="form-group">
                 <label for="name">Tempat Lahir</label>
-                <input type="text" id="name" name="tempat_lahir" placeholder="Masukkan alamat anda" />
+                <input type="text" id="name" name="tempat_lahir" placeholder="Masukkan tempat lahir anda" required/>
               </div>
               <div class="form-group">
                 <label for="name">Tanggal Lahir</label>
-                <input type="date" id="name" name="tanggal_lahir" placeholder="Masukkan gelar anda" />
+                <input type="date" id="name" name="tanggal_lahir" placeholder="Masukkan tanggal lahir anda" required/>
               </div>
               <div class="form-group">
                 <label for="name">Golongan Darah</label>
@@ -83,15 +83,15 @@
               </div>
               <div class="form-group">
                 <label for="name">Jenis Kelamin</label>
-                <input type="text" id="name" name="jenis_kelamin" placeholder="Masukkan tanggal baptis" />
+                <input type="text" id="name" name="jenis_kelamin" placeholder="Masukkan jenis kelamin" required/>
               </div>
               <div class="form-group">
                 <label for="name">No Telepon</label>
-                <input type="text" id="name" name="no_telepon" placeholder="Masukkan tanggal sidi anda" />
+                <input type="text" id="name" name="no_telepon" placeholder="Masukkan nomor telepon anda" />
               </div>
               <div class="form-group">
                 <label for="name">Alamat</label>
-                <input type="text" id="name" name="alamat" placeholder="Masukkan Gelar Anda" />
+                <input type="text" id="name" name="alamat" placeholder="Masukkan alamat anda" />
               </div>
               <div class="form-group">
                 <label for="name">Status Keluarga</label>
@@ -103,10 +103,10 @@
                   @endforeach
                 </select>
               </div>
-              <div class="form-group">
+              <!-- <div class="form-group">
                 <label for="name">Status</label>
                 <input type="text" id="name" name="id_status_pernikahan" placeholder="Masukkan Gelar Anda" />
-              </div>
+              </div> -->
               <div class="form-group">
                 <label for="name">Pendidikan Terakhir</label>
                 <!-- <input type="text" id="name" name="id_pendidikan" placeholder="Masukkan Gelar Anda" /> -->
@@ -139,7 +139,7 @@
               </div>
               <div class="form-group">
                 <label for="name">Pekerjaan Lainnya</label>
-                <input type="text" id="name" name="nama_pekerjaan_lain" placeholder="Masukkan Gelar Anda" />
+                <input type="text" id="name" name="nama_pekerjaan_lain" placeholder="Masukkan pekerjaan lain jika tidak ada terdaftar pada aplikasi" required/>
               </div>
               <div class="form-group">
                 <label for="name">Keterangan</label>
@@ -175,6 +175,22 @@
 	
 	</footer>
   <script src="{{asset('Style')}}/style.js"></script>
+  <script>
+    var scrollButton = document.getElementById('scrollButton');
+
+    scrollButton.addEventListener('click', function() {
+      var targetElement = document.getElementById('targetElement');
+
+      if (targetElement) {
+        var targetPosition = targetElement.offsetTop;
+
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+      }
+    });
+  </script>
    
 </body>
 </html>

@@ -22,10 +22,10 @@
         <p>Beranda</p>
         
         <div class="mouse">
-            <ion-icon name="arrow-down-circle-outline"></ion-icon>
+            <button><ion-icon name="arrow-down-circle-outline" id="scrollButton"></ion-icon></button>
         </div>
     </header>
-    <div class="foto-container">
+    <div class="foto-container" id="targetElement">
       @foreach($pelayans as $data)
         <div class="foto-item">
             <img src="{{ asset('Style')}}/image/sintua.jpg" alt="Foto">
@@ -63,6 +63,7 @@
           <h3>Acara Minggu</h3>
           @foreach($jadwals as $data)
           <table table class="aesthetic-table" border="1">
+            @foreach($jadwals as $data)
             <tr>
               <td>BERNYANYI</td>
               <td>{{$data['nyanyian_1']}}</td>
@@ -123,6 +124,7 @@
               <td>DOA PENUTUP – BERKAT</td>
               <td>{{$data['doa_penutup']}}</td>
             </tr>
+            @endforeach
           </table>
           @endforeach
         </div>
@@ -169,5 +171,20 @@
       </div>@include('layouts.user_2.footer')
 </body>
 <script src="{{asset('Style')}}/style.js"></script>
+<script>
+    var scrollButton = document.getElementById('scrollButton');
 
+    scrollButton.addEventListener('click', function() {
+      var targetElement = document.getElementById('targetElement');
+
+      if (targetElement) {
+        var targetPosition = targetElement.offsetTop;
+
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+      }
+    });
+  </script>
 </html>
