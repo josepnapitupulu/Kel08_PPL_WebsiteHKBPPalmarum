@@ -65,60 +65,63 @@
           <table table class="aesthetic-table" border="1">
             <tr>
               <td>BERNYANYI</td>
-             
+              <td>{{$data['nyanyian_1']}}</td>
             </tr>
             <tr>
               <td>VOTUM  – INTROITUS – DOA PEMBUKA</td>
-              
+              <td>{{$data['votum']}}</td>
             </tr>
             <tr>
               <td>BERNYANYI</td>
-             
+              <td>{{$data['nyanyian_2']}}</td>
             </tr>
             <tr>
               <td>HUKUM TAURAT</td>
-              
+              <td>{{$data['hukum_taurat']}}</td>
             </tr>
             <tr>
               <td>BERNYANYI</td>
-              
+              <td>{{$data['nyanyian_3']}}</td>
             </tr>
             <tr>
               <td>PENGAKUAN  DOSA</td>
-              
+              <td>{{$data['pengakuan_dosa']}}</td>
             </tr>
             <tr>
               <td>BERNYANYI</td>
-              
+              <td>{{$data['nyanyian_4']}}</td>
             </tr>
             <tr>
               <td>EPISTEL</td>
-              
+              <td>{{$data['epistel']}}</td>
             </tr>
             <tr>
               <td>BERNYANYI</td>
-              
+              <td>{{$data['nyanyian_5']}}</td>
             </tr>
             <tr>
               <td>PENGAKUAN IMAN</td>
-            
+              <td>{{$data['pengakuan_iman']}}</td>
             </tr>
-           
+            <tr>
+              <td>WARTA JEMAAT + DOA SYAFAAT</td>
+              <td></td>
+            </tr>
             <tr>
               <td>BERNYANYI</td>
-              
+              <td>{{$data['nyanyian_6']}}</td>
             </tr>
             <tr>
               <td>KHOTBAH</td>
-              
+              <td>{{$data['khotbah']}}</td>
             </tr>
             <tr>
               <td>BERNYANYI</td>
-              
+              <td>{{$data['nyanyian_7']}}</td>
             </tr>
             <tr>
               <td>DOA PENUTUP – BERKAT</td>
-              
+              <td>{{$data['doa_penutup']}}</td>
             </tr>
           </table>
           
