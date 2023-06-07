@@ -61,7 +61,7 @@
         <h1>Jadwal Ibadah</h1>
         <div class="">
           <h3>Acara Minggu</h3>
-          
+          @foreach($jadwals as $data)
           <table table class="aesthetic-table" border="1">
             <tr>
               <td>BERNYANYI</td>
@@ -124,7 +124,7 @@
               <td>{{$data['doa_penutup']}}</td>
             </tr>
           </table>
-          
+          @endforeach
         </div>
       </div>
       <div class="judul_1">
@@ -140,7 +140,7 @@
               <p>deskripsi : {{$data['keterangan']}}</p>
             </div>
             @endforeach
-            <!-- <div class="schedule-item">
+            <div class="schedule-item">
             <h2>Minggu Sore</h2>
             <p>16.00 - Ibadah Raya</p>
             </div>
@@ -163,7 +163,7 @@
                 <div class="schedule-item">
             <h2>Kamis</h2>
             <p>19.00 - Komsel</p>
-            </div> -->
+            </div> 
         </div>
       </div>
       </div>@include('layouts.user_2.footer')

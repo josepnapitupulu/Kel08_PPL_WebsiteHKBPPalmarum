@@ -54,7 +54,7 @@
               <div class="form-group">
                 <label for="name">Nama Jemaat</label>
                 <!-- <input type="text" id="name" name="id_jemaat" placeholder="Asexxxx , bxxxxx, Cxxxxx" /> -->
-                <select name="id_jemaat">
+                <select class="pilihan" name="id_jemaat">
                   <option value="">Pilih Nama Anda Sebagai Mempelai Laki-Laki</option>
                   @foreach($jemaats as $data)
                     <option value="{{$data['id_jemaat']}}">{{$data['nama_depan']}}&nbsp{{$data['nama_belakang']}}</option>
@@ -64,7 +64,7 @@
               <div class="form-group">
                 <label for="name">Nama Keluarga</label>
                 <!-- <input type="text" id="name" name="id_registrasi" placeholder="Asexxxx , bxxxxx, Cxxxxx" /> -->
-                <select name="id_registrasi">
+                <select class="pilihan" name="id_registrasi">
                   <option value="">Pilih Nama Anda Sebagai Mempelai Laki-Laki</option>
                   @foreach($namKeluargas as $data)
                     <option value="{{$data['id_registrasi']}}">{{$data['nama_keluarga']}}</option>

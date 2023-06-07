@@ -76,7 +76,7 @@
               <div class="form-group">
                 <label for="name">Gereja</label>
                 <!-- <input type="date" id="name" name="id_gereja_sidi" placeholder="Masukkan Tanggal Lahir Anda" /> -->
-                <select name="id_gereja_sidi">
+                <select class="pilihan" name="id_gereja_sidi">
                   <option value="">Pilih Gereja Anda</option>
                   @foreach($gerejas as $data)
                     <option value="{{$data['id_gereja']}}">{{$data['nama_gereja']}}</option>
@@ -90,7 +90,7 @@
               <div class="form-group">
                 <label for="name">Status Keluarga</label>
                 <!-- <input type="text" id="name" name="id_hub_keluarga" placeholder="Asal gereja Non HKBP" /> -->
-                <select name="id_hub_keluarga">
+                <select class="pilihan" name="id_hub_keluarga">
                   <option value="">Pilih Status Didalam Keluarga</option>
                   @foreach($keluargas as $data)
                     <option value="{{$data['id_hub_keluarga']}}">{{$data['nama_hub_keluarga']}}</option>

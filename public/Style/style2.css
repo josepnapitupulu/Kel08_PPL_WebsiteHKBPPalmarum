@@ -25,6 +25,7 @@ nav{
     background: transparent;
     color: white;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    
 }
 nav a{
     color: inherit;
@@ -409,7 +410,38 @@ input[type="text"] {
   margin-right: 20px;
   outline: none;
 }
+input[type="date"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0px 0px 10px rgba(2, 10, 10, 0.20);
+  margin-right: 20px;
+  outline: none;
+  content: attr(placeholder);
+  letter-spacing: 2px;
+  color: #888;
+}
+.pilihan{
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0px 0px 10px rgba(2, 10, 10, 0.20);
+  margin-right: 20px;
+  outline: none;
+  content: attr(placeholder);
+  color: #888;
+  letter-spacing: 2px;
+}
+ /* input[type="date"]::before {
+  
+} */
 
+.form-group input[type="date"]:focus::before,
+.form-group input[type="date"]:valid::before {
+  content: "";
+}
 input[type="submit"] {
   background-color: #3f486c;
   color: #fff;
@@ -420,6 +452,7 @@ input[type="submit"] {
   height: 30px;
   text-align: center; 
   font-weight: 20;
+
  
 }
 
@@ -577,7 +610,7 @@ input::placeholder {
   width: 80%;
   margin: 0 auto;
   border-collapse: collapse;
-  text-align: center;
+  /* text-align: center; */
   border: none;
   overflow: hidden;
   justify-content: space-between;
@@ -597,7 +630,7 @@ input::placeholder {
 
 .aesthetic-table th {
 margin-top: 20px;
-  text-align: center;
+ 
   margin-bottom: 10px;
 }
 
