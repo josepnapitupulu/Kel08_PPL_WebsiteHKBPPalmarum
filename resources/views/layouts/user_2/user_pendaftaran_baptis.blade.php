@@ -1,5 +1,6 @@
 @include('layouts.user_2.style')
 @include('layouts.user_2.navbar')
+@include('sweetalert::alert')
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,7 +23,7 @@
         <p>Jemaat Pindah HKBP Palmarum</p>
         
         <div class="mouse">
-            <ion-icon name="arrow-down-circle-outline"></ion-icon>
+          <button><ion-icon name="arrow-down-circle-outline" id="scrollButton"></ion-icon></button>
         </div>
     </header>
     <main>
@@ -44,7 +45,7 @@
 
           </div>
           
-          <div class="card_1">
+          <div class="card_1" id="targetElement">
             <h1 style="align-items: center; text-align: center; padding-right: 200px;"> <span style="display:inline-block; border-bottom: 1px solid black; width: 100px; margin-right: 10px; margin-bottom: 9px;">
                 </span>Baptis HKBP Palmarum<strong><span style="display:inline-block; border-bottom: 1px solid black; width: 100px; margin-left: 10px; margin-bottom: 9px;"></span></strong>
             </h1>
@@ -53,35 +54,35 @@
               @method('post')
               <div class="form-group">
                 <label for="name">Nama lengkap</label>
-                <input type="text" id="name" name="nama_lengkap" placeholder="Masukkan nama lengkap yang akan di baptis" />
+                <input type="text" id="name" name="nama_lengkap" placeholder="Masukkan nama lengkap yang akan di baptis" required/>
               </div>    
               <div class="form-group">
                 <label for="name">Nama Ayah</label>
-                <input type="text" id="name" name="nama_ayah" placeholder="Masukkan tanggal lahir yang akan di baptis" />
+                <input type="text" id="name" name="nama_ayah" placeholder="Masukkan nama ayah" required/>
               </div>
               <div class="form-group">
                 <label for="name">Nama Ibu</label>
-                <input type="text" id="name" name="nama_ibu" placeholder="Masukkan nama ibu" />
+                <input type="text" id="name" name="nama_ibu" placeholder="Masukkan nama ibu" required/>
               </div>
               <div class="form-group">
                 <label for="name">Tempat Lahir</label>
-                <input type="text" id="name" name="tempat_lahir" placeholder="Masukkan tempat lahir" />
+                <input type="text" id="name" name="tempat_lahir" placeholder="Masukkan tempat lahir" required/>
               </div>
               <div class="form-group">
                 <label for="name">Tanggal Lahir</label>
-                <input type="date" id="name" name="tanggal_lahir" placeholder="Masukkan tanggal lahir" />
+                <input type="date" id="name" name="tanggal_lahir" placeholder="Masukkan tanggal lahir" required/>
               </div>
               <div class="form-group">
                 <label for="name">Jenis Kelamin</label>
-                <input type="text" id="name" name="jenis_kelamin" placeholder="Masukkan alamat" />
+                <input type="text" id="name" name="jenis_kelamin" placeholder="Masukkan jenis kelamin" required/>
               </div>
               <div class="form-group">
                 <label for="name">Alamat</label>
-                <input type="text" id="name" name="alamat" placeholder="Masukkan alamat" />
+                <input type="text" id="name" name="alamat" placeholder="Masukkan alamat" required/>
               </div>
               <div class="form-group">
                 <label for="name">Keterangan</label>
-                <input type="text" id="name" name="keterangan" placeholder="Masukkan nama ibu" />
+                <input type="text" id="name" name="keterangan" placeholder="Keterangan" />
               </div>
               <div style="text-align: right; margin-top: 40px;">
                  <input type="submit" onclick="contoh()" value="daftar"/>
@@ -136,6 +137,22 @@
 	
 	</footer>
     <script src="{{asset('Style')}}/style.js"></script>
+    <script>
+    var scrollButton = document.getElementById('scrollButton');
+
+    scrollButton.addEventListener('click', function() {
+      var targetElement = document.getElementById('targetElement');
+
+      if (targetElement) {
+        var targetPosition = targetElement.offsetTop;
+
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+      }
+    });
+  </script>
    
 </body>
 </html>

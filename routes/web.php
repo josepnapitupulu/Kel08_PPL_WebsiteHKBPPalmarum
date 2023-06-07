@@ -176,17 +176,17 @@ Route::prefix('admin')->middleware(['isAdmin', 'auth'])->group(function(){
 
 //  user user user user
 Route::get('/aksesMartumpolUser', [App\Http\Controllers\userController::class, 'index'])->name('martumpolUser');
-Route::post('/daftarMartumpolUser', [App\Http\Controllers\userController::class, 'daftarMartumpol'])->name('registrasiMartumpol');
+Route::post('/daftarMartumpolUser', [App\Http\Controllers\userController::class, 'daftarMartumpol'])->name('registrasiMartumpol')->middleware('auth');
 Route::get('/aksesBaptisUser', [App\Http\Controllers\userController::class, 'index2'])->name('baptisUser');
-Route::post('/daftarBaptisUser', [App\Http\Controllers\userController::class, 'daftarBaptis'])->name('registrasiBaptis');
-Route::get('/aksesJemaatUser', [App\Http\Controllers\userController::class, 'index3'])->name('jemaatUser');
-Route::post('/daftarJemaatUser', [App\Http\Controllers\userController::class, 'daftarJemaat'])->name('registrasiJemaat');
+Route::post('/daftarBaptisUser', [App\Http\Controllers\userController::class, 'daftarBaptis'])->name('registrasiBaptis')->middleware('auth');
+Route::get('/aksesJemaatUser', [App\Http\Controllers\userController::class, 'keluarga'])->name('jemaatUser');
+Route::post('/daftarJemaatUser', [App\Http\Controllers\userController::class, 'daftarJemaat'])->name('registrasiJemaat')->middleware('auth');
 Route::get('/aksesNikahUser', [App\Http\Controllers\userController::class, 'index4'])->name('nikahUser');
-Route::post('/daftarNikahUser', [App\Http\Controllers\userController::class, 'daftarNikah'])->name('registrasiNikah');
+Route::post('/daftarNikahUser', [App\Http\Controllers\userController::class, 'daftarNikah'])->name('registrasiNikah')->middleware('auth');
 Route::get('/aksesPindahUser', [App\Http\Controllers\userController::class, 'index5'])->name('pindahUser');
-Route::get('/daftarPindahUser', [App\Http\Controllers\userController::class, 'daftarPindah'])->name('registrasiPindah');
+Route::post('/daftarPindahUser', [App\Http\Controllers\userController::class, 'daftarPindah'])->name('registrasiPindah')->middleware('auth');
 Route::get('/aksesSidiUser', [App\Http\Controllers\userController::class, 'index6'])->name('sidiUser');
-Route::post('/daftarSidiUser', [App\Http\Controllers\userController::class, 'daftarSidi'])->name('registrasiSidi');
+Route::post('/daftarSidiUser', [App\Http\Controllers\userController::class, 'daftarSidi'])->name('registrasiSidi')->middleware('auth');
 Route::get('/', [App\Http\Controllers\userController::class, 'index7'])->name('homeUser');
 
 

@@ -1,5 +1,6 @@
 @include('layouts.user_2.style')
 @include('layouts.user_2.navbar')
+@include('sweetalert::alert')
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,7 +23,7 @@
         <p>Jemaat Meninggal HKBP Palmarum</p>
         
         <div class="mouse">
-            <ion-icon name="arrow-down-circle-outline"></ion-icon>
+          <button><ion-icon name="arrow-down-circle-outline" id="scrollButton"></ion-icon></button>
         </div>
     </header>
     <main>
@@ -48,7 +49,7 @@
             <form>
               <div class="form-group">
                 <label for="name">Nama lengkap</label>
-                <input type="text" id="name" name="name" placeholder="Masukkan nama dan nama panggilan beliau " />
+                <input type="text" id="name" name="name" placeholder="Masukkan nama dan nama panggilan beliau " required/>
               </div>    
               <div class="form-group">
                 <label for="name">Tanggal lahir</label>
@@ -99,6 +100,22 @@
 	
 	</footer>
   <script src="{{asset('Style')}}/style.js"></script>
+  <script>
+    var scrollButton = document.getElementById('scrollButton');
+
+    scrollButton.addEventListener('click', function() {
+      var targetElement = document.getElementById('targetElement');
+
+      if (targetElement) {
+        var targetPosition = targetElement.offsetTop;
+
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+      }
+    });
+  </script>
    
 </body>
 </html>
