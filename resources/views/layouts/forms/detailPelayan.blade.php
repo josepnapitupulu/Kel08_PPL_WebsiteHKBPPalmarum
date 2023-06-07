@@ -22,41 +22,39 @@
                     </tr>
                   </thead>
                   <tbody>
+                    @foreach ($pelayan['data'] as $item)
                     <tr>
                       <td>Nama Pelayan</td>
-                      <td>------</td>
+                      <td>{{ $item['nama_lengkap'] }}</td>
                     </tr>
                     <tr>
                       <td>Tahbisan</td>
-                      <td>------</td>
+                      <td>{{$item['tanggal_tahbisan']}}</td>
                     </tr>
                     <tr>
-                      <td>Pendidikan</td>
-                      <td>------</td>
+                      <td>Jabatan</td>
+                      <td>{{ $item['jabatan'] }}</td>
                     </tr>
                     <tr>
-                      <td>Pekerjaan</td>
-                      <td>------</td>
+                      <td>Akhir Jawatan</td>
+                      <td>{{ $item['tanggal_akhir_jawatan'] }}</td>
                     </tr>
                     <tr>
                       <td>Status</td>
-                      <td>------</td>
+                      <td>{{ $item['status_pelayan'] }}</td>
                     </tr>
                     <tr>
                       <td>Alamat</td>
-                      <td>------</td>
+                      <td>{{ $item['alamat'] }}</td>
                     </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                    </tr>
+                    @endforeach
                   </tbody>
                 </table>
               </div><br>
               <!-- /.card-body -->
               <div>
-                <button class="btn btn-default" id="buttonKembali">Kembali</button>
-                <button class="btn btn-warning" id="buttonEdit">Edit</button>
+                <a class="btn btn-default" href="{{ route('pelayan') }}" id="buttonKembali">Kembali</a>
+                <a class="btn btn-warning" href="{{ route('editPelayan',$item['id_pelayan']) }}" id="buttonEdit">Edit</a>
               </div><br><br>
                 
             </div>

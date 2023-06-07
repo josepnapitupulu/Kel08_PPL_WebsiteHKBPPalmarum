@@ -21,8 +21,10 @@ Route::prefix('admin')->middleware(['isAdmin', 'auth'])->group(function(){
 
     Route::get('/pelayan', [App\Http\Controllers\pelayanController::class, 'index'])->name('pelayan');
     Route::get('/daftarPelayan', [App\Http\Controllers\pelayanController::class, 'store'])->name('daftarPelayan');
-    Route::get('/updatePelayan', [App\Http\Controllers\pelayanController::class, 'edit'])->name('updatePelayan');
-    Route::get('/detailPelayan', [App\Http\Controllers\pelayanController::class, 'create'])->name('detailPelayan');
+    Route::post('/createPelayan', [App\Http\Controllers\pelayanController::class, 'create'])->name('createPelayan');
+    Route::post('/updatePelayan', [App\Http\Controllers\pelayanController::class, 'update'])->name('updatePelayan');
+    Route::get('/edit/{id}', [App\Http\Controllers\pelayanController::class, 'edit'])->name('editPelayan');
+    Route::get('/detailPelayan/{id}', [App\Http\Controllers\pelayanController::class, 'showDetails'])->name('detailPelayan');
 
     Route::get('/sidi', [App\Http\Controllers\sidiController::class, 'index'])->name('sidi');
     Route::get('/daftarSidih', [App\Http\Controllers\sidiController::class, 'store'])->name('daftarSidi');
@@ -31,8 +33,13 @@ Route::prefix('admin')->middleware(['isAdmin', 'auth'])->group(function(){
 
     Route::get('/rpp', [App\Http\Controllers\rppController::class, 'index'])->name('rpp');
     Route::get('/daftarRpp', [App\Http\Controllers\rppController::class, 'store'])->name('daftarRpp');
-    Route::get('/updateRpp', [App\Http\Controllers\rppController::class, 'edit'])->name('updateRpp');
-    Route::get('/detailRpp', [App\Http\Controllers\rppController::class, 'create'])->name('detailRpp');
+    Route::post('/createRpp', [App\Http\Controllers\rppController::class, 'create'])->name('createRpp');
+    Route::get('/editRpp/{id}', [App\Http\Controllers\rppController::class, 'edit'])->name('editRpp');
+    Route::post('/updateRpp', [App\Http\Controllers\rppController::class, 'update'])->name('updateRpp');
+    Route::get('/detailRpp/{id}', [App\Http\Controllers\rppController::class, 'showDetails'])->name('detailRpp');
+    Route::get('/deleteRpp/{id}', [App\Http\Controllers\rppController::class, 'destroy'])->name('deleteRpp');
+
+
 
     Route::get('/pernikahan', [App\Http\Controllers\pernikahanController::class, 'index'])->name('pernikahan');
     Route::get('/daftarPernikahan', [App\Http\Controllers\pernikahanController::class, 'store'])->name('daftarPernikahan');
@@ -172,16 +179,15 @@ Route::get('/aksesMartumpolUser', [App\Http\Controllers\userController::class, '
 Route::post('/daftarMartumpolUser', [App\Http\Controllers\userController::class, 'daftarMartumpol'])->name('registrasiMartumpol');
 Route::get('/aksesBaptisUser', [App\Http\Controllers\userController::class, 'index2'])->name('baptisUser');
 Route::post('/daftarBaptisUser', [App\Http\Controllers\userController::class, 'daftarBaptis'])->name('registrasiBaptis');
-Route::get('/aksesJemaatUser', [App\Http\Controllers\userController::class, 'keluarga'])->name('jemaatUser');
+Route::get('/aksesJemaatUser', [App\Http\Controllers\userController::class, 'index3'])->name('jemaatUser');
 Route::post('/daftarJemaatUser', [App\Http\Controllers\userController::class, 'daftarJemaat'])->name('registrasiJemaat');
 Route::get('/aksesNikahUser', [App\Http\Controllers\userController::class, 'index4'])->name('nikahUser');
 Route::post('/daftarNikahUser', [App\Http\Controllers\userController::class, 'daftarNikah'])->name('registrasiNikah');
 Route::get('/aksesPindahUser', [App\Http\Controllers\userController::class, 'index5'])->name('pindahUser');
-Route::post('/daftarPindahUser', [App\Http\Controllers\userController::class, 'daftarPindah'])->name('registrasiPindah');
+Route::get('/daftarPindahUser', [App\Http\Controllers\userController::class, 'daftarPindah'])->name('registrasiPindah');
 Route::get('/aksesSidiUser', [App\Http\Controllers\userController::class, 'index6'])->name('sidiUser');
 Route::post('/daftarSidiUser', [App\Http\Controllers\userController::class, 'daftarSidi'])->name('registrasiSidi');
 Route::get('/', [App\Http\Controllers\userController::class, 'index7'])->name('homeUser');
-Route::get('/hubKeluarga', [App\Http\Controllers\userController::class, 'keluarga'])->name('hubKeluarga');
 
 
 // Route::get('/daftarMartumpolUser', function () {
