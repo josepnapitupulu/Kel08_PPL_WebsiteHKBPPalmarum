@@ -42,7 +42,7 @@
             </h1>
             <form>
               <div class="form-group">
-                <label for="name">Nama lengkap & Nama pamggilan</label>
+                <label for="name">Nama lengkap</label>
                 <input type="text" id="name" name="name" placeholder="Masukkan nama dan nama panggilan beliau " />
               </div>    
               <div class="form-group">

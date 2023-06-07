@@ -44,21 +44,55 @@
             <h1 style="align-items: center; text-align: center; padding-right: 200px;"> <span style="display:inline-block; border-bottom: 1px solid black; width: 100px; margin-right: 10px; margin-bottom: 9px;">
                 </span>Pendaftaran Pernikahan HKBP Palmarum<strong><span style="display:inline-block; border-bottom: 1px solid black; width: 100px; margin-left: 10px; margin-bottom: 9px;"></span></strong>
             </h1>
-            <form>
+            <form method="post" action="{{route('registrasiNikah')}}">
+              @csrf
+              @method('POST')
               <div class="form-group">
-                <label for="name">Tanggal Pernikahan</label>
-                <input type="text" id="name" name="name" placeholder="Masukkan Nama Lengkap Anda" />
+                <label for="name">Tanggal Martumpol</label>
+                <input type="text" id="name" name="tgl_martumpol" placeholder="Masukkan Nama Lengkap Anda" />
               </div>    
               <div class="form-group">
-                <label for="name">Nama Gereja Non-HKBP</label>
-                <input type="text" id="name" name="name" placeholder="Masukkan Alamat Anda" />
+                <label for="name">Nama Gereja Martumpol</label>
+                <input type="text" id="name" name="nama_gereja_martumpol" placeholder="Masukkan Alamat Anda" />
+              </div>
+              <div class="form-group">
+                <label for="name">Tanggal Pemberkatan</label>
+                <input type="text" id="name" name="tgl_pemberkatan" placeholder="Masukkan Alamat Anda" />
+              </div>
+              <div class="form-group">
+                <label for="name">Nama Gereja Pemberkatan</label>
+                <input type="text" id="name" name="nama_gereja_pemberkatan" placeholder="Masukkan Alamat Anda" />
+              </div>
+              <div class="form-group">
+                <label for="name">Nama Gereja Mempelai Laki-Laki</label>
+                <input type="text" id="name" name="nama_gereja_laki" placeholder="Masukkan Alamat Anda" />
+              </div>
+              <div class="form-group">
+                <label for="name">Nama Ayah Mempelai Laki-Laki</label>
+                <input type="text" id="name" name="nama_ayah_laki" placeholder="Masukkan Alamat Anda" />
+              </div>
+              <div class="form-group">
+                <label for="name">Nama Ibu Mempelai Laki-Laki</label>
+                <input type="text" id="name" name="nama_ibu_laki" placeholder="Masukkan Alamat Anda" />
+              </div>
+              <div class="form-group">
+                <label for="name">Nama Gereja Mempelai Laki-Laki</label>
+                <input type="text" id="name" name="nama_gereja_perempuan" placeholder="Masukkan Alamat Anda" />
+              </div>
+              <div class="form-group">
+                <label for="name">Nama Ayah Mempelai Laki-Laki</label>
+                <input type="text" id="name" name="nama_ayah_perempuan" placeholder="Masukkan Alamat Anda" />
+              </div>
+              <div class="form-group">
+                <label for="name">Nama Ibu Mempelai Laki-Laki</label>
+                <input type="text" id="name" name="nama_ibu_perempuan" placeholder="Masukkan Alamat Anda" />
               </div>
               <div class="form-group">
                 <label for="name">Keterangan</label>
                 <input type="text" id="name" name="name" placeholder="Tanggaal Rencana Pernikahan" />
               </div>
               <div style="text-align: right; margin-top: 40px;">
-                 <input type="submit" value="Submit"/>
+                <button type="submit">Daftar</button>
               </div>
              
             </form>

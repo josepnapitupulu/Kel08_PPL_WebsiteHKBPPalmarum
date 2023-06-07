@@ -228,51 +228,75 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{asset('AdminLTE-3.2.0')}}/UI/general.html" class="nav-link">
+                <a href="/admin/pemasukan" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>General</p>
+                  <p>Persembahan Keluarga</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{asset('AdminLTE-3.2.0')}}/UI/icons.html" class="nav-link">
+                <a href="/admin/pemasukanLelang" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Icons</p>
+                  <p>Pemasukan Lelang</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{asset('AdminLTE-3.2.0')}}/UI/buttons.html" class="nav-link">
+                <a href="/admin/pemasukanPembangunan" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Buttons</p>
+                  <p>Persembahan Pembangunan</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{asset('AdminLTE-3.2.0')}}/UI/sliders.html" class="nav-link">
+                <a href="/admin/pemasukanPengembanganPelayanan" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Sliders</p>
+                  <p>Pemasukan Pengembangan Pelayan</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{asset('AdminLTE-3.2.0')}}/UI/modals.html" class="nav-link">
+                <a href="/admin/pemasukanPersembahan" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Modals & Alerts</p>
+                  <p>Persembahan Minggu</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{asset('AdminLTE-3.2.0')}}/../UI/navbar.html" class="nav-link">
+                <a href="/admin/pemasukanSumbangan" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Navbar & Tabs</p>
+                  <p>Sumbangan</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{asset('AdminLTE-3.2.0')}}/UI/timeline.html" class="nav-link">
+                <a href="/admin/pemasukanUcapanSyukur" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Timeline</p>
+                  <p>Persembahan Ucapan Syukur</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{asset('AdminLTE-3.2.0')}}/UI/ribbons.html" class="nav-link">
+                <a href="/pengeluaran" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Ribbons</p>
+                  <p>Pengeluaran</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/pengeluaranKegiatan" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Pengeluaran Kegiatan</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/pengeluaranOpsional" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Pengeluaran Opsional</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/pengeluaranPembangunan" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Pengeluaran Pembangunan</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/kategoriPengeluaran" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Kategori Pengeluaran</p>
                 </a>
               </li>
             </ul>

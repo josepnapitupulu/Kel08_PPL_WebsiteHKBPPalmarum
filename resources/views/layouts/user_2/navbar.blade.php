@@ -7,13 +7,13 @@
             <a href="/" target="_blank">HOME</a>
         </li>
         <li>
-            <a href="/daftarSidiUser" target="blank">SIDI</a>
+            <a href="{{route('sidiUser')}}">SIDI</a>
         </li>
         <li>
             <a href="/daftarNikahUser">PERNIKAHAN</a>
         </li>
         <li>
-            <a href="/daftarJemaatUser">JEMAAT</a>
+            <a href="{{route('jemaatUser')}}">JEMAAT</a>
         </li>
         <li>
             <a href="/daftarMartumpolUser">MARTUMPOL</a>
@@ -22,7 +22,7 @@
             <a href="/daftarPindahUser">PINDAH</a>
         </li>
         <li>
-            <a href="/daftarBaptisUser">BAPTIS</a>
+            <a href="{{route('baptisUser')}}">BAPTIS</a>
         </li>
         <li>
             <a href="/login" target="blank">LOGIN</a>
@@ -35,7 +35,7 @@
             <a href="/" target="_blank">HOME</a>
         </li>
         <li>
-            <a href="/daftarSidiUser" target="blank">SIDI</a>
+            <a href="{{route('sidiUser')}}" target="blank">SIDI</a>
         </li>
         <li>
             <a href="/daftarNikahUser">PERNIKAHAN</a>
@@ -50,7 +50,7 @@
             <a href="/daftarPindahUser">PINDAH</a>
         </li>
         <li>
-            <a href="/daftarBaptisUser">BAPTIS</a>
+            <a href="{{route('baptisUser')}}">BAPTIS</a>
         </li>
         <li>
             <a href="/login" target="blank">LOGIN</a>
