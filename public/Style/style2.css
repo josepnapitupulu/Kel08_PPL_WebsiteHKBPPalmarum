@@ -356,7 +356,7 @@ img {
 .text-container {
   width: 50%;
   padding: 1em;
-  background-color: #23353C;
+  background-color: transparent;
   color: #fff;
 }
 

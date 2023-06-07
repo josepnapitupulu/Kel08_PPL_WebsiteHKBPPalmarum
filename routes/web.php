@@ -99,6 +99,49 @@ Route::prefix('admin')->middleware(['isAdmin', 'auth'])->group(function(){
     Route::get('/kategoriPengeluaran2', [App\Http\Controllers\pengeluaranController::class, 'index6'])->name('kategoriPengeluaran2');
 
 
+    Route::get('/sentralisasi', [App\Http\Controllers\sentralisasiController::class, 'index'])->name('sentralisasi');
+    Route::get('/detailSentralisasi', [App\Http\Controllers\sentralisasiController::class, 'index2'])->name('detailSentralisasi');
+
+    Route::get('/kategoriAnggaran', [App\Http\Controllers\anggaranController::class, 'index'])->name('kategoriMataAnggaran');
+    Route::get('/detailKategoriAnggaran', [App\Http\Controllers\anggaranController::class, 'index2'])->name('detailKategoriMataAnggaran');
+    Route::get('/matsAnggaran', [App\Http\Controllers\anggaranController::class, 'index3'])->name('mataAnggaran');
+    Route::get('/detailMataAnggaran', [App\Http\Controllers\anggaranController::class, 'index4'])->name('detailMataAnggaran');
+
+    Route::get('/headTransaksi', [App\Http\Controllers\transaksiController::class, 'index'])->name('headTransaksi');
+    Route::get('/detailHeadTransaksi', [App\Http\Controllers\transaksiController::class, 'index2'])->name('detailHeadTransaksi');
+    Route::get('/detailTransaksi', [App\Http\Controllers\transaksiController::class, 'index3'])->name('detailTransaksi');
+    Route::get('/headTransaksiDetail', [App\Http\Controllers\transaksiController::class, 'index4'])->name('headTransaksiDetail');
+
+    Route::get('/persembahanIbadah', [App\Http\Controllers\persembahanController::class, 'index'])->name('persembahanIbadah');
+    Route::get('/persembahanJemaat', [App\Http\Controllers\persembahanController::class, 'index'])->name('persembahanJemaat');
+
+    // Route::get('/daftarSidih', function () {
+    //     return view('layouts.forms.daftarSidih');
+    // });
+    // Route::get('/detailSidih', function () {
+    //     return view('layouts.forms.detailSidih');
+    // });
+    // Route::get('/updateSidi', function () {
+    //     return view('layouts.forms.updateSidi');
+    // });
+    // Route::get('/sidi', function () {
+    //     return view('layouts.formSearch.sidi');
+    // });
+    // Route::get('/daftarPernikahan', function () {
+    //     return view('layouts.forms.daftarPernikahan');
+    // });
+
+    //perbaikan
+    Route::get('/detailPernikahanLaki', function () {
+        return view('layouts.forms.detailPernikahanLaki');
+    });
+    Route::get('/detailPernikahanPerempuan', function () {
+        return view('layouts.forms.detailPernikahanPerempuan');
+    });
+    Route::get('/detailSentralisasi' , function () {
+        return view('layouts.forms.detailSentralisasi');
+    });
+
 
 
 
@@ -118,7 +161,7 @@ Route::prefix('admin')->middleware(['isAdmin', 'auth'])->group(function(){
     Route::get('/uprovePernikahan', function () {
         return view('layouts.forms.uprovePernikahan');
     });
-    Route::get('/uproveSidi', function () {
+    Route::get('x', function () {
         return view('layouts.forms.uproveSidi');
     });
     
