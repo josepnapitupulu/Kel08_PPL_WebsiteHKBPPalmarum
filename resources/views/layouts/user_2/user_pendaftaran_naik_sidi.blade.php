@@ -1,5 +1,6 @@
 @include('layouts.user_2.style')
 @include('layouts.user_2.navbar')
+@include('sweetalert::alert')
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +12,10 @@
     
     <link rel="stylesheet" href="{{asset('Style')}}/style2.css">
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+
+    <!-- Scripts -->
+    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     
 </head>
 <body>
@@ -19,16 +24,16 @@
         <p>Pendaftaran Naik Sidi HKBP Palmarum</p>
         
         <div class="mouse">
-            <ion-icon name="arrow-down-circle-outline"></ion-icon>
+          <button><ion-icon name="arrow-down-circle-outline" id="scrollButton"></ion-icon></button> 
         </div>
     </header>
     <main>
     
-        <h1>Sidi HKBP Palmarum</h1>
+        <h1>Pendaftaran Sidi HKBP Palmarum</h1>
 
         <div class="card">
             <div class="image-container">
-              <img class="foto_sidi" src=".{{ asset('Style') }}/image/sidi.JPG" alt="gambar">
+              <img class="foto_sidi" src="{{ asset('Style') }}/image/sidi.JPG" alt="gambar">
             </div>
             <div class="text-container">
               <h3>Judul</h3>
@@ -40,61 +45,67 @@
             </div>
           </div>
           
-          <div class="card_1">
+          <div class="card_1" id="targetElement">
             <h1 style="align-items: center; text-align: center; padding-right: 200px;"> <span style="display:inline-block; border-bottom: 1px solid black; width: 50px; margin-right: 10px; margin-bottom: 9px;">
             </span>Pendaftaran Sidi HKBP Palmarum<strong><span style="display:inline-block; border-bottom: 1px solid black; width: 50px; margin-left: 10px; margin-bottom: 9px;"></span></strong>
         </h1>
 
      
-            <form>
+            <form method="post" action="{{route('registrasiSidi')}}">
+              @csrf
+              @method('post')
               <div class="form-group">
                 <label for="name">Nama Lengkap</label>
-                <input type="text" id="name" name="name" placeholder="Masukkan Nama Lengkap Anda" />
+                <input type="text" id="name" name="nama_lengkap" placeholder="Masukkan Nama Lengkap Anda" required/>
               </div>
               <div class="form-group">
                 <label for="name">Nama Ayah</label>
-                <input type="text" id="nama Ayah" name="name" placeholder="Masukkan Nama Ayah" />
+                <input type="text" id="nama Ayah" name="nama_ayah" placeholder="Masukkan Nama Ayah Anda" required/>
               </div>     
               <div class="form-group">
                 <label for="name">Nama Ibu</label>
-                <input type="text" id="name" name="name" placeholder="Masukkan Nama Ibu A" />
-              </div>
-              <div class="form-group">
-                <label for="name">Alamat</label>
-                <input type="text" id="name" name="name" placeholder="Masukkan Alamat Anda" />
+                <input type="text" id="name" name="nama_ibu" placeholder="Masukkan Nama Ibu Anda" required/>
               </div>
               <div class="form-group">
                 <label for="name">Tempat Lahir</label>
-                <input type="text" id="name" name="name" placeholder="Masukkan Wijk" />
+                <input type="text" id="name" name="tempat_lahir" placeholder="Masukkan Tempat Lahir Anda" required/>
               </div>
               <div class="form-group">
                 <label for="name">Tanggal Lahir</label>
-                <input type="date" id="email" name="name" placeholder="Masukkan Email Anda" />
+                <input type="date" id="name" name="tanggal_lahir" placeholder="Masukkan Tanggal Lahir Anda" required/>
               </div>
               <div class="form-group">
-                <label for="name">Asal gereja</label>
-                <input type="text" id="name" name="name" placeholder="Masukkan NomorHandphone Anda" />
+                <label for="name">Gereja</label>
+                <!-- <input type="date" id="name" name="id_gereja_sidi" placeholder="Masukkan Tanggal Lahir Anda" /> -->
+                <select class="pilihan" name="id_gereja_sidi">
+                  <option value="">Pilih Gereja Anda</option>
+                  @foreach($gerejas as $data)
+                    <option value="{{$data['id_gereja']}}">{{$data['nama_gereja']}}</option>
+                  @endforeach
+                </select>
               </div>
               <div class="form-group">
-                <label for="name">Nama Pendeta</label>
-                <input type="text" id="name" name="name" placeholder="Masukkan NomorHandphone Anda" />
+                <label for="name">Nama Gereja Non-HKBP</label>
+                <input type="text" id="name" name="nama_gereja_non_hkbp" placeholder="Masukkan asal gereja Non HKBP" required/>
+              </div>
+              <div class="form-group">
+                <label for="name">Status Keluarga</label>
+                <!-- <input type="text" id="name" name="id_hub_keluarga" placeholder="Asal gereja Non HKBP" /> -->
+                <select class="pilihan" name="id_hub_keluarga">
+                  <option value="">Pilih Status Didalam Keluarga</option>
+                  @foreach($keluargas as $data)
+                    <option value="{{$data['id_hub_keluarga']}}">{{$data['nama_hub_keluarga']}}</option>
+                  @endforeach
+                </select>
               </div>
               <div class="form-group">
                 <label for="name">Keterangan</label>
-                <input type="text" id="name" name="name" placeholder="Masukkan NomorHandphone Anda" />
+                <input type="text" id="name" name="keterangan" placeholder="Masukkan keterangan yang terkait" />
               </div>
               <!-- upload foto -->
-              <div class="form-group foto_1">
-                <label for="foto">Upload Foto</label>
-                <input type="file" id="foto" name="foto">
-                <span>Drag and drop file here or click to upload <br> Ukuran foto harus .png</span>
-              </div>
-              <!-- upload foto -->
-              
               <div style="text-align: right; margin-top: 40px;">
-                 <input type="submit" value="Submit"/>
+                 <input type="submit" value="daftar"/>
               </div>
-             
             </form>
           </div>
           
@@ -120,6 +131,22 @@
 	
 	</footer>
   <script src="{{asset('Style')}}/style.js"></script>
+  <script>
+    var scrollButton = document.getElementById('scrollButton');
+
+    scrollButton.addEventListener('click', function() {
+      var targetElement = document.getElementById('targetElement');
+
+      if (targetElement) {
+        var targetPosition = targetElement.offsetTop;
+
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+      }
+    });
+  </script>
    
 </body>
 </html>

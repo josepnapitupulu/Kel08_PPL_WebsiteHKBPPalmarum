@@ -10,7 +10,7 @@
           <div class="col-12">
             <div class="card card-primary">
               <div class="card-header" style="height:6rem;">
-                <h3 class="card-title" id="textHeader">Detail Data Jemaat Kenak RPP</h3>
+                <h3 class="card-title" id="textHeader">Detail Data Jemaat Terkena RPP</h3>
               </div><br><br>
               <!-- /.card-header -->
               <div class="card-body table-responsive p-0">
@@ -22,37 +22,40 @@
                     </tr>
                   </thead>
                   <tbody>
+                    @foreach ($rpp['data'] as $item)
+                     
                     <tr>
                       <td>Id Jemaat</td>
-                      <td>------</td>
+                      <td>{{ $item['id_jemaat'] }}</td>
                     </tr>
                     <tr>
                       <td>Nama Lengkap</td>
-                      <td>------</td>
+                      <td>{{ $item['nama_lengkap'] }}</td>
                     </tr>
                     <tr>
                       <td>Tanggal Warta</td>
-                      <td>------</td>
+                      <td>{{ $item['tgl_warta_rpp'] }}</td>
                     </tr>
                     <tr>
                       <td>Jenis RPP</td>
-                      <td>------</td>
+                      <td>{{ $item['jenis_rpp'] }}</td>
                     </tr>
                     <tr>
                       <td>Keterangan</td>
-                      <td>------</td>
+                      <td>{{ $item['keterangan'] }}</td>
                     </tr>
                     <tr>
                         <td></td>
                         <td></td>
                     </tr>
+                    @endforeach
                   </tbody>
                 </table>
               </div><br>
               <!-- /.card-body -->
               <div>
-                <button class="btn btn-default" id="buttonKembali">Kembali</button>
-                <button class="btn btn-warning" id="buttonEdit">Edit</button>
+                <a class="btn btn-default" href="{{ route('rpp') }}" id="buttonKembali">Kembali</a>
+                <a class="btn btn-warning" href="{{ route('editRpp', $item['id_rpp']) }}" id="buttonEdit">Edit</a>
               </div><br><br>
                 
             </div>

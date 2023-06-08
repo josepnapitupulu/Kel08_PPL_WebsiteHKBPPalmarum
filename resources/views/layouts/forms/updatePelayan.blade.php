@@ -14,7 +14,7 @@
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item"><a href="/admin">Home</a></li>
               <li class="breadcrumb-item active">Update Pelayan Gereja</li>
             </ol>
           </div>
@@ -35,35 +35,39 @@
               </div><br>
               <!-- /.card-header -->
               <!-- form start -->
-              <form>
+              <form action="{{ route('updatePelayan') }}" method="POST">
+                @csrf
+                @foreach ($pelayan['data'] as $item)
+                <input type="hidden" name="id_pelayan" value="{{ $item['id_pelayan'] }}">
                 <div class="card-body">
                   <div class="form-group">
-                    <label for="exampleInputEmail1">Nama Pelayan</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nama Pelayan">
-                  </div>
-                  <div class="form-group">
                     <label for="exampleInputEmail1">ID Jemaat</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="ID Jemaat">
+                    <input type="text" class="form-control" name="id_jemaat" id="exampleInputEmail1" value="{{ $item['id_jemaat'] }}" placeholder="ID Jemaat">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputPassword1">Tanggal Tahbisan</label>
-                    <input type="date" class="form-control" id="exampleInputPassword1" placeholder="Tanggal Tahbisan">
+                    <input type="date" class="form-control" name="tanggal_tahbisan" id="exampleInputPassword1" value="{{ $item['tanggal_tahbisan'] }}" placeholder="Tanggal Tahbisan">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Jabatan</label>
+                    <input type="text" class="form-control" name="jabatan" id="exampleInputPassword1" value="{{ $item['jabatan'] }}" placeholder="Jabatan">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Tanggal Akhir Jawatan</label>
-                    <input type="date" class="form-control" id="exampleInputEmail1" placeholder="Tanggal Akhir Jawatan">
+                    <input type="date" class="form-control" name="tanggal_akhir_jawatan" id="exampleInputEmail1" value="{{ $item['tanggal_akhir_jawatan'] }}" placeholder="Tanggal Akhir Jawatan">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Keterangan</label>
-                    <textarea type="text" class="form-control" id="exampleInputEmail1" placeholder="Keterangan"></textarea>
+                    <textarea type="text" class="form-control" name="keterangan" id="exampleInputEmail1" value="{{ $item['keterangan'] }}" placeholder="Keterangan"></textarea>
                   </div>
                 </div>
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-outline-dark btn-lg ml-3 float-right">Cancel</button>
+                  <a type="submit" href="{{ route('pelayan') }}" class="btn btn-outline-dark btn-lg ml-3 float-right">Cancel</a>
                   <button type="submit" class="btn btn-warning btn-lg float-right">Edit</button>
                 </div>
+                @endforeach
               </form>
             </div>
             <!-- /.card -->

@@ -1,5 +1,6 @@
 @include('layouts.user_2.style')
 @include('layouts.user_2.navbar')
+@include('sweetalert::alert')
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +11,10 @@
 
     <link rel="stylesheet" href="{{asset('Style')}}/style2.css">
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+
+    <!-- Scripts -->
+    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     
 </head>
 <body>
@@ -18,10 +23,11 @@
         <p>Jemaat Meninggal HKBP Palmarum</p>
         
         <div class="mouse">
-            <ion-icon name="arrow-down-circle-outline"></ion-icon>
+          <button><ion-icon name="arrow-down-circle-outline" id="scrollButton"></ion-icon></button>
         </div>
     </header>
     <main>
+    <h1>Pendaftaran Baptis HKBP Palmarum</h1>
        <div class="card">
             <div class="image-container">
               <img class="foto_sidi" src="{{asset('Style')}}//image/meninggal.jpeg" alt="gambar">
@@ -42,8 +48,8 @@
             </h1>
             <form>
               <div class="form-group">
-                <label for="name">Nama lengkap & Nama pamggilan</label>
-                <input type="text" id="name" name="name" placeholder="Masukkan nama dan nama panggilan beliau " />
+                <label for="name">Nama lengkap</label>
+                <input type="text" id="name" name="name" placeholder="Masukkan nama dan nama panggilan beliau " required/>
               </div>    
               <div class="form-group">
                 <label for="name">Tanggal lahir</label>
@@ -66,7 +72,7 @@
                 <input type="text" id="name" name="name" placeholder="Masukkan Wijk" />
               </div>
               <div style="text-align: right; margin-top: 40px;">
-                 <input type="submit" value="Submit"/>
+                 <input type="submit" value="daftar"/>
               </div>
              
             </form>
@@ -94,6 +100,22 @@
 	
 	</footer>
   <script src="{{asset('Style')}}/style.js"></script>
+  <script>
+    var scrollButton = document.getElementById('scrollButton');
+
+    scrollButton.addEventListener('click', function() {
+      var targetElement = document.getElementById('targetElement');
+
+      if (targetElement) {
+        var targetPosition = targetElement.offsetTop;
+
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+      }
+    });
+  </script>
    
 </body>
 </html>

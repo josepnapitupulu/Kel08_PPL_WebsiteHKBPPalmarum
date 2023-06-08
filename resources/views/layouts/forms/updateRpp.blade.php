@@ -10,12 +10,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Update Data Jemaat Kenak RPP</h1>
+            <h1>Update Data Jemaat RPP</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Update Data Jemaat Kenak RPP</li>
+              <li class="breadcrumb-item"><a href="/admin">Home</a></li>
+              <li class="breadcrumb-item active">Update Data Jemaat RPP</li>
             </ol>
           </div>
         </div>
@@ -31,35 +31,40 @@
             <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header" style="height:6rem">
-                <h3 class="card-title" id="textHeader">Ubah Data Jemaat Kenak RPP</h3>
+                <h3 class="card-title" id="textHeader">Ubah Data Jemaat RPP</h3>
               </div><br>
               <!-- /.card-header -->
               <!-- form start -->
-              <form>
+              @foreach ($rpp['data'] as $item)
+              {{--  --}}
+              <form action="{{ route('updateRpp') }}" method="POST">
+                @csrf
+                <input type="hidden" name="id_pelayan" value="{{ $item['id_rpp'] }}">
                 <div class="card-body">
                   <div class="form-group">
                     <label for="exampleInputEmail1">ID Jemaat</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="ID Jemaat">
+                    <input type="text" class="form-control" name="id_jemaat" id="exampleInputEmail1" value="{{ $item['id_jemaat'] }}" placeholder="ID Jemaat">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputPassword1">Jenis RPP</label>
-                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Jenis RPP">
+                    <input type="text" class="form-control" name="id_jenis_rpp" id="exampleInputPassword1" value="{{ $item['jenis_rpp'] }}" placeholder="Jenis RPP">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Tanggal Warta RPP</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Tanggal Warta RPP">
+                    <input type="date" class="form-control" name="tgl_warta_rpp" id="exampleInputEmail1" value="{{ $item['tgl_warta_rpp'] }}" placeholder="Tanggal Warta RPP">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Keterangan</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Keterangan">
+                    <input type="text" class="form-control" name="keterangan" id="exampleInputEmail1" value="{{ $item['keterangan'] }}" placeholder="Keterangan">
                   </div>
                 </div>
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-outline-dark btn-lg ml-3 float-right">Cancel</button>
+                  <a href="{{ route('rpp') }}" class="btn btn-outline-dark btn-lg ml-3 float-right">Cancel</a>
                   <button type="submit" class="btn btn-warning btn-lg float-right">Update</button>
                 </div>
               </form>
+              @endforeach
             </div>
             <!-- /.card -->

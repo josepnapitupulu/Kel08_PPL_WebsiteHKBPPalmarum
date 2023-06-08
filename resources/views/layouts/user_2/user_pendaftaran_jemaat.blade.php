@@ -10,6 +10,13 @@
     
     <link rel="stylesheet" href="{{asset('Style')}}/style2.css">
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+
+    <!-- Scripts -->
+    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+
+
     
 </head>
 <body>
@@ -18,12 +25,12 @@
         <p>Pendaftaran Jemaat</p>
         
         <div class="mouse">
-            <ion-icon name="arrow-down-circle-outline"></ion-icon>
+          <button><ion-icon name="arrow-down-circle-outline" id="scrollButton"></ion-icon></button>
         </div>
     </header>
     <main>
     
-      
+    <h1>Pendaftaran Jemaat HKBP Palmarum</h1>
 
         <div class="card">
             <div class="image-container">
@@ -39,92 +46,108 @@
             </div>
           </div>
           
-          <div class="card_1">
+          <div class="card_1" id="targetElement">
             <h1 style="align-items: center; text-align: center; padding-right: 200px;"> <span style="display:inline-block; border-bottom: 1px solid black; width: 100px; margin-right: 10px; margin-bottom: 9px;">
                 </span>Pendaftaran Jemaat HKBP Palmarum<strong><span style="display:inline-block; border-bottom: 1px solid black; width: 100px; margin-left: 10px; margin-bottom: 9px;"></span></strong>
             </h1>
-            <form>
+            <form  method="post" action="{{route('registrasiJemaat')}}">
+              @csrf
+              @method('post')
               <div class="form-group">
                 <label for="name">Nama Depan</label>
-                <input type="text" id="name" name="name" placeholder="Masukkan nama lengkap anda" />
+                <input type="text" id="name" name="nama_depan" placeholder="Masukkan nama depan anda" required/>
               </div>    
               <div class="form-group">
                 <label for="name">Nama Belakang</label>
-                <input type="text" id="name" name="name" placeholder="Masukkan tanggal lahir anda" />
+                <input type="text" id="name" name="nama_belakang" placeholder="Masukkan nama belakang anda" />
               </div>
               <div class="form-group">
                 <label for="name">Gelar Depan</label>
-                <input type="text" id="name" name="name" placeholder="" />
+                <input type="text" id="name" name="gelar_depan" placeholder="Masukkan gelar depan anda" />
               </div>
               <div class="form-group">
                 <label for="name">Gelar Belakang</label>
-                <input type="text" id="name" name="name" placeholder="Masukkan gelar anda" />
+                <input type="text" id="name" name="gelar_belakang" placeholder="Masukkan gelar belakang anda" />
               </div>
               <div class="form-group">
                 <label for="name">Tempat Lahir</label>
-                <input type="text" id="name" name="name" placeholder="Masukkan alamat anda" />
+                <input type="text" id="name" name="tempat_lahir" placeholder="Masukkan tempat lahir anda" required/>
               </div>
               <div class="form-group">
                 <label for="name">Tanggal Lahir</label>
-                <input type="date" id="name" name="name" placeholder="Masukkan gelar anda" />
+                <input type="date" id="name" name="tanggal_lahir" placeholder="Masukkan tanggal lahir anda" required/>
               </div>
               <div class="form-group">
                 <label for="name">Golongan Darah</label>
-                <input type="text" id="name" name="name" placeholder="Masukkan Golongan Darah anda yang masih aktif" />
+                <input type="text" id="name" name="gol_darah" placeholder="Masukkan Golongan Darah anda yang masih aktif" />
               </div>
               <div class="form-group">
                 <label for="name">Jenis Kelamin</label>
-                <input type="text" id="name" name="name" placeholder="Masukkan tanggal baptis" />
+                <input type="text" id="name" name="jenis_kelamin" placeholder="Masukkan jenis kelamin" required/>
               </div>
               <div class="form-group">
                 <label for="name">No Telepon</label>
-                <input type="text" id="name" name="name" placeholder="Masukkan tanggal sidi anda" />
+                <input type="text" id="name" name="no_telepon" placeholder="Masukkan nomor telepon anda" />
               </div>
               <div class="form-group">
                 <label for="name">Alamat</label>
-                <input type="text" id="name" name="name" placeholder="Masukkan Gelar Anda" />
+                <input type="text" id="name" name="alamat" placeholder="Masukkan alamat anda" />
               </div>
               <div class="form-group">
                 <label for="name">Status Keluarga</label>
-                <input type="text" id="name" name="name" placeholder="Masukkan Gelar Anda" />
+                <!-- <input type="text" id="name" name="id_hub_keluarga" placeholder="Masukkan Gelar Anda" /> -->
+                <select class="pilihan" name="id_hub_keluarga">
+                  <option  value="">Pilih Status Hubungan Keluarga Anda</option>
+                  @foreach($keluargas as $data)
+                    <option value="{{$data['id_hub_keluarga']}}">{{$data['nama_hub_keluarga']}}</option>
+                  @endforeach
+                </select>
               </div>
+              <!-- <div class="form-group">
+                <label for="name">Status</label>
+                <input type="text" id="name" name="id_status_pernikahan" placeholder="Masukkan Gelar Anda" />
+              </div> -->
               <div class="form-group">
-                <label for="name">Pekerjaan</label>
-                <input type="text" id="name" name="name" placeholder="Masukkan Gelar Anda" />
-              </div>
-              <div class="form-group">
-                <label for="name">Pekerjaan Lainnya</label>
-                <input type="text" id="name" name="name" placeholder="Masukkan Gelar Anda" />
+                <label for="name">Pendidikan Terakhir</label>
+                <!-- <input type="text" id="name" name="id_pendidikan" placeholder="Masukkan Gelar Anda" /> -->
+                <select class="pilihan" name="id_pendidikan">
+                  <option  value="">Pilih Pendidikan Terakhir Anda</option>
+                  @foreach($pendidikans as $data)
+                    <option value="{{$data['id_pendidikan']}}">{{$data['pendidikan']}}</option>
+                  @endforeach
+                </select>
               </div>
               <div class="form-group">
                 <label for="name">Bidang Pendidikan</label>
-                <input type="text" id="name" name="name" placeholder="Masukkan Gelar Anda" />
+                <!-- <input type="text" id="name" name="id_bidang_pendidikan" placeholder="Masukkan Gelar Anda" /> -->
+                <select  class="pilihan"name="id_bidang_pendidikan">
+                  <option value="">Pilih Bidang Pendidikan Anda</option>
+                  @foreach($bidangPendidikans as $data)
+                    <option value="{{$data['id_bidang_pendidikan']}}">{{$data['nama_bidang_pendidikan']}}</option>
+                  @endforeach
+                </select>
               </div>
               <div class="form-group">
-                <label for="name">Pendidikan Terakhir</label>
-                <input type="text" id="name" name="name" placeholder="Masukkan Gelar Anda" />
+                <label for="name">Pekerjaan</label>
+                <!-- <input type="text" id="name" name="id_pekerjaan" placeholder="Masukkan Gelar Anda" /> -->
+                <select class="pilihan"name="id_pekerjaan">
+                  <option  value="">Pilih Pekerjaan Anda</option>
+                  @foreach($pekerjaans as $data)
+                    <option value="{{$data['id_pekerjaan']}}">{{$data['pekerjaan']}}</option>
+                  @endforeach
+                </select>
               </div>
               <div class="form-group">
-                <label for="name">Bidang Pendidikan Lainnya</label>
-                <input type="text" id="name" name="name" placeholder="Masukkan Gelar Anda" />
-              </div>
-              <div class="form-group">
-                <label for="name">Foto</label>
-                <input type="file" id="name" name="name" placeholder="Masukkan Gelar Anda" />
+                <label for="name">Pekerjaan Lainnya</label>
+                <input type="text" id="name" name="nama_pekerjaan_lain" placeholder="Masukkan pekerjaan lain jika tidak ada terdaftar pada aplikasi" required/>
               </div>
               <div class="form-group">
                 <label for="name">Keterangan</label>
-                <input type="text" id="name" name="name" placeholder="Masukkan Gelar Anda" />
-              </div>
-              <!-- upload foto -->
-              <div class="form-group foto_1">
-                <label for="foto">Foto Jemaat</label>
-                <input type="file" id="foto" name="foto">
-                <span>Drag and drop file here or click to upload <br> Ukuran foto harus .png</span>
+                <input type="text" id="name" name="keterangan" placeholder="Masukkan Gelar Anda" />
               </div>
               <!-- upload foto -->  
               <div style="text-align: right; margin-top: 40px;">
-                 <input type="submit" value="Submit"/>
+                 <input type="submit" value="daftar"/>
               </div>
              
             </form>
@@ -152,6 +175,22 @@
 	
 	</footer>
   <script src="{{asset('Style')}}/style.js"></script>
+  <script>
+    var scrollButton = document.getElementById('scrollButton');
+
+    scrollButton.addEventListener('click', function() {
+      var targetElement = document.getElementById('targetElement');
+
+      if (targetElement) {
+        var targetPosition = targetElement.offsetTop;
+
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+      }
+    });
+  </script>
    
 </body>
 </html>

@@ -25,6 +25,7 @@ nav{
     background: transparent;
     color: white;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    
 }
 nav a{
     color: inherit;
@@ -356,7 +357,7 @@ img {
 .text-container {
   width: 50%;
   padding: 1em;
-  background-color: #23353C;
+  background-color: transparent;
   color: #fff;
 }
 
@@ -409,7 +410,38 @@ input[type="text"] {
   margin-right: 20px;
   outline: none;
 }
+input[type="date"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0px 0px 10px rgba(2, 10, 10, 0.20);
+  margin-right: 20px;
+  outline: none;
+  content: attr(placeholder);
+  letter-spacing: 2px;
+  color: #888;
+}
+.pilihan{
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0px 0px 10px rgba(2, 10, 10, 0.20);
+  margin-right: 20px;
+  outline: none;
+  content: attr(placeholder);
+  color: #888;
+  letter-spacing: 2px;
+}
+ /* input[type="date"]::before {
+  
+} */
 
+.form-group input[type="date"]:focus::before,
+.form-group input[type="date"]:valid::before {
+  content: "";
+}
 input[type="submit"] {
   background-color: #3f486c;
   color: #fff;
@@ -420,6 +452,7 @@ input[type="submit"] {
   height: 30px;
   text-align: center; 
   font-weight: 20;
+
  
 }
 
@@ -569,4 +602,54 @@ input::placeholder {
   font-family: 'Martel', serif;
   margin: 40px;
 
+}
+.aesthetic-table {
+   background-color: #23353C;
+  color: white;
+  animation: fadeIn 1s ease-in-out;
+  width: 80%;
+  margin: 0 auto;
+  border-collapse: collapse;
+  /* text-align: center; */
+  border: none;
+  overflow: hidden;
+  justify-content: space-between;
+  border-radius: 50px;
+
+}
+.aesthetic-table .table-box {
+  width: 30%;
+  margin-right: 20px;
+}
+
+.aesthetic-table td {
+  padding: 10px;
+  border: none;
+
+}
+
+.aesthetic-table th {
+margin-top: 20px;
+ 
+  margin-bottom: 10px;
+}
+
+.aesthetic-table tr:not(:last-child) {
+  margin-bottom: 10px;
+}
+.aesthetic-table tr:nth-child(odd) {
+  background-color: #23353C;
+}
+
+.aesthetic-table tr:nth-child(even) {
+  background-color:  #2c4149;
+}
+
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
 }
