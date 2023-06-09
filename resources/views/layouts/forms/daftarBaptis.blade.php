@@ -77,7 +77,7 @@
                     </div>
                     <div class="col-sm-6">
                       <div class="form-group">
-                        <label>Asal Gereja</label>
+                        <label>Nama Ibu</label>
                         <input type="text" class="form-control" placeholder="Asal Gereja">
                       </div>
                     </div>
@@ -86,14 +86,14 @@
                     <div class="col-sm-6">
                       <!-- textarea -->
                       <div class="form-group">
-                        <label>Nama Ibu</label>
+                        <label>Tempat Lahir</label>
                         <input type="text" class="form-control" placeholder="Nama Ibu">
                       </div>
                     </div>
                     <div class="col-sm-6">
                       <div class="form-group">
-                        <label>Nama Pendeta</label>
-                        <input type="text" class="form-control" placeholder="Nama Pendeta">
+                        <label>Tanggal Lahir</label>
+                        <input type="date" class="form-control" placeholder="Nama Pendeta">
                       </div>
                     </div>
                   </div>
@@ -101,7 +101,7 @@
                     <div class="col-sm-6">
                       <!-- textarea -->
                       <div class="form-group">
-                        <label>Tempat Lahir</label>
+                        <label>ID Pendeta</label>
                         <input type="text" class="form-control" placeholder="Tempat Lahir">
                       </div>
                     </div>
@@ -113,12 +113,9 @@
                     </div>
                   </div>
                   <div class="row">
-                    <div class="col-sm-6">
-                      <!-- textarea -->
-                      <div class="form-group">
-                        <label>Tanggal Lahir</label>
-                        <input type="date" class="form-control" placeholder="Tanggal Lahir">
-                      </div>
+                    <div class="col-sm-6"> <label>Jenis Kelamin</label><br>
+                      <input type="text" class="form-control" placeholder="Jenis-Kelamin">
+
                     </div>
                   </div>
                 <!-- /.card-body -->

@@ -35,116 +35,16 @@
                               </tr>
                             </thead>
                             <tbody>
+                              @foreach($sentralisasis as $data)
                               <tr>
-                                <td>1</td>
-                                <td>Trident</td>
-                              
-                            
+                                <td>{{$data['persentasi_sentralisasi']}}</td>
+                                <td>{{$data['keterangan']}}</td>
                                 <td>
-                                  <button class="btn btn-primary"><i><img src="icon/search2.png" alt="" class="iconbutton"></i></button>
-                                  <button class="btn btn-warning"><i class="bi bi-pencil-square"></i></button>
-                                  <button class="btn btn-danger"><i class="bi bi-trash3-fill"></i></button>
+                                  <a class="btn btn-warning"href="{{route('editSentralisasi', $data['id_sentralisasi'])}}"><i class="bi bi-pencil-square"></i></a>
+                                  <a class="btn btn-danger" href="{{route('deleteSentralisasi', $data['id_sentralisasi'])}}"><i class="bi bi-trash3-fill"></i></a>
                                 </td>
                               </tr>
-                              <tr>
-                                <td>1</td>
-                                <td>Trident</td>
-                              
-                            
-                                <td>
-                                  <button class="btn btn-primary"><i><img src="icon/search2.png" alt="" class="iconbutton"></i></button>
-                                  <button class="btn btn-warning"><i class="bi bi-pencil-square"></i></button>
-                                  <button class="btn btn-danger"><i class="bi bi-trash3-fill"></i></button>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td>1</td>
-                                <td>Trident</td>
-                              
-                            
-                                <td>
-                                  <button class="btn btn-primary"><i><img src="icon/search2.png" alt="" class="iconbutton"></i></button>
-                                  <button class="btn btn-warning"><i class="bi bi-pencil-square"></i></button>
-                                  <button class="btn btn-danger"><i class="bi bi-trash3-fill"></i></button>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td>1</td>
-                                <td>Trident</td>
-                              
-                            
-                                <td>
-                                  <button class="btn btn-primary"><i><img src="icon/search2.png" alt="" class="iconbutton"></i></button>
-                                  <button class="btn btn-warning"><i class="bi bi-pencil-square"></i></button>
-                                  <button class="btn btn-danger"><i class="bi bi-trash3-fill"></i></button>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td>1</td>
-                                <td>Trident</td>
-                              
-                            
-                                <td>
-                                  <button class="btn btn-primary"><i><img src="icon/search2.png" alt="" class="iconbutton"></i></button>
-                                  <button class="btn btn-warning"><i class="bi bi-pencil-square"></i></button>
-                                  <button class="btn btn-danger"><i class="bi bi-trash3-fill"></i></button>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td>1</td>
-                                <td>Trident</td>
-                              
-                            
-                                <td>
-                                  <button class="btn btn-primary"><i><img src="icon/search2.png" alt="" class="iconbutton"></i></button>
-                                  <button class="btn btn-warning"><i class="bi bi-pencil-square"></i></button>
-                                  <button class="btn btn-danger"><i class="bi bi-trash3-fill"></i></button>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td>1</td>
-                                <td>Trident</td>
-                              
-                            
-                                <td>
-                                  <button class="btn btn-primary"><i><img src="icon/search2.png" alt="" class="iconbutton"></i></button>
-                                  <button class="btn btn-warning"><i class="bi bi-pencil-square"></i></button>
-                                  <button class="btn btn-danger"><i class="bi bi-trash3-fill"></i></button>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td>1</td>
-                                <td>Trident</td>
-                              
-                            
-                                <td>
-                                  <button class="btn btn-primary"><i><img src="icon/search2.png" alt="" class="iconbutton"></i></button>
-                                  <button class="btn btn-warning"><i class="bi bi-pencil-square"></i></button>
-                                  <button class="btn btn-danger"><i class="bi bi-trash3-fill"></i></button>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td>1</td>
-                                <td>Trident</td>
-                              
-                            
-                                <td>
-                                  <button class="btn btn-primary"><i><img src="icon/search2.png" alt="" class="iconbutton"></i></button>
-                                  <button class="btn btn-warning"><i class="bi bi-pencil-square"></i></button>
-                                  <button class="btn btn-danger"><i class="bi bi-trash3-fill"></i></button>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td>1</td>
-                                <td>Trident</td>
-                              
-                            
-                                <td>
-                                  <button class="btn btn-primary"><i><img src="icon/search2.png" alt="" class="iconbutton"></i></button>
-                                  <button class="btn btn-warning"><i class="bi bi-pencil-square"></i></button>
-                                  <button class="btn btn-danger"><i class="bi bi-trash3-fill"></i></button>
-                                </td>
-                              </tr>
+                              @endforeach
                               
                               <!-- Tambahkan baris lainnya sesuai kebutuhan -->
                             </tbody>

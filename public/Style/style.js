@@ -83,3 +83,19 @@ $(document).ready(function() {
       slideTo(currentIndex + direction);
     });
   });
+
+  
+  var scrollButton = document.getElementById('scrollButton');
+
+  scrollButton.addEventListener('click', function() {
+    var targetElement = document.getElementById('targetElement');
+
+    if (targetElement) {
+      var targetPosition = targetElement.offsetTop;
+
+      window.scrollTo({
+        top: targetPosition,
+        behavior: 'smooth'
+      });
+    }
+  });

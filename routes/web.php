@@ -22,20 +22,23 @@ Route::prefix('admin')->middleware(['isAdmin', 'auth'])->group(function(){
     Route::get('/pelayan', [App\Http\Controllers\pelayanController::class, 'index'])->name('pelayan');
     Route::get('/daftarPelayan', [App\Http\Controllers\pelayanController::class, 'store'])->name('daftarPelayan');
     Route::post('/createPelayan', [App\Http\Controllers\pelayanController::class, 'create'])->name('createPelayan');
-    Route::post('/updatePelayan', [App\Http\Controllers\pelayanController::class, 'update'])->name('updatePelayan');
-    Route::get('/edit/{id}', [App\Http\Controllers\pelayanController::class, 'edit'])->name('editPelayan');
+    Route::put('/updatePelayan', [App\Http\Controllers\pelayanController::class, 'update'])->name('updatePelayan');
+    Route::get('/editPelayan/{id}', [App\Http\Controllers\pelayanController::class, 'edit'])->name('editPelayan');
     Route::get('/detailPelayan/{id}', [App\Http\Controllers\pelayanController::class, 'showDetails'])->name('detailPelayan');
+    Route::get('/deletePelayan/{id}', [App\Http\Controllers\pelayanController::class, 'destroy'])->name('deletePelayan');
+
 
     Route::get('/sidi', [App\Http\Controllers\sidiController::class, 'index'])->name('sidi');
     Route::get('/daftarSidih', [App\Http\Controllers\sidiController::class, 'store'])->name('daftarSidi');
     Route::get('/updateSidi', [App\Http\Controllers\sidiController::class, 'edit'])->name('updateSidi');
     Route::get('/detailSidi', [App\Http\Controllers\sidiController::class, 'create'])->name('detailSidi');
+    
 
     Route::get('/rpp', [App\Http\Controllers\rppController::class, 'index'])->name('rpp');
     Route::get('/daftarRpp', [App\Http\Controllers\rppController::class, 'store'])->name('daftarRpp');
     Route::post('/createRpp', [App\Http\Controllers\rppController::class, 'create'])->name('createRpp');
     Route::get('/editRpp/{id}', [App\Http\Controllers\rppController::class, 'edit'])->name('editRpp');
-    Route::post('/updateRpp', [App\Http\Controllers\rppController::class, 'update'])->name('updateRpp');
+    Route::put('/updateRpp', [App\Http\Controllers\rppController::class, 'update'])->name('updateRpp');
     Route::get('/detailRpp/{id}', [App\Http\Controllers\rppController::class, 'showDetails'])->name('detailRpp');
     Route::get('/deleteRpp/{id}', [App\Http\Controllers\rppController::class, 'destroy'])->name('deleteRpp');
 
@@ -106,8 +109,21 @@ Route::prefix('admin')->middleware(['isAdmin', 'auth'])->group(function(){
     Route::get('/kategoriPengeluaran2', [App\Http\Controllers\pengeluaranController::class, 'index6'])->name('kategoriPengeluaran2');
 
 
-    Route::get('/sentralisasi', [App\Http\Controllers\sentralisasiController::class, 'index'])->name('sentralisasi');
+
+    // SENTRALISASI
+    Route::get('/setSentralisasi', [App\Http\Controllers\sentralisasiController::class, 'index'])->name('setSentralisasi');
+    Route::post('/tambahSentralisasi', [App\Http\Controllers\sentralisasiController::class, 'create'])->name('tambahSentralisasi');
     Route::get('/detailSentralisasi', [App\Http\Controllers\sentralisasiController::class, 'index2'])->name('detailSentralisasi');
+    Route::get('/deleteSentralisasi/{id}', [App\Http\Controllers\sentralisasiController::class, 'destroy'])->name('deleteSentralisasi');
+    Route::put('/updateSentralisasi/{id}', [App\Http\Controllers\sentralisasiController::class, 'update'])->name('updateSentralisasi');
+    Route::get('/editSentralisasi', [App\Http\Controllers\sentralisasiController::class, 'index3'])->name('editSentralisasi');
+
+
+    
+    // Route::match(['get', 'post'], '/setSentralisasi', [App\Http\Controllers\sentralisasiController::class, 'index'])->name('setSentralisasi');
+    // Route::match(['get', 'post'], '/detailSentralisasi', [App\Http\Controllers\sentralisasiController::class, 'index2'])->name('detailSentralisasi');
+
+
 
     Route::get('/kategoriAnggaran', [App\Http\Controllers\anggaranController::class, 'index'])->name('kategoriMataAnggaran');
     Route::get('/detailKategoriAnggaran', [App\Http\Controllers\anggaranController::class, 'index2'])->name('detailKategoriMataAnggaran');
@@ -122,21 +138,7 @@ Route::prefix('admin')->middleware(['isAdmin', 'auth'])->group(function(){
     Route::get('/persembahanIbadah', [App\Http\Controllers\persembahanController::class, 'index'])->name('persembahanIbadah');
     Route::get('/persembahanJemaat', [App\Http\Controllers\persembahanController::class, 'index'])->name('persembahanJemaat');
 
-    // Route::get('/daftarSidih', function () {
-    //     return view('layouts.forms.daftarSidih');
-    // });
-    // Route::get('/detailSidih', function () {
-    //     return view('layouts.forms.detailSidih');
-    // });
-    // Route::get('/updateSidi', function () {
-    //     return view('layouts.forms.updateSidi');
-    // });
-    // Route::get('/sidi', function () {
-    //     return view('layouts.formSearch.sidi');
-    // });
-    // Route::get('/daftarPernikahan', function () {
-    //     return view('layouts.forms.daftarPernikahan');
-    // });
+
 
     //perbaikan
     Route::get('/detailPernikahanLaki', function () {
@@ -145,33 +147,30 @@ Route::prefix('admin')->middleware(['isAdmin', 'auth'])->group(function(){
     Route::get('/detailPernikahanPerempuan', function () {
         return view('layouts.forms.detailPernikahanPerempuan');
     });
-    Route::get('/detailSentralisasi' , function () {
-        return view('layouts.forms.detailSentralisasi');
-    });
+    // Route::get('/detailSentralisasi' , function () {
+    //     return view('layouts.forms.detailSentralisasi');
+    // });
 
 
 
 
+    Route::get('/uproveBaptis', [App\Http\Controllers\uproveController::class, 'baptis'])->name('aksesUproveBaptis');
+    Route::get('/fixUproveBaptis/{id}', [App\Http\Controllers\uproveController::class, 'uproveBaptis'])->name('UproveBaptis');
 
-    Route::get('/uproveBaptis', function () {
-        return view('layouts.forms.uproveBaptis');
-    });
-    Route::get('/uproveJemaat', function () {
-        return view('layouts.forms.uproveBJemaat');
-    });
-    Route::get('/uproveKeluarga', function () {
-        return view('layouts.forms.uproveKeluarga');
-    });
-    Route::get('/uproveMartumpol', function () {
-        return view('layouts.forms.uproveMartumpol');
-    });
-    Route::get('/uprovePernikahan', function () {
-        return view('layouts.forms.uprovePernikahan');
-    });
-    Route::get('x', function () {
-        return view('layouts.forms.uproveSidi');
-    });
-    
+    Route::get('/uproveJemaat', [App\Http\Controllers\uproveController::class, 'prvJemaat'])->name('aksesUproveJemaat');
+    Route::get('/fixUproveJemaat/{id}', [App\Http\Controllers\uproveController::class, 'uproveJemaat'])->name('UproveJemaat');
+
+    Route::get('/uprovePindah', [App\Http\Controllers\uproveController::class, 'pindah'])->name('aksesUprovePindah');
+    Route::get('/fixUprovePindah/{id}', [App\Http\Controllers\uproveController::class, 'uprovePindah'])->name('UprovePindah');
+
+    Route::get('/uproveMartumpol', [App\Http\Controllers\uproveController::class, 'martumpol'])->name('aksesUproveMartumpol');
+    Route::get('/fixUproveMartumpol/{id}', [App\Http\Controllers\uproveController::class, 'uproveMartumpol'])->name('UproveMartumpol');
+
+    Route::get('/uprovePernikahan', [App\Http\Controllers\uproveController::class, 'pernikahan'])->name('aksesUprovePernikahan');
+    Route::get('/fixUprovePernikahan/{id}', [App\Http\Controllers\uproveController::class, 'uprovePernikahan'])->name('UprovePernikahan');
+
+    Route::get('/uproveSidi', [App\Http\Controllers\uproveController::class, 'sidi'])->name('aksesUproveSidi');
+    Route::get('/fixUproveSidi/{id}', [App\Http\Controllers\uproveController::class, 'uproveSidi'])->name('UproveSidi');    
 });
 
 //  user user user user
@@ -215,3 +214,7 @@ Route::get('/', [App\Http\Controllers\userController::class, 'index7'])->name('h
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/luis', function(){
+return view('layouts.user.daftarBaptis');
+});
