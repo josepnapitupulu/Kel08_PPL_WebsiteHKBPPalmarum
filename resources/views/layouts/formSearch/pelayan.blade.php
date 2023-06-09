@@ -27,14 +27,14 @@
                   </thead>
                   <tbody>
                     @if ($pelayan['data'] != null)
-                      @foreach ($pelayan['data'] as $item)
+                    @foreach ($pelayan['data'] as $item)
                         
                   <tr>
                     <td>{{ $item['nama_lengkap'] }}</td>
                     <td>
                       <a class="btn btn-primary" href="{{ route('detailPelayan', $item['id_pelayan']) }}"><i><img src="/icon/search2.png" alt="" class="iconbutton"></i></a>
                       <a class="btn btn-warning" href="{{ route('editPelayan', $item['id_pelayan']) }}"><i class="bi bi-pencil-square"></i></a>
-                      <a class="btn btn-danger" href=""><i class="bi bi-trash3-fill"></i></a>
+                      <a class="btn btn-danger" href="{{ route('deletePelayan',$item['id_pelayan']) }}"><i class="bi bi-trash3-fill"></i></a>
                     </td>                    
                   </tr>
                   

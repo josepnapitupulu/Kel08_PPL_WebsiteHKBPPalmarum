@@ -47,6 +47,10 @@
                       <td>Alamat</td>
                       <td>{{ $item['alamat'] }}</td>
                     </tr>
+                    <tr>
+                      <td>Keterangan</td>
+                      <td>{{ $item['keterangan'] }}</td>
+                    </tr>
                     @endforeach
                   </tbody>
                 </table>

@@ -22,20 +22,23 @@ Route::prefix('admin')->middleware(['isAdmin', 'auth'])->group(function(){
     Route::get('/pelayan', [App\Http\Controllers\pelayanController::class, 'index'])->name('pelayan');
     Route::get('/daftarPelayan', [App\Http\Controllers\pelayanController::class, 'store'])->name('daftarPelayan');
     Route::post('/createPelayan', [App\Http\Controllers\pelayanController::class, 'create'])->name('createPelayan');
-    Route::post('/updatePelayan', [App\Http\Controllers\pelayanController::class, 'update'])->name('updatePelayan');
-    Route::get('/edit/{id}', [App\Http\Controllers\pelayanController::class, 'edit'])->name('editPelayan');
+    Route::put('/updatePelayan', [App\Http\Controllers\pelayanController::class, 'update'])->name('updatePelayan');
+    Route::get('/editPelayan/{id}', [App\Http\Controllers\pelayanController::class, 'edit'])->name('editPelayan');
     Route::get('/detailPelayan/{id}', [App\Http\Controllers\pelayanController::class, 'showDetails'])->name('detailPelayan');
+    Route::get('/deletePelayan/{id}', [App\Http\Controllers\pelayanController::class, 'destroy'])->name('deletePelayan');
+
 
     Route::get('/sidi', [App\Http\Controllers\sidiController::class, 'index'])->name('sidi');
     Route::get('/daftarSidih', [App\Http\Controllers\sidiController::class, 'store'])->name('daftarSidi');
     Route::get('/updateSidi', [App\Http\Controllers\sidiController::class, 'edit'])->name('updateSidi');
     Route::get('/detailSidi', [App\Http\Controllers\sidiController::class, 'create'])->name('detailSidi');
+    
 
     Route::get('/rpp', [App\Http\Controllers\rppController::class, 'index'])->name('rpp');
     Route::get('/daftarRpp', [App\Http\Controllers\rppController::class, 'store'])->name('daftarRpp');
     Route::post('/createRpp', [App\Http\Controllers\rppController::class, 'create'])->name('createRpp');
     Route::get('/editRpp/{id}', [App\Http\Controllers\rppController::class, 'edit'])->name('editRpp');
-    Route::post('/updateRpp', [App\Http\Controllers\rppController::class, 'update'])->name('updateRpp');
+    Route::put('/updateRpp', [App\Http\Controllers\rppController::class, 'update'])->name('updateRpp');
     Route::get('/detailRpp/{id}', [App\Http\Controllers\rppController::class, 'showDetails'])->name('detailRpp');
     Route::get('/deleteRpp/{id}', [App\Http\Controllers\rppController::class, 'destroy'])->name('deleteRpp');
 
@@ -215,3 +218,7 @@ Route::get('/', [App\Http\Controllers\userController::class, 'index7'])->name('h
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/luis', function(){
+return view('layouts.user.daftarBaptis');
+});

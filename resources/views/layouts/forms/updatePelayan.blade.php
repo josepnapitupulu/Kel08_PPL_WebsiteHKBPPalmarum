@@ -37,6 +37,7 @@
               <!-- form start -->
               <form action="{{ route('updatePelayan') }}" method="POST">
                 @csrf
+                @method('PUT')
                 @foreach ($pelayan['data'] as $item)
                 <input type="hidden" name="id_pelayan" value="{{ $item['id_pelayan'] }}">
                 <div class="card-body">
@@ -58,13 +59,13 @@
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Keterangan</label>
-                    <textarea type="text" class="form-control" name="keterangan" id="exampleInputEmail1" value="{{ $item['keterangan'] }}" placeholder="Keterangan"></textarea>
+                    <input type="text" class="form-control" name="keterangan" id="exampleInputEmail1" value="{{ $item['keterangan'] }}" placeholder="Keterangan"></input>
                   </div>
                 </div>
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <a type="submit" href="{{ route('pelayan') }}" class="btn btn-outline-dark btn-lg ml-3 float-right">Cancel</a>
+                  <a href="{{ route('pelayan') }}" class="btn btn-outline-dark btn-lg ml-3 float-right">Cancel</a>
                   <button type="submit" class="btn btn-warning btn-lg float-right">Edit</button>
                 </div>
                 @endforeach
