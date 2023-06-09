@@ -106,8 +106,21 @@ Route::prefix('admin')->middleware(['isAdmin', 'auth'])->group(function(){
     Route::get('/kategoriPengeluaran2', [App\Http\Controllers\pengeluaranController::class, 'index6'])->name('kategoriPengeluaran2');
 
 
-    Route::get('/sentralisasi', [App\Http\Controllers\sentralisasiController::class, 'index'])->name('sentralisasi');
+
+    // SENTRALISASI
+    Route::get('/setSentralisasi', [App\Http\Controllers\sentralisasiController::class, 'index'])->name('setSentralisasi');
+    Route::post('/tambahSentralisasi', [App\Http\Controllers\sentralisasiController::class, 'create'])->name('tambahSentralisasi');
     Route::get('/detailSentralisasi', [App\Http\Controllers\sentralisasiController::class, 'index2'])->name('detailSentralisasi');
+    Route::get('/deleteSentralisasi/{id}', [App\Http\Controllers\sentralisasiController::class, 'destroy'])->name('deleteSentralisasi');
+    Route::put('/updateSentralisasi/{id}', [App\Http\Controllers\sentralisasiController::class, 'update'])->name('updateSentralisasi');
+    Route::get('/editSentralisasi', [App\Http\Controllers\sentralisasiController::class, 'index3'])->name('editSentralisasi');
+
+
+    
+    // Route::match(['get', 'post'], '/setSentralisasi', [App\Http\Controllers\sentralisasiController::class, 'index'])->name('setSentralisasi');
+    // Route::match(['get', 'post'], '/detailSentralisasi', [App\Http\Controllers\sentralisasiController::class, 'index2'])->name('detailSentralisasi');
+
+
 
     Route::get('/kategoriAnggaran', [App\Http\Controllers\anggaranController::class, 'index'])->name('kategoriMataAnggaran');
     Route::get('/detailKategoriAnggaran', [App\Http\Controllers\anggaranController::class, 'index2'])->name('detailKategoriMataAnggaran');
@@ -145,9 +158,9 @@ Route::prefix('admin')->middleware(['isAdmin', 'auth'])->group(function(){
     Route::get('/detailPernikahanPerempuan', function () {
         return view('layouts.forms.detailPernikahanPerempuan');
     });
-    Route::get('/detailSentralisasi' , function () {
-        return view('layouts.forms.detailSentralisasi');
-    });
+    // Route::get('/detailSentralisasi' , function () {
+    //     return view('layouts.forms.detailSentralisasi');
+    // });
 
 
 
