@@ -12,24 +12,28 @@
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/accounting.js/0.4.2/accounting.min.js"></script>
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 <body>
+  <div id="loading-indicator">
+    <img src="{{asset('Style')}}/image/loading2.gif" alt="Loading..." />
+  </div>
     <header class="hero">
        <H1><span>Palmarum</span></H1>
         <p>Beranda</p>
         
         <div class="mouse">
-            <ion-icon name="arrow-down-circle-outline"></ion-icon>
+            <ion-icon name="arrow-down-circle-outline" id="scrollButton"></ion-icon>
         </div>
     </header>
-    <div class="foto-container">
+    <div class="foto-container" id="targetElement">
       @foreach($pelayans as $data)
         <div class="foto-item">
-            <img src="{{ asset('Style')}}/image/sintua.jpg" alt="Foto">
-            <h3 value="{{$data['id_jemaat']}}"></h3>
+            <img src="{{ asset('Style/image/')}}/{{$data['photo']}}" alt="Foto">
+            <h1 class="foto-text">{{$data['nama_lengkap']}}</h1>
             <h3 class="foto-text">Jabatan : {{$data['jabatan']}}</h3>
             <h4 class="foto-text">Tanggal Tahbisan : {{$data['tanggal_tahbisan']}}</h4>
             <p class="foto-text">{{$data['keterangan']}}</p>          
@@ -60,106 +64,223 @@
       <div class="judul_1">
         <h1>Jadwal Ibadah</h1>
         <div class="">
-          <h3>Acara Minggu</h3>
-          
           <table table class="aesthetic-table" border="1">
+            @foreach($jadwals as $data)
             <tr>
-              <td>BERNYANYI</td>
-             
+              <th  style=" font-weight:40px ;border: none; background-color: #37545f ; ; padding:40px;  "colspan="3">Acara Minggu</th>
             </tr>
             <tr>
-              <td>VOTUM  – INTROITUS – DOA PEMBUKA</td>
-              
+              <td class="kolom_1">BERNYANYI</td>
+              <td> : </td>
+              <td class="kolom_2">{{$data['nyanyian_1']}}</td>
             </tr>
             <tr>
-              <td>BERNYANYI</td>
-             
+              <td class="kolom_1">VOTUM  – INTROITUS – DOA PEMBUKA</td>
+              <td>:</td>
+              <td class="kolom ">{{$data['votum']}}</td>
             </tr>
             <tr>
-              <td>HUKUM TAURAT</td>
-              
+              <td class="kolom_1">BERNYANYI</td>
+              <td>:</td>
+              <td class="kolom 2">{{$data['nyanyian_2']}}</td>
             </tr>
             <tr>
-              <td>BERNYANYI</td>
-              
+              <td class="kolom_1">HUKUM TAURAT</td>
+              <td>:</td>
+              <td class="kolom 2">{{$data['hukum_taurat']}}</td>
             </tr>
             <tr>
-              <td>PENGAKUAN  DOSA</td>
-              
+              <td class="kolom_1">BERNYANYI</td>
+              <td>:</td>
+              <td class="kolom 2">{{$data['nyanyian_3']}}</td>
             </tr>
             <tr>
-              <td>BERNYANYI</td>
-              
+              <td class="kolom_1">PENGAKUAN  DOSA</td>
+              <td>:</td>
+              <td class="kolom 2">{{$data['pengakuan_dosa']}}</td>
             </tr>
             <tr>
-              <td>EPISTEL</td>
-              
+              <td class="kolom_1">BERNYANYI</td>
+              <td>:</td>
+              <td class="kolom 2">{{$data['nyanyian_4']}}</td>
             </tr>
             <tr>
-              <td>BERNYANYI</td>
-              
+              <td class="kolom_1">EPISTEL</td>
+              <td>:</td>
+              <td class="kolom 2">{{$data['epistel']}}</td>
             </tr>
             <tr>
-              <td>PENGAKUAN IMAN</td>
-            
-            </tr>
-           
-            <tr>
-              <td>BERNYANYI</td>
-              
+              <td class="kolom_1">BERNYANYI</td>
+              <td>:</td>
+              <td class="kolom 2">{{$data['nyanyian_5']}}</td>
             </tr>
             <tr>
-              <td>KHOTBAH</td>
-              
+              <td class="kolom_1">PENGAKUAN IMAN</td>
+              <td>:</td>
+              <td class="kolom 2">{{$data['pengakuan_iman']}}</td>
             </tr>
             <tr>
-              <td>BERNYANYI</td>
-              
+              <td class="kolom_1">WARTA JEMAAT + DOA SYAFAAT</td>
+              <td>:</td>
+              <td class="kolom 2"></td>
             </tr>
             <tr>
-              <td>DOA PENUTUP – BERKAT</td>
-              
+              <td class="kolom_1">BERNYANYI</td>
+              <td>:</td>
+              <td class="kolom 2">{{$data['nyanyian_6']}}</td>
             </tr>
+            <tr>
+              <td class="kolom_1">KHOTBAH</td>
+              <td>:</td>
+              <td class="kolom 2">{{$data['khotbah']}}</td>
+            </tr>
+            <tr>
+              <td class="kolom_1">BERNYANYI</td>
+              <td>:</td>
+              <td class="kolom 2">{{$data['nyanyian_7']}}</td>
+            </tr>
+            <tr>
+              <td class="kolom_1">DOA PENUTUP – BERKAT</td>
+              <td>:</td>
+              <td class="kolom 2">{{$data['doa_penutup']}}</td>
+            </tr>
+            @endforeach
           </table>
-          
         </div>
       </div>
-       <div class="jadwal">
-	
-		<div class="schedule-slider">
-		  <div class="schedule-item">
-			<h2>Minggu Pagi</h2>
-			<p>09.00 - Ibadah Raya</p>
-			<p>11.00 - Kebaktian Sekolah Minggu</p>
-		  </div>
-		  <div class="schedule-item">
-			<h2>Minggu Sore</h2>
-			<p>16.00 - Ibadah Raya</p>
-		  </div>
-		  <div class="schedule-item">
-			<h2>Senin</h2>
-			<p>19.00 - Doa Bersama</p>
-		  </div>
-		  <div class="schedule-item">
-			<h2>Kamis</h2>
-			<p>19.00 - Komsel</p>
-		  </div>
-          <div class="schedule-item">
-			<h2>Kamis</h2>
-			<p>19.00 - Komsel</p>
-		  </div>
-          <div class="schedule-item">
-			<h2>Kamis</h2>
-			<p>19.00 - Komsel</p>
-		  </div>
-          <div class="schedule-item">
-			<h2>Kamis</h2>
-			<p>19.00 - Komsel</p>
-		  </div>
-
-		</div>
-	  </div>@include('layouts.user_2.footer')
+      <div class="judul_1"><br>
+      <h1>Informasi Keuangan Gereja</h1>
+        <table table class="aesthetic-table2" border="1">
+          <tr>
+            <th style=" font-weight:40px ;border: none; background-color: #37545f ; padding:40px;">No</th>
+            <th  style=" font-weight:40px ;border: none; background-color: #37545f ; ">Pemasukan Gereja</th>
+            <th  style=" font-weight:40px ;border: none; background-color: #37545f ;   ">Total</th>
+            <th style=" font-weight:40px ;border: none; background-color: #37545f ;   ">Bentuk Pemasukan</th>
+          </tr>
+          @foreach($pemasukans as $data)
+          <tr>
+            <td class="row-number"><center>0</center></td>
+            <td class="kolom_1">{{$data['nama_kategori_pemasukan']}}</td>
+            <td class="kolom_2" id="formatted-amount">{{$data['total_pemasukan']}}</td>
+            <td class="kolom_2">{{$data['bentuk_pemasukan']}}</td>
+          </tr>
+          @endforeach
+        </table>
+      </div>
+      <div class="judul_1">
+      <table table class="aesthetic-table2" border="1">
+          <tr>
+            <th style=" font-weight:40px ;border: none; background-color: #37545f ; padding:40px;">No</th>
+            <th  style=" font-weight:40px ;border: none; background-color: #37545f ; ">Pengeluaran Gereja</th>
+            <th  style=" font-weight:40px ;border: none; background-color: #37545f ;   ">Total</th>
+            <th style=" font-weight:40px ;border: none; background-color: #37545f ;   ">Keterangan</th>
+          </tr>
+          @foreach($pengeluarans as $data)
+          <tr>
+            <td class="row-number2"><center>0</center></td>
+            <td class="kolom_1">{{$data['nama_kategori_pengelaran']}}</td>
+            <td class="kolom_2" id="formatted-amount">{{$data['jumlah_pengeluaran']}}</td>
+            <td class="kolom_2">{{$data['keterangan_pengeluaran']}}</td>
+          </tr>
+          @endforeach
+        </table>
+      </div>
+      <div class="judul_1">
+        <h1>Informasi Keuangan Gereja</h1>
+        <div class="jadwal">
+          <div class="schedule-slider">
+            @foreach($kegiatans as $data)
+            <div class="schedule-item">
+              <h2><center>{{$data['nama_jenis_kegiatan']}}</center></h2>
+              <p>tanggal : {{$data['tanggal_kegiatan']}}</p>
+              <p>waktu : {{$data['waktu_kegiatan']}}</p>
+              <p>Lokasi : {{$data['lokasi_kegiatan']}}</p>
+              <p>deskripsi : {{$data['keterangan']}}</p>
+            </div>
+            @endforeach
+        </div>
+      </div>
+      </div>@include('layouts.user_2.footer')
 </body>
 <script src="{{asset('Style')}}/style.js"></script>
+<script>
+    var scrollButton = document.getElementById('scrollButton');
 
+    scrollButton.addEventListener('click', function() {
+      var targetElement = document.getElementById('targetElement');
+
+      if (targetElement) {
+        var targetPosition = targetElement.offsetTop;
+
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+      }
+    });
+  </script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var rowNumbers = document.querySelectorAll('.row-number');
+
+    function updateRowNumbers() {
+      rowNumbers.forEach(function(row, index) {
+        row.textContent = index + 1; // Mengupdate nomor urut
+      });
+    }
+
+    // Panggil fungsi updateRowNumbers saat terjadi perubahan dalam tabel
+    function observeTableChanges() {
+      var targetNode = document.getElementById('table-body');
+      var observer = new MutationObserver(function() {
+        updateRowNumbers();
+      });
+      var config = { childList: true, subtree: true };
+
+      observer.observe(targetNode, config);
+    }
+
+    updateRowNumbers(); // Panggil fungsi pertama kali saat halaman dimuat
+    observeTableChanges(); // Memantau perubahan dalam tabel
+  });
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var rowNumbers = document.querySelectorAll('.row-number2');
+
+    function updateRowNumbers() {
+      rowNumbers.forEach(function(row, index) {
+        row.textContent = index + 1; // Mengupdate nomor urut
+      });
+    }
+
+    // Panggil fungsi updateRowNumbers saat terjadi perubahan dalam tabel
+    function observeTableChanges() {
+      var targetNode = document.getElementById('table-body');
+      var observer = new MutationObserver(function() {
+        updateRowNumbers();
+      });
+      var config = { childList: true, subtree: true };
+
+      observer.observe(targetNode, config);
+    }
+
+    updateRowNumbers(); // Panggil fungsi pertama kali saat halaman dimuat
+    observeTableChanges(); // Memantau perubahan dalam tabel
+  });
+</script>
+<script>
+  document.getElementById('loading-indicator').style.display = 'block';
+
+  // Kirim permintaan asinkron menggunakan JavaScript atau teknik AJAX
+  // Setelah respons diterima, sembunyikan GIF loading
+  // Contoh penggunaan dengan teknik Fetch API
+  fetch('/example')
+      .then(response => {
+          // Proses respons atau tindakan lain yang sesuai
+      })
+      .finally(() => {
+          document.getElementById('loading-indicator').style.display = 'none';
+      });
+</script>
 </html>

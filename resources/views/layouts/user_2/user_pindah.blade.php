@@ -1,5 +1,6 @@
 @include('layouts.user_2.style')
 @include('layouts.user_2.navbar')
+@include('sweetalert::alert')
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,34 +18,34 @@
     
 </head>
 <body>
+  <div id="loading-indicator">
+    <img src="{{asset('Style')}}/image/loading2.gif" alt="Loading..." />
+  </div>
     <header class="hero">
        <H1><span>Palmarum</span></H1>
         <p>Jemaat Pindah HKBP Palmarum</p>
         
         <div class="mouse">
-            <ion-icon name="arrow-down-circle-outline"></ion-icon>
+          <ion-icon name="arrow-down-circle-outline" id="scrollButton"></ion-icon>
         </div>
     </header>
     <main>
     
-    <h1>Pendaftaran Pindah HKBP Palmarum</h1>
+    <h1>Pendaftaran Jemaat Pindah</h1>
 
         <div class="card">
             <div class="image-container">
               <img class="foto_sidi" src="{{ asset('Style') }}/image/pindah.png" alt="gambar">
             </div>
             <div class="text-container">
-              <h3>Jemaat Pindah HKBP Palmarum</h3>
-              <p>ext commonly used to demonstrate the visual form of a 
-                    document or a typeface without relying on meaningful content. 
-                    Lorem ipsum may be used as a placeholder before final copy is 
-                    available. It is also used to temporarily replace text in a
-                     process called greeking, which allows designers to consider</p>
+              <h3>Jemaat Pindah</h3><br>
+              <p>Jemaat sah HKBP Palmarum Tarutung yang ingin pindah jemaat menjadi jemaat gereja lain, 
+                maka wajib melakukan pendaftaran jemaat pindah agar sah tidak lagi menjadi jemaat HKBP Palmarum Tarutung</p>
             </div>
 
           </div>
           
-          <div class="card_1">
+          <div class="card_1" id="targetElement">
             <h1 style="align-items: center; text-align: center; padding-right: 200px;"> <span style="display:inline-block; border-bottom: 1px solid black; width: 100px; margin-right: 10px; margin-bottom: 9px;">
                 </span>Jemaat Pindah HKBP Palmarum<strong><span style="display:inline-block; border-bottom: 1px solid black; width: 100px; margin-left: 10px; margin-bottom: 9px;"></span></strong>
             </h1>
@@ -54,7 +55,7 @@
               <div class="form-group">
                 <label for="name">Nama Jemaat</label>
                 <!-- <input type="text" id="name" name="id_jemaat" placeholder="Asexxxx , bxxxxx, Cxxxxx" /> -->
-                <select name="id_jemaat">
+                <select class="pilihan" name="id_jemaat">
                   <option value="">Pilih Nama Anda Sebagai Mempelai Laki-Laki</option>
                   @foreach($jemaats as $data)
                     <option value="{{$data['id_jemaat']}}">{{$data['nama_depan']}}&nbsp{{$data['nama_belakang']}}</option>
@@ -64,7 +65,7 @@
               <div class="form-group">
                 <label for="name">Nama Keluarga</label>
                 <!-- <input type="text" id="name" name="id_registrasi" placeholder="Asexxxx , bxxxxx, Cxxxxx" /> -->
-                <select name="id_registrasi">
+                <select class="pilihan" name="id_registrasi">
                   <option value="">Pilih Nama Anda Sebagai Mempelai Laki-Laki</option>
                   @foreach($namKeluargas as $data)
                     <option value="{{$data['id_registrasi']}}">{{$data['nama_keluarga']}}</option>
@@ -73,15 +74,15 @@
               </div>  
               <div class="form-group">
                 <label for="name">Tanggal Pindah</label>
-                <input type="date" id="name" name="tgl_pindah" placeholder="Masukkan wijk" />
+                <input type="date" id="name" name="tgl_pindah" placeholder="Masukkan rencana tanggal pindah" required/>
               </div>
               <div class="form-group">
                 <label for="name">Gereja Tujuan</label>
-                <input type="text" id="name" name="nama_gereja" placeholder="cnth : Gereja Katedral Jakarta Jl. Katedral No. 7B Jakarta Pusat 10110 Indonesia" />
+                <input type="text" id="name" name="nama_gereja" placeholder="cnth : Gereja Katedral Jakarta Jl. Katedral No. 7B Jakarta Pusat 10110 Indonesia" required/>
               </div>
               <div class="form-group">
                 <label for="name">Keterangan</label>
-                <input type="text" id="name" name="keterangan" placeholder="(cth: Jefri Manalu/Pria/1 mei 1999 dengan Sinta Siagian/Wanita/2 juni 1999)" />
+                <input type="text" id="name" name="keterangan" placeholder="Masukkan keterangan jika dibutuhkan" />
               </div>
               <div style="text-align: right; margin-top: 40px;">
                  <input type="submit" value="daftar"/>
@@ -111,6 +112,35 @@
 	
 	</footer>
   <script src="{{asset('Style')}}/style.js"></script>
-   
+  <script>
+    var scrollButton = document.getElementById('scrollButton');
+
+    scrollButton.addEventListener('click', function() {
+      var targetElement = document.getElementById('targetElement');
+
+      if (targetElement) {
+        var targetPosition = targetElement.offsetTop;
+
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+      }
+    });
+  </script>
+  <script>
+    document.getElementById('loading-indicator').style.display = 'block';
+
+    // Kirim permintaan asinkron menggunakan JavaScript atau teknik AJAX
+    // Setelah respons diterima, sembunyikan GIF loading
+    // Contoh penggunaan dengan teknik Fetch API
+    fetch('/example')
+        .then(response => {
+            // Proses respons atau tindakan lain yang sesuai
+        })
+        .finally(() => {
+            document.getElementById('loading-indicator').style.display = 'none';
+        });
+  </script>
 </body>
 </html>

@@ -25,6 +25,7 @@ nav{
     background: transparent;
     color: white;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    
 }
 nav a{
     color: inherit;
@@ -350,7 +351,7 @@ main h1{
 img {
   max-width: 100%;
   height: auto;
-  background-color: #23353C;
+  background-color: #37545f;
 }
 
 .text-container {
@@ -409,7 +410,38 @@ input[type="text"] {
   margin-right: 20px;
   outline: none;
 }
+input[type="date"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0px 0px 10px rgba(2, 10, 10, 0.20);
+  margin-right: 20px;
+  outline: none;
+  content: attr(placeholder);
+  letter-spacing: 2px;
+  color: #888;
+}
+.pilihan{
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0px 0px 10px rgba(2, 10, 10, 0.20);
+  margin-right: 20px;
+  outline: none;
+  content: attr(placeholder);
+  color: #888;
+  letter-spacing: 2px;
+}
+ /* input[type="date"]::before {
+  
+} */
 
+.form-group input[type="date"]:focus::before,
+.form-group input[type="date"]:valid::before {
+  content: "";
+}
 input[type="submit"] {
   background-color: #3f486c;
   color: #fff;
@@ -420,6 +452,7 @@ input[type="submit"] {
   height: 30px;
   text-align: center; 
   font-weight: 20;
+
  
 }
 
@@ -574,30 +607,74 @@ input::placeholder {
    background-color: #23353C;
   color: white;
   animation: fadeIn 1s ease-in-out;
-  width: 80%;
+  width: 85%;
   margin: 0 auto;
   border-collapse: collapse;
-  text-align: center;
+ 
+  /* text-align: center; */
   border: none;
   overflow: hidden;
   justify-content: space-between;
-  border-radius: 50px;
+  
 
 }
 .aesthetic-table .table-box {
   width: 30%;
-  margin-right: 20px;
+  margin-right: 50px;
 }
 
 .aesthetic-table td {
-  padding: 10px;
+  padding: 20px;
   border: none;
+}
+
+.aesthetic-table2 {
+   background-color: #23353C;
+  color: white;
+  animation: fadeIn 1s ease-in-out;
+  width: 85%;
+  margin: 0 auto;
+  border-collapse: collapse;
+ 
+  /* text-align: center; */
+  border: none;
+  overflow: hidden;
+  justify-content: space-between;
+  
 
 }
+.aesthetic-table2 .table-box {
+  width: 30%;
+  margin-right: 50px;
+}
+
+.aesthetic-table2 td {
+  padding: 20px;
+}
+
+ .kolom_1 {
+    width: 50%;
+    text-align: left;
+  
+  }
+
+ .kolom_2 {
+    width: 50%;
+    
+  }
+
+  .row-number {
+    width: 5%;
+  }
+
+  .row-number2 {
+    width: 5%;
+  }
+
 
 .aesthetic-table th {
 margin-top: 20px;
-  text-align: center;
+ 
   margin-bottom: 10px;
 }
 
@@ -619,4 +696,22 @@ margin-top: 20px;
   100% {
       opacity: 1;
   }
+}
+
+#loading-indicator {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: white url(/public/Style/image/loading2.gif);
+  background-size: 50%;
+  z-index: 9999;
+}
+
+#loading-indicator img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white
 }
