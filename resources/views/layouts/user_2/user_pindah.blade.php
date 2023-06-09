@@ -18,29 +18,29 @@
     
 </head>
 <body>
+  <div id="loading-indicator">
+    <img src="{{asset('Style')}}/image/loading2.gif" alt="Loading..." />
+  </div>
     <header class="hero">
        <H1><span>Palmarum</span></H1>
         <p>Jemaat Pindah HKBP Palmarum</p>
         
         <div class="mouse">
-          <button><ion-icon name="arrow-down-circle-outline" id="scrollButton"></ion-icon></button>
+          <ion-icon name="arrow-down-circle-outline" id="scrollButton"></ion-icon>
         </div>
     </header>
     <main>
     
-    <h1>Pendaftaran Pindah HKBP Palmarum</h1>
+    <h1>Pendaftaran Jemaat Pindah</h1>
 
         <div class="card">
             <div class="image-container">
               <img class="foto_sidi" src="{{ asset('Style') }}/image/pindah.png" alt="gambar">
             </div>
             <div class="text-container">
-              <h3>Jemaat Pindah HKBP Palmarum</h3>
-              <p>ext commonly used to demonstrate the visual form of a 
-                    document or a typeface without relying on meaningful content. 
-                    Lorem ipsum may be used as a placeholder before final copy is 
-                    available. It is also used to temporarily replace text in a
-                     process called greeking, which allows designers to consider</p>
+              <h3>Jemaat Pindah</h3><br>
+              <p>Jemaat sah HKBP Palmarum Tarutung yang ingin pindah jemaat menjadi jemaat gereja lain, 
+                maka wajib melakukan pendaftaran jemaat pindah agar sah tidak lagi menjadi jemaat HKBP Palmarum Tarutung</p>
             </div>
 
           </div>
@@ -127,6 +127,20 @@
         });
       }
     });
+  </script>
+  <script>
+    document.getElementById('loading-indicator').style.display = 'block';
+
+    // Kirim permintaan asinkron menggunakan JavaScript atau teknik AJAX
+    // Setelah respons diterima, sembunyikan GIF loading
+    // Contoh penggunaan dengan teknik Fetch API
+    fetch('/example')
+        .then(response => {
+            // Proses respons atau tindakan lain yang sesuai
+        })
+        .finally(() => {
+            document.getElementById('loading-indicator').style.display = 'none';
+        });
   </script>
 </body>
 </html>

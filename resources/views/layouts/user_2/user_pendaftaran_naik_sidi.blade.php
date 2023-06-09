@@ -19,29 +19,30 @@
     
 </head>
 <body>
+  <div id="loading-indicator">
+    <img src="{{asset('Style')}}/image/loading2.gif" alt="Loading..." />
+  </div>
     <header class="hero">
        <H1><span>Palmarum</span></H1>
-        <p>Pendaftaran Naik Sidi HKBP Palmarum</p>
+        <p>Pendaftaran Naik Sidi</p>
         
         <div class="mouse">
-          <button><ion-icon name="arrow-down-circle-outline" id="scrollButton"></ion-icon></button> 
+          <ion-icon name="arrow-down-circle-outline" id="scrollButton"></ion-icon>
         </div>
     </header>
     <main>
     
-        <h1>Pendaftaran Sidi HKBP Palmarum</h1>
+        <h1>Pendaftaran Sidi</h1>
 
         <div class="card">
             <div class="image-container">
               <img class="foto_sidi" src="{{ asset('Style') }}/image/sidi.JPG" alt="gambar">
             </div>
             <div class="text-container">
-              <h3>Judul</h3>
-              <p>ext commonly used to demonstrate the visual form of a 
-                    document or a typeface without relying on meaningful content. 
-                    Lorem ipsum may be used as a placeholder before final copy is 
-                    available. It is also used to temporarily replace text in a
-                     process called greeking, which allows designers to consider</p>
+              <h3>Sidi</h3><br>
+              <p>Malua/Naik Sidi merupakan suatu pemberkatan terhadap umat Gereja yang sudah dianggap dewasa, 
+                dan sudah bisa membedakan mana yang baik dan yang baik menurut ajaran Yesus. Malua atau naik sidi 
+                membuktikan bahwa kita menerima Tuhan Yesus dan bersaksi untuknya serta masuk dalam perjamuan-Nya.</p>
             </div>
           </div>
           
@@ -147,6 +148,19 @@
       }
     });
   </script>
-   
+  <script>
+    document.getElementById('loading-indicator').style.display = 'block';
+
+    // Kirim permintaan asinkron menggunakan JavaScript atau teknik AJAX
+    // Setelah respons diterima, sembunyikan GIF loading
+    // Contoh penggunaan dengan teknik Fetch API
+    fetch('/example')
+        .then(response => {
+            // Proses respons atau tindakan lain yang sesuai
+        })
+        .finally(() => {
+            document.getElementById('loading-indicator').style.display = 'none';
+        });
+  </script>
 </body>
 </html>
