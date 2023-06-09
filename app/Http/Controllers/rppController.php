@@ -93,14 +93,13 @@ class rppController extends Controller
             'tgl_warta_rpp' => 'required',
             'keterangan' => 'required',
         ]);
-
         $id_rpp = $request->input('id_rpp');
         $id_jemaat = $request->input('id_jemaat');
         $id_jenis_rpp = $request->input('id_jenis_rpp');
         $tgl_warta_rpp = $request->input('tgl_warta_rpp');
         $keterangan = $request->input('keterangan');
 
-        $response = Http::post('http://127.0.0.1:8070/api/updateRpp', [
+        $response = Http::put('http://127.0.0.1:8070/api/updateRpp', [
             'id_rpp' => $id_rpp,
             'id_jemaat' => $id_jemaat,
             'id_jenis_rpp' => $id_jenis_rpp,
@@ -109,6 +108,7 @@ class rppController extends Controller
         ]);
         if (!$response) {
             return back()->withErrors(['message' => 'error when create RPP']);
+        // return redirect()->route('rpp');
         }
         
         return redirect()->route('rpp');
@@ -118,8 +118,7 @@ class rppController extends Controller
 
     public function edit($id)
     {
-        $rpp = Http::get('http://127.0.0.1:8070/api/rpp/'.$id);
-        $data['rpp'] = $rpp->json();
+        $data['rpp']  = Http::get('http://127.0.0.1:8070/api/rppEdit/'.$id);
        
         return view('layouts.forms.updateRpp',$data);
     }

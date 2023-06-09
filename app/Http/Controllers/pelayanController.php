@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Session;
+
 
 class pelayanController extends Controller
 {
@@ -13,7 +15,7 @@ class pelayanController extends Controller
      */
     public function index()
     {
-        $data['pelayan'] = Http::get('http://127.0.0.1:8070/api/pelayan'); 
+        $data['pelayan'] = Http::get('http://127.0.0.1:8070/api/pelayanGereja'); 
         
         return view('layouts.formSearch.pelayan', $data);
     }
@@ -23,7 +25,7 @@ class pelayanController extends Controller
      */
     public function showDetails($id)
     {
-        $data['pelayan'] = Http::get('http://127.0.0.1:8070/api/pelayan/'.$id);
+        $data['pelayan'] = Http::get('http://127.0.0.1:8070/api/pelayanGereja/'.$id);
 
         return view('layouts.forms.detailPelayan', $data);
     }
@@ -46,7 +48,7 @@ class pelayanController extends Controller
             $jabatan = $request->input('jabatan');
             $keterangan = $request->input('keterangan');
 
-            $response = Http::post('http://127.0.0.1:8070/api/storePelayan', [
+            $response = Http::post('http://127.0.0.1:8070/api/storePelayanGereja', [
                 'id_jemaat' => $id_jemaat,
                 'tanggal_tahbisan' => $tanggal_tahbisan,
                 'jabatan' => $jabatan,
@@ -82,7 +84,7 @@ class pelayanController extends Controller
      */
     public function edit($id)
     {
-        $data['pelayan'] = Http::get('http://127.0.0.1:8070/api/pelayan/'.$id);
+        $data['pelayan'] = Http::get('http://127.0.0.1:8070/api/pelayanGereja/'.$id);
 
         return view('layouts.forms.updatePelayan',$data);
     }
@@ -108,12 +110,12 @@ class pelayanController extends Controller
             $jabatan = $request->input('jabatan');
             $keterangan = $request->input('keterangan');
 
-            $response = Http::post('http://127.0.0.1:8070/api/updatePelayan',[
+            $response = Http::put('http://127.0.0.1:8070/api/updatePelayanGereja',[
                 'id_pelayan' => $id_pelayan,
                 'id_jemaat' => $id_jemaat,
                 'tanggal_tahbisan' => $tanggal_tahbisan,
-                'jabatan' => $jabatan,
                 'tanggal_akhir_jawatan' => $tanggal_akhir_jawatan,
+                'jabatan' => $jabatan,
                 'keterangan' => $keterangan,
             ]);
 
@@ -127,8 +129,16 @@ class pelayanController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy($id)
     {
-        //
+        $data['pelayan'] = Http::get('http://127.0.0.1:8070/api/deletePelayanGereja/'.$id);
+        if($data == null){
+            $failedMessage = Session::get('failed');
+            return redirect()->route('pelayan', compact('failedMessage'));
+        }else{
+            $successMessage = Session::get('success');
+            return redirect()->route('pelayan',compact('successMessage'));
+        }
+
     }
 }

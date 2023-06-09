@@ -36,18 +36,18 @@
               <!-- /.card-header -->
               <!-- form start -->
               @foreach ($rpp['data'] as $item)
-              {{--  --}}
-              <form action="{{ route('updateRpp') }}" method="POST">
+              <form action="{{ route('updateRpp') }}" method="post">
                 @csrf
-                <input type="hidden" name="id_pelayan" value="{{ $item['id_rpp'] }}">
+                @method('PUT')
                 <div class="card-body">
+                  <input type="hidden" name="id_rpp" value="{{ $item['id_rpp'] }}">
                   <div class="form-group">
                     <label for="exampleInputEmail1">ID Jemaat</label>
                     <input type="text" class="form-control" name="id_jemaat" id="exampleInputEmail1" value="{{ $item['id_jemaat'] }}" placeholder="ID Jemaat">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputPassword1">Jenis RPP</label>
-                    <input type="text" class="form-control" name="id_jenis_rpp" id="exampleInputPassword1" value="{{ $item['jenis_rpp'] }}" placeholder="Jenis RPP">
+                    <input type="text" class="form-control" name="id_jenis_rpp" id="exampleInputPassword1" value="{{ $item['id_jenis_rpp'] }}" placeholder="Jenis RPP">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Tanggal Warta RPP</label>

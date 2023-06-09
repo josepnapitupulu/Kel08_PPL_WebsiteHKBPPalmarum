@@ -18,12 +18,15 @@
     
 </head>
 <body>
+  <div id="loading-indicator">
+    <img src="{{asset('Style')}}/image/loading2.gif" alt="Loading..." />
+  </div>
     <header class="hero">
        <H1><span>Palmarum</span></H1>
         <p>Jemaat Meninggal HKBP Palmarum</p>
         
         <div class="mouse">
-          <button><ion-icon name="arrow-down-circle-outline" id="scrollButton"></ion-icon></button>
+          <ion-icon name="arrow-down-circle-outline" id="scrollButton"></ion-icon>
         </div>
     </header>
     <main>
@@ -116,6 +119,19 @@
       }
     });
   </script>
-   
+  <script>
+    document.getElementById('loading-indicator').style.display = 'block';
+
+    // Kirim permintaan asinkron menggunakan JavaScript atau teknik AJAX
+    // Setelah respons diterima, sembunyikan GIF loading
+    // Contoh penggunaan dengan teknik Fetch API
+    fetch('/example')
+        .then(response => {
+            // Proses respons atau tindakan lain yang sesuai
+        })
+        .finally(() => {
+            document.getElementById('loading-indicator').style.display = 'none';
+        });
+  </script>
 </body>
 </html>

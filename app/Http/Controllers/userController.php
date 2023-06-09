@@ -210,8 +210,10 @@ class userController extends Controller
         $pelayan['pelayans'] = Http::get('http://127.0.0.1:8070/api/pelayan')->collect();
         $jadwal['jadwals'] = Http::get('http://127.0.0.1:8070/api/jadwal')->collect();
         $kegiatan['kegiatans'] = Http::get('http://127.0.0.1:8070/api/kegiatan')->collect();
+        $pemasukan['pemasukans'] = Http::get('http://127.0.0.1:8070/api/pemasukan')->collect();
+        $pengeluaran['pengeluarans'] = Http::get('http://127.0.0.1:8070/api/pengeluaran')->collect();
 
-        $data = array_merge($pelayan, $jadwal, $kegiatan);
+        $data = array_merge($pelayan, $jadwal, $kegiatan, $pemasukan, $pengeluaran);
 
         return view('layouts.user_2.userHome', $data);
     }
