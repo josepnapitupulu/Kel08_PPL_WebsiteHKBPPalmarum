@@ -84,14 +84,24 @@ Route::prefix('admin')->middleware(['isAdmin', 'auth'])->group(function(){
     Route::get('/updatePindah', [App\Http\Controllers\pindahController::class, 'edit'])->name('updatePindah');
     Route::get('/detailPindah', [App\Http\Controllers\pindahController::class, 'create'])->name('detailPindah');
 
+
     Route::get('/pemasukan', [App\Http\Controllers\pemasukanController::class, 'index'])->name('pemasukan');
+
+    //Lelang
     Route::get('/pemasukanLelang', [App\Http\Controllers\pemasukanController::class, 'index2'])->name('pemasukanLelang');
     Route::get('/pemasukanLelang2', [App\Http\Controllers\pemasukanController::class, 'index3'])->name('pemasukanLelang2');
+
+    //pembangunan
     Route::get('/pemasukanPembangunan', [App\Http\Controllers\pemasukanController::class, 'index4'])->name('pemasukanPembangunan');
+
+    //pengembangan
     Route::get('/pemasukanPengembanganPelayanan', [App\Http\Controllers\pemasukanController::class, 'index5'])->name('pemasukanPengembanganPelayanan');
     Route::get('/pemasukanPengembanganPelayanan2', [App\Http\Controllers\pemasukanController::class, 'index6'])->name('pemasukanPengembanganPelayanan2');
+
+    //
     Route::get('/pemasukanPersembahan', [App\Http\Controllers\pemasukanController::class, 'index7'])->name('pemasukanPersembahan');
     Route::get('/pemasukanPersembahan2', [App\Http\Controllers\pemasukanController::class, 'index8'])->name('pemasukanPersembahan2');
+    
     Route::get('/pemasukanPersembahanKeluarga2', [App\Http\Controllers\pemasukanController::class, 'index9'])->name('pemasukanPersembahanKeluarga2');
     Route::get('/pemasukanSumbangan', [App\Http\Controllers\pemasukanController::class, 'index10'])->name('pemasukanSumbangan');
     Route::get('/pemasukanSumbangan2', [App\Http\Controllers\pemasukanController::class, 'index11'])->name('pemasukanSumbangan2');
