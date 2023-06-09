@@ -126,7 +126,11 @@ Route::prefix('admin')->middleware(['isAdmin', 'auth'])->group(function(){
     Route::get('/detailSentralisasi', [App\Http\Controllers\sentralisasiController::class, 'index2'])->name('detailSentralisasi');
     Route::get('/deleteSentralisasi/{id}', [App\Http\Controllers\sentralisasiController::class, 'destroy'])->name('deleteSentralisasi');
     Route::put('/updateSentralisasi/{id}', [App\Http\Controllers\sentralisasiController::class, 'update'])->name('updateSentralisasi');
-    Route::get('/editSentralisasi', [App\Http\Controllers\sentralisasiController::class, 'index3'])->name('editSentralisasi');
+    Route::get('/editSentralisasi/{id}', [App\Http\Controllers\sentralisasiController::class, 'edit'])->name('editSentralisasi');
+    // Route::get('/editSentralisasi/{id}', [App\Http\Controllers\sentralisasiController::class, 'edit'])->name('editSentralisasi');
+
+    // Route::get('editSentralisasi/{id}', 'sentralisasiController@edit')->name('editSentralisasi');
+
 
 
     
