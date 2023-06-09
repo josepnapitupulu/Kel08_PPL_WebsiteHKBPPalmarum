@@ -10,19 +10,20 @@
       <div class="card-header">
         <h2 style="font-weight: bold;">Edit Sentralisasi</h2>
       </div>
-     @foreach ($sentralisasis as $data)
-      <form action="{{ route('updateSentralisasi',$data['id_sentralisasi']) }}" method="POST">
+      
+      <form action="{{ route('updateSentralisasi', $data->id_sentralisasi) }}" method="POST">
         @csrf
         @method('PUT')
         <div class="card-body">
-          <!-- <input type="hidden" name="id_sentralisasi" value="{{ $data['id_sentralisasi'] }}"> -->
+          <!-- <input type="hidden" name="id_sentralisasi" value="{{ $data->id_sentralisasi }}"> -->
           <!-- Date -->
-          <div class="form-group">    
+          <div class="form-group">
+          <input type="hidden" name="id_sentralisasi" class="form-control" value="{{ $data->id_sentralisasi }}">    
             <label>Persentase Sentralisasi:</label>
-            <input type="text" name="persentasi_sentralisasi" class="form-control" value="{{ $data['persentasi_sentralisasi'] }}" placeholder="Masukkan persentase sentralisasi">
+            <input type="text" name="persentasi_sentralisasi" class="form-control" value="{{ $data->persentasi_sentralisasi }}" placeholder="Masukkan persentase sentralisasi">
             <br>
             <label>Keterangan:</label>
-            <input type="text" name="keterangan" class="form-control" value="{{ $data['keterangan'] }}" placeholder="Masukkan keterangan">
+            <input type="text" name="keterangan" class="form-control" value="{{ $data->keterangan }}" placeholder="Masukkan keterangan">
             <br>  
           </div><br><br><br>
           
@@ -34,7 +35,7 @@
           </div>
         </div>
       </form>
-      @endforeach
+    
     </div>
   </div>
 </div>
