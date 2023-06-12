@@ -8,6 +8,7 @@ use app\Helpers\ApiFormatter;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Session;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class uproveController extends Controller
 {
@@ -28,6 +29,7 @@ class uproveController extends Controller
             $statusCode = $response->status();
 
             if ($statusCode === 200) {
+                Alert::success('Uprove Baptis', 'Uprove Baptis Berhasil');
                 return redirect()->route('aksesUproveBaptis');
             }
         } catch (\Exception $e) {
@@ -51,6 +53,7 @@ class uproveController extends Controller
             $statusCode = $response->status();
 
             if ($statusCode === 200) {
+                Alert::success('Uprove Jemaat', 'Uprove Jemaat Berhasil');
                 return redirect()->route('aksesUproveJemaat');
             }
         } catch (\Exception $e) {
@@ -74,6 +77,7 @@ class uproveController extends Controller
             $statusCode = $response->status();
 
             if ($statusCode === 200) {
+                Alert::success('Uprove Martumpol', 'Uprove Martumpol Berhasil');
                 return redirect()->route('aksesUproveMartumpol');
             }
         } catch (\Exception $e) {
@@ -97,6 +101,7 @@ class uproveController extends Controller
             $statusCode = $response->status();
 
             if ($statusCode === 200) {
+                Alert::success('Uprove Pernikahan', 'Uprove Pernikahan Berhasil');
                 return redirect()->route('aksesUprovePernikahan');
             }
         } catch (\Exception $e) {
@@ -120,6 +125,7 @@ class uproveController extends Controller
             $statusCode = $response->status();
 
             if ($statusCode === 200) {
+                Alert::success('Uprove Jemaat Pindah', 'Uprove Jemaat Pindah Berhasil');
                 return redirect()->route('aksesUprovePindah');
             }
         } catch (\Exception $e) {
@@ -143,6 +149,7 @@ class uproveController extends Controller
             $statusCode = $response->status();
 
             if ($statusCode === 200) {
+                Alert::success('Uprove Sidi', 'Uprove Sidi Berhasil');
                 return redirect()->route('aksesUproveSidi');
             }
         } catch (\Exception $e) {

@@ -32,7 +32,7 @@
         </div>
     </header>
 
-    <div class="wrapper" id="targetElement">
+    {{-- <div class="wrapper" id="targetElement">
       <div class="gallery">
         @foreach($pelayans as $data)
         <div class="image"><span><img src="{{ asset('Style/image/')}}" alt="Foto"></span>
@@ -44,8 +44,8 @@
         </div>
       
       </div>
-    </div>
-    <div class="preview-box">
+    </div> --}}
+    {{-- <div class="preview-box">
       <div class="details">
         <span class="title">Image <p class="current-img"></p> of <p class="total-img"></p></span>
         <span class="icon">x</span>
@@ -62,11 +62,11 @@
         <figcaption>Beliau ini selama hidupnya selalu mengundang tawa</figcaption>
       </div>
     </div>
-    <div class="shadow"></div>
+    <div class="shadow"></div> --}}
 
     {{-- contoh tampa foreach --}}
 
-    {{-- <div class="wrapper" >
+    <div class="wrapper" >
       <div class="gallery">
         <div class="image"><span><img src="{{ asset('Style/image/sintua.jpg')}}" alt=""></span>
           <h1 class="foto-text">okaokw</h1>
@@ -113,7 +113,7 @@
         <figcaption>Beliau ini selama hidupnya selalu mengundang tawa</figcaption>
       </div>
     </div>
-    <div class="shadow"></div> --}}
+    <div class="shadow"></div> 
 
 
 {{-- contoh sebelumnya --}}
@@ -126,10 +126,10 @@
             <h4 class="foto-text">Tanggal Tahbisan : {{$data['tanggal_tahbisan']}}</h4>
             <p class="foto-text">{{$data['keterangan']}}</p>          
         </div>
-        @endforeach  --}}
+        @endforeach 
 
         <!-- Tambahkan lebih banyak foto di sini jika diperlukan -->
-      </div>
+      </div> --}}
     <div class="judul_1">
         <h1>Mengenai HKBP Palmarum</h1>
     </div>  
