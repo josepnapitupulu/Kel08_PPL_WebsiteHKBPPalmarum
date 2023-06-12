@@ -32,89 +32,11 @@
         </div>
     </header>
 
-    <div class="wrapper" id="targetElement">
-      <div class="gallery">
-        @foreach($pelayans as $data)
-        <div class="image"><span><img src="{{ asset('Style/image/')}}" alt="Foto"></span>
-          <img src="{{ asset('Style/image/')}}" alt="Foto">
-          <h1 class="foto-text">{{$data['nama_lengkap']}}</h1>
-          <h3 class="foto-text">Jabatan : {{$data['jabatan']}}</h3>
-          <h4 class="foto-text">Tanggal Tahbisan : {{$data['tanggal_tahbisan']}}</h4>
-          <p class="foto-text">{{$data['keterangan']}}</p>        
-        </div>
-      
-      </div>
-    </div>
-    <div class="preview-box">
-      <div class="details">
-        <span class="title">Image <p class="current-img"></p> of <p class="total-img"></p></span>
-        <span class="icon">x</span>
-      </div>
-      <div class="image-box">
-        <div class="slide prev"><i class="fa fa-angle-left" aria-hidden="true"></i></div>
-        <div class="slide next"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
-        <img src="" alt="">
-        <img src="{{ asset('Style/image/')}}" alt="Foto">
-        <h1 class="foto-text">{{$data['nama_lengkap']}}</h1>
-        <h3 class="foto-text">Jabatan : {{$data['jabatan']}}</h3>
-        <h4 class="foto-text">Tanggal Tahbisan : {{$data['tanggal_tahbisan']}}</h4>
-        <p class="foto-text">{{$data['keterangan']}}</p>   
-        <figcaption>Beliau ini selama hidupnya selalu mengundang tawa</figcaption>
-      </div>
-    </div>
-    <div class="shadow"></div>
+    {{-- foto --}}
+    <div class="photo-gallery" id="photoGallery"></div>
 
-    {{-- contoh tampa foreach --}}
-
-    {{-- <div class="wrapper" >
-      <div class="gallery">
-        <div class="image"><span><img src="{{ asset('Style/image/sintua.jpg')}}" alt=""></span>
-          <h1 class="foto-text">okaokw</h1>
-          <h3 class="foto-text">oakwaw</h3>
-          <h4 class="foto-text">oawokaw</h4>
-          <p class="foto-text">oakwkoa</p>        
-        </div>
-        <div class="image"><span><img src="{{ asset('Style/image/sintua.jpg')}}" alt=""></span>
-          <h1 class="foto-text">okaokw</h1>
-          <h3 class="foto-text">oakwaw</h3>
-          <h4 class="foto-text">oawokaw</h4>
-          <p class="foto-text">oakwkoa</p>        
-        </div> 
-        <div class="image"><span><img src="{{ asset('Style/image/sintua.jpg')}}" alt=""></span>
-          <h1 class="foto-text">okaokw</h1>
-          <h3 class="foto-text">oakwaw</h3>
-          <h4 class="foto-text">oawokaw</h4>
-          <p class="foto-text">oakwkoa</p>        
-        </div>
-        <div class="image"><span><img src="{{ asset('Style/image/sintua.jpg')}}" alt=""></span>
-          <h1 class="foto-text">okaokw</h1>
-          <h3 class="foto-text">oakwaw</h3>
-          <h4 class="foto-text">oawokaw</h4>
-          <p class="foto-text">oakwkoa</p>        
-        </div>
-        <div class="image"><span><img src="{{ asset('Style/image/sintua.jpg')}}" alt=""></span>
-          <h1 class="foto-text">okaokw</h1>
-          <h3 class="foto-text">oakwaw</h3>
-          <h4 class="foto-text">oawokaw</h4>
-          <p class="foto-text">oakwkoa</p>        
-        </div>
-      
-      </div>
-    </div>
-    <div class="preview-box">
-      <div class="details">
-        <span class="title">Image <p class="current-img"></p> of <p class="total-img"></p></span>
-        <span class="icon">x</span>
-      </div>
-      <div class="image-box">
-        <div class="slide prev"><i class="fa fa-angle-left" aria-hidden="true"></i></div>
-        <div class="slide next"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
-        <img src="" alt="">
-        <figcaption>Beliau ini selama hidupnya selalu mengundang tawa</figcaption>
-      </div>
-    </div>
-    <div class="shadow"></div> --}}
-
+    
+    
 
 {{-- contoh sebelumnya --}}
     {{-- <div class="foto-container" id="targetElement">
@@ -126,10 +48,10 @@
             <h4 class="foto-text">Tanggal Tahbisan : {{$data['tanggal_tahbisan']}}</h4>
             <p class="foto-text">{{$data['keterangan']}}</p>          
         </div>
-        @endforeach  --}}
+        @endforeach 
 
         <!-- Tambahkan lebih banyak foto di sini jika diperlukan -->
-      </div>
+      </div> --}}
     <div class="judul_1">
         <h1>Mengenai HKBP Palmarum</h1>
     </div>  
@@ -288,7 +210,9 @@
             @endforeach
         </div>
       </div>
-      </div>@include('layouts.user_2.footer')
+      </div>
+      
+      @include('layouts.user_2.footer')
 </body>
 <script src="{{asset('Style')}}/style.js"></script>
 <script>
@@ -374,82 +298,46 @@
 
 
 
-      //untuk foto
-      function openFunction(){
-    document.getElementById("menu").style.width="300px";
-    document.getElementById("mainbox").style.marginLeft="300px";
-    document.getElementById("mainbox").innerHTML="";
-   }
-  function closeFunction(){
-   document.getElementById("menu").style.width="0px";
-   document.getElementById("mainbox").style.marginLeft="0px";
-   document.getElementById("mainbox").innerHTML="&#9776;";
-  }
+//foto js
+const photos = [
+  { 
+    url: '{{ asset('Style/image/sintua.jpg')}}',
+    description: 'Deskripsi Foto 1',
+    description: 'Deskripsi Foto 1',
+    description: 'Deskripsi Foto 1',
 
-const gallery  = document.querySelectorAll(".image"),
-previewBox = document.querySelector(".preview-box"),
-previewImg = previewBox.querySelector("img"),
-closeIcon = previewBox.querySelector(".icon"),
-currentImg = previewBox.querySelector(".current-img"),
-totalImg = previewBox.querySelector(".total-img"),
-shadow = document.querySelector(".shadow");
-window.onload = ()=>{
-    for (let i = 0; i < gallery.length; i++) {
-        totalImg.textContent = gallery.length; 
-        let newIndex = i; 
-        let clickedImgIndex; 
-        
-        gallery[i].onclick = () =>{
-            clickedImgIndex = i; 
-            function preview(){
-                currentImg.textContent = newIndex + 1; 
-                let imageURL = gallery[newIndex].querySelector("img").src;
-                previewImg.src = imageURL; 
-            }
-            preview(); 
-    
-            const prevBtn = document.querySelector(".prev");
-            const nextBtn = document.querySelector(".next");
-            if(newIndex == 0){ 
-                prevBtn.style.display = "none"; 
-            }
-            if(newIndex >= gallery.length - 1){ 
-                nextBtn.style.display = "none"; 
-            }
-            prevBtn.onclick = ()=>{ 
-                newIndex--; 
-                if(newIndex == 0){
-                    preview(); 
-                    prevBtn.style.display = "none"; 
-                }else{
-                    preview();
-                    nextBtn.style.display = "block";
-                } 
-            }
-            nextBtn.onclick = ()=>{ 
-                newIndex++; 
-                if(newIndex >= gallery.length - 1){
-                    preview(); 
-                    nextBtn.style.display = "none";
-                }else{
-                    preview(); 
-                    prevBtn.style.display = "block";
-                }
-            }
-            document.querySelector("body").style.overflow = "hidden";
-            previewBox.classList.add("show"); 
-            shadow.style.display = "block"; 
-            closeIcon.onclick = ()=>{
-                newIndex = clickedImgIndex; 
-                prevBtn.style.display = "block"; 
-                nextBtn.style.display = "block";
-                previewBox.classList.remove("show");
-                shadow.style.display = "none";
-                document.querySelector("body").style.overflow = "scroll";
-            }
-        }
-        
-    } 
-}
+  },
+
+  
+];
+
+const photoGallery = document.getElementById("photoGallery");
+
+photos.forEach((photo) => {
+  const photoElement = document.createElement("div");
+  photoElement.classList.add("photo", "fade-in");
+
+  const imageElement = document.createElement("img");
+  imageElement.src = photo.url;
+  imageElement.alt = photo.description;
+
+  const overlayElement = document.createElement("div");
+  overlayElement.classList.add("photo-overlay");
+
+  const descriptionElement = document.createElement("p");
+  descriptionElement.classList.add("photo-text");
+  descriptionElement.textContent = photo.description;
+
+  overlayElement.appendChild(descriptionElement);
+  photoElement.appendChild(imageElement);
+  photoElement.appendChild(overlayElement);
+  photoGallery.appendChild(photoElement);
+});
+
+
+
+
+
 </script>
+<script src="{{asset('Style')}}/style.js"></script>
 </html>
