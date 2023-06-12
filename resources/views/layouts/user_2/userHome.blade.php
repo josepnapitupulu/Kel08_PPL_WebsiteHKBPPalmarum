@@ -82,6 +82,10 @@
               <th  style=" font-weight:40px ;border: none; background-color: #37545f ; ; padding:40px;  "colspan="3">Acara Minggu</th>
             </tr>
             <tr>
+              <th style=" border: none;" colspan="2"></th>
+              <th style=" font-weight:40px ;border: none;">Tanggal Ibadah : {{$data['tgl_ibadah']}}</th>
+            </tr>
+            <tr>
               <td class="kolom_1">BERNYANYI</td>
               <td> : </td>
               <td class="kolom_2">{{$data['nyanyian_1']}}</td>
@@ -167,7 +171,7 @@
             <th style=" font-weight:40px ;border: none; background-color: #37545f ; padding:40px;">No</th>
             <th  style=" font-weight:40px ;border: none; background-color: #37545f ; ">Pemasukan Gereja</th>
             <th  style=" font-weight:40px ;border: none; background-color: #37545f ;   ">Total</th>
-            <th style=" font-weight:40px ;border: none; background-color: #37545f ;   ">Bentuk Pemasukan</th>
+            <th style=" font-weight:40px ;border: none; background-color: #37545f ; padding-left:40px ; padding-right:40px ">Bentuk Pemasukan</th>
           </tr>
           @foreach($pemasukans as $data)
           <tr>
@@ -185,7 +189,7 @@
             <th style=" font-weight:40px ;border: none; background-color: #37545f ; padding:40px;">No</th>
             <th  style=" font-weight:40px ;border: none; background-color: #37545f ; ">Pengeluaran Gereja</th>
             <th  style=" font-weight:40px ;border: none; background-color: #37545f ;   ">Total</th>
-            <th style=" font-weight:40px ;border: none; background-color: #37545f ;   ">Keterangan</th>
+            <th style=" font-weight:40px ;border: none; background-color: #37545f ;  padding-left:40px ; padding-right:40px ">Keterangan</th>
           </tr>
           @foreach($pengeluarans as $data)
           <tr>
