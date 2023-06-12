@@ -66,6 +66,9 @@
     </div>
     <div class="shadow"></div> --}}
 
+   
+
+
     
     
 
@@ -335,15 +338,11 @@
 
 //foto js
 const photos = [
-  { 
+  {
     url: '{{ asset('Style/image/sintua.jpg')}}',
-    description: 'Deskripsi Foto 1',
-    description: 'Deskripsi Foto 1',
-    description: 'Deskripsi Foto 1',
-
+    descriptions: ['Deskripsi 1', 'Deskripsi 2', 'Deskripsi 3', 'Deskripsi 4']
   },
-
-  
+  // Tambahkan objek lain di sini jika diperlukan
 ];
 
 const photoGallery = document.getElementById("photoGallery");
@@ -354,16 +353,19 @@ photos.forEach((photo) => {
 
   const imageElement = document.createElement("img");
   imageElement.src = photo.url;
-  imageElement.alt = photo.description;
+  imageElement.alt = photo.descriptions[0]; // Menggunakan deskripsi pertama sebagai atribut alt
 
   const overlayElement = document.createElement("div");
   overlayElement.classList.add("photo-overlay");
 
-  const descriptionElement = document.createElement("p");
-  descriptionElement.classList.add("photo-text");
-  descriptionElement.textContent = photo.description;
+  photo.descriptions.forEach((description, index) => {
+    const descriptionElement = document.createElement("p");
+    descriptionElement.classList.add("photo-text");
+    descriptionElement.textContent = description;
+    descriptionElement.classList.add(`description-${index + 1}`); // Menambahkan kelas CSS dengan gaya yang berbeda
+    overlayElement.appendChild(descriptionElement);
+  });
 
-  overlayElement.appendChild(descriptionElement);
   photoElement.appendChild(imageElement);
   photoElement.appendChild(overlayElement);
   photoGallery.appendChild(photoElement);
