@@ -4,7 +4,7 @@
     </h3>
     <ul class="list-name">
         <li>
-            <a href="/" target="_blank">HOME</a>
+            <a href="/" target="_self">HOME</a>
         </li>
         <li>
             <a href="{{route('sidiUser')}}">SIDI</a>
@@ -66,7 +66,7 @@
     <ion-icon class="burger-bar" name="list-outline"></ion-icon>
     <ul class="list-name-android">
         <li>
-            <a href="/" target="_blank">HOME</a>
+            <a href="/" target="_self">HOME</a>
         </li>
         <li>
             <a href="{{route('sidiUser')}}" target="blank">SIDI</a>

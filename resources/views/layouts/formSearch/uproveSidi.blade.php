@@ -2,7 +2,7 @@
 @include('layouts.formSearch.header')
 @include('layouts.formSearch.sidebar')
 @include('layouts.formSearch.footer')
-
+@include('sweetalert::alert')
 <!-- Main content -->
 <div class="content-wrapper"><br><br>
 <section class="content">

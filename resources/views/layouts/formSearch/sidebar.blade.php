@@ -187,33 +187,45 @@
             <a href="#" class="nav-link">
               <i><img src="/icon/aproval.png" alt=""></i>
               <p>
-                Approve
+                Upprove
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{asset('AdminLTE-3.2.0')}}/charts/chartjs.html" class="nav-link">
+                <a href="/admin/uproveSidi" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>ChartJS</p>
+                  <p>Sidi</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{asset('AdminLTE-3.2.0')}}/charts/flot.html" class="nav-link">
+                <a href="/admin/uprovePernikahan" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Flot</p>
+                  <p>Pernikahan</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{asset('AdminLTE-3.2.0')}}/charts/inline.html" class="nav-link">
+                <a href="/admin/uproveJemaat" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Inline</p>
+                  <p>Jemaat</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{asset('AdminLTE-3.2.0')}}/charts/uplot.html" class="nav-link">
+                <a href="/admin/uproveMartumpol" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>uPlot</p>
+                  <p>Martumpol</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/admin/uprovePindah" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Jemaat Pindah</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/admin/uproveBaptis" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Baptis</p>
                 </a>
               </li>
             </ul>

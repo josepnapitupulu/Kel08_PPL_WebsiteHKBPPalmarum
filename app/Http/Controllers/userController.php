@@ -40,6 +40,7 @@ class userController extends Controller
         Alert::success('Martumpol', 'Registrasi Berhasil');
         
         if ($response->failed()) {
+            Alert::error('Martumpol', 'Registrasi Gagal');
             return back()->withErrors(['message' => 'error when create Baptis data']);
         }
     
@@ -65,6 +66,7 @@ class userController extends Controller
         ]);
 
         if ($response->failed()) {
+            Alert::error('Baptis', 'Registrasi Gagal');
             return back()->withErrors(['message' => 'error when create Baptis data']);
         }
         Alert::success('Baptis', 'Registrasi Berhasil');
@@ -101,6 +103,7 @@ class userController extends Controller
         Alert::success('Jemaat', 'Registrasi Berhasil');
     
         if ($response->failed()) {
+            Alert::error('Jemaat', 'Registrasi Gagal');
             return back()->withErrors(['message' => 'error when create Baptis data']);
         }
     
@@ -136,6 +139,7 @@ class userController extends Controller
         Alert::success('Nikah', 'Registrasi Berhasil');
     
         if ($response->failed()) {
+            Alert::error('Nikah', 'Registrasi Gagal');
             return back()->withErrors(['message' => 'error when create Baptis data']);
         }
     
@@ -165,6 +169,7 @@ class userController extends Controller
         Alert::success('Jemaat Pindah', 'Registrasi Berhasil');
     
         if ($response->failed()) {
+            Alert::error('Jemaat Pindah', 'Registrasi Gagal');
             return back()->withErrors(['message' => 'error when create Baptis data']);
         }
     
@@ -199,6 +204,7 @@ class userController extends Controller
         Alert::success('Sidi', 'Registrasi Berhasil');
     
         if ($response->failed()) {
+            Alert::error('Sidi', 'Registrasi Gagal');
             return back()->withErrors(['message' => 'error when create Baptis data']);
         }
     
