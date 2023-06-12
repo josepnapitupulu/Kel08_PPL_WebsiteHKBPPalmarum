@@ -6,8 +6,8 @@ var buka = false;
 burgerBar.addEventListener('click', function(){
     buka = !buka;
     if(buka){
-        nav.style.backgroundColor = "#f6f6f6"
-        nav.style.color = "#414141"
+        nav.style.backgroundColor = "#23283C"
+        nav.style.color = "#fffff"
         listName.style.display = "block";
     }else{
         nav.style.backgroundColor = "transparent"

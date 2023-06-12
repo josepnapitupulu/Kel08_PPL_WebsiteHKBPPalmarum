@@ -32,6 +32,10 @@
         </div>
     </header>
 
+<<<<<<< HEAD
+    {{-- foto --}}
+    <div class="photo-gallery" id="photoGallery"></div>
+=======
     {{-- <div class="wrapper" id="targetElement">
       <div class="gallery">
         @foreach($pelayans as $data)
@@ -114,7 +118,10 @@
       </div>
     </div>
     <div class="shadow"></div> 
+>>>>>>> 8d4eaf4e4580c13d255ca685dea21b929cb68496
 
+    
+    
 
 {{-- contoh sebelumnya --}}
     {{-- <div class="foto-container" id="targetElement">
@@ -292,7 +299,9 @@
             @endforeach
         </div>
       </div>
-      </div>@include('layouts.user_2.footer')
+      </div>
+      
+      @include('layouts.user_2.footer')
 </body>
 <script src="{{asset('Style')}}/style.js"></script>
 <script>
@@ -378,82 +387,46 @@
 
 
 
-      //untuk foto
-      function openFunction(){
-    document.getElementById("menu").style.width="300px";
-    document.getElementById("mainbox").style.marginLeft="300px";
-    document.getElementById("mainbox").innerHTML="";
-   }
-  function closeFunction(){
-   document.getElementById("menu").style.width="0px";
-   document.getElementById("mainbox").style.marginLeft="0px";
-   document.getElementById("mainbox").innerHTML="&#9776;";
-  }
+//foto js
+const photos = [
+  { 
+    url: '{{ asset('Style/image/sintua.jpg')}}',
+    description: 'Deskripsi Foto 1',
+    description: 'Deskripsi Foto 1',
+    description: 'Deskripsi Foto 1',
 
-const gallery  = document.querySelectorAll(".image"),
-previewBox = document.querySelector(".preview-box"),
-previewImg = previewBox.querySelector("img"),
-closeIcon = previewBox.querySelector(".icon"),
-currentImg = previewBox.querySelector(".current-img"),
-totalImg = previewBox.querySelector(".total-img"),
-shadow = document.querySelector(".shadow");
-window.onload = ()=>{
-    for (let i = 0; i < gallery.length; i++) {
-        totalImg.textContent = gallery.length; 
-        let newIndex = i; 
-        let clickedImgIndex; 
-        
-        gallery[i].onclick = () =>{
-            clickedImgIndex = i; 
-            function preview(){
-                currentImg.textContent = newIndex + 1; 
-                let imageURL = gallery[newIndex].querySelector("img").src;
-                previewImg.src = imageURL; 
-            }
-            preview(); 
-    
-            const prevBtn = document.querySelector(".prev");
-            const nextBtn = document.querySelector(".next");
-            if(newIndex == 0){ 
-                prevBtn.style.display = "none"; 
-            }
-            if(newIndex >= gallery.length - 1){ 
-                nextBtn.style.display = "none"; 
-            }
-            prevBtn.onclick = ()=>{ 
-                newIndex--; 
-                if(newIndex == 0){
-                    preview(); 
-                    prevBtn.style.display = "none"; 
-                }else{
-                    preview();
-                    nextBtn.style.display = "block";
-                } 
-            }
-            nextBtn.onclick = ()=>{ 
-                newIndex++; 
-                if(newIndex >= gallery.length - 1){
-                    preview(); 
-                    nextBtn.style.display = "none";
-                }else{
-                    preview(); 
-                    prevBtn.style.display = "block";
-                }
-            }
-            document.querySelector("body").style.overflow = "hidden";
-            previewBox.classList.add("show"); 
-            shadow.style.display = "block"; 
-            closeIcon.onclick = ()=>{
-                newIndex = clickedImgIndex; 
-                prevBtn.style.display = "block"; 
-                nextBtn.style.display = "block";
-                previewBox.classList.remove("show");
-                shadow.style.display = "none";
-                document.querySelector("body").style.overflow = "scroll";
-            }
-        }
-        
-    } 
-}
+  },
+
+  
+];
+
+const photoGallery = document.getElementById("photoGallery");
+
+photos.forEach((photo) => {
+  const photoElement = document.createElement("div");
+  photoElement.classList.add("photo", "fade-in");
+
+  const imageElement = document.createElement("img");
+  imageElement.src = photo.url;
+  imageElement.alt = photo.description;
+
+  const overlayElement = document.createElement("div");
+  overlayElement.classList.add("photo-overlay");
+
+  const descriptionElement = document.createElement("p");
+  descriptionElement.classList.add("photo-text");
+  descriptionElement.textContent = photo.description;
+
+  overlayElement.appendChild(descriptionElement);
+  photoElement.appendChild(imageElement);
+  photoElement.appendChild(overlayElement);
+  photoGallery.appendChild(photoElement);
+});
+
+
+
+
+
 </script>
+<script src="{{asset('Style')}}/style.js"></script>
 </html>
