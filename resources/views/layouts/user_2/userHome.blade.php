@@ -32,93 +32,10 @@
         </div>
     </header>
 
-<<<<<<< HEAD
     {{-- foto --}}
     <div class="photo-gallery" id="photoGallery"></div>
-=======
-    {{-- <div class="wrapper" id="targetElement">
-      <div class="gallery">
-        @foreach($pelayans as $data)
-        <div class="image"><span><img src="{{ asset('Style/image/')}}" alt="Foto"></span>
-          <img src="{{ asset('Style/image/')}}" alt="Foto">
-          <h1 class="foto-text">{{$data['nama_lengkap']}}</h1>
-          <h3 class="foto-text">Jabatan : {{$data['jabatan']}}</h3>
-          <h4 class="foto-text">Tanggal Tahbisan : {{$data['tanggal_tahbisan']}}</h4>
-          <p class="foto-text">{{$data['keterangan']}}</p>        
-        </div>
-      
-      </div>
-    </div> --}}
-    {{-- <div class="preview-box">
-      <div class="details">
-        <span class="title">Image <p class="current-img"></p> of <p class="total-img"></p></span>
-        <span class="icon">x</span>
-      </div>
-      <div class="image-box">
-        <div class="slide prev"><i class="fa fa-angle-left" aria-hidden="true"></i></div>
-        <div class="slide next"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
-        <img src="" alt="">
-        <img src="{{ asset('Style/image/')}}" alt="Foto">
-        <h1 class="foto-text">{{$data['nama_lengkap']}}</h1>
-        <h3 class="foto-text">Jabatan : {{$data['jabatan']}}</h3>
-        <h4 class="foto-text">Tanggal Tahbisan : {{$data['tanggal_tahbisan']}}</h4>
-        <p class="foto-text">{{$data['keterangan']}}</p>   
-        <figcaption>Beliau ini selama hidupnya selalu mengundang tawa</figcaption>
-      </div>
-    </div>
-    <div class="shadow"></div> --}}
+   
 
-    {{-- contoh tampa foreach --}}
-
-    <div class="wrapper" >
-      <div class="gallery">
-        <div class="image"><span><img src="{{ asset('Style/image/sintua.jpg')}}" alt=""></span>
-          <h1 class="foto-text">okaokw</h1>
-          <h3 class="foto-text">oakwaw</h3>
-          <h4 class="foto-text">oawokaw</h4>
-          <p class="foto-text">oakwkoa</p>        
-        </div>
-        <div class="image"><span><img src="{{ asset('Style/image/sintua.jpg')}}" alt=""></span>
-          <h1 class="foto-text">okaokw</h1>
-          <h3 class="foto-text">oakwaw</h3>
-          <h4 class="foto-text">oawokaw</h4>
-          <p class="foto-text">oakwkoa</p>        
-        </div> 
-        <div class="image"><span><img src="{{ asset('Style/image/sintua.jpg')}}" alt=""></span>
-          <h1 class="foto-text">okaokw</h1>
-          <h3 class="foto-text">oakwaw</h3>
-          <h4 class="foto-text">oawokaw</h4>
-          <p class="foto-text">oakwkoa</p>        
-        </div>
-        <div class="image"><span><img src="{{ asset('Style/image/sintua.jpg')}}" alt=""></span>
-          <h1 class="foto-text">okaokw</h1>
-          <h3 class="foto-text">oakwaw</h3>
-          <h4 class="foto-text">oawokaw</h4>
-          <p class="foto-text">oakwkoa</p>        
-        </div>
-        <div class="image"><span><img src="{{ asset('Style/image/sintua.jpg')}}" alt=""></span>
-          <h1 class="foto-text">okaokw</h1>
-          <h3 class="foto-text">oakwaw</h3>
-          <h4 class="foto-text">oawokaw</h4>
-          <p class="foto-text">oakwkoa</p>        
-        </div>
-      
-      </div>
-    </div>
-    <div class="preview-box">
-      <div class="details">
-        <span class="title">Image <p class="current-img"></p> of <p class="total-img"></p></span>
-        <span class="icon">x</span>
-      </div>
-      <div class="image-box">
-        <div class="slide prev"><i class="fa fa-angle-left" aria-hidden="true"></i></div>
-        <div class="slide next"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
-        <img src="" alt="">
-        <figcaption>Beliau ini selama hidupnya selalu mengundang tawa</figcaption>
-      </div>
-    </div>
-    <div class="shadow"></div> 
->>>>>>> 8d4eaf4e4580c13d255ca685dea21b929cb68496
 
     
     
@@ -385,15 +302,11 @@
 
 //foto js
 const photos = [
-  { 
+  {
     url: '{{ asset('Style/image/sintua.jpg')}}',
-    description: 'Deskripsi Foto 1',
-    description: 'Deskripsi Foto 1',
-    description: 'Deskripsi Foto 1',
-
+    descriptions: ['Deskripsi 1', 'Deskripsi 2', 'Deskripsi 3', 'Deskripsi 4']
   },
-
-  
+  // Tambahkan objek lain di sini jika diperlukan
 ];
 
 const photoGallery = document.getElementById("photoGallery");
@@ -404,16 +317,19 @@ photos.forEach((photo) => {
 
   const imageElement = document.createElement("img");
   imageElement.src = photo.url;
-  imageElement.alt = photo.description;
+  imageElement.alt = photo.descriptions[0]; // Menggunakan deskripsi pertama sebagai atribut alt
 
   const overlayElement = document.createElement("div");
   overlayElement.classList.add("photo-overlay");
 
-  const descriptionElement = document.createElement("p");
-  descriptionElement.classList.add("photo-text");
-  descriptionElement.textContent = photo.description;
+  photo.descriptions.forEach((description, index) => {
+    const descriptionElement = document.createElement("p");
+    descriptionElement.classList.add("photo-text");
+    descriptionElement.textContent = description;
+    descriptionElement.classList.add(`description-${index + 1}`); // Menambahkan kelas CSS dengan gaya yang berbeda
+    overlayElement.appendChild(descriptionElement);
+  });
 
-  overlayElement.appendChild(descriptionElement);
   photoElement.appendChild(imageElement);
   photoElement.appendChild(overlayElement);
   photoGallery.appendChild(photoElement);
