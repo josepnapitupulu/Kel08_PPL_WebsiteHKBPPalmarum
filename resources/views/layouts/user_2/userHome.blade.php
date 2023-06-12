@@ -32,10 +32,8 @@
         </div>
     </header>
 
-<<<<<<< HEAD
     {{-- foto --}}
     <div class="photo-gallery" id="photoGallery"></div>
-=======
     {{-- <div class="wrapper" id="targetElement">
       <div class="gallery">
         @foreach($pelayans as $data)
@@ -67,58 +65,6 @@
       </div>
     </div>
     <div class="shadow"></div> --}}
-
-    {{-- contoh tampa foreach --}}
-
-    <div class="wrapper" >
-      <div class="gallery">
-        <div class="image"><span><img src="{{ asset('Style/image/sintua.jpg')}}" alt=""></span>
-          <h1 class="foto-text">okaokw</h1>
-          <h3 class="foto-text">oakwaw</h3>
-          <h4 class="foto-text">oawokaw</h4>
-          <p class="foto-text">oakwkoa</p>        
-        </div>
-        <div class="image"><span><img src="{{ asset('Style/image/sintua.jpg')}}" alt=""></span>
-          <h1 class="foto-text">okaokw</h1>
-          <h3 class="foto-text">oakwaw</h3>
-          <h4 class="foto-text">oawokaw</h4>
-          <p class="foto-text">oakwkoa</p>        
-        </div> 
-        <div class="image"><span><img src="{{ asset('Style/image/sintua.jpg')}}" alt=""></span>
-          <h1 class="foto-text">okaokw</h1>
-          <h3 class="foto-text">oakwaw</h3>
-          <h4 class="foto-text">oawokaw</h4>
-          <p class="foto-text">oakwkoa</p>        
-        </div>
-        <div class="image"><span><img src="{{ asset('Style/image/sintua.jpg')}}" alt=""></span>
-          <h1 class="foto-text">okaokw</h1>
-          <h3 class="foto-text">oakwaw</h3>
-          <h4 class="foto-text">oawokaw</h4>
-          <p class="foto-text">oakwkoa</p>        
-        </div>
-        <div class="image"><span><img src="{{ asset('Style/image/sintua.jpg')}}" alt=""></span>
-          <h1 class="foto-text">okaokw</h1>
-          <h3 class="foto-text">oakwaw</h3>
-          <h4 class="foto-text">oawokaw</h4>
-          <p class="foto-text">oakwkoa</p>        
-        </div>
-      
-      </div>
-    </div>
-    <div class="preview-box">
-      <div class="details">
-        <span class="title">Image <p class="current-img"></p> of <p class="total-img"></p></span>
-        <span class="icon">x</span>
-      </div>
-      <div class="image-box">
-        <div class="slide prev"><i class="fa fa-angle-left" aria-hidden="true"></i></div>
-        <div class="slide next"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
-        <img src="" alt="">
-        <figcaption>Beliau ini selama hidupnya selalu mengundang tawa</figcaption>
-      </div>
-    </div>
-    <div class="shadow"></div> 
->>>>>>> 8d4eaf4e4580c13d255ca685dea21b929cb68496
 
     
     
