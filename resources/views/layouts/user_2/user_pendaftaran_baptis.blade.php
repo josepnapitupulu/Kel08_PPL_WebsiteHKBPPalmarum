@@ -88,6 +88,7 @@
               <div style="text-align: right; margin-top: 40px;">
                  <input type="submit" onclick="contoh()" value="daftar"/>
               </div>
+              <input type="hidden" name="id_user" value="{{ Auth::id() }}">
               <script type="text/javascript">
 
                     function contoh() {

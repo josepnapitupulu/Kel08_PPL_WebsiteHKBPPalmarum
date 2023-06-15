@@ -1,5 +1,6 @@
 @include('layouts.user_2.style')
 @include('layouts.user_2.navbar')
+@include('sweetalert::alert')
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -145,11 +146,11 @@
                 <label for="name">Keterangan</label>
                 <input type="text" id="name" name="keterangan" placeholder="Masukkan Gelar Anda" />
               </div>
+              <input type="hidden" name="id_user" value="{{ Auth::id() }}">
               <!-- upload foto -->  
               <div style="text-align: right; margin-top: 40px;">
                  <input type="submit" value="daftar"/>
               </div>
-             
             </form>
           </div>
           

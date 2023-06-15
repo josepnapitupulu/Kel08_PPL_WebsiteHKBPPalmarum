@@ -74,10 +74,11 @@
                 <label for="name">Wijk</label>
                 <input type="text" id="name" name="name" placeholder="Masukkan Wijk" />
               </div>
+              <input type="hidden" name="id_user" value="{{ Auth::id() }}">
               <div style="text-align: right; margin-top: 40px;">
                  <input type="submit" value="daftar"/>
               </div>
-             
+
             </form>
           </div>
           

@@ -33,7 +33,9 @@
     </header>
 
     {{-- foto --}}
-    <div class="photo-gallery" id="photoGallery"></div>
+    <div id="targetElement">
+      <div class="photo-gallery" id="photoGallery"></div>
+    </div>
     {{-- <div class="wrapper" id="targetElement">
       <div class="gallery">
         @foreach($pelayans as $data)
@@ -234,7 +236,7 @@
         </table>
       </div>
       <div class="judul_1">
-        <h1>Informasi Keuangan Gereja</h1>
+        <h1>Informasi Kegiatan Gereja</h1>
         <div class="jadwal">
           <div class="schedule-slider">
             @foreach($kegiatans as $data)
@@ -338,10 +340,12 @@
 
 //foto js
 const photos = [
+  @foreach($pelayans as $data)
   {
-    url: '{{ asset('Style/image/sintua.jpg')}}',
-    descriptions: ['Deskripsi 1', 'Deskripsi 2', 'Deskripsi 3', 'Deskripsi 4']
+    url: '{{ asset('Style/image/')}}/{{$data['photo']}}',
+    descriptions: ['{{$data['nama_lengkap']}}', 'Jabatan : {{$data['jabatan']}}', 'Tanggal Tahbisan : {{$data['tanggal_tahbisan']}}', '{{$data['keterangan']}}']
   },
+  @endforeach
   // Tambahkan objek lain di sini jika diperlukan
 ];
 

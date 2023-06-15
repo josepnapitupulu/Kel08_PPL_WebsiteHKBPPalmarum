@@ -632,6 +632,34 @@ input::placeholder {
   border: none;
 }
 
+.aesthetic-table-user {
+  background-color: white;
+  color: black;
+  animation: fadeIn 1s ease-in-out;
+  width: 85%;
+  margin: 0 auto;
+  border-collapse: collapse;
+ 
+  /* text-align: center; */
+  border: none;
+  overflow: hidden;
+  justify-content: space-between;
+}
+
+.aesthetic-table-user .table-box {
+  width: 30%;
+  margin-right: 50px;
+}
+
+.aesthetic-table-user th {
+  padding: 20px;
+  border: 1;
+}
+.aesthetic-table-user td {
+  padding: 20px;
+  border: 1;
+}
+
 .aesthetic-table2 {
    background-color: #23353C;
   color: white;
@@ -738,7 +766,7 @@ margin-top: 20px;
 
 .photo img {
   width: 100%;
-  height: auto;
+  height: 300px;
   object-fit: cover;
   transition: transform 0.3s ease;
 }
@@ -793,4 +821,31 @@ margin-top: 20px;
 
 .description-4{
   font-size: 18px;
+}
+
+.info-1{
+  background-color: #CFFECC;
+}
+.info-2{
+  background-color: #FECCCC;
+}
+.info-3{
+  background-color: #CCFEF9;
+}
+.lebar{
+  width: 1200px;
+}
+.judul-tabel{
+  background-color: #F4F4F4;
+}
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
 }

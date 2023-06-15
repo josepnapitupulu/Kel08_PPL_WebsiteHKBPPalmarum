@@ -24,17 +24,31 @@
                     <th width="50px"><center>Aksi</center></th>
                   </tr>
                   </thead>
-                  <tbody>
-                    @foreach($martumpols as $data)
+                  @foreach($martumpols as $data)
+                    @if($data['status']== 0)
+                  <tbody class="info-2">
                   <tr>
                     <td>{{$data['nama_gereja_laki']}}</td>
                     <td><label class="text-danger">Belum di Uprove</label></td>
                     <td>
-                      <a href="{{route('UproveMartumpol', $data['id_registrasi_calon'])}}" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="uprove">Uprove</a>
+                      <a href="{{route('UproveMartumpol1', $data['id_registrasi_calon'])}}" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="uprove">Uprove</a>
+                      <a href="{{route('UproveMartumpol2', $data['id_registrasi_calon'])}}" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="tolak uprove">Tolak</a>
                     </td>                    
                   </tr>
-                  @endforeach
                   </tbody>
+                  @elseif($data['status'] == 1)
+                  <tbody class="info-1">
+                  <tr>
+                    <td>{{$data['nama_gereja_laki']}}</td>
+                    <td><label class="text-danger">Belum di Uprove</label></td>
+                    <td>
+                      <a href="{{route('UproveMartumpol1', $data['id_registrasi_calon'])}}" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="uprove">Uprove</a>
+                      <a href="{{route('UproveMartumpol2', $data['id_registrasi_calon'])}}" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="tolak uprove">Tolak</a>
+                    </td>                    
+                  </tr>
+                  </tbody>
+                  @endif
+                  @endforeach
                 </table>
               </div>
               <!-- /.card-body -->

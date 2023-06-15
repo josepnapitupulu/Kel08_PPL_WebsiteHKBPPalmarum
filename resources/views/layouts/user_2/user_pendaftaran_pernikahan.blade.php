@@ -54,15 +54,13 @@
               @csrf
               @method('POST')
               <div class="form-group">
-                <label for="name">Nama Mempelai Laki</label>
-                <!-- <input type="text" id="name" name="id_jemaat_laki" placeholder="Masukkan Nama Lengkap Anda" /> -->
-                <select class="pilihan" name="id_jemaat_laki">
-                  <option value="">Pilih Nama Anda Sebagai Mempelai Laki-Laki</option>
-                  @foreach($jemaats as $data)
-                    <option value="{{$data['id_jemaat']}}">{{$data['nama_depan']}}&nbsp{{$data['nama_belakang']}}</option>
-                  @endforeach
-                </select>
-              </div>
+                <label for="name">Nama Mempelai Laki-Laki</label>
+                <input type="text" id="name" name="nama_lengkap_laki" placeholder="Masukkan tanggal martumpol anda" required/>
+              </div> 
+              <div class="form-group">
+                <label for="name">Nama Mempelai Perempuan</label>
+                <input type="text" id="name" name="nama_lengkap_perempuan" placeholder="Masukkan tanggal martumpol anda" required/>
+              </div> 
               <div class="form-group">
                 <label for="name">Tanggal Martumpol</label>
                 <input type="date" id="name" name="tgl_martumpol" placeholder="Masukkan tanggal martumpol anda" required/>
@@ -107,6 +105,7 @@
                 <label for="name">Keterangan</label>
                 <input type="text" id="name" name="keterangan" placeholder="masukkan keterangan terkait jika dibutuhkan" />
               </div>
+              <input type="hidden" name="id_user" value="{{ Auth::id() }}">
               <div style="text-align: right; margin-top: 40px;">
                  <input type="submit" value="daftar"/>
               </div>

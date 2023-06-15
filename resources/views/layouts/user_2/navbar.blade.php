@@ -24,9 +24,17 @@
         <li>
             <a href="{{route('baptisUser')}}">BAPTIS</a>
         </li>
-        <!-- <li>
-            <a href="/login" target="blank">LOGIN</a>
-        </li> -->
+        <li class="dropdown">
+            <a href="#" target="blank">Status Pendaftaran</a>
+            <ul class="dropdown-menu">
+                <li><a href="">Status Pendaftaran Sidi</a></li>
+                <li><a href="">Status Pendaftaran Pernikahan</a></li>
+                <li><a href="">Status Pendaftaran Jemaat</a></li>
+                <li><a href="">Status Pendaftaran Martumpol</a></li>
+                <li><a href="">Status Pendaftaran Pindah</a></li>
+                <li><a href="">Status Pendaftaran Baptis</a></li>
+            </ul>
+        </li>
     </ul>
     <ul class="list-name">
         <!-- Authentication Links -->
@@ -44,11 +52,11 @@
         @endif
         @else
         <li class="list-name">
-            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+            <a  class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                 {{ Auth::user()->name }}
             </a>&nbsp&nbsp&nbsp&nbsp&nbsp
 
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <div aria-labelledby="dropdownMenuLink">
                 <a class="dropdown-item" href="{{ route('logout') }}"
                     onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();">
@@ -92,3 +100,18 @@
     </ul>
 </nav>
 <script src="{{asset('Style')}}/style.js"></script>
+<script>
+window.addEventListener('load', function () {
+  var dropdowns = document.getElementsByClassName('dropdown');
+  
+  for (var i = 0; i < dropdowns.length; i++) {
+    dropdowns[i].addEventListener('mouseover', function () {
+      this.getElementsByClassName('dropdown-menu')[0].style.display = 'block';
+    });
+    
+    dropdowns[i].addEventListener('mouseout', function () {
+      this.getElementsByClassName('dropdown-menu')[0].style.display = 'none';
+    });
+  }
+});
+</script>

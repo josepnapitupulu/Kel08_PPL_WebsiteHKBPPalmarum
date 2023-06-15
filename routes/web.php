@@ -169,22 +169,28 @@ Route::prefix('admin')->middleware(['isAdmin', 'auth'])->group(function(){
 
 
     Route::get('/uproveBaptis', [App\Http\Controllers\uproveController::class, 'baptis'])->name('aksesUproveBaptis');
-    Route::get('/fixUproveBaptis/{id}', [App\Http\Controllers\uproveController::class, 'uproveBaptis'])->name('UproveBaptis');
+    Route::get('/fixUproveBaptis1/{id}', [App\Http\Controllers\uproveController::class, 'uproveBaptis1'])->name('UproveBaptis1');
+    Route::get('/fixUproveBaptis2/{id}', [App\Http\Controllers\uproveController::class, 'uproveBaptis2'])->name('UproveBaptis2');
 
     Route::get('/uproveJemaat', [App\Http\Controllers\uproveController::class, 'prvJemaat'])->name('aksesUproveJemaat');
-    Route::get('/fixUproveJemaat/{id}', [App\Http\Controllers\uproveController::class, 'uproveJemaat'])->name('UproveJemaat');
+    Route::get('/fixUproveJemaat1/{id}', [App\Http\Controllers\uproveController::class, 'uproveJemaat1'])->name('UproveJemaat1');
+    Route::get('/fixUproveJemaat2/{id}', [App\Http\Controllers\uproveController::class, 'uproveJemaat2'])->name('UproveJemaat2');
 
     Route::get('/uprovePindah', [App\Http\Controllers\uproveController::class, 'pindah'])->name('aksesUprovePindah');
-    Route::get('/fixUprovePindah/{id}', [App\Http\Controllers\uproveController::class, 'uprovePindah'])->name('UprovePindah');
+    Route::get('/fixUprovePindah1/{id}', [App\Http\Controllers\uproveController::class, 'uprovePindah1'])->name('UprovePindah1');
+    Route::get('/fixUprovePindah2/{id}', [App\Http\Controllers\uproveController::class, 'uprovePindah2'])->name('UprovePindah2');
 
     Route::get('/uproveMartumpol', [App\Http\Controllers\uproveController::class, 'martumpol'])->name('aksesUproveMartumpol');
-    Route::get('/fixUproveMartumpol/{id}', [App\Http\Controllers\uproveController::class, 'uproveMartumpol'])->name('UproveMartumpol');
+    Route::get('/fixUproveMartumpol1/{id}', [App\Http\Controllers\uproveController::class, 'uproveMartumpol1'])->name('UproveMartumpol1');
+    Route::get('/fixUproveMartumpol2/{id}', [App\Http\Controllers\uproveController::class, 'uproveMartumpol2'])->name('UproveMartumpol2');
 
     Route::get('/uprovePernikahan', [App\Http\Controllers\uproveController::class, 'pernikahan'])->name('aksesUprovePernikahan');
-    Route::get('/fixUprovePernikahan/{id}', [App\Http\Controllers\uproveController::class, 'uprovePernikahan'])->name('UprovePernikahan');
+    Route::get('/fixUprovePernikahan1/{id}', [App\Http\Controllers\uproveController::class, 'uprovePernikahan1'])->name('UprovePernikahan1');
+    Route::get('/fixUprovePernikahan2/{id}', [App\Http\Controllers\uproveController::class, 'uprovePernikahan2'])->name('UprovePernikahan2');
 
     Route::get('/uproveSidi', [App\Http\Controllers\uproveController::class, 'sidi'])->name('aksesUproveSidi');
-    Route::get('/fixUproveSidi/{id}', [App\Http\Controllers\uproveController::class, 'uproveSidi'])->name('UproveSidi');    
+    Route::get('/fixUproveSidi1/{id}', [App\Http\Controllers\uproveController::class, 'uproveSidi1'])->name('UproveSidi1');    
+    Route::get('/fixUproveSidi2/{id}', [App\Http\Controllers\uproveController::class, 'uproveSidi2'])->name('UproveSidi2');    
 });
 
 //  user user user user
@@ -202,33 +208,18 @@ Route::get('/aksesSidiUser', [App\Http\Controllers\userController::class, 'index
 Route::post('/daftarSidiUser', [App\Http\Controllers\userController::class, 'daftarSidi'])->name('registrasiSidi')->middleware('auth');
 Route::get('/', [App\Http\Controllers\userController::class, 'index7'])->name('homeUser');
 
+Route::get('/userUproveBaptis', [App\Http\Controllers\uproveController::class, 'userUproveBaptis'])->name('userUproveBaptis')->middleware('auth');
+Route::get('/userUproveJemaat', [App\Http\Controllers\uproveController::class, 'userUproveJemaat'])->name('userUproveJemaat')->middleware('auth');
+Route::get('/userUproveMartumpol', [App\Http\Controllers\uproveController::class, 'userUproveMartumpol'])->name('userUproveMartumpol')->middleware('auth');
+Route::get('/userUprovePernikahan', [App\Http\Controllers\uproveController::class, 'userUprovePernikahan'])->name('userUprovePernikahan')->middleware('auth');
+Route::get('/userUprovePindah', [App\Http\Controllers\uproveController::class, 'userUprovePindah'])->name('userUprovePindah')->middleware('auth');
+Route::get('/userUproveSidi', [App\Http\Controllers\uproveController::class, 'userUproveSidi'])->name('userUproveSidi')->middleware('auth');
 
-// Route::get('/daftarMartumpolUser', function () {
-//     return view('layouts.user_2.user_pendaftaran_martumpol');
-// });
-// Route::get('/daftarBaptisUser', function () {
-//     return view('layouts.user_2.user_pendaftaran_baptis');
-// });
-// Route::get('/daftarJemaatUser', function () {
-//     return view('layouts.user_2.user_pendaftaran_jemaat');
-// });
-// Route::get('/daftarNikahUser', function () {
-//     return view('layouts.user_2.user_pendaftaran_pernikahan');
-// });
-// Route::get('/daftarPindahUser', function () {
-//     return view('layouts.user_2.user_pindah');
-// });
-// Route::get('/daftarSidiUser', function () {
-//     return view('layouts.user_2.user_pendaftaran_naik_sidi');
-// });
-// Route::get('/', function () {
-//     return view('layouts.user_2.userHome');
-// });
+Route::get('/detailPernikahanPerempuan', function () {
+    return view('layouts.forms.detailPernikahanPerempuan');
+});
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\userController::class, 'index7'])->name('home');
 
-Route::get('/luis', function(){
-return view('layouts.user.daftarBaptis');
-});

@@ -99,6 +99,7 @@
                 <label for="name">Keterangan</label>
                 <input type="text" id="name" name="keterangan" placeholder="Masukkan keterangan yang terkait" />
               </div>
+              <input type="hidden" name="id_user" value="{{ Auth::id() }}">
               <div style="text-align: right; margin-top: 40px;">
                  <input type="submit" value="daftar"/>
               </div>

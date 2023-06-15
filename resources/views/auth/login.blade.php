@@ -75,10 +75,10 @@
                     <p class="mb-4">belum mempunyai account?  <a href="{{ route('register') }}" style="color: #3F486C; text-decoration: none;">{{ __('register ') }} Klik disini</a>
                     <p class="mb-4">lupa password anda?? 
                       @if (Route::has('password.request'))
-                        <a class="btn btn-link" href="{{ route('password.request') }} style="color: #3F486C; text-decoration: none;"">
+                        <a class="btn btn-link" href="{{ route('password.request') }}" style=color: #3F486C; text-decoration: none;>
                           {{ __('Forgot Your Password? ') }}Klik disini
                         </a>
-                      @endif\
+                      @endif
                   </div>   
                 </form>
               </div>
