@@ -12,19 +12,20 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                <form>
+                <form action="{{ route('createSidi') }}" method="POST">
+                  @csrf
                   <div class="row">
                     <div class="col-sm-6">
                       <!-- text input -->
                       <div class="form-group">
                         <label>Nama Lengkap</label>
-                        <input type="text" class="form-control" placeholder="Nama Lengkap">
+                        <input type="text" class="form-control" name="nama_lengkap" placeholder="Nama Lengkap">
                       </div>
                     </div>
                     <div class="col-sm-6">
                       <div class="form-group">
-                        <label>Alamat</label>
-                        <input type="text" class="form-control" placeholder="Alamat">
+                        <label>Nats Sidi</label>
+                        <input type="text" class="form-control" name="nats_sidi" placeholder="Alamat">
                       </div>
                     </div>
                   </div>
@@ -33,13 +34,13 @@
                       <!-- text input -->
                       <div class="form-group">
                         <label>Nama Ayah</label>
-                        <input type="text" class="form-control" placeholder="Nama Ayah">
+                        <input type="text" class="form-control" name="nama_ayah" placeholder="Nama Ayah">
                       </div>
                     </div>
                     <div class="col-sm-6">
                       <div class="form-group">
                         <label>Asal Gereja</label>
-                        <input type="text" class="form-control" placeholder="Asal Gereja">
+                        <input type="text" class="form-control" name="nama_gereja_non_HKBP" placeholder="Asal Gereja">
                       </div>
                     </div>
                   </div>
@@ -48,28 +49,13 @@
                       <!-- text input -->
                       <div class="form-group">
                         <label>Nama Ibu</label>
-                        <input type="text" class="form-control" placeholder="Nama Ibu">
+                        <input type="text" class="form-control" name="nama_ibu" placeholder="Nama Ibu">
                       </div>
                     </div>
                     <div class="col-sm-6">
                       <div class="form-group">
                         <label>Nama Pendeta</label>
-                        <input type="text" class="form-control" placeholder="Nama Pendeta">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <!-- textarea -->
-                      <div class="form-group">
-                        <label>Tempat Lahir</label>
-                        <input type="text" class="form-control" placeholder="Tempat Lahir">
-                      </div>
-                    </div>
-                    <div class="col-sm-6">
-                      <div class="form-group">
-                        <label>Keterangan</label>
-                        <textarea class="form-control" rows="3" placeholder="keterangan"></textarea>
+                        <input type="text" class="form-control" name="nama_pendeta_sidi" placeholder="Nama Pendeta">
                       </div>
                     </div>
                   </div>
@@ -78,18 +64,34 @@
                       <!-- textarea -->
                       <div class="form-group">
                         <label>Tanggal Lahir</label>
-                        <input type="date" class="form-control" placeholder="Tanggal Lahir">
+                        <input type="date" class="form-control" name="tanggal_lahir" placeholder="Tanggal Lahir">
                       </div>
                     </div>
                     <div class="col-sm-6">
                       <div class="form-group">
-                        <label>File Baptis</label>
-                        <input type="file" class="form-control" placeholder="File Baptis">
+                        <label>Tanggal Sidi</label>
+                        <input type="date" class="form-control" name="tanggal_sidi" placeholder="File Baptis">
                       </div>
                     </div>
                   </div>
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <!-- textarea -->
+                      <div class="form-group">
+                        <label>Tempat Lahir</label>
+                        <input type="text" class="form-control" name="tempat_lahir" placeholder="Tempat Lahir">
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <label>Keterangan</label>
+                        <input type="text" class="form-control" name="keterangan" placeholder="Keterangan">
+                      </div>
+                    </div>
+                  </div>
+                  
                   <div class="card-footer">
-                    <button type="submit" class="btn btn-outline-dark btn-lg ml-3 float-right">Cancel</button>
+                    <a href="{{ route('sidi') }}" class="btn btn-outline-dark btn-lg ml-3 float-right">Cancel</a>
                     <button type="submit" class="btn btn-success btn-lg float-right">Create</button>
                     </div>
                 </form>

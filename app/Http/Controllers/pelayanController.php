@@ -60,7 +60,7 @@ class pelayanController extends Controller
             if (!$response) {
                 return back()->withErrors(['message' => 'error when create RPP']);
             }
-        return redirect()->back();
+        return redirect()->route('pelayan');
     }
 
     /**

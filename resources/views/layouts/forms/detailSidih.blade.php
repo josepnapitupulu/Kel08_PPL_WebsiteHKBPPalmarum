@@ -22,61 +22,62 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td>Id Jemaat</td>
-                      <td>------</td>
-                    </tr>
+                    @if($sidi['data'] != null)
+                    @foreach ( $sidi['data'] as $item)
                     <tr>
                       <td>Nama Lengkap</td>
-                      <td>------</td>
+                      <td>{{ $item['nama_lengkap'] }}</td>
                     </tr>
                     <tr>
                       <td>Nama Ayah</td>
-                      <td>------</td>
+                      <td>{{ $item['nama_ayah'] }}</td>
                     </tr>
                     <tr>
                       <td>Nama Ibu</td>
-                      <td>------</td>
+                      <td>{{ $item['nama_ibu'] }}</td>
                     </tr>
                     <tr>
                       <td>Tempat Lahir</td>
-                      <td>------</td>
+                      <td>{{ $item['tempat_lahir'] }}</td>
                     </tr>
                     <tr>
                       <td>Tanggal Lahir</td>
-                      <td>------</td>
-                    </tr>
-                    <tr>
-                      <td>Alamat</td>
-                      <td>------</td>
+                      <td>{{ $item['tanggal_lahir'] }}</td>
                     </tr>
                     <tr>
                       <td>Asal Gereja</td>
-                      <td>------</td>
+                      <td>{{ $item['nama_gereja_non_hkbp'] }}</td>
                     </tr>
                     <tr>
-                      <td>Nama Pendeta</td>
-                      <td>------</td>
+                      <td>Nats Sidi</td>
+                      <td>{{ $item['nats_sidi'] }}</td>
+                    </tr>
+                    <tr>
+                      <td>Tanggal Sidi</td>
+                      <td>{{ $item['tanggal_sidi'] }}</td>
+                    </tr>
+                    <tr>
+                      <td>Nama Pendeta Sidi</td>
+                      <td>{{ $item['nama_pendeta_sidi'] }}</td>
                     </tr>
                     <tr>
                       <td>Keterangan</td>
-                      <td>------</td>
-                    </tr>
-                    <tr>
-                      <td>File Baptis</td>
-                      <td>------</td>
+                      <td>{{ $item['keterangan'] }}</td>
                     </tr>
                     <tr>
                         <td></td>
                         <td></td>
                     </tr>
+                    @endforeach
+                    @endif
+
                   </tbody>
                 </table>
               </div><br>
               <!-- /.card-body -->
               <div>
-                <button class="btn btn-default" id="buttonKembali">Kembali</button>
-                <button class="btn btn-warning" id="buttonEdit">Edit</button>
+                <a class="btn btn-default" href="{{ route('sidi') }}" id="buttonKembali">Kembali</a>
+                <a class="btn btn-warning" href="{{ route('editSidi', $item['id_registrasi_sidi']) }}" id="buttonEdit">Edit</a>
               </div><br><br>
                 
             </div>

@@ -22,45 +22,59 @@
                     </tr>
                   </thead>
                   <tbody>
+                    @foreach ($baptis['data'] as $item)
                     <tr>
                       <td>ID Baptis</td>
-                      <td>------</td>
+                      <td>{{ $item['id_registrasi_baptis'] }}</td>
                     </tr>
                     <tr>
                       <td>Nama Lengkap</td>
-                      <td>------</td>
-                    </tr>
-                    <tr>
-                      <td>Tempat/Tanggal Lahir</td>
-                      <td>------</td>
-                    </tr>
-                    <tr>
-                      <td>Tanggal Baptis</td>
-                      <td>------</td>
+                      <td>{{ $item['nama_lengkap'] }}</td>
                     </tr>
                     <tr>
                       <td>Nama Ayah</td>
-                      <td>------</td>
+                      <td>{{ $item['nama_ayah'] }}</td>
                     </tr>
                     <tr>
                       <td>Nama Ibu</td>
-                      <td>------</td>
+                      <td>{{ $item['nama_ibu'] }}</td>
+                    </tr>
+                    <tr>
+                      <td>Jenis Kelamin</td>
+                      <td>{{ $item['jenis_kelamin'] }}</td>
+                    </tr>
+                    <tr>
+                      <td>Tempat/Tanggal Lahir</td>
+                      <td>{{ $item['tempat_lahir'] }}  /  {{ $item['tanggal_lahir'] }}</td>
+                    </tr>
+                    <tr>
+                      <td>Alamat</td>
+                      <td>{{ $item['alamat'] }}</td>
+                    </tr>
+                    <tr>
+                      <td>Tanggal Baptis</td>
+                      <td>{{ $item['tanggal_baptis'] }}</td>
+                    </tr>
+                    <tr>
+                      <td>Nama Pendeta</td>
+                      <td>{{ $item['nama_pendeta'] }}</td>
                     </tr>
                     <tr>
                       <td>Keterangan</td>
-                      <td>------</td>
+                      <td>{{ $item['keterangan'] }}</td>
                     </tr>
                     <tr>
                         <td></td>
                         <td></td>
                     </tr>
+                    @endforeach
                   </tbody>
                 </table>
               </div><br>
               <!-- /.card-body -->
               <div>
-                <button class="btn btn-default" id="buttonKembali">Kembali</button>
-                <button class="btn btn-warning" id="buttonEdit">Edit</button>
+                <a href="{{ route('baptis') }}" class="btn btn-default" id="buttonKembali">Kembali</a>
+                <a href="{{ route('editBaptis',$item['id_registrasi_baptis']) }}" class="btn btn-warning" id="buttonEdit">Edit</a>
               </div><br><br>
                 
             </div>

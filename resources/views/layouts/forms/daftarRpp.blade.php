@@ -40,19 +40,19 @@
                 <div class="card-body">
                   <div class="form-group">
                     <label for="exampleInputEmail1">ID Jemaat</label>
-                    <input type="text" class="form-control" name="id_jemaat" id="exampleInputEmail1" placeholder="ID Jemaat">
+                    <input type="text" class="form-control" name="id_jemaat" id="exampleInputEmail1" placeholder="ID Jemaat" required>
                   </div>
                   <div class="form-group">
                     <label for="exampleInputPassword1">Jenis RPP</label>
-                    <input type="text" class="form-control" name="id_jenis_rpp" id="exampleInputPassword1" placeholder="Jenis RPP">
+                    <input type="text" class="form-control" name="id_jenis_rpp" id="exampleInputPassword1" placeholder="Jenis RPP" required>
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Tanggal Warta RPP</label>
-                    <input type="date" class="form-control" name="tgl_warta_rpp" id="exampleInputEmail1" placeholder="Tanggal Warta RPP">
+                    <input type="date" class="form-control" name="tgl_warta_rpp" id="exampleInputEmail1" placeholder="Tanggal Warta RPP" required>
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Keterangan</label>
-                    <input type="text" class="form-control" name="keterangan" id="exampleInputEmail1" placeholder="Keterangan">
+                    <input type="text" class="form-control" name="keterangan" id="exampleInputEmail1" placeholder="Keterangan" required>
                   </div>
                 </div>
                 <!-- /.card-body -->

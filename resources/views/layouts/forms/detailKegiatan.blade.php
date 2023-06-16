@@ -22,41 +22,40 @@
                     </tr>
                   </thead>
                   <tbody>
+                    @foreach ($kegiatan['data'] as $item)
                     <tr>
                       <td>Nama Kegiatan</td>
-                      <td>------</td>
+                      <td>{{ $item['nama_jenis_kegiatan'] }}</td>
                     </tr>
                     <tr>
-                      <td>Jenis Kegiatan</td>
-                      <td>------</td>
+                      <td>Tanggal Kegiatan</td>
+                      <td>{{ $item['tanggal_kegiatan'] }}</td>
                     </tr>
                     <tr>
-                      <td>Jadwal Kegiatan</td>
-                      <td>------</td>
+                      <td>Waktu Kegiatan</td>
+                      <td>{{ $item['waktu_kegiatan'] }}</td>
                     </tr>
                     <tr>
                       <td>Lokasi Kegiatan</td>
-                      <td>------</td>
-                    </tr>
-                    <tr>
-                      <td>Status</td>
-                      <td>------</td>
+                      <td>{{ $item['lokasi_kegiatan'] }}</td>
                     </tr>
                     <tr>
                       <td>Keterangan</td>
-                      <td>------</td>
+                      <td>{{ $item['keterangan'] }}</td>
                     </tr>
                     <tr>
                         <td></td>
                         <td></td>
                     </tr>
+@endforeach
+
                   </tbody>
                 </table>
               </div><br>
               <!-- /.card-body -->
               <div>
-                <button class="btn btn-default" id="buttonKembali">Kembali</button>
-                <button class="btn btn-warning" id="buttonEdit">Edit</button>
+                <a class="btn btn-default" href="{{ route('kegiatan') }}" id="buttonKembali">Kembali</a>
+                <a class="btn btn-warning" href="{{ route('editKegiatan',$item['id_jenis_kegiatan']) }}" id="buttonEdit">Edit</a>
               </div><br><br>
                 
             </div>

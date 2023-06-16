@@ -36,19 +36,22 @@
               <!-- /.card-header -->
               <!-- form start -->
               <div class="card-body">
-                <form>
+                <form action="{{ route('createBaptis') }}" method="POST">
+                  @csrf
+                  @method('POST')
                   <div class="row">
                     <div class="col-sm-6">
                       <!-- text input -->
+                      
                       <div class="form-group">
-                        <label>ID Register Jemaat</label>
-                        <input type="text" class="form-control" placeholder="ID Register">
+                        <label>Nama Lengkap</label>
+                        <input type="text" class="form-control" name="nama_lengkap" placeholder="Nama Lengkap">
                       </div>
                     </div>
                     <div class="col-sm-6">
                       <div class="form-group">
                         <label>Alamat</label>
-                        <input type="text" class="form-control" placeholder="Alamat">
+                        <input type="text" class="form-control" name="alamat" placeholder="Alamat">
                       </div>
                     </div>
                   </div>
@@ -56,14 +59,14 @@
                     <div class="col-sm-6">
                       <!-- text input -->
                       <div class="form-group">
-                        <label>Nama Lengkap</label>
-                        <input type="text" class="form-control" placeholder="Nama Lengkap">
-                      </div>
+                        <label>Jenis Kelamin</label><br>
+                        <input type="text" class="form-control" name="jenis_kelamin" placeholder="Jenis-Kelamin">
+                        </div>
                     </div>
                     <div class="col-sm-6">
                       <div class="form-group">
                         <label>Tanggal Baptis</label>
-                        <input type="date" class="form-control" placeholder="Tanggal Baptis">
+                        <input type="date" class="form-control" name="tanggal_baptis" placeholder="Tanggal Baptis">
                       </div>
                     </div>
                   </div>
@@ -72,13 +75,13 @@
                       <!-- text input -->
                       <div class="form-group">
                         <label>Nama Ayah</label>
-                        <input type="text" class="form-control" placeholder="Nama Ayah">
+                        <input type="text" class="form-control" name="nama_ayah" placeholder="Nama Ayah">
                       </div>
                     </div>
                     <div class="col-sm-6">
                       <div class="form-group">
                         <label>Nama Ibu</label>
-                        <input type="text" class="form-control" placeholder="Asal Gereja">
+                        <input type="text" class="form-control" name="nama_ibu" placeholder="Asal Gereja">
                       </div>
                     </div>
                   </div>
@@ -87,13 +90,13 @@
                       <!-- textarea -->
                       <div class="form-group">
                         <label>Tempat Lahir</label>
-                        <input type="text" class="form-control" placeholder="Nama Ibu">
+                        <input type="text" class="form-control" name="tempat_lahir" placeholder="Nama Ibu">
                       </div>
                     </div>
                     <div class="col-sm-6">
                       <div class="form-group">
                         <label>Tanggal Lahir</label>
-                        <input type="date" class="form-control" placeholder="Nama Pendeta">
+                        <input type="date" class="form-control" name="tanggal_lahir" placeholder="Nama Pendeta">
                       </div>
                     </div>
                   </div>
@@ -102,26 +105,20 @@
                       <!-- textarea -->
                       <div class="form-group">
                         <label>ID Pendeta</label>
-                        <input type="text" class="form-control" placeholder="Tempat Lahir">
+                        <input type="text" class="form-control" name="id_pendeta" placeholder="Tempat Lahir">
                       </div>
                     </div>
                     <div class="col-sm-6">
                       <div class="form-group">
                         <label>Keterangan</label>
-                        <textarea class="form-control" rows="3" placeholder="keterangan"></textarea>
+                        <input type="text" class="form-control" name="keterangan" placeholder="keterangan">
                       </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-sm-6"> <label>Jenis Kelamin</label><br>
-                      <input type="text" class="form-control" placeholder="Jenis-Kelamin">
-
                     </div>
                   </div>
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-outline-dark btn-lg ml-3 float-right">Cancel</button>
+                  <a href="{{ route('baptis') }}" class="btn btn-outline-dark btn-lg ml-3 float-right">Cancel</a>
                   <button type="submit" class="btn btn-success btn-lg float-right">Create</button>
                 </div>
               </form>

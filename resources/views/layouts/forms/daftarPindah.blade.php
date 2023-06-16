@@ -12,19 +12,20 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                <form>
+                <form action="{{ route('createPindah') }}" method="post">
+                  @csrf
                   <div class="row">
                     <div class="col-sm-6">
                       <!-- text input -->
                       <div class="form-group">
                         <label>ID Registrasi Jemaat</label>
-                        <input type="text" class="form-control" placeholder="ID Registrasi Jemaat">
+                        <input type="text" class="form-control" name="id_registrasi" placeholder="ID Registrasi Jemaat">
                       </div>
                     </div>
                     <div class="col-sm-6">
                       <div class="form-group">
                         <label>ID Jemaat</label>
-                        <input type="text" class="form-control" placeholder="ID Jemaat">
+                        <input type="text" class="form-control" name="id_jemaat" placeholder="ID Jemaat">
                       </div>
                     </div>
                   </div>
@@ -33,13 +34,13 @@
                       <!-- text input -->
                       <div class="form-group">
                         <label>No Surat Pindah</label>
-                        <input type="text" class="form-control" placeholder="No Surat Pindah">
+                        <input type="text" class="form-control" name="no_surat_pindah" placeholder="No Surat Pindah">
                       </div>
                     </div>
                     <div class="col-sm-6">
                       <div class="form-group">
                         <label>ID Gereja Tujuan</label>
-                        <input type="text" class="form-control" placeholder="ID Gereja Tujuan">
+                        <input type="text" class="form-control" name="id_gereja_tujuan" placeholder="ID Gereja Tujuan">
                       </div>
                     </div>
                   </div>
@@ -48,13 +49,13 @@
                       <!-- text input -->
                       <div class="form-group">
                         <label>Tanggal Pindah</label>
-                        <input type="date" class="form-control" placeholder="Tanggal Pindah">
+                        <input type="date" class="form-control" name="tgl_pindah" placeholder="Tanggal Pindah">
                       </div>
                     </div>
                     <div class="col-sm-6">
                       <div class="form-group">
                         <label>Nama Gereja Non-HKBP</label>
-                        <input type="text" class="form-control" placeholder="Nama Gereja Non-HKBP">
+                        <input type="text" class="form-control" name="nama_gereja" placeholder="Nama Gereja Non-HKBP">
                       </div>
                     </div>
                   </div>
@@ -62,27 +63,19 @@
                     <div class="col-sm-6">
                       <!-- textarea -->
                       <div class="form-group">
-                        <label>File Baptis</label>
-                        <input type="file" class="form-control" placeholder="File Baptis">
+                        <label>Keterangan</label>
+                        <textarea class="form-control" rows="3" name="keterangan" placeholder="keterangan"></textarea>
                       </div>
                     </div>
                     <div class="col-sm-6">
                       <div class="form-group">
                         <label>Tanggal Warta</label>
-                        <input type="date" class="form-control" placeholder="Tanggal Warta">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <div class="form-group">
-                        <label>Keterangan</label>
-                        <textarea class="form-control" rows="3" placeholder="keterangan"></textarea>
+                        <input type="date" class="form-control" name="tgl_warta" placeholder="Tanggal Warta">
                       </div>
                     </div>
                   </div>
                   <div class="card-footer">
-                    <button type="submit" class="btn btn-outline-dark btn-lg ml-3 float-right">Cancel</button>
+                    <a href="{{ route('pindah') }}" class="btn btn-outline-dark btn-lg ml-3 float-right">Cancel</a>
                     <button type="submit" class="btn btn-success btn-lg float-right">Create</button>
                     </div>
                 </form>

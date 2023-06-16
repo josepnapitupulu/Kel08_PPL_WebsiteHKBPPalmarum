@@ -35,43 +35,49 @@
               </div><br>
               <!-- /.card-header -->
               <!-- form start -->
-              <form>
+              @foreach ($nikah['data'] as $item)
+
+              <form action="{{ route('updatePernikahan') }}" method="POST">
+                @csrf
+                @method('POST')
                 <div class="card-body">
+                  <input type="hidden" name="id_pernikahan" value="{{ $item['id_pernikahan'] }}">
                   <div class="form-group">
                     <label for="exampleInputEmail1">ID Registrasi Nikah</label>
-                    <input type="option" class="form-control" id="exampleInputEmail1" placeholder="Nama Pelayan">
+                    <input type="option" class="form-control" id="exampleInputEmail1" name="id_registrasi_pernikahan" value="{{ $item['id_registrasi_pernikahan'] }}" placeholder="Nama Pelayan">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Tanggal Pernikahan</label>
-                    <input type="date" class="form-control" id="exampleInputEmail1" placeholder="ID Jemaat">
+                    <input type="date" class="form-control" id="exampleInputEmail1" name="tgl_pernikahan" value="{{ $item['tgl_pernikahan'] }}" placeholder="ID Jemaat">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputPassword1">Nats Pernikahan</label>
-                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Nats Pernikahan">
+                    <input type="text" class="form-control" id="exampleInputPassword1" name="nats_pernikahan" value="{{ $item['nats_pernikahan'] }}" placeholder="Nats Pernikahan">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">ID Gereja Pernikahan</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="ID Gereja Pernikahan">
+                    <input type="text" class="form-control" id="exampleInputEmail1" name="id_gereja_nikah" value="{{ $item['id_gereja_nikah'] }}" placeholder="ID Gereja Pernikahan">
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputEmail1">Nama Gereja Non-HKBP</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nama Gereja Non-HKBP">
+                    <label for="exampleInputEmail1">Nama Gereja</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" name="nama_gereja_non_HKBP" value="{{ $item['nama_gereja_non_HKBP'] }}" placeholder="Nama Gereja Non-HKBP">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Nama Pendeta Memberkati</label>
-                    <input type="date" class="form-control" id="exampleInputEmail1" placeholder="Nama Pendeta Memberkati">
+                    <input type="text" class="form-control" id="exampleInputEmail1" name="nama_pendeta" value="{{ $item['nama_pendeta'] }}" placeholder="Nama Pendeta Memberkati">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Keterangan</label>
-                    <textarea type="text" class="form-control" id="exampleInputEmail1" placeholder="Keterangan"></textarea>
+                    <textarea type="text" class="form-control" id="exampleInputEmail1" name="keterangan" value="" placeholder="Keterangan">{{ $item['keterangan'] }}</textarea>
                   </div>
                 </div>
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-outline-dark btn-lg ml-3 float-right">Cancel</button>
+                  <a href="{{ route('pernikahan') }}" class="btn btn-out9line-dark btn-lg ml-3 float-right">Cancel</a>
                   <button type="submit" class="btn btn-warning btn-lg float-right">Edit</button>
                 </div>
               </form>
+              @endforeach
             </div>
             <!-- /.card -->

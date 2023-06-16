@@ -22,60 +22,60 @@
                     </tr>
                   </thead>
                   <tbody>
+                    @foreach ($jemaat['data'] as $item)
+                      
                     <tr>
                       <td>Nama</td>
-                      <td>------</td>
+                      <td>{{ $item ['nama_lengkap'] }}</td>
                     </tr>
                     <tr>
                       <td>Tempat Tanggal Lahir</td>
-                      <td>------</td>
+                      <td>{{ $item ['tempat_lahir'] }} / {{ $item ['tanggal_lahir'] }}</td>
                     </tr>
                     <tr>
                       <td>Jenis Kelamin</td>
-                      <td>------</td>
-                    </tr>
-                    <tr>
-                      <td>Pekerjaan</td>
-                      <td>------</td>
+                      <td>{{ $item ['jenis_kelamin'] }}</td>
                     </tr>
                     <tr>
                       <td>Status Keluarga</td>
-                      <td>------</td>
+                      <td>{{ $item ['status_keluarga'] }}</td>
                     </tr>
                     <tr>
                       <td>Pendidikan</td>
-                      <td>------</td>
+                      <td>{{ $item ['pendidikan'] }}</td>
                     </tr>
                     <tr>
                       <td>Pekerjaan</td>
-                      <td>------</td>
+                      <td>{{ $item ['pekerjaan'] }}</td>
                     </tr>
                     <tr>
                       <td>Golongan Darah</td>
-                      <td>------</td>
+                      <td>{{ $item ['gol_darah'] }}</td>
                     </tr>
                     <tr>
                       <td>Alamat</td>
-                      <td>------</td>
+                      <td>{{ $item ['alamat'] }}</td>
                     </tr>
                     <tr>
                       <td>No Telepon</td>
-                      <td>------</td>
+                      <td>{{ $item ['no_telepon'] }}</td>
                     </tr>
                     <tr>
                       <td>Keterangan</td>
-                      <td>------</td>
+                      <td>{{ $item ['keterangan'] }}</td>
                     </tr>
                     <tr>
                         <td></td>
                         <td></td>
                     </tr>
+                    
+                    @endforeach
                   </tbody>
                 </table>
               </div><br>
               <!-- /.card-body -->
               <div>
-                <button class="btn btn-default" id="buttonKembali">Kembali</button>
+                <a class="btn btn-default" href="{{ route('jemaat') }}" id="buttonKembali">Kembali</a>
                 <button class="btn btn-warning" id="buttonEdit">Edit</button>
               </div><br><br>
                 
