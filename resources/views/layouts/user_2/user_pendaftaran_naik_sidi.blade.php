@@ -57,29 +57,29 @@
               @method('post')
               <div class="form-group">
                 <label for="name">Nama Lengkap</label>
-                <input type="text" id="name" name="nama_lengkap" placeholder="Masukkan Nama Lengkap Anda" required/>
+                <input type="text" id="name" name="nama_lengkap" value="{{ old('nama_lengkap') }}" placeholder="Masukkan Nama Lengkap Anda" required/>
               </div>
               <div class="form-group">
                 <label for="name">Nama Ayah</label>
-                <input type="text" id="nama Ayah" name="nama_ayah" placeholder="Masukkan Nama Ayah Anda" required/>
+                <input type="text" id="nama Ayah" name="nama_ayah" value="{{ old('nama_ayah') }}" placeholder="Masukkan Nama Ayah Anda" required/>
               </div>     
               <div class="form-group">
                 <label for="name">Nama Ibu</label>
-                <input type="text" id="name" name="nama_ibu" placeholder="Masukkan Nama Ibu Anda" required/>
+                <input type="text" id="name" name="nama_ibu" value="{{ old('nama_ibu') }}" placeholder="Masukkan Nama Ibu Anda" required/>
               </div>
               <div class="form-group">
                 <label for="name">Tempat Lahir</label>
-                <input type="text" id="name" name="tempat_lahir" placeholder="Masukkan Tempat Lahir Anda" required/>
+                <input type="text" id="name" name="tempat_lahir" value="{{ old('tempat_lahir') }}" placeholder="Masukkan Tempat Lahir Anda" required/>
               </div>
               <div class="form-group">
                 <label for="name">Tanggal Lahir</label>
-                <input type="date" id="name" name="tanggal_lahir" placeholder="Masukkan Tanggal Lahir Anda" required/>
+                <input type="date" id="name" name="tanggal_lahir" value="{{ old('tanggal_lahir') }}" placeholder="Masukkan Tanggal Lahir Anda" required/>
               </div>
               <div class="form-group">
                 <label for="name">Gereja</label>
                 <!-- <input type="date" id="name" name="id_gereja_sidi" placeholder="Masukkan Tanggal Lahir Anda" /> -->
                 <select class="pilihan" name="id_gereja_sidi">
-                  <option value="">Pilih Gereja Anda</option>
+                  <option value="{{ old('id_gereja_sidi') }}">Pilih Gereja Anda</option>
                   @foreach($gerejas as $data)
                     <option value="{{$data['id_gereja']}}">{{$data['nama_gereja']}}</option>
                   @endforeach
@@ -87,13 +87,13 @@
               </div>
               <div class="form-group">
                 <label for="name">Nama Gereja Non-HKBP</label>
-                <input type="text" id="name" name="nama_gereja_non_hkbp" placeholder="Masukkan asal gereja Non HKBP" required/>
+                <input type="text" id="name" name="nama_gereja_non_hkbp" value="{{ old('nama_gereja_non_hkbp') }}" placeholder="Masukkan asal gereja Non HKBP" required/>
               </div>
               <div class="form-group">
                 <label for="name">Status Keluarga</label>
                 <!-- <input type="text" id="name" name="id_hub_keluarga" placeholder="Asal gereja Non HKBP" /> -->
                 <select class="pilihan" name="id_hub_keluarga">
-                  <option value="">Pilih Status Didalam Keluarga</option>
+                  <option value="{{ old('id_hub_keluarga') }}">Pilih Status Didalam Keluarga</option>
                   @foreach($keluargas as $data)
                     <option value="{{$data['id_hub_keluarga']}}">{{$data['nama_hub_keluarga']}}</option>
                   @endforeach
@@ -101,8 +101,9 @@
               </div>
               <div class="form-group">
                 <label for="name">Keterangan</label>
-                <input type="text" id="name" name="keterangan" placeholder="Masukkan keterangan yang terkait" />
+                <input type="text" id="name" name="keterangan" value="{{ old('keterangan') }}" placeholder="Masukkan keterangan yang terkait" />
               </div>
+              <input type="hidden" name="id_user" value="{{ Auth::id() }}">
               <!-- upload foto -->
               <div style="text-align: right; margin-top: 40px;">
                  <input type="submit" value="daftar"/>

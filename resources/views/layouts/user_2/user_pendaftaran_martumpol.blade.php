@@ -55,7 +55,7 @@
                 <label for="name">Nama Lengkap Mempelai Laki-Laki</label>
                 <!-- <input type="text" id="name" name="id_jemaat_laki" placeholder="Masukkan nama keluarga anda" /> -->
                 <select class="pilihan" name="id_jemaat_laki">
-                  <option value="">Pilih Nama Anda Sebagai Mempelai Laki-Laki</option>
+                  <option value="{{ old('id_jemaat_laki') }}">Pilih Nama Anda Sebagai Mempelai Laki-Laki</option>
                   @foreach($jemaats as $data)
                     <option value="{{$data['id_jemaat']}}">{{$data['nama_depan']}}&nbsp{{$data['nama_belakang']}}</option>
                   @endforeach
@@ -63,21 +63,21 @@
               </div>    
               <div class="form-group">
                 <label for="name">Nama Ayah Mempelai Laki-Laki</label>
-                <input type="text" id="name" name="nama_ayah_laki" placeholder="Masukkan nama ayah mempelai laki-laki" required/>
+                <input type="text" id="name" name="nama_ayah_laki" value="{{ old('nama_ayah_laki') }}" placeholder="Masukkan nama ayah mempelai laki-laki" required/>
               </div>
               <div class="form-group">
                 <label for="name">Nama Ibu Mempelai Laki-Laki</label>
-                <input type="text" id="name" name="nama_ibu_laki" placeholder="Masukkan Nama Ibu Mempelai Laki-Laki anda" required/>
+                <input type="text" id="name" name="nama_ibu_laki" value="{{ old('nama_ibu_laki') }}" placeholder="Masukkan Nama Ibu Mempelai Laki-Laki anda" required/>
               </div>
               <div class="form-group">
                 <label for="name">Gereja Mempelai Laki-Laki</label>
-                <input type="text" id="name" name="nama_gereja_laki" placeholder="Masukkan Nama Ibu Mempelai Laki-Laki anda" required/>
+                <input type="text" id="name" name="nama_gereja_laki" value="{{ old('nama_gereja_laki') }}" placeholder="Masukkan Nama Ibu Mempelai Laki-Laki anda" required/>
               </div>
               <div class="form-group">
                 <label for="name">Nama Lengkap Mempelai Perempuan</label>
                 <!-- <input type="text" id="name" name="id_jemaat_perempuan" placeholder="Masukkan Nama Lengkap Mempelai Perempuan anda" /> -->
                 <select class="pilihan" name="id_jemaat_perempuan">
-                  <option value="">Pilih Nama Anda Sebagai Mempelai Perempuan</option>
+                  <option value="{{ old('id_jemaat_perempuan') }}">Pilih Nama Anda Sebagai Mempelai Perempuan</option>
                   @foreach($jemaats as $data)
                     <option value="{{$data['id_jemaat']}}">{{$data['nama_depan']}}&nbsp{{$data['nama_belakang']}}</option>
                   @endforeach
@@ -85,20 +85,21 @@
               </div>
               <div class="form-group">
                 <label for="name">Nama Ayah Mempelai Perempuan</label>
-                <input type="text" id="name" name="nama_ayah_perempuan" placeholder="Masukkan nama ayah mempelai perempuan" required/>
+                <input type="text" id="name" name="nama_ayah_perempuan" value="{{ old('nama_ayah_perempuan') }}" placeholder="Masukkan nama ayah mempelai perempuan" required/>
               </div>
               <div class="form-group">
                 <label for="name">Nama Ibu Mempelai Perempuan</label>
-                <input type="text" id="name" name="nama_ibu_perempuan" placeholder="Masukkan Nama Ibu Mempelai Perempuan" required/>
+                <input type="text" id="name" name="nama_ibu_perempuan" value="{{ old('nama_ibu_perempuan') }}" placeholder="Masukkan Nama Ibu Mempelai Perempuan" required/>
               </div>
               <div class="form-group">
                 <label for="name">Gereja Mempelai Perempuan</label>
-                <input type="text" id="name" name="nama_gereja_perempuan" placeholder="Masukkan Nama Gereja Mempelai Perempuan" required/>
+                <input type="text" id="name" name="nama_gereja_perempuan" value="{{ old('nama_gereja_perempuan') }}" placeholder="Masukkan Nama Gereja Mempelai Perempuan" required/>
               </div>
               <div class="form-group">
                 <label for="name">Keterangan</label>
-                <input type="text" id="name" name="keterangan" placeholder="Masukkan keterangan yang terkait" />
+                <input type="text" id="name" name="keterangan" value="{{ old('keterangan') }}" placeholder="Masukkan keterangan yang terkait" />
               </div>
+              <input type="hidden" name="id_user" value="{{ Auth::id() }}">
               <div style="text-align: right; margin-top: 40px;">
                  <input type="submit" value="daftar"/>
               </div>

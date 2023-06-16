@@ -72,13 +72,13 @@
                     </a>
                   </div>
                   <div class="mb-4" style="text-align: center;">
-                    <p class="mb-4">belum mempunyai account?  <a href="{{ route('register') }}" style="color: #3F486C; text-decoration: none;">{{ __('register ') }} Klik disini</a>
-                    <p class="mb-4">lupa password anda?? 
+                    <p class="mb-4">belum mempunyai account?  <a href="{{ route('register') }}" style="color: #3F486C; text-decoration: none;">{{ __('Register Klik Disini') }}</a>
+                    <p class="mb-4">
                       @if (Route::has('password.request'))
-                        <a class="btn btn-link" href="{{ route('password.request') }} style="color: #3F486C; text-decoration: none;"">
-                          {{ __('Forgot Your Password? ') }}Klik disini
+                        <a class="btn btn-link" href="{{ route('password.request') }}" style=color: #3F486C; text-decoration: none;>
+                          {{ __('anda lupa password? ') }}Klik Disini
                         </a>
-                      @endif\
+                      @endif
                   </div>   
                 </form>
               </div>

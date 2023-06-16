@@ -2,6 +2,7 @@
 @include('layouts.formSearch.header')
 @include('layouts.formSearch.sidebar')
 @include('layouts.formSearch.footer')
+@include('sweetalert::alert')
 
 <!-- Main content -->
 <div class="content-wrapper"><br><br>
@@ -15,25 +16,43 @@
               </div><br>
               <!-- /.card-header -->
               <div class="card-body">
-                <table id="example1" class="table table-bordered table-striped">
+                <table id="example1" class="table table-bordered ">
                   <thead>
                   <tr>
-                    <th>Nama</th>
+                    <th>Nama Gereja Tuuan</th>
                     <th width="400px">Status</th>
-                    <th width="50px"><center>Aksi</center></th>
+                    <th width="126px"><center>Aksi</center></th>
                   </tr>
                   </thead>
-                  <tbody>
-                    @foreach($pindahs as $data)
-                  <tr>
-                    <td>{{$data['nama_gereja']}}</td>
-                    <td><label class="text-danger">Belum di Uprove</label></td>
-                    <td>
-                      <a href="{{route('UprovePindah', $data['id_head_reg_pindah'])}}" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="uprove">Uprove</a>
-                    </td>                    
-                  </tr>
+                  @foreach($pindahs as $data)
+                  @if($data['status']== 0)
+                    <tbody>
+                      <tr>
+                        <td>{{$data['nama_gereja']}}</td>
+                        <td>
+                          <label class="text-danger">Belum di Uprove</label>
+                        </td>
+                        <td>
+                          <a href="{{route('UprovePindah1', $data['id_head_reg_pindah'])}}" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="uprove">Uprove</a>
+                          <a href="{{route('UprovePindah2', $data['id_head_reg_pindah'])}}" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="tolak uprove">Tolak</a>
+                        </td>                    
+                      </tr>
+                    </tbody>
+                  @elseif($data['status'] == 1)
+                    <tbody class="info-1">
+                      <tr>
+                        <td>{{$data['nama_gereja']}}</td>
+                        <td>
+                          <label class="text-danger">Belum di Uprove</label>
+                        </td>
+                        <td>
+                          <a href="{{route('UprovePindah1', $data['id_head_reg_pindah'])}}" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="uprove">Uprove</a>
+                          <a href="{{route('UprovePindah2', $data['id_head_reg_pindah'])}}" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="tolak uprove">Tolak</a>
+                        </td>                    
+                      </tr>
+                    </tbody>
+                  @endif
                   @endforeach
-                  </tbody>
                 </table>
               </div>
               <!-- /.card-body -->

@@ -1,5 +1,6 @@
 @include('layouts.user_2.style')
 @include('layouts.user_2.navbar')
+@include('sweetalert::alert')
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -55,49 +56,49 @@
               @method('post')
               <div class="form-group">
                 <label for="name">Nama Depan</label>
-                <input type="text" id="name" name="nama_depan" placeholder="Masukkan nama depan anda" required/>
+                <input type="text" id="name" name="nama_depan" value="{{ old('nama_depan') }}" placeholder="Masukkan nama depan anda" required/>
               </div>    
               <div class="form-group">
                 <label for="name">Nama Belakang</label>
-                <input type="text" id="name" name="nama_belakang" placeholder="Masukkan nama belakang anda" />
+                <input type="text" id="name" name="nama_belakang" value="{{ old('nama_belakang') }}" placeholder="Masukkan nama belakang anda" />
               </div>
               <div class="form-group">
                 <label for="name">Gelar Depan</label>
-                <input type="text" id="name" name="gelar_depan" placeholder="Masukkan gelar depan anda" />
+                <input type="text" id="name" name="gelar_depan" value="{{ old('gelar_depan') }}" placeholder="Masukkan gelar depan anda" />
               </div>
               <div class="form-group">
                 <label for="name">Gelar Belakang</label>
-                <input type="text" id="name" name="gelar_belakang" placeholder="Masukkan gelar belakang anda" />
+                <input type="text" id="name" name="gelar_belakang" value="{{ old('gelar_belakang') }}" placeholder="Masukkan gelar belakang anda" />
               </div>
               <div class="form-group">
                 <label for="name">Tempat Lahir</label>
-                <input type="text" id="name" name="tempat_lahir" placeholder="Masukkan tempat lahir anda" required/>
+                <input type="text" id="name" name="tempat_lahir" value="{{ old('tempat_lahir') }}" placeholder="Masukkan tempat lahir anda" required/>
               </div>
               <div class="form-group">
                 <label for="name">Tanggal Lahir</label>
-                <input type="date" id="name" name="tanggal_lahir" placeholder="Masukkan tanggal lahir anda" required/>
+                <input type="date" id="name" name="tanggal_lahir" value="{{ old('tanggal_lahir') }}" placeholder="Masukkan tanggal lahir anda" required/>
               </div>
               <div class="form-group">
                 <label for="name">Golongan Darah</label>
-                <input type="text" id="name" name="gol_darah" placeholder="Masukkan Golongan Darah anda yang masih aktif" />
+                <input type="text" id="name" name="gol_darah" value="{{ old('gol_darah') }}" placeholder="Masukkan Golongan Darah anda yang masih aktif" />
               </div>
               <div class="form-group">
                 <label for="name">Jenis Kelamin</label>
-                <input type="text" id="name" name="jenis_kelamin" placeholder="Masukkan jenis kelamin" required/>
+                <input type="text" id="name" name="jenis_kelamin" value="{{ old('jenis_kelamin') }}" placeholder="Masukkan jenis kelamin" required/>
               </div>
               <div class="form-group">
                 <label for="name">No Telepon</label>
-                <input type="text" id="name" name="no_telepon" placeholder="Masukkan nomor telepon anda" />
+                <input type="text" id="name" name="no_telepon" value="{{ old('no_telepon') }}" placeholder="Masukkan nomor telepon anda" />
               </div>
               <div class="form-group">
                 <label for="name">Alamat</label>
-                <input type="text" id="name" name="alamat" placeholder="Masukkan alamat anda" />
+                <input type="text" id="name" name="alamat" value="{{ old('alamat') }}" placeholder="Masukkan alamat anda" />
               </div>
               <div class="form-group">
                 <label for="name">Status Keluarga</label>
                 <!-- <input type="text" id="name" name="id_hub_keluarga" placeholder="Masukkan Gelar Anda" /> -->
                 <select class="pilihan" name="id_hub_keluarga">
-                  <option  value="">Pilih Status Hubungan Keluarga Anda</option>
+                  <option  value="{{ old('id_hub_keluarga') }}">Pilih Status Hubungan Keluarga Anda</option>
                   @foreach($keluargas as $data)
                     <option value="{{$data['id_hub_keluarga']}}">{{$data['nama_hub_keluarga']}}</option>
                   @endforeach
@@ -111,7 +112,7 @@
                 <label for="name">Pendidikan Terakhir</label>
                 <!-- <input type="text" id="name" name="id_pendidikan" placeholder="Masukkan Gelar Anda" /> -->
                 <select class="pilihan" name="id_pendidikan">
-                  <option  value="">Pilih Pendidikan Terakhir Anda</option>
+                  <option  value="{{ old('id_pendidikan') }}">Pilih Pendidikan Terakhir Anda</option>
                   @foreach($pendidikans as $data)
                     <option value="{{$data['id_pendidikan']}}">{{$data['pendidikan']}}</option>
                   @endforeach
@@ -121,7 +122,7 @@
                 <label for="name">Bidang Pendidikan</label>
                 <!-- <input type="text" id="name" name="id_bidang_pendidikan" placeholder="Masukkan Gelar Anda" /> -->
                 <select  class="pilihan"name="id_bidang_pendidikan">
-                  <option value="">Pilih Bidang Pendidikan Anda</option>
+                  <option value="{{ old('id_bidang_pendidikan') }}">Pilih Bidang Pendidikan Anda</option>
                   @foreach($bidangPendidikans as $data)
                     <option value="{{$data['id_bidang_pendidikan']}}">{{$data['nama_bidang_pendidikan']}}</option>
                   @endforeach
@@ -131,7 +132,7 @@
                 <label for="name">Pekerjaan</label>
                 <!-- <input type="text" id="name" name="id_pekerjaan" placeholder="Masukkan Gelar Anda" /> -->
                 <select class="pilihan"name="id_pekerjaan">
-                  <option  value="">Pilih Pekerjaan Anda</option>
+                  <option  value="{{ old('id_pekerjaan') }}">Pilih Pekerjaan Anda</option>
                   @foreach($pekerjaans as $data)
                     <option value="{{$data['id_pekerjaan']}}">{{$data['pekerjaan']}}</option>
                   @endforeach
@@ -139,17 +140,17 @@
               </div>
               <div class="form-group">
                 <label for="name">Pekerjaan Lainnya</label>
-                <input type="text" id="name" name="nama_pekerjaan_lain" placeholder="Masukkan pekerjaan lain jika tidak ada terdaftar pada aplikasi" required/>
+                <input type="text" id="name" name="nama_pekerjaan_lain" value="{{ old('nama_pekerjaan_lain') }}" placeholder="Masukkan pekerjaan lain jika tidak ada terdaftar pada aplikasi" required/>
               </div>
               <div class="form-group">
                 <label for="name">Keterangan</label>
-                <input type="text" id="name" name="keterangan" placeholder="Masukkan Gelar Anda" />
+                <input type="text" id="name" name="keterangan" value="{{ old('keterangan') }}" placeholder="Masukkan Gelar Anda" />
               </div>
+              <input type="hidden" name="id_user" value="{{ Auth::id() }}">
               <!-- upload foto -->  
               <div style="text-align: right; margin-top: 40px;">
                  <input type="submit" value="daftar"/>
               </div>
-             
             </form>
           </div>
           

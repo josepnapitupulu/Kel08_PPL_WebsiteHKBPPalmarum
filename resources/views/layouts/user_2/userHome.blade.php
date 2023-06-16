@@ -12,10 +12,12 @@
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/accounting.js/0.4.2/accounting.min.js"></script>
 
     <!-- Scripts -->
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    {{-- @vite(['resources/sass/app.scss', 'resources/js/app.js']) --}}
 </head>
 <body>
   <div id="loading-indicator">
@@ -29,10 +31,18 @@
             <ion-icon name="arrow-down-circle-outline" id="scrollButton"></ion-icon>
         </div>
     </header>
-    <div class="foto-container" id="targetElement">
+
+    {{-- foto --}}
+    <div id="targetElement">
+      <h1 class="photo-gallery2">Pelayan Pelayan Gereja</h1>
+      <div class="photo-gallery" id="photoGallery"></div>
+    </div>
+
+{{-- contoh sebelumnya --}}
+    {{-- <div class="foto-container" id="targetElement">
       @foreach($pelayans as $data)
         <div class="foto-item">
-            <img src="{{ asset('Style/image/')}}/{{$data['photo']}}" alt="Foto">
+            <img src="{{ asset('Style/image/')}}" alt="Foto">
             <h1 class="foto-text">{{$data['nama_lengkap']}}</h1>
             <h3 class="foto-text">Jabatan : {{$data['jabatan']}}</h3>
             <h4 class="foto-text">Tanggal Tahbisan : {{$data['tanggal_tahbisan']}}</h4>
@@ -41,8 +51,8 @@
         @endforeach 
 
         <!-- Tambahkan lebih banyak foto di sini jika diperlukan -->
-      </div>
-    <div class="judul_1">
+      </div> --}}
+    <div class="judul_11">
         <h1>Mengenai HKBP Palmarum</h1>
     </div>  
       <div class="card">
@@ -68,6 +78,10 @@
             @foreach($jadwals as $data)
             <tr>
               <th  style=" font-weight:40px ;border: none; background-color: #37545f ; ; padding:40px;  "colspan="3">Acara Minggu</th>
+            </tr>
+            <tr>
+              <th style=" border: none;" colspan="2"></th>
+              <th style=" font-weight:40px ;border: none;">Tanggal Ibadah : {{$data['tgl_ibadah']}}</th>
             </tr>
             <tr>
               <td class="kolom_1">BERNYANYI</td>
@@ -155,7 +169,7 @@
             <th style=" font-weight:40px ;border: none; background-color: #37545f ; padding:40px;">No</th>
             <th  style=" font-weight:40px ;border: none; background-color: #37545f ; ">Pemasukan Gereja</th>
             <th  style=" font-weight:40px ;border: none; background-color: #37545f ;   ">Total</th>
-            <th style=" font-weight:40px ;border: none; background-color: #37545f ;   ">Bentuk Pemasukan</th>
+            <th style=" font-weight:40px ;border: none; background-color: #37545f ; padding-left:40px ; padding-right:40px ">Bentuk Pemasukan</th>
           </tr>
           @foreach($pemasukans as $data)
           <tr>
@@ -173,7 +187,7 @@
             <th style=" font-weight:40px ;border: none; background-color: #37545f ; padding:40px;">No</th>
             <th  style=" font-weight:40px ;border: none; background-color: #37545f ; ">Pengeluaran Gereja</th>
             <th  style=" font-weight:40px ;border: none; background-color: #37545f ;   ">Total</th>
-            <th style=" font-weight:40px ;border: none; background-color: #37545f ;   ">Keterangan</th>
+            <th style=" font-weight:40px ;border: none; background-color: #37545f ;  padding-left:40px ; padding-right:40px ">Keterangan</th>
           </tr>
           @foreach($pengeluarans as $data)
           <tr>
@@ -186,7 +200,7 @@
         </table>
       </div>
       <div class="judul_1">
-        <h1>Informasi Keuangan Gereja</h1>
+        <h1>Informasi Kegiatan Gereja</h1>
         <div class="jadwal">
           <div class="schedule-slider">
             @foreach($kegiatans as $data)
@@ -200,7 +214,9 @@
             @endforeach
         </div>
       </div>
-      </div>@include('layouts.user_2.footer')
+      </div>
+      
+      @include('layouts.user_2.footer')
 </body>
 <script src="{{asset('Style')}}/style.js"></script>
 <script>
@@ -282,5 +298,51 @@
       .finally(() => {
           document.getElementById('loading-indicator').style.display = 'none';
       });
+
+
+
+
+//foto js
+const photos = [
+  @foreach($pelayans as $data)
+  {
+    url: '{{ asset('Style/image/')}}/{{$data['photo']}}',
+    descriptions: ['{{$data['nama_lengkap']}}', 'Jabatan : {{$data['jabatan']}}', 'Tanggal Tahbisan : {{$data['tanggal_tahbisan']}}', '{{$data['keterangan']}}']
+  },
+  @endforeach
+  // Tambahkan objek lain di sini jika diperlukan
+];
+
+const photoGallery = document.getElementById("photoGallery");
+
+photos.forEach((photo) => {
+  const photoElement = document.createElement("div");
+  photoElement.classList.add("photo", "fade-in");
+
+  const imageElement = document.createElement("img");
+  imageElement.src = photo.url;
+  imageElement.alt = photo.descriptions[0]; // Menggunakan deskripsi pertama sebagai atribut alt
+
+  const overlayElement = document.createElement("div");
+  overlayElement.classList.add("photo-overlay");
+
+  photo.descriptions.forEach((description, index) => {
+    const descriptionElement = document.createElement("p");
+    descriptionElement.classList.add("photo-text");
+    descriptionElement.textContent = description;
+    descriptionElement.classList.add(`description-${index + 1}`); // Menambahkan kelas CSS dengan gaya yang berbeda
+    overlayElement.appendChild(descriptionElement);
+  });
+
+  photoElement.appendChild(imageElement);
+  photoElement.appendChild(overlayElement);
+  photoGallery.appendChild(photoElement);
+});
+
+
+
+
+
 </script>
+<script src="{{asset('Style')}}/style.js"></script>
 </html>

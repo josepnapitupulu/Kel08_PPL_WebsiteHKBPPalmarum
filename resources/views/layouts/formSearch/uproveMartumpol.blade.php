@@ -2,6 +2,7 @@
 @include('layouts.formSearch.header')
 @include('layouts.formSearch.sidebar')
 @include('layouts.formSearch.footer')
+@include('sweetalert::alert')
 
 <!-- Main content -->
 <div class="content-wrapper"><br><br>
@@ -18,22 +19,36 @@
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                   <tr>
-                    <th>Nama</th>
+                    <th>Nama Gereja</th>
                     <th width="400px">Status</th>
-                    <th width="50px"><center>Aksi</center></th>
+                    <th width="126px"><center>Aksi</center></th>
                   </tr>
                   </thead>
+                  @foreach($martumpols as $data)
+                    @if($data['status']== 0)
                   <tbody>
-                    @foreach($martumpols as $data)
                   <tr>
                     <td>{{$data['nama_gereja_laki']}}</td>
                     <td><label class="text-danger">Belum di Uprove</label></td>
                     <td>
-                      <a href="{{route('UproveMartumpol', $data['id_registrasi_calon'])}}" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="uprove">Uprove</a>
+                      <a href="{{route('UproveMartumpol1', $data['id_registrasi_calon'])}}" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="uprove">Uprove</a>
+                      <a href="{{route('UproveMartumpol2', $data['id_registrasi_calon'])}}" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="tolak uprove">Tolak</a>
                     </td>                    
                   </tr>
-                  @endforeach
                   </tbody>
+                  @elseif($data['status'] == 1)
+                  <tbody class="info-1">
+                  <tr>
+                    <td>{{$data['nama_gereja_laki']}}</td>
+                    <td><label class="text-danger">Belum di Uprove</label></td>
+                    <td>
+                      <a href="{{route('UproveMartumpol1', $data['id_registrasi_calon'])}}" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="uprove">Uprove</a>
+                      <a href="{{route('UproveMartumpol2', $data['id_registrasi_calon'])}}" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="tolak uprove">Tolak</a>
+                    </td>                    
+                  </tr>
+                  </tbody>
+                  @endif
+                  @endforeach
                 </table>
               </div>
               <!-- /.card-body -->

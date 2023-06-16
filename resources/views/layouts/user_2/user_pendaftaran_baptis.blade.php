@@ -55,39 +55,40 @@
               @method('post')
               <div class="form-group">
                 <label for="name">Nama lengkap</label>
-                <input type="text" id="name" name="nama_lengkap" placeholder="Masukkan nama lengkap yang akan di baptis" required/>
+                <input type="text" id="name" name="nama_lengkap" value="{{ old('nama_lengkap') }}" placeholder="Masukkan nama lengkap yang akan di baptis" required/>
               </div>    
               <div class="form-group">
                 <label for="name">Nama Ayah</label>
-                <input type="text" id="name" name="nama_ayah" placeholder="Masukkan nama ayah" required/>
+                <input type="text" id="name" name="nama_ayah" value="{{ old('nama_ayah') }}" placeholder="Masukkan nama ayah" required/>
               </div>
               <div class="form-group">
                 <label for="name">Nama Ibu</label>
-                <input type="text" id="name" name="nama_ibu" placeholder="Masukkan nama ibu" required/>
+                <input type="text" id="name" name="nama_ibu" value="{{ old('nama_ibu') }}" placeholder="Masukkan nama ibu" required/>
               </div>
               <div class="form-group">
                 <label for="name">Tempat Lahir</label>
-                <input type="text" id="name" name="tempat_lahir" placeholder="Masukkan tempat lahir" required/>
+                <input type="text" id="name" name="tempat_lahir" value="{{ old('tempat_lahir') }}" placeholder="Masukkan tempat lahir" required/>
               </div>
               <div class="form-group">
                 <label for="name">Tanggal Lahir</label>
-                <input type="date" id="name" name="tanggal_lahir" placeholder="Masukkan tanggal lahir" required/>
+                <input type="date" id="name" name="tanggal_lahir" value="{{ old('tanggal_lahir') }}" placeholder="Masukkan tanggal lahir" required/>
               </div>
               <div class="form-group">
                 <label for="name">Jenis Kelamin</label>
-                <input type="text" id="name" name="jenis_kelamin" placeholder="Masukkan jenis kelamin" required/>
+                <input type="text" id="name" name="jenis_kelamin" value="{{ old('jenis_kelamin') }}" placeholder="Masukkan jenis kelamin" required/>
               </div>
               <div class="form-group">
                 <label for="name">Alamat</label>
-                <input type="text" id="name" name="alamat" placeholder="Masukkan alamat" required/>
+                <input type="text" id="name" name="alamat" value="{{ old('alamat') }}" placeholder="Masukkan alamat" required/>
               </div>
               <div class="form-group">
                 <label for="name">Keterangan</label>
-                <input type="text" id="name" name="keterangan" placeholder="Keterangan" />
+                <input type="text" id="name" name="keterangan" value="{{ old('keterangan') }}" placeholder="Keterangan"/>
               </div>
               <div style="text-align: right; margin-top: 40px;">
                  <input type="submit" onclick="contoh()" value="daftar"/>
               </div>
+              <input type="hidden" name="id_user" value="{{ Auth::id() }}">
               <script type="text/javascript">
 
                     function contoh() {

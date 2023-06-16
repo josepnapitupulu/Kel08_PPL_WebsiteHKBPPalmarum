@@ -78,8 +78,7 @@
                     </a>
                   </div>
                   <div class="mb-4" style="text-align: center;">
-                    <p class="mb-4">belum mempunyai account?  <a href="#" style="color: #3F486C; text-decoration: none;">Klik disini</a>
-                    <p class="mb-4">lupa password anda??  <a href="#" style="color: #3F486C; text-decoration: none;">Klik disini</a>
+                    <p class="mb-4">Sudah Memiliki Akun?  <a href="{{ route('login') }}" style="color: #3F486C; text-decoration: none;">Klik disini</a>
                   </div>
                   
                   </p>

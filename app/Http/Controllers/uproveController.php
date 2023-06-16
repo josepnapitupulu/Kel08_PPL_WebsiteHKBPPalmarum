@@ -6,8 +6,10 @@ use Exception;
 use Illuminate\Http\Request;
 use app\Helpers\ApiFormatter;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Session;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class uproveController extends Controller
 {
@@ -21,13 +23,43 @@ class uproveController extends Controller
         return view('layouts.formSearch.uproveBaptis', $data);
     }
 
-    public function uproveBaptis($id)
+    public function userUproveBaptis()
+    {
+        $user = Auth::user();
+
+        $response = Http::get('http://127.0.0.1:8070/api/userBaptis');
+
+        $baptis['userBaptiss'] = $response->collect()->where('id_user', $user->id);
+
+        $data = array_merge($baptis);
+
+        return view('layouts.user_2.user_uprove_baptis', $data);
+    }
+
+
+    public function uproveBaptis1($id)
     {
         try {
-            $response = Http::put('http://127.0.0.1:8070/api/uproveBaptis/'.$id);
+            $response = Http::put('http://127.0.0.1:8070/api/uproveBaptis1/'.$id);
             $statusCode = $response->status();
 
             if ($statusCode === 200) {
+                Alert::success('Uprove Baptis', 'Uprove Baptis Berhasil');
+                return redirect()->route('aksesUproveBaptis');
+            }
+        } catch (\Exception $e) {
+            return response()->json(['message' => 'Error: ' . $e->getMessage()], 500);
+        }
+    }
+
+    public function uproveBaptis2($id)
+    {
+        try {
+            $response = Http::put('http://127.0.0.1:8070/api/uproveBaptis2/'.$id);
+            $statusCode = $response->status();
+
+            if ($statusCode === 200) {
+                Alert::success('Tolak Uprove Baptis', 'Tolak Uprove Baptis Berhasil');
                 return redirect()->route('aksesUproveBaptis');
             }
         } catch (\Exception $e) {
@@ -44,13 +76,42 @@ class uproveController extends Controller
         return view('layouts.formSearch.uproveJemaat', $data);
     }
 
-    public function uproveJemaat($id)
+    public function userUproveJemaat()
+    {
+        $user = Auth::user();
+
+        $response = Http::get('http://127.0.0.1:8070/api/userPrvJemaat');
+
+        $jemaat['userJemaats'] = $response->collect()->where('id_user', $user->id);
+
+        $data = array_merge($jemaat);
+
+        return view('layouts.user_2.user_uprove_jemaat', $data);
+    }
+
+    public function uproveJemaat1($id)
     {
         try {
-            $response = Http::put('http://127.0.0.1:8070/api/uproveJemaat/'.$id);
+            $response = Http::put('http://127.0.0.1:8070/api/uproveJemaat1/'.$id);
             $statusCode = $response->status();
 
             if ($statusCode === 200) {
+                Alert::success('Uprove Jemaat', 'Uprove Jemaat Berhasil');
+                return redirect()->route('aksesUproveJemaat');
+            }
+        } catch (\Exception $e) {
+            return response()->json(['message' => 'Error: ' . $e->getMessage()], 500);
+        }
+    }
+
+    public function uproveJemaat2($id)
+    {
+        try {
+            $response = Http::put('http://127.0.0.1:8070/api/uproveJemaat2/'.$id);
+            $statusCode = $response->status();
+
+            if ($statusCode === 200) {
+                Alert::success('Tolak Uprove Jemaat', 'Tolak Uprove Jemaat Berhasil');
                 return redirect()->route('aksesUproveJemaat');
             }
         } catch (\Exception $e) {
@@ -67,13 +128,42 @@ class uproveController extends Controller
         return view('layouts.formSearch.uproveMartumpol', $data);
     }
 
-    public function uproveMartumpol($id)
+    public function userUproveMartumpol()
+    {
+        $user = Auth::user();
+
+        $response = Http::get('http://127.0.0.1:8070/api/userMartumpol');
+
+        $martumpol['userMartumpols'] = $response->collect()->where('id_user', $user->id);
+
+        $data = array_merge($martumpol);
+
+        return view('layouts.user_2.user_uprove_martumpol', $data);
+    }
+
+    public function uproveMartumpol1($id)
     {
         try {
-            $response = Http::put('http://127.0.0.1:8070/api/uproveMartumpol/'.$id);
+            $response = Http::put('http://127.0.0.1:8070/api/uproveMartumpol1/'.$id);
             $statusCode = $response->status();
 
             if ($statusCode === 200) {
+                Alert::success('Uprove Martumpol', 'Uprove Martumpol Berhasil');
+                return redirect()->route('aksesUproveMartumpol');
+            }
+        } catch (\Exception $e) {
+            return response()->json(['message' => 'Error: ' . $e->getMessage()], 500);
+        }
+    }
+
+    public function uproveMartumpol2($id)
+    {
+        try {
+            $response = Http::put('http://127.0.0.1:8070/api/uproveMartumpol2/'.$id);
+            $statusCode = $response->status();
+
+            if ($statusCode === 200) {
+                Alert::success('Tolak Uprove Martumpol', 'Tolak Uprove Martumpol Berhasil');
                 return redirect()->route('aksesUproveMartumpol');
             }
         } catch (\Exception $e) {
@@ -90,13 +180,42 @@ class uproveController extends Controller
         return view('layouts.formSearch.uprovePernikahan', $data);
     }
 
-    public function uproveNikah($id)
+    public function userUprovePernikahan()
+    {
+        $user = Auth::user();
+
+        $response = Http::get('http://127.0.0.1:8070/api/userNikah');
+
+        $nikah['userNikahs'] = $response->collect()->where('id_user', $user->id);
+
+        $data = array_merge($nikah);
+
+        return view('layouts.user_2.user_uprove_nikah', $data);
+    }
+
+    public function uprovePernikahan1($id)
     {
         try {
-            $response = Http::put('http://127.0.0.1:8070/api/uproveNikah/'.$id);
+            $response = Http::put('http://127.0.0.1:8070/api/uproveNikah1/'.$id);
             $statusCode = $response->status();
 
             if ($statusCode === 200) {
+                Alert::success('Uprove Pernikahan', 'Uprove Pernikahan Berhasil');
+                return redirect()->route('aksesUprovePernikahan');
+            }
+        } catch (\Exception $e) {
+            return response()->json(['message' => 'Error: ' . $e->getMessage()], 500);
+        }
+    }
+
+    public function uprovePernikahan2($id)
+    {
+        try {
+            $response = Http::put('http://127.0.0.1:8070/api/uproveNikah2/'.$id);
+            $statusCode = $response->status();
+
+            if ($statusCode === 200) {
+                Alert::success('Tolak Uprove Pernikahan', 'Tolak Uprove Pernikahan Berhasil');
                 return redirect()->route('aksesUprovePernikahan');
             }
         } catch (\Exception $e) {
@@ -113,13 +232,42 @@ class uproveController extends Controller
         return view('layouts.formSearch.uprovePindah', $data);
     }
 
-    public function uprovePindah($id)
+    public function userUprovePindah()
+    {
+        $user = Auth::user();
+
+        $response = Http::get('http://127.0.0.1:8070/api/userPindah');
+
+        $pindah['userPindahs'] = $response->collect()->where('id_user', $user->id);
+
+        $data = array_merge($pindah);
+
+        return view('layouts.user_2.user_uprove_pindah', $data);
+    }
+
+    public function uprovePindah1($id)
     {
         try {
-            $response = Http::put('http://127.0.0.1:8070/api/uprovePindah/'.$id);
+            $response = Http::put('http://127.0.0.1:8070/api/uprovePindah1/'.$id);
             $statusCode = $response->status();
 
             if ($statusCode === 200) {
+                Alert::success('Uprove Jemaat Pindah', 'Uprove Jemaat Pindah Berhasil');
+                return redirect()->route('aksesUprovePindah');
+            }
+        } catch (\Exception $e) {
+            return response()->json(['message' => 'Error: ' . $e->getMessage()], 500);
+        }
+    }
+
+    public function uprovePindah2($id)
+    {
+        try {
+            $response = Http::put('http://127.0.0.1:8070/api/uprovePindah2/'.$id);
+            $statusCode = $response->status();
+
+            if ($statusCode === 200) {
+                Alert::success('Tolak Uprove Jemaat Pindah', 'Tolak Uprove Jemaat Pindah Berhasil');
                 return redirect()->route('aksesUprovePindah');
             }
         } catch (\Exception $e) {
@@ -136,13 +284,42 @@ class uproveController extends Controller
         return view('layouts.formSearch.uproveSidi', $data);
     }
 
-    public function uproveSidi($id)
+    public function userUproveSidi()
+    {
+        $user = Auth::user();
+
+        $response = Http::get('http://127.0.0.1:8070/api/userSidi');
+
+        $sidi['userSidis'] = $response->collect()->where('id_user', $user->id);
+
+        $data = array_merge($sidi);
+
+        return view('layouts.user_2.user_uprove_sidi', $data);
+    }
+
+    public function uproveSidi1($id)
     {
         try {
-            $response = Http::put('http://127.0.0.1:8070/api/uproveSidi/'.$id);
+            $response = Http::put('http://127.0.0.1:8070/api/uproveSidi1/'.$id);
             $statusCode = $response->status();
 
             if ($statusCode === 200) {
+                Alert::success('Uprove Sidi', 'Uprove Sidi Berhasil');
+                return redirect()->route('aksesUproveSidi');
+            }
+        } catch (\Exception $e) {
+            return response()->json(['message' => 'Error: ' . $e->getMessage()], 500);
+        }
+    }
+
+    public function uproveSidi2($id)
+    {
+        try {
+            $response = Http::put('http://127.0.0.1:8070/api/uproveSidi2/'.$id);
+            $statusCode = $response->status();
+
+            if ($statusCode === 200) {
+                Alert::success('Tolak Uprove Sidi', 'Tolak Uprove Sidi Berhasil');
                 return redirect()->route('aksesUproveSidi');
             }
         } catch (\Exception $e) {

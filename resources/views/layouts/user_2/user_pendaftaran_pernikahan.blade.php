@@ -54,59 +54,58 @@
               @csrf
               @method('POST')
               <div class="form-group">
-                <label for="name">Nama Mempelai Laki</label>
-                <!-- <input type="text" id="name" name="id_jemaat_laki" placeholder="Masukkan Nama Lengkap Anda" /> -->
-                <select class="pilihan" name="id_jemaat_laki">
-                  <option value="">Pilih Nama Anda Sebagai Mempelai Laki-Laki</option>
-                  @foreach($jemaats as $data)
-                    <option value="{{$data['id_jemaat']}}">{{$data['nama_depan']}}&nbsp{{$data['nama_belakang']}}</option>
-                  @endforeach
-                </select>
-              </div>
+                <label for="name">Nama Mempelai Laki-Laki</label>
+                <input type="text" id="name" name="nama_lengkap_laki" value="{{ old('nama_lengkap_laki') }}" placeholder="Masukkan tanggal martumpol anda" required/>
+              </div> 
+              <div class="form-group">
+                <label for="name">Nama Mempelai Perempuan</label>
+                <input type="text" id="name" name="nama_lengkap_perempuan" value="{{ old('nama_lengkap_perempuan') }}" placeholder="Masukkan tanggal martumpol anda" required/>
+              </div> 
               <div class="form-group">
                 <label for="name">Tanggal Martumpol</label>
-                <input type="date" id="name" name="tgl_martumpol" placeholder="Masukkan tanggal martumpol anda" required/>
+                <input type="date" id="name" name="tgl_martumpol" value="{{ old('tgl_martumpol') }}" placeholder="Masukkan tanggal martumpol anda" required/>
               </div>    
               <div class="form-group">
                 <label for="name">Nama Gereja Martumpol</label>
-                <input type="text" id="name" name="nama_gereja_martumpol" placeholder="Masukkan nama gereja martumpol anda" required/>
+                <input type="text" id="name" name="nama_gereja_martumpol" value="{{ old('nama_gereja_martumpol') }}" placeholder="Masukkan nama gereja martumpol anda" required/>
               </div>
               <div class="form-group">
                 <label for="name">Tanggal Pemberkatan</label>
-                <input type="date" id="name" name="tgl_pemberkatan" placeholder="Masukkan rencana tanggal pemberkatan" required/>
+                <input type="date" id="name" name="tgl_pemberkatan" value="{{ old('tgl_pemberkatan') }}" placeholder="Masukkan rencana tanggal pemberkatan" required/>
               </div>
               <div class="form-group">
                 <label for="name">Nama Gereja Pemberkatan</label>
-                <input type="text" id="name" name="nama_gereja_pemberkatan" placeholder="Masukkan nama gereja pemberkatan" required/>
+                <input type="text" id="name" name="nama_gereja_pemberkatan" value="{{ old('nama_gereja_pemberkatan') }}" placeholder="Masukkan nama gereja pemberkatan" required/>
               </div>
               <div class="form-group">
                 <label for="name">Nama Gereja Mempelai Laki-Laki</label>
-                <input type="text" id="name" name="nama_gereja_laki" placeholder="Masukkan nama gereja mempelai laki-laki" required/>
+                <input type="text" id="name" name="nama_gereja_laki" value="{{ old('nama_gereja_laki') }}" placeholder="Masukkan nama gereja mempelai laki-laki" required/>
               </div>
               <div class="form-group">
                 <label for="name">Nama Ayah Mempelai Laki-Laki</label>
-                <input type="text" id="name" name="nama_ayah_laki" placeholder="Masukkan nama ayah mempelai laki-laki" required/>
+                <input type="text" id="name" name="nama_ayah_laki" value="{{ old('nama_ayah_laki') }}" placeholder="Masukkan nama ayah mempelai laki-laki" required/>
               </div>
               <div class="form-group">
                 <label for="name">Nama Ibu Mempelai Laki-Laki</label>
-                <input type="text" id="name" name="nama_ibu_laki" placeholder="Masukkan nama ibu mempelai laki-laki" required/>
+                <input type="text" id="name" name="nama_ibu_laki" value="{{ old('nama_ibu_laki') }}" placeholder="Masukkan nama ibu mempelai laki-laki" required/>
               </div>
               <div class="form-group">
                 <label for="name">Nama Gereja Mempelai Perempuan</label>
-                <input type="text" id="name" name="nama_gereja_perempuan" placeholder="Masukkan nama gereja mempelai perempuan" required/>
+                <input type="text" id="name" name="nama_gereja_perempuan" value="{{ old('nama_gereja_perempuan') }}" placeholder="Masukkan nama gereja mempelai perempuan" required/>
               </div>
               <div class="form-group">
                 <label for="name">Nama Ayah Mempelai Perempuan</label>
-                <input type="text" id="name" name="nama_ayah_perempuan" placeholder="Masukkan nama ayah mempelai perempuan" required/>
+                <input type="text" id="name" name="nama_ayah_perempuan" value="{{ old('nama_ayah_perempuan') }}" placeholder="Masukkan nama ayah mempelai perempuan" required/>
               </div>
               <div class="form-group">
                 <label for="name">Nama Ibu Mempelai Perempuan</label>
-                <input type="text" id="name" name="nama_ibu_perempuan" placeholder="Masukkan nama ibu mempelai perempuan" required/>
+                <input type="text" id="name" name="nama_ibu_perempuan" value="{{ old('nama_ibu_perempuan') }}" placeholder="Masukkan nama ibu mempelai perempuan" required/>
               </div>
               <div class="form-group">
                 <label for="name">Keterangan</label>
-                <input type="text" id="name" name="keterangan" placeholder="masukkan keterangan terkait jika dibutuhkan" />
+                <input type="text" id="name" name="keterangan" value="{{ old('keterangan') }}" placeholder="masukkan keterangan terkait jika dibutuhkan" />
               </div>
+              <input type="hidden" name="id_user" value="{{ Auth::id() }}">
               <div style="text-align: right; margin-top: 40px;">
                  <input type="submit" value="daftar"/>
               </div>
