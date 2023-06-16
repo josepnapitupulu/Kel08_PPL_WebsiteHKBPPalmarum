@@ -35,33 +35,35 @@
               </div><br>
               <!-- /.card-header -->
               <!-- form start -->
-              <form>
+              <form action="{{ route('createKegiatan') }}" method="POST">
+                @csrf
+                @method('POST')
                 <div class="card-body">
                   <div class="form-group">
                     <label for="exampleInputEmail1">Nama Kegiatan</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nama Kegiatan">
+                    <input type="text" class="form-control" name="nama_jenis_kegiatan" id="exampleInputEmail1" placeholder="Nama Kegiatan">
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputPassword1">Jenis Kegiatan</label>
-                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Jenis Kegiatan">
+                    <label for="exampleInputPassword1">Tanggal Kegiatan</label>
+                    <input type="date" class="form-control" name="tanggal_kegiatan" id="exampleInputPassword1" placeholder="Jenis Kegiatan">
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputEmail1">Jadwal Kegiatan</label>
-                    <input type="date" class="form-control" id="exampleInputEmail1" placeholder="Jadwal Kegiatan">
+                    <label for="exampleInputEmail1">Waktu Kegiatan</label>
+                    <input type="time" class="form-control" name="waktu_kegiatan" id="exampleInputEmail1" placeholder="Jadwal Kegiatan">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Lokasi Kegiatan</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Lokasi Kegiatan">
+                    <input type="text" class="form-control" name="lokasi_kegiatan" id="exampleInputEmail1" placeholder="Lokasi Kegiatan">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Keterangan</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Keterangan">
+                    <input type="text" class="form-control" name="keterangan" id="exampleInputEmail1" placeholder="Keterangan">
                   </div>
                 </div>
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-outline-dark btn-lg ml-3 float-right">Cancel</button>
+                  <a href="{{ route('kegiatan') }}" class="btn btn-outline-dark btn-lg ml-3 float-right">Cancel</a>
                   <button type="submit" class="btn btn-success btn-lg float-right">Create</button>
                 </div>
               </form>

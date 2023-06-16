@@ -68,12 +68,12 @@
                   <p>Kegiatan</p>
                 </a>
               </li>
-              <li class="nav-item">
+              {{-- <li class="nav-item">
                 <a href="/admin/keluarga" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Keluarga</p>
                 </a>
-              </li>
+              </li> --}}
               <li class="nav-item">
                 <a href="/admin/martumpol" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>

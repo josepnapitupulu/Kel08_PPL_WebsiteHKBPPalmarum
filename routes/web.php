@@ -29,10 +29,12 @@ Route::prefix('admin')->middleware(['isAdmin', 'auth'])->group(function(){
 
 
     Route::get('/sidi', [App\Http\Controllers\sidiController::class, 'index'])->name('sidi');
-    Route::get('/daftarSidih', [App\Http\Controllers\sidiController::class, 'store'])->name('daftarSidi');
-    Route::get('/updateSidi', [App\Http\Controllers\sidiController::class, 'edit'])->name('updateSidi');
-    Route::get('/detailSidi', [App\Http\Controllers\sidiController::class, 'create'])->name('detailSidi');
-    
+    Route::get('/daftarSidi', [App\Http\Controllers\sidiController::class, 'store'])->name('daftarSidi');
+    Route::post('/createSidi', [App\Http\Controllers\sidiController::class, 'create'])->name('createSidi');
+    Route::post('/updateSidi', [App\Http\Controllers\sidiController::class, 'update'])->name('updateSidi');
+    Route::get('/detailSidi/{id}', [App\Http\Controllers\sidiController::class, 'details'])->name('detailSidi');
+    Route::get('/editSidi/{id}', [App\Http\Controllers\sidiController::class, 'edit'])->name('editSidi');
+    Route::get('/deleteSidi/{id}', [App\Http\Controllers\sidiController::class, 'destroy'])->name('deleteSidi');
 
     Route::get('/rpp', [App\Http\Controllers\rppController::class, 'index'])->name('rpp');
     Route::get('/daftarRpp', [App\Http\Controllers\rppController::class, 'store'])->name('daftarRpp');
@@ -42,47 +44,73 @@ Route::prefix('admin')->middleware(['isAdmin', 'auth'])->group(function(){
     Route::get('/detailRpp/{id}', [App\Http\Controllers\rppController::class, 'showDetails'])->name('detailRpp');
     Route::get('/deleteRpp/{id}', [App\Http\Controllers\rppController::class, 'destroy'])->name('deleteRpp');
 
+    Route::get('/ibadah', [App\Http\Controllers\ibadahController::class, 'index'])->name('ibadah');
+    Route::get('/daftarIbadah', [App\Http\Controllers\ibadahController::class, 'store'])->name('daftarIbadah');
+    Route::get('/editIbadah/{id}', [App\Http\Controllers\ibadahController::class, 'edit'])->name('editIbadah');
+    Route::post('/createIbadah', [App\Http\Controllers\ibadahController::class, 'create'])->name('createIbadah');
+    Route::get('/detailIbadah/{id}', [App\Http\Controllers\ibadahController::class, 'details'])->name('detailIbadah');
+    Route::get('/deleteIbadah/{id}', [App\Http\Controllers\ibadahController::class, 'destroy'])->name('deleteIbadah');
+    Route::post('/updateIbadah', [App\Http\Controllers\ibadahController::class, 'update'])->name('updateIbadah');
+
+    Route::get('/baptis', [App\Http\Controllers\baptisController::class, 'index'])->name('baptis');
+    Route::get('/daftarBaptis', [App\Http\Controllers\baptisController::class, 'store'])->name('daftarBaptis');
+    Route::post('/updateBaptis', [App\Http\Controllers\baptisController::class, 'update'])->name('updateBaptis');
+    Route::get('/detailBaptis/{id}', [App\Http\Controllers\baptisController::class, 'details'])->name('detailBaptis');
+    Route::post('/createBaptis', [App\Http\Controllers\baptisController::class, 'create'])->name('createBaptis');
+    Route::get('/deleteBaptis/{id}', [App\Http\Controllers\baptisController::class, 'destroy'])->name('deleteBaptis');
+    Route::get('/editBaptis/{id}', [App\Http\Controllers\baptisController::class, 'edit'])->name('editBaptis');
+
+
+    Route::get('/jemaat', [App\Http\Controllers\jemaatController::class, 'index'])->name('jemaat');
+    Route::get('/daftarJemaat', [App\Http\Controllers\jemaatController::class, 'store'])->name('daftarJemaat');
+    Route::post('/createJemaat', [App\Http\Controllers\jemaatController::class, 'create'])->name('createJemaat');
+    Route::post('/updateJemaat', [App\Http\Controllers\jemaatController::class, 'update'])->name('updateJemaat');
+    Route::get('/editJemaat/{id}', [App\Http\Controllers\jemaatController::class, 'edit'])->name('editJemaat');
+    Route::get('/detailJemaat/{id}', [App\Http\Controllers\jemaatController::class, 'details'])->name('detailJemaat');
+    Route::get('/deleteJemaat/{id}', [App\Http\Controllers\jemaatController::class, 'destroy'])->name('deleteJemaat');
+   
+    
+
+    Route::get('/kegiatan', [App\Http\Controllers\kegiatanController::class, 'index'])->name('kegiatan');
+    Route::post('/createKegiatan', [App\Http\Controllers\kegiatanController::class, 'create'])->name('createKegiatan');
+    Route::get('/daftarKegiatan', [App\Http\Controllers\kegiatanController::class, 'store'])->name('daftarKegiatan');
+    Route::get('/editKegiatan/{id}', [App\Http\Controllers\kegiatanController::class, 'edit'])->name('editKegiatan');
+    Route::post('/updateKegiatan', [App\Http\Controllers\kegiatanController::class, 'update'])->name('updateKegiatan');
+    Route::get('/detailKegiatan/{id}', [App\Http\Controllers\kegiatanController::class, 'details'])->name('detailKegiatan');
+    Route::get('/deleteKegiatan/{id}', [App\Http\Controllers\kegiatanController::class, 'destroy'])->name('deleteKegiatan');
 
 
     Route::get('/pernikahan', [App\Http\Controllers\pernikahanController::class, 'index'])->name('pernikahan');
     Route::get('/daftarPernikahan', [App\Http\Controllers\pernikahanController::class, 'store'])->name('daftarPernikahan');
-    Route::get('/updatePernikahan', [App\Http\Controllers\pernikahanController::class, 'edit'])->name('updatePernikahan');
-    Route::get('/detailPernikahan', [App\Http\Controllers\pernikahanController::class, 'create'])->name('detailPernikahan');//perbaikan
-
-    Route::get('/martumpol', [App\Http\Controllers\martumpolController::class, 'index'])->name('martumpol');
-    Route::get('/daftarMartumpol', [App\Http\Controllers\martumpolController::class, 'store'])->name('daftarMartumpol');
-    Route::get('/updateMartumpol', [App\Http\Controllers\martumpolController::class, 'edit'])->name('updateMartumpol');
-    Route::get('/detailMartumpol', [App\Http\Controllers\martumpolController::class, 'create'])->name('detailMartumpol');
-
-    Route::get('/kegiatan', [App\Http\Controllers\kegiatanController::class, 'index'])->name('kegiatan');
-    Route::get('/daftarKegiatan', [App\Http\Controllers\kegiatanController::class, 'store'])->name('daftarKegiatan');
-    Route::get('/updateKegiatan', [App\Http\Controllers\kegiatanController::class, 'edit'])->name('updateKegiatan');
-    Route::get('/detailKegiatan', [App\Http\Controllers\kegiatanController::class, 'create'])->name('detailKegiatan');
-
-    Route::get('/jemaat', [App\Http\Controllers\jemaatController::class, 'index'])->name('jemaat');
-    Route::get('/daftarJemaat', [App\Http\Controllers\jemaatController::class, 'store'])->name('daftarJemaat');
-    Route::get('/updateJemaat', [App\Http\Controllers\jemaatController::class, 'edit'])->name('updateJemaat');
-    Route::get('/detailJemaat', [App\Http\Controllers\jemaatController::class, 'create'])->name('detailJemaat');
-
-    Route::get('/ibadah', [App\Http\Controllers\ibadahController::class, 'index'])->name('ibadah');
-    Route::get('/daftarIbadah', [App\Http\Controllers\ibadahController::class, 'store'])->name('daftarIbadah');
-    Route::get('/updateIbadah', [App\Http\Controllers\ibadahController::class, 'edit'])->name('updateIbadah');
-    Route::get('/detailIbadah', [App\Http\Controllers\ibadahController::class, 'create'])->name('detailIbadah');
-
-    Route::get('/baptis', [App\Http\Controllers\baptisController::class, 'index'])->name('baptis');
-    Route::get('/daftarBaptis', [App\Http\Controllers\baptisController::class, 'store'])->name('daftarBaptis');
-    Route::get('/updateBaptis', [App\Http\Controllers\baptisController::class, 'edit'])->name('updateBaptis');
-    Route::get('/detailBaptis', [App\Http\Controllers\baptisController::class, 'create'])->name('detailBaptis');
-
-    Route::get('/keluarga', [App\Http\Controllers\keluargaController::class, 'index'])->name('keluarga');
-    Route::get('/daftarKeluarga', [App\Http\Controllers\keluargaController::class, 'store'])->name('daftarKeluarga');
-    Route::get('/updateKeluarga', [App\Http\Controllers\keluargaController::class, 'edit'])->name('updateKeluarga');
-    Route::get('/detailKeluarga', [App\Http\Controllers\keluargaController::class, 'create'])->name('detailKeluarga');
+    Route::post('/updatePernikahan', [App\Http\Controllers\pernikahanController::class, 'update'])->name('updatePernikahan');
+    Route::post('/createPernikahan', [App\Http\Controllers\pernikahanController::class, 'create'])->name('createPernikahan');
+    Route::get('/editPernikahan/{id}', [App\Http\Controllers\pernikahanController::class, 'edit'])->name('editPernikahan');
+    Route::get('/detailPernikahan/{id}', [App\Http\Controllers\pernikahanController::class, 'details'])->name('detailPernikahan');
+    Route::get('/deletePernikahan/{id}', [App\Http\Controllers\pernikahanController::class, 'destroy'])->name('deletePernikahan');
 
     Route::get('/pindah', [App\Http\Controllers\pindahController::class, 'index'])->name('pindah');
     Route::get('/daftarPindah', [App\Http\Controllers\pindahController::class, 'store'])->name('daftarPindah');
-    Route::get('/updatePindah', [App\Http\Controllers\pindahController::class, 'edit'])->name('updatePindah');
-    Route::get('/detailPindah', [App\Http\Controllers\pindahController::class, 'create'])->name('detailPindah');
+    Route::post('/updatePindah', [App\Http\Controllers\pindahController::class, 'update'])->name('updatePindah');
+    Route::post('/createPindah', [App\Http\Controllers\pindahController::class, 'create'])->name('createPindah');
+    Route::get('/editPindah/{id}', [App\Http\Controllers\pindahController::class, 'edit'])->name('editPindah');
+    Route::get('/deletePindah/{id}', [App\Http\Controllers\pindahController::class, 'destroy'])->name('deletePindah');
+    Route::get('/detailPindah/{id}', [App\Http\Controllers\pindahController::class, 'details'])->name('detailPindah');
+
+    Route::get('/martumpol', [App\Http\Controllers\martumpolController::class, 'index'])->name('martumpol');
+    Route::get('/daftarMartumpol', [App\Http\Controllers\martumpolController::class, 'store'])->name('daftarMartumpol');
+    Route::post('/createMartumpol', [App\Http\Controllers\martumpolController::class, 'create'])->name('createMartumpol');
+    Route::post('/updateMartumpol', [App\Http\Controllers\martumpolController::class, 'update'])->name('updateMartumpol');
+    Route::get('/editMartumpol/{id}', [App\Http\Controllers\martumpolController::class, 'edit'])->name('editMartumpol');
+    Route::get('/detailMartumpol/{id}', [App\Http\Controllers\martumpolController::class, 'detail'])->name('detailMartumpol');
+    Route::get('/deleteMartumpol/{id}', [App\Http\Controllers\martumpolController::class, 'destroy'])->name('deleteMartumpol');
+
+
+    // Route::get('/keluarga', [App\Http\Controllers\keluargaController::class, 'index'])->name('keluarga');
+    // Route::get('/daftarKeluarga', [App\Http\Controllers\keluargaController::class, 'store'])->name('daftarKeluarga');
+    // Route::get('/updateKeluarga', [App\Http\Controllers\keluargaController::class, 'edit'])->name('updateKeluarga');
+    // Route::get('/detailKeluarga', [App\Http\Controllers\keluargaController::class, 'create'])->name('detailKeluarga');
+
+    
 
 
     Route::get('/pemasukan', [App\Http\Controllers\pemasukanController::class, 'index'])->name('pemasukan');

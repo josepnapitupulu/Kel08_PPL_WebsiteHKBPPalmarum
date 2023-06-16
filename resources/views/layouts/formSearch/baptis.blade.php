@@ -14,7 +14,7 @@
                 <h3 class="card-title" id="textHeader">Daftar Jemaat Baptis</h3>
               </div><br>
               <div>
-                <button type="submit" class="btn btn-success float-right" id="buttonHeader">Tambah Baptis</button>
+                <a  class="btn btn-success float-right" href="{{ route('daftarBaptis') }}" id="buttonHeader">Tambah Baptis</a>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -25,264 +25,21 @@
                     <th width="120px"><center>Aksi</center></th>
                   </tr>
                   </thead>
+                  @if($baptis['data'] != null)
+                      
+                  @foreach ( $baptis['data'] as $item)
                   <tbody>
                   <tr>
-                    <td>Trident</td>
+                    <td>{{ $item['nama_lengkap'] }}</td>
                     <td>
-                      <button class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="detail"><i><img src="/icon/search2.png" alt="" class="iconbutton"></i></button>
-                      <button class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="edit"><i class="bi bi-pencil-square"></i></button>
-                      <button class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="hapus"><i class="bi bi-trash3-fill"></i></button>
+                      <a class="btn btn-primary" href="{{ route('detailBaptis',$item['id_registrasi_baptis']) }}" data-toggle="tooltip" data-placement="top" title="detail"><i><img src="/icon/search2.png" alt="" class="iconbutton"></i></a>
+                      <a class="btn btn-warning" href="{{ route('editBaptis',$item['id_registrasi_baptis']) }}" data-toggle="tooltip" data-placement="top" title="edit"><i class="bi bi-pencil-square"></i></a>
+                      <a class="btn btn-danger" href="{{ route('deleteBaptis',$item['id_registrasi_baptis']) }}" data-toggle="tooltip" data-placement="top" title="hapus"><i class="bi bi-trash3-fill"></i></a>
                     </td>                    
-                  </tr>
-                  <tr>
-                    <td>Trident</td>
-                    <td>
-                      <button class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="detail"><i><img src="/icon/search2.png" alt="" class="iconbutton"></i></button>
-                      <button class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="edit"><i class="bi bi-pencil-square"></i></button>
-                      <button class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="hapus"><i class="bi bi-trash3-fill"></i></button>
-                    </td>                    
-                  </tr>
-                  <tr>
-                    <td>Trident</td>
-                    <td>
-                      <button class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="detail"><i><img src="/icon/search2.png" alt="" class="iconbutton"></i></button>
-                      <button class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="edit"><i class="bi bi-pencil-square"></i></button>
-                      <button class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="hapus"><i class="bi bi-trash3-fill"></i></button>
-                    </td>                    
-                  </tr>
-                  <tr>
-                    <td>Trident</td>
-                    <td>
-                      <button class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="detail"><i><img src="/icon/search2.png" alt="" class="iconbutton"></i></button>
-                      <button class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="edit"><i class="bi bi-pencil-square"></i></button>
-                      <button class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="hapus"><i class="bi bi-trash3-fill"></i></button>
-                    </td>                   
-                  </tr>
-                  <tr>
-                    <td>Trident</td>
-                    <td>
-                      <button class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="detail"><i><img src="/icon/search2.png" alt="" class="iconbutton"></i></button>
-                      <button class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="edit"><i class="bi bi-pencil-square"></i></button>
-                      <button class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="hapus"><i class="bi bi-trash3-fill"></i></button>
-                    </td>                     
-                  </tr>
-                  <tr>
-                    <td>Gecko</td>
-                    <td>
-                      <button class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="detail"><i><img src="/icon/search2.png" alt="" class="iconbutton"></i></button>
-                      <button class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="edit"><i class="bi bi-pencil-square"></i></button>
-                      <button class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="hapus"><i class="bi bi-trash3-fill"></i></button>
-                    </td>                     
-                  </tr>
-                  <tr>
-                    <td>Gecko</td>
-                    <td>
-                      <button class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="detail"><i><img src="/icon/search2.png" alt="" class="iconbutton"></i></button>
-                      <button class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="edit"><i class="bi bi-pencil-square"></i></button>
-                      <button class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="hapus"><i class="bi bi-trash3-fill"></i></button>
-                    </td>  
-                  </tr>
-                  <tr>
-                    <td>Gecko</td>
-                    <td>
-                      <button class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="detail"><i><img src="/icon/search2.png" alt="" class="iconbutton"></i></button>
-                      <button class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="edit"><i class="bi bi-pencil-square"></i></button>
-                      <button class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="hapus"><i class="bi bi-trash3-fill"></i></button>
-                    </td>                     
-                  </tr>
-                  <tr>
-                    <td>Gecko</td>
-                    <td>
-                      <button class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="detail"><i><img src="/icon/search2.png" alt="" class="iconbutton"></i></button>
-                      <button class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="edit"><i class="bi bi-pencil-square"></i></button>
-                      <button class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="hapus"><i class="bi bi-trash3-fill"></i></button>
-                    </td> 
-                  </tr>
-                  <tr>
-                    <td>Gecko</td>
-                    <td>
-                      <button class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="detail"><i><img src="/icon/search2.png" alt="" class="iconbutton"></i></button>
-                      <button class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="edit"><i class="bi bi-pencil-square"></i></button>
-                      <button class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="hapus"><i class="bi bi-trash3-fill"></i></button>
-                    </td> 
-                  </tr>
-                  <tr>
-                    <td>Gecko</td>
-                    <td>
-                      <button class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="detail"><i><img src="/icon/search2.png" alt="" class="iconbutton"></i></button>
-                      <button class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="edit"><i class="bi bi-pencil-square"></i></button>
-                      <button class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="hapus"><i class="bi bi-trash3-fill"></i></button>
-                    </td> 
-                  </tr>
-                  <tr>
-                    <td>Gecko</td>
-                    <td>
-                      <button class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="detail"><i><img src="/icon/search2.png" alt="" class="iconbutton"></i></button>
-                      <button class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="edit"><i class="bi bi-pencil-square"></i></button>
-                      <button class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="hapus"><i class="bi bi-trash3-fill"></i></button>
-                    </td> 
-                  </tr>
-                  <tr>
-                    <td>Gecko</td>
-                    <td>
-                      <button class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="detail"><i><img src="/icon/search2.png" alt="" class="iconbutton"></i></button>
-                      <button class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="edit"><i class="bi bi-pencil-square"></i></button>
-                      <button class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="hapus"><i class="bi bi-trash3-fill"></i></button>
-                    </td> 
-                  </tr>
-                  <tr>
-                    <td>Gecko</td>
-                    <td>
-                      <button class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="detail"><i><img src="/icon/search2.png" alt="" class="iconbutton"></i></button>
-                      <button class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="edit"><i class="bi bi-pencil-square"></i></button>
-                      <button class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="hapus"><i class="bi bi-trash3-fill"></i></button>
-                    </td> 
-                  </tr>
-                  <tr>
-                    <td>Gecko</td>
-                    <td>
-                      <button class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="detail"><i><img src="/icon/search2.png" alt="" class="iconbutton"></i></button>
-                      <button class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="edit"><i class="bi bi-pencil-square"></i></button>
-                      <button class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="hapus"><i class="bi bi-trash3-fill"></i></button>
-                    </td> 
-                  </tr>
-                  <tr>
-                    <td>Gecko</td>
-                    <td>
-                      <button class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="detail"><i><img src="/icon/search2.png" alt="" class="iconbutton"></i></button>
-                      <button class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="edit"><i class="bi bi-pencil-square"></i></button>
-                      <button class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="hapus"><i class="bi bi-trash3-fill"></i></button>
-                    </td> 
-                  </tr>
-                  <tr>
-                    <td>Gecko</td>
-                    <td>
-                      <button class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="detail"><i><img src="/icon/search2.png" alt="" class="iconbutton"></i></button>
-                      <button class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="edit"><i class="bi bi-pencil-square"></i></button>
-                      <button class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="hapus"><i class="bi bi-trash3-fill"></i></button>
-                    </td> 
-                  </tr>
-                  <tr>
-                    <td>Gecko</td>
-                    <td>
-                      <button class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="detail"><i><img src="/icon/search2.png" alt="" class="iconbutton"></i></button>
-                      <button class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="edit"><i class="bi bi-pencil-square"></i></button>
-                      <button class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="hapus"><i class="bi bi-trash3-fill"></i></button>
-                    </td> 
-                  </tr>
-                  <tr>
-                    <td>Gecko</td>
-                    <td>
-                      <button class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="detail"><i><img src="/icon/search2.png" alt="" class="iconbutton"></i></button>
-                      <button class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="edit"><i class="bi bi-pencil-square"></i></button>
-                      <button class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="hapus"><i class="bi bi-trash3-fill"></i></button>
-                    </td> 
-                  </tr>
-                  <tr>
-                    <td>Gecko</td>
-                    <td>
-                      <button class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="detail"><i><img src="/icon/search2.png" alt="" class="iconbutton"></i></button>
-                      <button class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="edit"><i class="bi bi-pencil-square"></i></button>
-                      <button class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="hapus"><i class="bi bi-trash3-fill"></i></button>
-                    </td> 
-                  </tr>
-                  <tr>
-                    <td>Gecko</td>
-                    <td>
-                      <button class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="detail"><i><img src="/icon/search2.png" alt="" class="iconbutton"></i></button>
-                      <button class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="edit"><i class="bi bi-pencil-square"></i></button>
-                      <button class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="hapus"><i class="bi bi-trash3-fill"></i></button>
-                    </td> 
-                  </tr>
-                  <tr>
-                    <td>Gecko</td>
-                    <td>
-                      <button class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="detail"><i><img src="/icon/search2.png" alt="" class="iconbutton"></i></button>
-                      <button class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="edit"><i class="bi bi-pencil-square"></i></button>
-                      <button class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="hapus"><i class="bi bi-trash3-fill"></i></button>
-                    </td> 
-                  </tr>
-                  <tr>
-                    <td>Gecko</td>
-                    <td>
-                      <button class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="detail"><i><img src="/icon/search2.png" alt="" class="iconbutton"></i></button>
-                      <button class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="edit"><i class="bi bi-pencil-square"></i></button>
-                      <button class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="hapus"><i class="bi bi-trash3-fill"></i></button>
-                    </td> 
-                  </tr>
-                  <tr>
-                    <td>Gecko</td>
-                    <td>
-                      <button class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="detail"><i><img src="/icon/search2.png" alt="" class="iconbutton"></i></button>
-                      <button class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="edit"><i class="bi bi-pencil-square"></i></button>
-                      <button class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="hapus"><i class="bi bi-trash3-fill"></i></button>
-                    </td> 
-                  </tr>
-                  <tr>
-                    <td>Gecko</td>
-                    <td>
-                      <button class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="detail"><i><img src="/icon/search2.png" alt="" class="iconbutton"></i></button>
-                      <button class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="edit"><i class="bi bi-pencil-square"></i></button>
-                      <button class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="hapus"><i class="bi bi-trash3-fill"></i></button>
-                    </td> 
-                  </tr>
-                  <tr>
-                    <td>Webkit</td>
-                    <td>
-                      <button class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="detail"><i><img src="/icon/search2.png" alt="" class="iconbutton"></i></button>
-                      <button class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="edit"><i class="bi bi-pencil-square"></i></button>
-                      <button class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="hapus"><i class="bi bi-trash3-fill"></i></button>
-                    </td> 
-                  </tr>
-                  <tr>
-                    <td>Webkit</td>
-                    <td>
-                      <button class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="detail"><i><img src="/icon/search2.png" alt="" class="iconbutton"></i></button>
-                      <button class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="edit"><i class="bi bi-pencil-square"></i></button>
-                      <button class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="hapus"><i class="bi bi-trash3-fill"></i></button>
-                    </td> 
-                  </tr>
-                  <tr>
-                    <td>Webkit</td>
-                    <td>
-                      <button class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="detail"><i><img src="/icon/search2.png" alt="" class="iconbutton"></i></button>
-                      <button class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="edit"><i class="bi bi-pencil-square"></i></button>
-                      <button class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="hapus"><i class="bi bi-trash3-fill"></i></button>
-                    </td> 
-                  </tr>
-                  <tr>
-                    <td>Webkit</td>
-                    <td>
-                      <button class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="detail"><i><img src="/icon/search2.png" alt="" class="iconbutton"></i></button>
-                      <button class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="edit"><i class="bi bi-pencil-square"></i></button>
-                      <button class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="hapus"><i class="bi bi-trash3-fill"></i></button>
-                    </td> 
-                  </tr>
-                  <tr>
-                    <td>Webkit</td>
-                    <td>
-                      <button class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="detail"><i><img src="/icon/search2.png" alt="" class="iconbutton"></i></button>
-                      <button class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="edit"><i class="bi bi-pencil-square"></i></button>
-                      <button class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="hapus"><i class="bi bi-trash3-fill"></i></button>
-                    </td> 
-                  </tr>
-                  <tr>
-                    <td>Webkit</td>
-                    <td>
-                      <button class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="detail"><i><img src="/icon/search2.png" alt="" class="iconbutton"></i></button>
-                      <button class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="edit"><i class="bi bi-pencil-square"></i></button>
-                      <button class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="hapus"><i class="bi bi-trash3-fill"></i></button>
-                    </td> 
-                  </tr>
-                  <tr>
-                    <td>Webkit</td>
-                    <td>
-                      <button class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="detail"><i><img src="/icon/search2.png" alt="" class="iconbutton"></i></button>
-                      <button class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="edit"><i class="bi bi-pencil-square"></i></button>
-                      <button class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="hapus"><i class="bi bi-trash3-fill"></i></button>
-                    </td> 
                   </tr>
                   </tbody>
+                  @endforeach
+                  @endif
                 </table>
               </div>
               <!-- /.card-body -->

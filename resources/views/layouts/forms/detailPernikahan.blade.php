@@ -22,41 +22,45 @@
                     </tr>
                   </thead>
                   <tbody>
+                    @foreach ($nikah['data'] as $item)
+
                     <tr>
                       <td>Pasangan</td>
-                      <td>------</td>
+                      <td>{{ $item['pasangan'] }}</td>
                     </tr>
                     <tr>
                       <td>Tanggal Pernikahan</td>
-                      <td>------</td>
+                      <td>{{ $item['tgl_pernikahan'] }}</td>
                     </tr>
                     <tr>
                       <td>Nats Pernikahan</td>
-                      <td>------</td>
+                      <td>{{ $item['nats_pernikahan'] }}</td>
                     </tr>
                     <tr>
                       <td>Gereja Pernikahan</td>
-                      <td>------</td>
+                      <td>{{ $item['nama_gereja'] }}</td>
                     </tr>
                     <tr>
                       <td>Pendeta yang Memberkati</td>
-                      <td>------</td>
+                      <td>{{ $item['nama_pendeta'] }}</td>
                     </tr>
                     <tr>
                     <tr>
                       <td>Keterangan</td>
-                      <td>------</td>
+                      <td>{{ $item['keterangan'] }}</td>
                     </tr>
                     <tr>
                         <td></td>
                         <td></td>
                     </tr>
+                    @endforeach
                   </tbody>
                 </table>
               </div><br>
               <!-- /.card-body -->
               <div>
-                <a href="/updatePernikahanLaki"><button class="btn btn-warning" id="buttonEdit">Edit</button></a>
+                <a class="btn btn-default" href="{{ route('pernikahan') }}" id="buttonKembali">Kembali</a>
+                <a href="{{ route('editPernikahan', $item['id_pernikahan']) }}"><button class="btn btn-warning" id="buttonEdit">Edit</button></a>
               </div><br><br>
                 
             </div>

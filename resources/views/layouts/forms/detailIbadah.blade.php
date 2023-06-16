@@ -22,41 +22,100 @@
                     </tr>
                   </thead>
                   <tbody>
+                    @foreach ($ibadah['data'] as $item)
+
                     <tr>
                       <td>Nama Jenis Minggu</td>
-                      <td>------</td>
+                      <td>{{ $item['nama_jenis_minggu'] }}</td>
                     </tr>
                     <tr>
-                      <td>Waktu Ibadah</td>
-                      <td>------</td>
+                      <td>Tanggal Ibadah</td>
+                      <td>{{ $item['tgl_ibadah'] }}</td>
                     </tr>
                     <tr>
                       <td>Pelayan Ibadah</td>
-                      <td>------</td>
+                      <td>{{ $item['nama_pendeta'] }}</td>
                     </tr>
                     <tr>
                       <td>Jumlah Pelayan</td>
-                      <td>------</td>
+                      <td>{{ $item['jumlah_pelayan'] }}</td>
                     </tr>
                     <tr>
-                      <td>Status</td>
-                      <td>------</td>
+                      <td>Waktu Mulai Ibadah</td>
+                      <td>{{ $item['waktu_mulai'] }}</td>
                     </tr>
                     <tr>
-                      <td>Keteranagan</td>
-                      <td>------</td>
+                      <td>Nyanyian-1</td>
+                      <td>{{ $item['nyanyian_1'] }}</td>
+                    </tr>
+                    <tr>
+                      <td>Votum</td>
+                      <td>{{ $item['votum'] }}-</td>
+                    </tr>
+                    <tr>
+                      <td>Nyanyian-2</td>
+                      <td>{{ $item['nyanyian_2'] }}</td>
+                    </tr>
+                    <tr>
+                      <td>Hukum Taurat</td>
+                      <td>{{ $item['hukum_taurat'] }}-</td>
+                    </tr>
+                    <tr>
+                      <td>Nyanyian-3</td>
+                      <td>{{ $item['nyanyian_3'] }}</td>
+                    </tr>
+                    <tr>
+                      <td>Pengakuan Dosa</td>
+                      <td>{{ $item['pengakuan_dosa'] }}</td>
+                    </tr>
+                    <tr>
+                      <td>Nyanyian-4</td>
+                      <td>{{ $item['nyanyian_4'] }}</td>
+                    </tr>
+                    <tr>
+                      <td>Epistel</td>
+                      <td>{{ $item['epistel'] }}</td>
+                    </tr>
+                    <tr>
+                      <td>Nyanyian-5</td>
+                      <td>{{ $item['nyanyian_5'] }}</td>
+                    </tr>
+                    <tr>
+                      <td>Pengakuan Iman</td>
+                      <td>{{ $item['pengakuan_iman'] }}</td>
+                    </tr>
+                    <tr>
+                      <td>Nyanyian-6</td>
+                      <td>{{ $item['nyanyian_6'] }}-</td>
+                    </tr>
+                    <tr>
+                      <td>Khotbah</td>
+                      <td>{{ $item['khotbah'] }}</td>
+                    </tr>
+                    <tr>
+                      <td>Nyanyian-7</td>
+                      <td>{{ $item['nyanyian_7'] }}</td>
+                    </tr>
+                    <tr>
+                      <td>Doa Penutup</td>
+                      <td>{{ $item['doa_penutup'] }}</td>
+                    </tr>
+                    <tr>
+                      <td>Keterangan</td>
+                      <td>{{ $item['keterangan'] }}</td>
                     </tr>
                     <tr>
                         <td></td>
                         <td></td>
                     </tr>
+                    @endforeach
                   </tbody>
                 </table>
               </div><br>
               <!-- /.card-body -->
               <div>
-                <button class="btn btn-default" id="buttonKembali">Kembali</button>
-                <button class="btn btn-warning" id="buttonEdit">Edit</button>
+                <a class="btn btn-default" href="{{ route('ibadah') }}" id="buttonKembali">Kembali</a>
+                <a class="btn btn-warning" href="{{ route('editIbadah',$item['id_jadwal_ibadah']) }}" id="buttonEdit">Edit</a>
               </div><br><br>
                 
             </div>

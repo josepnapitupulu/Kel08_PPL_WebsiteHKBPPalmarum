@@ -22,49 +22,61 @@
                     </tr>
                   </thead>
                   <tbody>
+                    @foreach ($pindah['data'] as $item)
+
                     <tr>
                       <td>ID Registrasi Pindah</td>
-                      <td>------</td>
-                    </tr>
-                    <tr>
-                      <td>ID Registrasi Jemaat</td>
-                      <td>------</td>
+                      <td>{{ $item['id_head_reg_pindah'] }}</td>
                     </tr>
                     <tr>
                       <td>No Surat Pindah</td>
-                      <td>------</td>
+                      <td>{{ $item['no_surat_pindah'] }}</td>
+                    </tr>
+                    <tr>
+                      <td>ID Registrasi Jemaat</td>
+                      <td>{{ $item['id_registrasi'] }}</td>
                     </tr>
                     <tr>
                       <td>ID Jemaat</td>
-                      <td>------</td>
+                      <td>{{ $item['id_jemaat'] }}</td>
+                    </tr>
+                    <tr>
+                      <td>Nama Jemaat</td>
+                      <td>{{ $item['nama_lengkap'] }}</td>
                     </tr>
                     <tr>
                       <td>ID Gereja Tujuan</td>
-                      <td>------</td>
+                      <td>{{ $item['id_gereja_tujuan'] }}</td>
                     </tr>
                     <tr>
                     <tr>
                       <td>Nama Gereja</td>
-                      <td>------</td>
+                      <td>{{ $item['nama_gereja'] }}</td>
+                    </tr>
+                    <tr>
+                      <td>Tanggal Pindah</td>
+                      <td>{{ $item['tgl_pindah'] }}</td>
                     </tr>
                     <tr>
                       <td>Tanggal Warta</td>
-                      <td>------</td>
+                      <td>{{ $item['tgl_warta'] }}</td>
                     </tr>
                     <tr>
                       <td>Keterangan</td>
-                      <td>------</td>
+                      <td>{{ $item['keterangan'] }}</td>
                     </tr>
                     <tr>
                         <td></td>
                         <td></td>
                     </tr>
+                    @endforeach
                   </tbody>
                 </table>
               </div><br>
               <!-- /.card-body -->
               <div>
-                <a href="/updatePernikahanLaki"><button class="btn btn-warning" id="buttonEdit">Edit</button></a>
+                <a class="btn btn-default" href="{{ route('pindah') }}" id="buttonKembali">Kembali</a>
+                <a class="btn btn-warning" href="{{ route('editPindah', $item['id_head_reg_pindah']) }}" id="buttonEdit">Edit</a>
               </div><br><br>
                 
             </div>

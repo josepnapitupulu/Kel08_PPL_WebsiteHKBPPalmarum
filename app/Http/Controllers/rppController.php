@@ -138,8 +138,5 @@ class rppController extends Controller
             $successMessage = Session::get('success');
             return redirect()->route('rpp',compact('successMessage'));
         }
-
-        
-
     }
 }
