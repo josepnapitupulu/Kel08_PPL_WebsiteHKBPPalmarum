@@ -19,13 +19,13 @@
             <a href="{{route('martumpolUser')}}">MARTUMPOL</a>
         </li>
         <li>
-            <a href="{{route('pindahUser')}}">PINDAH</a>
+            <a href="{{route('pindahUser')}}">JEMAAT PINDAH</a>
         </li>
         <li>
             <a href="{{route('baptisUser')}}">BAPTIS</a>
         </li>
         <li class="dropdown">
-            <a href="#" target="blank">Status Pendaftaran</a>
+            <a href="#" target="blank">STATUS PENDAFTARAN</a>
             <ul class="dropdown-menu">
                 <li><a href="{{ route('userUproveSidi') }}">Status Pendaftaran Sidi</a></li>
                 <li><a href="{{ route('userUprovePernikahan') }}">Status Pendaftaran Pernikahan</a></li>
