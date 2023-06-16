@@ -1,7 +1,7 @@
 <!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-primary" style="height: 130vh;">
     <!-- Brand Logo -->
-    <a href="{{asset('AdminLTE-3.2.0')}}/index3.html" class="brand-link">
+    <a href="/" class="brand-link">
       <img src="/Style/img/logo_HKBP.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">HKBP PALMARUM</span>
     </a>
@@ -14,7 +14,7 @@
           <img src="/Style/img/logo_Admin.png" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Admin HKBP Palmarum</a>
+          <a href="/" class="d-block">Admin HKBP Palmarum</a>
         </div>
       </div>
 
@@ -187,33 +187,45 @@
             <a href="#" class="nav-link">
               <i><img src="/icon/aproval.png" alt=""></i>
               <p>
-                Approve
+                Upprove
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{asset('AdminLTE-3.2.0')}}/charts/chartjs.html" class="nav-link">
+                <a href="/admin/uproveSidi" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>ChartJS</p>
+                  <p>Sidi</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{asset('AdminLTE-3.2.0')}}/charts/flot.html" class="nav-link">
+                <a href="/admin/uprovePernikahan" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Flot</p>
+                  <p>Pernikahan</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{asset('AdminLTE-3.2.0')}}/charts/inline.html" class="nav-link">
+                <a href="/admin/uproveJemaat" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Inline</p>
+                  <p>Jemaat</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{asset('AdminLTE-3.2.0')}}/charts/uplot.html" class="nav-link">
+                <a href="/admin/uproveMartumpol" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>uPlot</p>
+                  <p>Martumpol</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/admin/uprovePindah" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Jemaat Pindah</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/admin/uproveBaptis" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Baptis</p>
                 </a>
               </li>
             </ul>
@@ -300,6 +312,17 @@
                 </a>
               </li>
             </ul>
+          </li>
+          <li class="nav-item">
+            <form method="POST" action="{{ route('logout') }}">
+                @csrf
+                    <a class="nav-link" :href="route('logout')"
+                        onclick="event.preventDefault();
+                        this.closest('form').submit();">
+                        <i class="nav-icon fas fa-power-off"></i>
+                        {{ __('Log Out') }}
+                    </a>
+            </form>
           </li>
         </ul>
       </nav>

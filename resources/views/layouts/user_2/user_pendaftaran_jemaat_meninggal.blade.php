@@ -52,27 +52,27 @@
             <form>
               <div class="form-group">
                 <label for="name">Nama lengkap</label>
-                <input type="text" id="name" name="name" placeholder="Masukkan nama dan nama panggilan beliau " required/>
+                <input type="text" id="name" name="name" value="{{ old('nama_depan') }}" placeholder="Masukkan nama dan nama panggilan beliau " required/>
               </div>    
               <div class="form-group">
                 <label for="name">Tanggal lahir</label>
-                <input type="text" id="name" name="name" placeholder="Masukkan tanggal lahir beliau" />
+                <input type="text" id="name" name="name" value="{{ old('nama_depan') }}" placeholder="Masukkan tanggal lahir beliau" />
               </div>
               <div class="form-group">
                 <label for="name">Tanggal Meninggal</label>
-                <input type="text" id="name" name="name" placeholder="Masukkan tanggal meninggal beliau" />
+                <input type="text" id="name" name="name" value="{{ old('nama_depan') }}" placeholder="Masukkan tanggal meninggal beliau" />
               </div>
               <div class="form-group">
                 <label for="name">Tutup Umur</label>
-                <input type="text" id="name" name="name" placeholder="Masukkan tanggal tutup umur beliau" />
+                <input type="text" id="name" name="name" value="{{ old('nama_depan') }}" placeholder="Masukkan tanggal tutup umur beliau" />
               </div>
               <div class="form-group">
                 <label for="name">Tanggal Pemakaman</label>
-                <input type="text" id="name" name="name" placeholder="Masukkan tanggal pemakaman beliau" />
+                <input type="text" id="name" name="name" value="{{ old('nama_depan') }}" placeholder="Masukkan tanggal pemakaman beliau" />
               </div>
               <div class="form-group">
                 <label for="name">Wijk</label>
-                <input type="text" id="name" name="name" placeholder="Masukkan Wijk" />
+                <input type="text" id="name" name="name" value="{{ old('name') }}" placeholder="Masukkan Wijk" />
               </div>
               <input type="hidden" name="id_user" value="{{ Auth::id() }}">
               <div style="text-align: right; margin-top: 40px;">

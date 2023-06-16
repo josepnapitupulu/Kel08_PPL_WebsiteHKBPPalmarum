@@ -34,45 +34,9 @@
 
     {{-- foto --}}
     <div id="targetElement">
+      <h1 class="photo-gallery2">Pelayan Pelayan Gereja</h1>
       <div class="photo-gallery" id="photoGallery"></div>
     </div>
-    {{-- <div class="wrapper" id="targetElement">
-      <div class="gallery">
-        @foreach($pelayans as $data)
-        <div class="image"><span><img src="{{ asset('Style/image/')}}" alt="Foto"></span>
-          <img src="{{ asset('Style/image/')}}" alt="Foto">
-          <h1 class="foto-text">{{$data['nama_lengkap']}}</h1>
-          <h3 class="foto-text">Jabatan : {{$data['jabatan']}}</h3>
-          <h4 class="foto-text">Tanggal Tahbisan : {{$data['tanggal_tahbisan']}}</h4>
-          <p class="foto-text">{{$data['keterangan']}}</p>        
-        </div>
-      
-      </div>
-    </div> --}}
-    {{-- <div class="preview-box">
-      <div class="details">
-        <span class="title">Image <p class="current-img"></p> of <p class="total-img"></p></span>
-        <span class="icon">x</span>
-      </div>
-      <div class="image-box">
-        <div class="slide prev"><i class="fa fa-angle-left" aria-hidden="true"></i></div>
-        <div class="slide next"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
-        <img src="" alt="">
-        <img src="{{ asset('Style/image/')}}" alt="Foto">
-        <h1 class="foto-text">{{$data['nama_lengkap']}}</h1>
-        <h3 class="foto-text">Jabatan : {{$data['jabatan']}}</h3>
-        <h4 class="foto-text">Tanggal Tahbisan : {{$data['tanggal_tahbisan']}}</h4>
-        <p class="foto-text">{{$data['keterangan']}}</p>   
-        <figcaption>Beliau ini selama hidupnya selalu mengundang tawa</figcaption>
-      </div>
-    </div>
-    <div class="shadow"></div> --}}
-
-   
-
-
-    
-    
 
 {{-- contoh sebelumnya --}}
     {{-- <div class="foto-container" id="targetElement">
@@ -88,7 +52,7 @@
 
         <!-- Tambahkan lebih banyak foto di sini jika diperlukan -->
       </div> --}}
-    <div class="judul_1">
+    <div class="judul_11">
         <h1>Mengenai HKBP Palmarum</h1>
     </div>  
       <div class="card">

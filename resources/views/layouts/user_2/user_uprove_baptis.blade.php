@@ -25,14 +25,14 @@
   </div>
     <header class="hero">
        <H1><span>Palmarum</span></H1>
-        <p>Beranda</p>
+        <p>Status Pendaftaran Baptis</p>
         
         <div class="mouse">
             <ion-icon name="arrow-down-circle-outline" id="scrollButton"></ion-icon>
         </div>
     </header><br><br><br><br><br><br>   
 
-      <div class="judul_1">
+      <div class="judul_1" id="targetElement">
         <div class="">
           <table table class="aesthetic-table-user" >
             <thead>
@@ -40,7 +40,7 @@
                 <th  style=" font-weight:40px ;border: none; background-color: #37545f ; color:white; padding:40px;  "colspan="3">Status Pendaftaran Baptis</th>
               </tr>
               <tr>
-                <th class="judul-tabel">Nama</th>
+                <th class="judul-tabel">Nama Anak Dibaptis</th>
                 <th class="judul-tabel">Status</th>
               </tr>
             </thead>

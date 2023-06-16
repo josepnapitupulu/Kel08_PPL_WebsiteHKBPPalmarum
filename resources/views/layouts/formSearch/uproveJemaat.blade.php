@@ -21,12 +21,12 @@
                   <tr>
                     <th>Nama</th>
                     <th width="400px">Status</th>
-                    <th width="50px"><center>Aksi</center></th>
+                    <th width="126px"><center>Aksi</center></th>
                   </tr>
                   </thead>
                     @foreach($prvJemaats as $data)
                     @if($data['status']== 0)
-                  <tbody class="info-2">
+                  <tbody>
                   <tr>
                     <td>{{$data['nama_depan']}}&nbsp{{$data['nama_belakang']}}</td>
                     <td><label class="text-danger">Belum di Uprove</label></td>

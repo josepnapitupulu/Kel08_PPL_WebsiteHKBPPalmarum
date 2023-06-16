@@ -25,14 +25,14 @@
   </div>
     <header class="hero">
        <H1><span>Palmarum</span></H1>
-        <p>Beranda</p>
+        <p>Status Pendaftaran Martumpol</p>
         
         <div class="mouse">
             <ion-icon name="arrow-down-circle-outline" id="scrollButton"></ion-icon>
         </div>
     </header><br><br><br><br><br><br>   
 
-      <div class="judul_1">
+      <div class="judul_1" id="targetElement">
         <div class="">
           <table table class="aesthetic-table-user" >
             <thead>
@@ -40,7 +40,7 @@
                 <th  style=" font-weight:40px ;border: none; background-color: #37545f ; color:white; padding:40px;  "colspan="3">Status Pendaftaran Martumpol</th>
               </tr>
               <tr>
-                <th class="judul-tabel">Nama</th>
+                <th class="judul-tabel">Nama Gereja</th>
                 <th class="judul-tabel">Status</th>
               </tr>
             </thead>
@@ -48,7 +48,7 @@
             @if($data['status']== 0)
             <tbody class="info-3">
               <tr>
-                <td class="lebar">{{$data['nama_ayah_laki']}}</td>
+                <td class="lebar">{{$data['nama_gereja_laki']}}</td>
                 <td>
                   @if($data['status']== 0)
                     <label for="">Menunggu</label>
@@ -63,7 +63,7 @@
             @elseif($data['status'] == 1)
             <tbody class="info-1">
             <tr>
-                <td class="lebar">{{$data['nama_ayah_laki']}}</td>
+                <td class="lebar">{{$data['nama_gereja_laki']}}</td>
                 <td>
                   @if($data['status']== 0)
                     <label for="">Belum Uprove</label>
@@ -78,7 +78,7 @@
             @elseif($data['status'] == 2)
             <tbody class="info-2">
             <tr>
-                <td class="lebar">{{$data['nama_ayah_laki']}}</td>
+                <td class="lebar">{{$data['nama_gereja_laki']}}</td>
                 <td>
                   @if($data['status']== 0)
                     <label for="">Belum Uprove</label>

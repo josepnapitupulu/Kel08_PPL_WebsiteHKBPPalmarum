@@ -19,16 +19,16 @@
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                   <tr>
-                    <th>Nama</th>
+                    <th>Nama Kedua Mempelai</th>
                     <th width="400px">Status</th>
-                    <th width="50px"><center>Aksi</center></th>
+                    <th width="126px"><center>Aksi</center></th>
                   </tr>
                   </thead>
                     @foreach($nikahs as $data)
                     @if($data['status']== 0)
-                  <tbody class="info-2">
+                  <tbody>
                   <tr>
-                    <td>{{$data['nama_gereja_martumpol']}}</td>
+                    <td>{{$data['nama_lengkap_laki']}}&nbsp<span style="color: #e25555;">&#9829;</span>&nbsp{{$data['nama_lengkap_perempuan']}}</td>
                     <td><label class="text-danger">Belum di Uprove</label></td>
                     <td>
                       <a href="{{route('UprovePernikahan1', $data['id_registrasi_nikah'])}}" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="uprove">Uprove</a>
@@ -39,7 +39,7 @@
                   @elseif($data['status'] == 1)
                   <tbody class="info-1">
                   <tr>
-                    <td>{{$data['nama_gereja_martumpol']}}</td>
+                    <td>{{$data['nama_lengkap_laki']}}&nbsp<span style="color: #e25555;">&#9829;</span>&nbsp{{$data['nama_lengkap_perempuan']}}</td>
                     <td><label class="text-danger">Belum di Uprove</label></td>
                     <td>
                       <a href="{{route('UprovePernikahan1', $data['id_registrasi_nikah'])}}" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="uprove">Uprove</a>

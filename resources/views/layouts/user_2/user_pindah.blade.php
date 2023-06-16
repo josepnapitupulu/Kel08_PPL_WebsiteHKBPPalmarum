@@ -57,7 +57,7 @@
                 <label for="name">Nama Jemaat</label>
                 <!-- <input type="text" id="name" name="id_jemaat" placeholder="Asexxxx , bxxxxx, Cxxxxx" /> -->
                 <select class="pilihan" name="id_jemaat">
-                  <option value="">Pilih Nama Anda Sebagai Mempelai Laki-Laki</option>
+                  <option value="{{ old('id_jemaat') }}">Pilih Nama Anda Sebagai Mempelai Laki-Laki</option>
                   @foreach($jemaats as $data)
                     <option value="{{$data['id_jemaat']}}">{{$data['nama_depan']}}&nbsp{{$data['nama_belakang']}}</option>
                   @endforeach
@@ -67,7 +67,7 @@
                 <label for="name">Nama Keluarga</label>
                 <!-- <input type="text" id="name" name="id_registrasi" placeholder="Asexxxx , bxxxxx, Cxxxxx" /> -->
                 <select class="pilihan" name="id_registrasi">
-                  <option value="">Pilih Nama Anda Sebagai Mempelai Laki-Laki</option>
+                  <option value="{{ old('id_registrasi') }}">Pilih Nama Anda Sebagai Mempelai Laki-Laki</option>
                   @foreach($namKeluargas as $data)
                     <option value="{{$data['id_registrasi']}}">{{$data['nama_keluarga']}}</option>
                   @endforeach
@@ -75,15 +75,15 @@
               </div>  
               <div class="form-group">
                 <label for="name">Tanggal Pindah</label>
-                <input type="date" id="name" name="tgl_pindah" placeholder="Masukkan rencana tanggal pindah" required/>
+                <input type="date" id="name" name="tgl_pindah" value="{{ old('tgl_pindah') }}" placeholder="Masukkan rencana tanggal pindah" required/>
               </div>
               <div class="form-group">
                 <label for="name">Gereja Tujuan</label>
-                <input type="text" id="name" name="nama_gereja" placeholder="cnth : Gereja Katedral Jakarta Jl. Katedral No. 7B Jakarta Pusat 10110 Indonesia" required/>
+                <input type="text" id="name" name="nama_gereja" value="{{ old('nama_gereja') }}" placeholder="cnth : Gereja Katedral Jakarta Jl. Katedral No. 7B Jakarta Pusat 10110 Indonesia" required/>
               </div>
               <div class="form-group">
                 <label for="name">Keterangan</label>
-                <input type="text" id="name" name="keterangan" placeholder="Masukkan keterangan jika dibutuhkan" />
+                <input type="text" id="name" name="keterangan" value="{{ old('keterangan') }}" placeholder="Masukkan keterangan jika dibutuhkan" />
               </div>
               <input type="hidden" name="id_user" value="{{ Auth::id() }}">
               <div style="text-align: right; margin-top: 40px;">

@@ -18,17 +18,17 @@
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                   <tr>
-                    <th>Nama</th>
+                    <th>Nama Jemaat Sidi</th>
                     <th width="400px">Status</th>
-                    <th width="50px"><center>Aksi</center></th>
+                    <th width="126px"><center>Aksi</center></th>
                   </tr>
                   </thead>
                     @foreach($sidis as $data)
                     @if($data['status']== 0)
-                    <tbody class="info-2">
+                    <tbody>
                   <tr>
                     <td>{{$data['nama_lengkap']}}</td>
-                    <td><label class="text-danger">Belum di Uprove</label></td>
+                    <td><label >Belum di Uprove</label></td>
                     <td>
                       <a href="{{route('UproveSidi1', $data['id_registrasi_sidi'])}}" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="uprove">Uprove</a>
                       <a href="{{route('UproveSidi2', $data['id_registrasi_sidi'])}}" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="tolak uprove">Tolak</a>
@@ -39,7 +39,7 @@
                     <tbody class="info-1">
                     <tr>
                     <td>{{$data['nama_lengkap']}}</td>
-                    <td><label class="text-danger">Belum di Uprove</label></td>
+                    <td><label >Belum di Uprove</label></td>
                     <td>
                       <a href="{{route('UproveSidi1', $data['id_registrasi_sidi'])}}" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="uprove">Uprove</a>
                       <a href="{{route('UproveSidi2', $data['id_registrasi_sidi'])}}" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="tolak uprove">Tolak</a>

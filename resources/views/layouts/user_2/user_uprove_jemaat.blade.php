@@ -25,9 +25,9 @@
   </div>
     <header class="hero">
        <H1><span>Palmarum</span></H1>
-        <p>Beranda</p>
+        <p>Status Pendaftaran Jemaat</p>
         
-        <div class="mouse">
+        <div class="mouse" id="targetElement">
             <ion-icon name="arrow-down-circle-outline" id="scrollButton"></ion-icon>
         </div>
     </header><br><br><br><br><br><br>   
@@ -40,7 +40,7 @@
                 <th  style=" font-weight:40px ;border: none; background-color: #37545f ; color:white; padding:40px;  "colspan="3">Status Pendaftaran Jemaat</th>
               </tr>
               <tr>
-                <th class="judul-tabel">Nama</th>
+                <th class="judul-tabel">Nama Jemaat</th>
                 <th class="judul-tabel">Status</th>
               </tr>
             </thead>

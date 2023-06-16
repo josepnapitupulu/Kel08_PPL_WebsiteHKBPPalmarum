@@ -19,14 +19,14 @@
                 <table id="example1" class="table table-bordered ">
                   <thead>
                   <tr>
-                    <th>Nama</th>
+                    <th>Nama Gereja Tuuan</th>
                     <th width="400px">Status</th>
-                    <th width="50px"><center>Aksi</center></th>
+                    <th width="126px"><center>Aksi</center></th>
                   </tr>
                   </thead>
                   @foreach($pindahs as $data)
                   @if($data['status']== 0)
-                    <tbody class="info-2">
+                    <tbody>
                       <tr>
                         <td>{{$data['nama_gereja']}}</td>
                         <td>
