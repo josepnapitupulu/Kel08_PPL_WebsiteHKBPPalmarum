@@ -46,7 +46,7 @@ class userController extends Controller
             return back()->withErrors(['message' => 'error when create Baptis data']);
         }
     
-        return redirect()->route('martumpolUser');
+        return redirect()->route('userUproveMartumpol');
     }
 
     public function index2()
@@ -73,7 +73,7 @@ class userController extends Controller
             return back()->withErrors(['message' => 'error when create Baptis data']);
         }
         Alert::success('Baptis', 'Registrasi Berhasil');
-        return redirect()->route('baptisUser');
+        return redirect()->route('userUproveBaptis');
     }
 
     public function index3()
@@ -110,7 +110,7 @@ class userController extends Controller
         }
     
         Alert::success('Baptis', 'Registrasi Berhasil');
-        return redirect()->route('jemaatUser');
+        return redirect()->route('userUproveJemaat');
     }
 
     public function index4()
@@ -148,7 +148,7 @@ class userController extends Controller
             return back()->withErrors(['message' => 'error when create Baptis data']);
         }
     
-        return redirect()->route('nikahUser');
+        return redirect()->route('userUprovePernikahan');
     }
 
     public function index5()
@@ -179,7 +179,7 @@ class userController extends Controller
             return back()->withErrors(['message' => 'error when create Baptis data']);
         }
     
-        return redirect()->route('pindahUser');
+        return redirect()->route('userUprovePindah');
     }
 
     public function index6()
@@ -215,7 +215,7 @@ class userController extends Controller
             return back()->withErrors(['message' => 'error when create Baptis data']);
         }
     
-        return redirect()->route('sidiUser');
+        return redirect()->route('userUproveSidi');
     }
 
     public function index7()
