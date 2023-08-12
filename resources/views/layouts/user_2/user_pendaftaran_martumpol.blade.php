@@ -1,5 +1,5 @@
 @include('layouts.user_2.style')
-@include('layouts.user_2.navbar')
+@include('layouts.user_2.navbar2')
 @include('sweetalert::alert')
 <!DOCTYPE html>
 <html lang="en">

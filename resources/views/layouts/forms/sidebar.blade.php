@@ -187,7 +187,7 @@
             <a href="#" class="nav-link">
               <i><img src="/icon/aproval.png" alt=""></i>
               <p>
-                Upprove
+                Approve
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>

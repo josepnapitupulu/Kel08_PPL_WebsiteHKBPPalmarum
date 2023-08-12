@@ -71,7 +71,7 @@
             Gereja ini didirikan karena adanya pergumulan dari antar jemaat.  </p>
         </div>
       </div>
-      <div class="judul_1">
+      <div class="judul_1" id="targetJadwal">
         <h1>Jadwal Ibadah</h1>
         <div class="">
           <table table class="aesthetic-table" border="1">
@@ -162,7 +162,7 @@
           </table>
         </div>
       </div>
-      <div class="judul_1"><br>
+      <div class="judul_1" id="targetKeuangan"><br>
       <h1>Informasi Keuangan Gereja</h1>
         <table table class="aesthetic-table2" border="1">
           <tr>
@@ -199,7 +199,7 @@
           @endforeach
         </table>
       </div>
-      <div class="judul_1">
+      <div class="judul_1" id="targetKegiatan">
         <h1>Informasi Kegiatan Gereja</h1>
         <div class="jadwal">
           <div class="schedule-slider">

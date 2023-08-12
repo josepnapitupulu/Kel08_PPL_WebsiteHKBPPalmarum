@@ -105,11 +105,11 @@ class userController extends Controller
         ]);
     
         if ($response->failed()) {
-            Alert::error('Baptis', 'Registrasi Gagal');
-            return back()->withErrors(['message' => 'error when create Baptis data']);
+            Alert::error('Jemaat', 'Registrasi Gagal');
+            return back()->withErrors(['message' => 'error when create Jemaat data']);
         }
     
-        Alert::success('Baptis', 'Registrasi Berhasil');
+        Alert::success('Jemaat', 'Registrasi Berhasil');
         return redirect()->route('userUproveJemaat');
     }
 

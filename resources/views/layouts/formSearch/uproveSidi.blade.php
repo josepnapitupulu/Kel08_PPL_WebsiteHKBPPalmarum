@@ -11,7 +11,7 @@
           <div class="col-12">
             <div class="card card-primary">
               <div class="card-header" style="height:6rem;">
-                <h3 class="card-title" id="textHeader">Uprove Jemaat Sidi</h3>
+                <h3 class="card-title" id="textHeader">Approve Jemaat Sidi</h3>
               </div><br>
               <!-- /.card-header -->
               <div class="card-body">
@@ -28,9 +28,9 @@
                     <tbody>
                   <tr>
                     <td>{{$data['nama_lengkap']}}</td>
-                    <td><label >Belum di Uprove</label></td>
+                    <td><label >Belum di Approve</label></td>
                     <td>
-                      <a href="{{route('UproveSidi1', $data['id_registrasi_sidi'])}}" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="uprove">Uprove</a>
+                      <a href="{{route('UproveSidi1', $data['id_registrasi_sidi'])}}" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="uprove">Approve</a>
                       <a href="{{route('UproveSidi2', $data['id_registrasi_sidi'])}}" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="tolak uprove">Tolak</a>
                     </td>                    
                   </tr>
@@ -39,9 +39,9 @@
                     <tbody class="info-1">
                     <tr>
                     <td>{{$data['nama_lengkap']}}</td>
-                    <td><label >Belum di Uprove</label></td>
+                    <td><label >Belum di Approve</label></td>
                     <td>
-                      <a href="{{route('UproveSidi1', $data['id_registrasi_sidi'])}}" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="uprove">Uprove</a>
+                      <a href="{{route('UproveSidi1', $data['id_registrasi_sidi'])}}" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="uprove">Approve</a>
                       <a href="{{route('UproveSidi2', $data['id_registrasi_sidi'])}}" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="tolak uprove">Tolak</a>
                     </td>                    
                   </tr>

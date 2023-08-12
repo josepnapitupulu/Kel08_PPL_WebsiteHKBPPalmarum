@@ -1,5 +1,5 @@
 @include('layouts.user_2.style')
-@include('layouts.user_2.navbar')
+@include('layouts.user_2.navbar2')
 @include('sweetalert::alert')
 <!DOCTYPE html>
 <html lang="en">
@@ -87,7 +87,7 @@
               </div>
               <div class="form-group">
                 <label for="name">Nama Gereja Non-HKBP</label>
-                <input type="text" id="name" name="nama_gereja_non_hkbp" value="{{ old('nama_gereja_non_hkbp') }}" placeholder="Masukkan asal gereja Non HKBP" required/>
+                <input type="text" id="name" name="nama_gereja_non_hkbp" value="{{ old('nama_gereja_non_hkbp') }}" placeholder="Masukkan asal gereja Non HKBP"/>
               </div>
               <div class="form-group">
                 <label for="name">Status Keluarga</label>

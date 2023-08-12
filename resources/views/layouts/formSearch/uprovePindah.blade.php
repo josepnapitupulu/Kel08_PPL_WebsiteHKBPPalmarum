@@ -12,14 +12,14 @@
           <div class="col-12">
             <div class="card card-primary">
               <div class="card-header" style="height:6rem;">
-                <h3 class="card-title" id="textHeader">Uprove Jemaat Pindah</h3>
+                <h3 class="card-title" id="textHeader">Approve Jemaat Pindah</h3>
               </div><br>
               <!-- /.card-header -->
               <div class="card-body">
                 <table id="example1" class="table table-bordered ">
                   <thead>
                   <tr>
-                    <th>Nama Gereja Tuuan</th>
+                    <th>Nama Gereja Tujuan</th>
                     <th width="400px">Status</th>
                     <th width="126px"><center>Aksi</center></th>
                   </tr>
@@ -30,10 +30,10 @@
                       <tr>
                         <td>{{$data['nama_gereja']}}</td>
                         <td>
-                          <label class="text-danger">Belum di Uprove</label>
+                          <label class="text-danger">Belum di Approve</label>
                         </td>
                         <td>
-                          <a href="{{route('UprovePindah1', $data['id_head_reg_pindah'])}}" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="uprove">Uprove</a>
+                          <a href="{{route('UprovePindah1', $data['id_head_reg_pindah'])}}" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="uprove">Approve</a>
                           <a href="{{route('UprovePindah2', $data['id_head_reg_pindah'])}}" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="tolak uprove">Tolak</a>
                         </td>                    
                       </tr>
@@ -43,10 +43,10 @@
                       <tr>
                         <td>{{$data['nama_gereja']}}</td>
                         <td>
-                          <label class="text-danger">Belum di Uprove</label>
+                          <label class="text-danger">Belum di Approve</label>
                         </td>
                         <td>
-                          <a href="{{route('UprovePindah1', $data['id_head_reg_pindah'])}}" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="uprove">Uprove</a>
+                          <a href="{{route('UprovePindah1', $data['id_head_reg_pindah'])}}" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="uprove">Approve</a>
                           <a href="{{route('UprovePindah2', $data['id_head_reg_pindah'])}}" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="tolak uprove">Tolak</a>
                         </td>                    
                       </tr>

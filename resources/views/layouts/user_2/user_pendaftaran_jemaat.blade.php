@@ -1,5 +1,5 @@
 @include('layouts.user_2.style')
-@include('layouts.user_2.navbar')
+@include('layouts.user_2.navbar2')
 @include('sweetalert::alert')
 <!DOCTYPE html>
 <html lang="en">
@@ -140,7 +140,7 @@
               </div>
               <div class="form-group">
                 <label for="name">Pekerjaan Lainnya</label>
-                <input type="text" id="name" name="nama_pekerjaan_lain" value="{{ old('nama_pekerjaan_lain') }}" placeholder="Masukkan pekerjaan lain jika tidak ada terdaftar pada aplikasi" required/>
+                <input type="text" id="name" name="nama_pekerjaan_lain" value="{{ old('nama_pekerjaan_lain') }}" placeholder="Masukkan pekerjaan lain jika tidak ada terdaftar pada aplikasi"/>
               </div>
               <div class="form-group">
                 <label for="name">Keterangan</label>

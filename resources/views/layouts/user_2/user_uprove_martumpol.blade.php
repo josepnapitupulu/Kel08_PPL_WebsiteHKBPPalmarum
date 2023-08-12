@@ -54,7 +54,7 @@
                   @if($data['status']== 0)
                     <label for="">Menunggu</label>
                   @elseif($data['status']== 1)  
-                    <label for="">Uprove</label>
+                    <label for="">Approve</label>
                   @elseif($data['status']== 2)  
                     <label for="">Tolak</label>
                   @endif
@@ -67,9 +67,9 @@
                 <td class="lebar">{{$data['nama_gereja_laki']}}</td>
                 <td>
                   @if($data['status']== 0)
-                    <label for="">Belum Uprove</label>
+                    <label for="">Menunggu</label>
                   @elseif($data['status']== 1)  
-                    <label for="">Uprove</label>
+                    <label for="">Approve</label>
                   @elseif($data['status']== 2)  
                     <label for="">Tolak</label>
                   @endif
@@ -82,9 +82,9 @@
                 <td class="lebar">{{$data['nama_gereja_laki']}}</td>
                 <td>
                   @if($data['status']== 0)
-                    <label for="">Belum Uprove</label>
+                    <label for="">Menunggu</label>
                   @elseif($data['status']== 1)  
-                    <label for="">Uprove</label>
+                    <label for="">Approve</label>
                   @elseif($data['status']== 2)  
                     <label for="">Tolak</label>
                   @endif

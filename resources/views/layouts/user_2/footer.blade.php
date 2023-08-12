@@ -1,4 +1,4 @@
-<footer>
+<footer id="targetTentang">
     <div class="footer_1">
      <img src="{{ asset('Style') }}/image/logo_putih.png" alt="Foto">
          <div class="teks">

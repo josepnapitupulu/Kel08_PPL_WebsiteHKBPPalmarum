@@ -12,7 +12,7 @@
           <div class="col-12">
             <div class="card card-primary">
               <div class="card-header" style="height:6rem;">
-                <h3 class="card-title" id="textHeader">Uprove Jemaat Baru</h3>
+                <h3 class="card-title" id="textHeader">Approve Jemaat Baru</h3>
               </div><br>
               <!-- /.card-header -->
               <div class="card-body">
@@ -29,9 +29,9 @@
                   <tbody>
                   <tr>
                     <td>{{$data['nama_depan']}}&nbsp{{$data['nama_belakang']}}</td>
-                    <td><label class="text-danger">Belum di Uprove</label></td>
+                    <td><label class="text-danger">Belum di Approve</label></td>
                     <td>
-                      <a href="{{route('UproveJemaat1', $data['id_jemaat'])}}" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="uprove">Uprove</a>
+                      <a href="{{route('UproveJemaat1', $data['id_jemaat'])}}" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="uprove">Approve</a>
                       <a href="{{route('UproveJemaat2', $data['id_jemaat'])}}" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="tolak uprove">Tolak</a>
                     </td>                    
                   </tr>
@@ -40,9 +40,9 @@
                   <tbody class="info-1">
                   <tr>
                     <td>{{$data['nama_depan']}}&nbsp{{$data['nama_belakang']}}</td>
-                    <td><label class="text-danger">Belum di Uprove</label></td>
+                    <td><label class="text-danger">Belum di Approve</label></td>
                     <td>
-                      <a href="{{route('UproveJemaat1', $data['id_jemaat'])}}" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="uprove">Uprove</a>
+                      <a href="{{route('UproveJemaat1', $data['id_jemaat'])}}" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="uprove">Approve</a>
                       <a href="{{route('UproveJemaat2', $data['id_jemaat'])}}" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="tolak uprove">Tolak</a>
                     </td>                    
                   </tr>

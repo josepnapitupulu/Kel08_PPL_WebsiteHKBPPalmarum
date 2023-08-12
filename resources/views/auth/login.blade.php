@@ -60,17 +60,6 @@
                     
                   <span class="d-block text-center my-4 text-muted"> or sign in with</span>
                   
-                  <div class="social-login text-center">
-                    <a href="#" class="facebook">
-                      <span class="icon-facebook mr-3"></span> 
-                    </a>
-                    <a href="#" class="twitter">
-                      <span class="icon-twitter mr-3"></span> 
-                    </a>
-                    <a href="#" class="google">
-                      <span class="icon-google mr-3"></span> 
-                    </a>
-                  </div>
                   <div class="mb-4" style="text-align: center;">
                     <p class="mb-4">belum mempunyai account?  <a href="{{ route('register') }}" style="color: #3F486C; text-decoration: none;">{{ __('Register Klik Disini') }}</a>
                     <p class="mb-4">

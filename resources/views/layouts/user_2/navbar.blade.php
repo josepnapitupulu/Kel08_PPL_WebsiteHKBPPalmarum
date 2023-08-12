@@ -7,25 +7,30 @@
             <a href="/" target="_self">HOME</a>
         </li>
         <li>
-            <a href="{{route('sidiUser')}}">SIDI</a>
+            <a id="scrollButton">PELAYAN</a>
         </li>
         <li>
-            <a href="{{route('nikahUser')}}">PERNIKAHAN</a>
+            <a id="Jadwal">JADWAL IBADAH</a>
         </li>
         <li>
-            <a href="{{route('jemaatUser')}}">JEMAAT</a>
+            <a id="Keuangan">KEUANGAN</a>
         </li>
         <li>
-            <a href="{{route('martumpolUser')}}">MARTUMPOL</a>
-        </li>
-        <li>
-            <a href="{{route('pindahUser')}}">JEMAAT PINDAH</a>
-        </li>
-        <li>
-            <a href="{{route('baptisUser')}}">BAPTIS</a>
+            <a id="Kegiatan">KEGIATAN</a>
         </li>
         <li class="dropdown">
-            <a href="#" target="blank">STATUS PENDAFTARAN</a>
+            <a target="blank">PENDAFTARAN</a>
+            <ul class="dropdown-menu">
+                <li><a href="{{route('sidiUser')}}">Pendaftaran sidi</a></li>
+                <li><a href="{{ route('nikahUser') }}">Pendaftaran Pernikahan</a></li>
+                <li><a href="{{ route('jemaatUser') }}">Pendaftaran Jemaat</a></li>
+                <li><a href="{{ route('martumpolUser') }}">Pendaftaran Martumpol</a></li>
+                <li><a href="{{ route('pindahUser') }}">Pendaftaran Pindah</a></li>
+                <li><a href="{{ route('baptisUser') }}">Pendaftaran Baptis</a></li>
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a target="blank">STATUS PENDAFTARAN</a>
             <ul class="dropdown-menu">
                 <li><a href="{{ route('userUproveSidi') }}">Status Pendaftaran Sidi</a></li>
                 <li><a href="{{ route('userUprovePernikahan') }}">Status Pendaftaran Pernikahan</a></li>
@@ -34,6 +39,9 @@
                 <li><a href="{{ route('userUprovePindah') }}">Status Pendaftaran Pindah</a></li>
                 <li><a href="{{ route('userUproveBaptis') }}">Status Pendaftaran Baptis</a></li>
             </ul>
+        </li>
+        <li>
+            <a id="Tentang">TENTANG</a>
         </li>
     </ul>
     <ul class="list-name">
@@ -100,3 +108,68 @@
     </ul>
 </nav>
 <script src="{{asset('Style')}}/style.js"></script>
+<script>
+    var scrollButton = document.getElementById('Jadwal');
+
+    scrollButton.addEventListener('click', function() {
+      var targetElement = document.getElementById('targetJadwal');
+
+      if (targetElement) {
+        var targetPosition = targetElement.offsetTop;
+
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+      }
+    });
+  </script>
+  <script>
+    var scrollButton = document.getElementById('Keuangan');
+
+    scrollButton.addEventListener('click', function() {
+      var targetElement = document.getElementById('targetKeuangan');
+
+      if (targetElement) {
+        var targetPosition = targetElement.offsetTop;
+
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+      }
+    });
+  </script>
+    <script>
+    var scrollButton = document.getElementById('Kegiatan');
+
+    scrollButton.addEventListener('click', function() {
+      var targetElement = document.getElementById('targetKegiatan');
+
+      if (targetElement) {
+        var targetPosition = targetElement.offsetTop;
+
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+      }
+    });
+  </script>
+    <script>
+    var scrollButton = document.getElementById('Tentang');
+
+    scrollButton.addEventListener('click', function() {
+      var targetElement = document.getElementById('targetTentang');
+
+      if (targetElement) {
+        var targetPosition = targetElement.offsetTop;
+
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+      }
+    });
+  </script>
+
