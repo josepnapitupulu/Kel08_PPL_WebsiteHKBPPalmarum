@@ -1,5 +1,5 @@
 ## to run the program
--aktifkan xampp
+-aktifkan xampp<br>
 -php artisan serve
 
 
