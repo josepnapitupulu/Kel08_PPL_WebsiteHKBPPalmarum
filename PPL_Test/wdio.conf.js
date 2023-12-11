@@ -26,7 +26,12 @@ exports.config = {
         './test/specs/jemaat.js',
         './test/specs/baptis.js',
         './test/specs/pindah.js',
+<<<<<<< HEAD
         './test/specs/sidi.js',
+=======
+        './test/specs/martumpol.js',
+        './test/specs/admin/appjemaat.js',
+>>>>>>> 2d9225739672913d17a73ce513df3d991cfb36bb
     ],
     // Patterns to exclude.
     exclude: [
@@ -128,7 +133,11 @@ exports.config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter
-    reporters: ['spec'],
+    reporters: ['spec', ['allure', {
+        outputDir: 'allure-results',
+        disableWebdriverStepsReporting: false,
+        disableWebdriverScreenshotsReporting: false,
+    }]],
 
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
