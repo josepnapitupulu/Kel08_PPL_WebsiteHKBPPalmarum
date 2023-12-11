@@ -17,7 +17,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('admin')->middleware(['isAdmin', 'auth'])->group(function(){
     
-    Route::get('/', [App\Http\Controllers\dashbordController::class, 'index'])->name('dashbord');
+    // Route::get('/', [App\Http\Controllers\dashbordController::class, 'index'])->name('dashbord');
+    Route::get('/dashboard', [App\Http\Controllers\dashbordController::class, 'index'])->name('dashbord');
 
     Route::get('/pelayan', [App\Http\Controllers\pelayanController::class, 'index'])->name('pelayan');
     Route::get('/daftarPelayan', [App\Http\Controllers\pelayanController::class, 'store'])->name('daftarPelayan');

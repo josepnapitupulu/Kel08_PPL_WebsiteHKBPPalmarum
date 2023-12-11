@@ -56,7 +56,7 @@
                    
                   </div>
 
-                  <input type="submit" value="Log In" class="btn btn-pill text-white btn-block btn-primary" style="background-color: #3F486C; border-radius: 0;"   {{ __('Login') }}>
+                  <input type="submit" value="Log In" id="login" class="btn btn-pill text-white btn-block btn-primary" style="background-color: #3F486C; border-radius: 0;"   {{ __('Login') }}>
                     
                   <span class="d-block text-center my-4 text-muted"> or sign in with</span>
                   
