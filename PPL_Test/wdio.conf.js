@@ -26,6 +26,7 @@ exports.config = {
         './test/specs/jemaat.js',
         './test/specs/baptis.js',
         './test/specs/pindah.js',
+        './test/specs/sidi.js',
     ],
     // Patterns to exclude.
     exclude: [
