@@ -1,0 +1,5 @@
+{
+  "error": "no such element",
+  "message": "no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//td[contains(text(), \"Ester\") and contains(text(), \"Pardede\")]/parent::tr\"}\n  (Session info: chrome=119.0.6045.200)",
+  "stacktrace": "\tGetHandleVerifier [0x00007FF71B4E82B2+55298]\n\t(No symbol) [0x00007FF71B455E02]\n\t(No symbol) [0x00007FF71B3105AB]\n\t(No symbol) [0x00007FF71B35175C]\n\t(No symbol) [0x00007FF71B3518DC]\n\t(No symbol) [0x00007FF71B38CBC7]\n\t(No symbol) [0x00007FF71B3720EF]\n\t(No symbol) [0x00007FF71B38AAA4]\n\t(No symbol) [0x00007FF71B371E83]\n\t(No symbol) [0x00007FF71B34670A]\n\t(No symbol) [0x00007FF71B347964]\n\tGetHandleVerifier [0x00007FF71B860AAB+3694587]\n\tGetHandleVerifier [0x00007FF71B8B728E+4048862]\n\tGetHandleVerifier [0x00007FF71B8AF173+4015811]\n\tGetHandleVerifier [0x00007FF71B5847D6+695590]\n\t(No symbol) [0x00007FF71B460CE8]\n\t(No symbol) [0x00007FF71B45CF34]\n\t(No symbol) [0x00007FF71B45D062]\n\t(No symbol) [0x00007FF71B44D3A3]\n\tBaseThreadInitThunk [0x00007FFE0694257D+29]\n\tRtlUserThreadStart [0x00007FFE07F8AA58+40]\n"
+}
