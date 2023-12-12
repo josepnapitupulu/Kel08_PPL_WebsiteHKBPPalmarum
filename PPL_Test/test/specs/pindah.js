@@ -16,12 +16,12 @@ describe('Laravel Project Testing', () => {
         // Setelah login, pergi ke halaman yang diinginkan
         await browser.url('http://127.0.0.1:8000/aksesPindahUser');
 
-        // Mengisi form
+        // Mengisi semua data pada form
         const idJemaatDropdown = await $('[name="id_jemaat"]');
-        await idJemaatDropdown.selectByVisibleText('Lidya Simamora');
+        await idJemaatDropdown.selectByAttribute('value', '1'); 
 
         const idRegistrasiDropdown = await $('[name="id_registrasi"]');
-        await idRegistrasiDropdown.selectByVisibleText('Ny. Simamora A. br. Situmorang Op. Maria');
+        await idRegistrasiDropdown.selectByAttribute('value', '1');
 
         const tglPindahInput = await $('[name="tgl_pindah"]');
         await tglPindahInput.setValue('01-01-2020');
@@ -35,5 +35,119 @@ describe('Laravel Project Testing', () => {
         // Klik tombol "daftar"
         const daftarButton = await $('input[type="submit"][value="daftar"]');
         await daftarButton.click();
+
     });
+
+    // Section 2: Adding user for relocation with empty id_jemaat
+    it('mengisi form dengan id_jemaat kosong', async () => {
+        await browser.url('http://127.0.0.1:8000/aksesPindahUser');
+
+        // Mengisi semua data pada form
+        const idJemaatDropdown = await $('[name="id_jemaat"]');
+        await idJemaatDropdown.selectByAttribute('value',''); 
+
+        const idRegistrasiDropdown = await $('[name="id_registrasi"]');
+        await idRegistrasiDropdown.selectByAttribute('value', '1');
+
+        const tglPindahInput = await $('[name="tgl_pindah"]');
+        await tglPindahInput.setValue('01-01-2020');
+
+        const namaGerejaInput = await $('[name="nama_gereja"]');
+        await namaGerejaInput.setValue('siualuompu');
+
+        const keteranganInput = await $('[name="keterangan"]');
+        await keteranganInput.setValue('Masukkan keterangan jika dibutuhkan');
+
+        // Klik tombol "daftar"
+        const daftarButton = await $('input[type="submit"][value="daftar"]');
+        await daftarButton.click();
+
+        const errorMessageElement = await $('#error-message');
+        expect(await errorMessageElement.isExisting()).to.be.true;
+    });
+
+    // Section 3: Adding user for relocation with empty id_registrasi
+    it('mengisi form dengan id_registrasi kosong', async () => {
+        await browser.url('http://127.0.0.1:8000/aksesPindahUser');
+
+        // Mengisi semua data pada form
+        const idJemaatDropdown = await $('[name="id_jemaat"]');
+        await idJemaatDropdown.selectByAttribute('value','1'); 
+
+        const idRegistrasiDropdown = await $('[name="id_registrasi"]');
+        await idRegistrasiDropdown.selectByAttribute('value', '');
+
+        const tglPindahInput = await $('[name="tgl_pindah"]');
+        await tglPindahInput.setValue('01-01-2020');
+
+        const namaGerejaInput = await $('[name="nama_gereja"]');
+        await namaGerejaInput.setValue('siualuompu');
+
+        const keteranganInput = await $('[name="keterangan"]');
+        await keteranganInput.setValue('Masukkan keterangan jika dibutuhkan');
+
+        // Klik tombol "daftar"
+        const daftarButton = await $('input[type="submit"][value="daftar"]');
+        await daftarButton.click();
+
+        const errorMessageElement = await $('#error-message');
+        expect(await errorMessageElement.isExisting()).to.be.true;
+
+    });
+
+    // Section 4: Adding user for relocation with empty tgl_pindah
+    it('mengisi form dengan tgl_pindah kosong', async () => {
+        await browser.url('http://127.0.0.1:8000/aksesPindahUser');
+
+        // Mengisi semua data pada form
+        const idJemaatDropdown = await $('[name="id_jemaat"]');
+        await idJemaatDropdown.selectByAttribute('value', '1'); 
+
+        const idRegistrasiDropdown = await $('[name="id_registrasi"]');
+        await idRegistrasiDropdown.selectByAttribute('value', '1');
+
+        const tglPindahInput = await $('[name="tgl_pindah"]');
+        await tglPindahInput.setValue('');
+
+        const namaGerejaInput = await $('[name="nama_gereja"]');
+        await namaGerejaInput.setValue('siualuompu');
+
+        const keteranganInput = await $('[name="keterangan"]');
+        await keteranganInput.setValue('Masukkan keterangan jika dibutuhkan');
+
+        // Klik tombol "daftar"
+        const daftarButton = await $('input[type="submit"][value="daftar"]');
+        await daftarButton.click();
+
+        const errorMessageElement = await $('#error-message');
+        expect(await errorMessageElement.isExisting()).to.be.true;
+    });
+
+    // Section 5: Adding user for relocation with empty nama_gereja
+    it('mengisi form dengan nama_gereja kosong', async () => {
+        await browser.url('http://127.0.0.1:8000/aksesPindahUser');
+
+        const idJemaatDropdown = await $('[name="id_jemaat"]');
+        await idJemaatDropdown.selectByAttribute('value', '1'); 
+
+        const idRegistrasiDropdown = await $('[name="id_registrasi"]');
+        await idRegistrasiDropdown.selectByAttribute('value', '1');
+
+        const tglPindahInput = await $('[name="tgl_pindah"]');
+        await tglPindahInput.setValue('01-01-2020');
+
+        const namaGerejaInput = await $('[name="nama_gereja"]');
+        await namaGerejaInput.setValue('');
+
+        const keteranganInput = await $('[name="keterangan"]');
+        await keteranganInput.setValue('Masukkan keterangan jika dibutuhkan');
+
+        // Klik tombol "daftar"
+        const daftarButton = await $('input[type="submit"][value="daftar"]');
+        await daftarButton.click();
+    
+        const errorMessageElement = await $('#error-message');
+        expect(await errorMessageElement.isExisting()).to.be.true;
+
+    });    
 });
