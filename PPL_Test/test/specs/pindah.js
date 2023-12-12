@@ -7,7 +7,7 @@ describe('Laravel Project Testing', () => {
         const emailInput = await $('#email');
         const passwordInput = await $('#password');
 
-        await emailInput.setValue('abellivakamnydwi@gmail.com');
+        await emailInput.setValue('josepnapitupulu9@gmail.com');
         await passwordInput.setValue('12345678');
 
         const loginButton = await $('input[type="submit"].btn.btn-pill.text-white.btn-block.btn-primary');
