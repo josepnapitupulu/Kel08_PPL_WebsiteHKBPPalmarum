@@ -1,0 +1,4 @@
+{
+  "using": "xpath",
+  "value": "//td[contains(text(), \"Josep\") and contains(text(), \"Napitupulu\")]/parent::tr"
+}
