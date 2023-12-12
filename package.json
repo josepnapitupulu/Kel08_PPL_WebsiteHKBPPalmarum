@@ -19,6 +19,7 @@
   "dependencies": {
     "asynckit": "^0.4.0",
     "combined-stream": "^1.0.8",
+    "create-vite": "^5.0.0",
     "delayed-stream": "^1.0.0",
     "esbuild": "^0.18.20",
     "follow-redirects": "^1.15.2",
