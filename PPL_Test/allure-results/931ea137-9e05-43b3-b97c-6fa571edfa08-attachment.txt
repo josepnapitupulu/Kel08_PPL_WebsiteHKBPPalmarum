@@ -1,4 +1,0 @@
-{
-  "using": "xpath",
-  "value": ".//a[contains(concat(\" \",@class,\" \"), \" nav-link \") and normalize-space(text()) = \"i\\[src\\=\"/icon/aproval.png\"\\]\"] | .//a[contains(concat(\" \",@class,\" \"), \" nav-link \") and not(.//a[contains(concat(\" \",@class,\" \"), \" nav-link \") and normalize-space(text()) = \"i\\[src\\=\"/icon/aproval.png\"\\]\"]) and normalize-space() = \"i\\[src\\=\"/icon/aproval.png\"\\]\"]"
-}

@@ -6,8 +6,8 @@ describe('Laravel Project Testing', () => {
       const emailInput = await $('#email');
       const passwordInput = await $('#password');
 
-      await emailInput.setValue('josepnapitupulu9@gmail.com');
-      await passwordInput.setValue('12345678');
+      await emailInput.setValue('freskyuo@gmail.com');
+      await passwordInput.setValue('Dingzone');
 
       const loginButton = await $('input[type="submit"].btn.btn-pill.text-white.btn-block.btn-primary');
       await loginButton.click();
@@ -81,59 +81,59 @@ describe('Laravel Project Testing', () => {
   it('should add a new jemaat with empty first name', async () => {
       await browser.url('http://127.0.0.1:8000/aksesJemaatUser');
 
-      const namaDepanInput2 = await $('#name');
-      await namaDepanInput2.setValue('');
+      const namaDepanInput = await $('#name');
+      await namaDepanInput.setValue('');
 
-      const namaBelakangInput2 = await $('[name="nama_belakang"]');
-      await namaBelakangInput2.setValue('Tobing');
+      const namaBelakangInput = await $('[name="nama_belakang"]');
+      await namaBelakangInput.setValue('Tobing');
 
-      const gelarDepanInput2 = await $('[name="gelar_depan"]');
-      await gelarDepanInput2.setValue('Mayjend');
+      const gelarDepanInput = await $('[name="gelar_depan"]');
+      await gelarDepanInput.setValue('Mayjend');
 
-      const gelarBelakangInput2 = await $('[name="gelar_belakang"]');
-      await gelarBelakangInput2.setValue('S.kom');
+      const gelarBelakangInput = await $('[name="gelar_belakang"]');
+      await gelarBelakangInput.setValue('S.kom');
 
-      const tempatLahirInput2 = await $('[name="tempat_lahir"]');
-      await tempatLahirInput2.setValue('Lobupining');
+      const tempatLahirInput = await $('[name="tempat_lahir"]');
+      await tempatLahirInput.setValue('Lobupining');
 
-      const tanggalLahirInput2 = await $('[name="tanggal_lahir"]');
-      await tanggalLahirInput2.setValue('01-06-2000');
+      const tanggalLahirInput = await $('[name="tanggal_lahir"]');
+      await tanggalLahirInput.setValue('01-06-2000');
 
-      const golDarahInput2 = await $('[name="gol_darah"]');
-      await golDarahInput2.setValue('AB');
+      const golDarahInput = await $('[name="gol_darah"]');
+      await golDarahInput.setValue('AB');
 
-      const jenisKelaminInput2 = await $('[name="jenis_kelamin"]');
-      await jenisKelaminInput2.setValue('Laki Laki');
+      const jenisKelaminInput = await $('[name="jenis_kelamin"]');
+      await jenisKelaminInput.setValue('Laki Laki');
 
-      const noTeleponInput2 = await $('[name="no_telepon"]');
-      await noTeleponInput2.setValue('081362721250');
+      const noTeleponInput = await $('[name="no_telepon"]');
+      await noTeleponInput.setValue('081362721250');
 
-      const alamatInput2 = await $('[name="alamat"]');
-      await alamatInput2.setValue('Tarutung');
+      const alamatInput = await $('[name="alamat"]');
+      await alamatInput.setValue('Tarutung');
 
-      const statusHubunganDropdown2 = await $('[name="id_hub_keluarga"]');
-      await statusHubunganDropdown2.selectByVisibleText('Anak');
+      const statusHubunganDropdown = await $('[name="id_hub_keluarga"]');
+      await statusHubunganDropdown.selectByVisibleText('Anak');
 
-      const pendidikanTerakhirDropdown2 = await $('[name="id_pendidikan"]');
-      await pendidikanTerakhirDropdown2.selectByVisibleText('SMA');
+      const pendidikanTerakhirDropdown = await $('[name="id_pendidikan"]');
+      await pendidikanTerakhirDropdown.selectByVisibleText('SMA');
 
-      const bidangPendidikanDropdown2 = await $('[name="id_bidang_pendidikan"]');
-      await bidangPendidikanDropdown2.selectByVisibleText('Pendidikan Khusus');
+      const bidangPendidikanDropdown = await $('[name="id_bidang_pendidikan"]');
+      await bidangPendidikanDropdown.selectByVisibleText('Pendidikan Khusus');
 
-      const pekerjaanDropdown2 = await $('[name="id_pekerjaan"]');
-      await pekerjaanDropdown2.selectByVisibleText('Petani');
+      const pekerjaanDropdown = await $('[name="id_pekerjaan"]');
+      await pekerjaanDropdown.selectByVisibleText('Petani');
 
       // Input Pekerjaan Lain jika tidak terdaftar
-      const pekerjaanLainInput2 = await $('[name="nama_pekerjaan_lain"]');
-      await pekerjaanLainInput2.setValue('');
+      const pekerjaanLainInput = await $('[name="nama_pekerjaan_lain"]');
+      await pekerjaanLainInput.setValue('');
 
       // Input Gelar
-      const gelarInput2 = await $('[name="keterangan"]');
-      await gelarInput2.setValue('');
+      const gelarInput = await $('[name="keterangan"]');
+      await gelarInput.setValue('');
 
       // "Daftar" button
-      const daftarButton2 = await $('[value="daftar"]');
-      await daftarButton2.click();
+      const daftarButton = await $('[value="daftar"]');
+      await daftarButton.click();
 
       const errorMessageElement = await $('#error-message'); 
       expect(await errorMessageElement.isExisting()).to.be.true;
