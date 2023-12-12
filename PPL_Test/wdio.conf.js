@@ -30,6 +30,8 @@ exports.config = {
         './test/specs/martumpol.js',
         './test/specs/admin/appjemaat.js',
         './test/specs/admin/apppindah.js',
+        './test/specs/admin/appnikah.js',
+        './test/specs/admin/appsidi.js',
     ],
     // Patterns to exclude.
     exclude: [
