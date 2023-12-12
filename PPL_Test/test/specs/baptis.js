@@ -1,5 +1,5 @@
 describe('Laravel Project Testing', () => {
-    it('should register a new user for baptism', async () => {
+    it('should register a new user for baptis', async () => {
         // Mengunjungi halaman web
         await browser.url('http://127.0.0.1:8000/login');
   
