@@ -12,24 +12,24 @@ describe('Laravel Project Testing', () => {
       await loginButton.click();
   
       // Ke halaman uprovesidi
-      await browser.url('http://127.0.0.1:8000/admin/uproveSidi');
+      await browser.url('http://127.0.0.1:8000/admin/uprovePernikahan');
   
-      // Temukan baris yang berisi "Nama Jemaat Sidi" tertentu untuk disetujui
-      const rowToApprove = await $('//td[contains(text(), "Sahat")]/parent::tr');
+      // Temukan baris yang berisi "Nama Jemaat nikah" tertentu untuk disetujui
+      const rowToApprove = await $('//td[contains(text(), "Irvan ♥ Santa")]/parent::tr');
 
       const approveID = await rowToApprove.$('a.btn.btn-success').getAttribute('href');
   
-      // Klik tombol "Setuju" untuk data uproveSidi tertentu
+      // Klik tombol "Setuju" untuk data uprovepernikahan tertentu
       const approveButton = await rowToApprove.$('a.btn.btn-success');
       await approveButton.waitForClickable();
       await approveButton.click();
   
-      // Baris yang berisi "Nama Jemaat Sidi" khusus untuk penolakan
+      // Baris yang berisi "Nama Jemaat menikah" khusus untuk penolakan
       const rowToReject = await $('//td[contains(text(), "asd")]/parent::tr');
 
       const rejectID = await rowToReject.$('a.btn.btn-danger').getAttribute('href');
   
-      // Klik tombol "Tolak" untuk data uproveSidi tertentu
+      // Klik tombol "Tolak" untuk data uprovemenikah tertentu
       const rejectButton = await rowToReject.$('a.btn.btn-danger');
       await rejectButton.waitForClickable();
       await rejectButton.click();

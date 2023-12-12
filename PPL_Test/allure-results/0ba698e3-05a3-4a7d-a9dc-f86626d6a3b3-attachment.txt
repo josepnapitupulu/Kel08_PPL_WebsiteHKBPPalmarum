@@ -1,0 +1,5 @@
+{
+  "error": "no such element",
+  "message": "no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//td[contains(text(), \"Sahat\")]/parent::tr\"}\n  (Session info: chrome=120.0.6099.71)",
+  "stacktrace": "\tGetHandleVerifier [0x00007FF7EDFA4D02+56194]\n\t(No symbol) [0x00007FF7EDF104B2]\n\t(No symbol) [0x00007FF7EDDB76AA]\n\t(No symbol) [0x00007FF7EDE016D0]\n\t(No symbol) [0x00007FF7EDE017EC]\n\t(No symbol) [0x00007FF7EDE44D77]\n\t(No symbol) [0x00007FF7EDE25EBF]\n\t(No symbol) [0x00007FF7EDE42786]\n\t(No symbol) [0x00007FF7EDE25C23]\n\t(No symbol) [0x00007FF7EDDF4A45]\n\t(No symbol) [0x00007FF7EDDF5AD4]\n\tGetHandleVerifier [0x00007FF7EE31D5BB+3695675]\n\tGetHandleVerifier [0x00007FF7EE376197+4059159]\n\tGetHandleVerifier [0x00007FF7EE36DF63+4025827]\n\tGetHandleVerifier [0x00007FF7EE03F029+687785]\n\t(No symbol) [0x00007FF7EDF1B508]\n\t(No symbol) [0x00007FF7EDF17564]\n\t(No symbol) [0x00007FF7EDF176E9]\n\t(No symbol) [0x00007FF7EDF08094]\n\tBaseThreadInitThunk [0x00007FFE8DD7257D+29]\n\tRtlUserThreadStart [0x00007FFE8F4AAA58+40]\n"
+}
