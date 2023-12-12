@@ -96,4 +96,23 @@ describe('Laravel Project Testing', () => {
         expect(await errorMessageElement.isExisting()).to.be.true;
      }); 
 
+     it('Login dengan mengisi email dan password yang salah', async () => {
+      // Mengunjungi halaman login
+      await browser.url('http://127.0.0.1:8000/login');
+  
+      // Mengisi field email dan mengosongkan kata sandi tertentu
+      const emailInput = await $('#email');
+      const passwordInput = await $('#password');
+    
+      await emailInput.setValue('josep@gmail.com');
+      await passwordInput.setValue('12fyyu313');
+    
+      // Menekan tombol login
+      const loginButton = await $('input[type="submit"].btn.btn-pill.text-white.btn-block.btn-primary');
+      await loginButton.click();
+
+      const errorMessageElement = await $('#error-message'); 
+      expect(await errorMessageElement.isExisting()).to.be.true;
+   }); 
+
 });
