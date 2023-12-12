@@ -1,4 +1,0 @@
-{
-  "using": "css selector",
-  "value": "input[type=\"submit\"].btn.btn-pill.text-white.btn-block.btn-primary"
-}

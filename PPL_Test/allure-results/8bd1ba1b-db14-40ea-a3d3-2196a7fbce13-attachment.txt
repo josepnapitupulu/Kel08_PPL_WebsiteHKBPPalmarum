@@ -1,4 +1,0 @@
-{
-  "using": "xpath",
-  "value": "//td[contains(text(), \"4634353453\")]/parent::tr"
-}

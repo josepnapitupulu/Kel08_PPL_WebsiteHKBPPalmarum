@@ -1,5 +1,5 @@
 describe('Laravel Project Testing', () => {
-  it('should interact with Approve and Tolak buttons for uprovePindah data', async () => {
+  it('should interact with Approve and Tolak buttons for uprove jemaat', async () => {
       // Login page
       await browser.url('http://127.0.0.1:8000/login');
 
@@ -16,8 +16,8 @@ describe('Laravel Project Testing', () => {
 
       // Data untuk approve dan reject
       const actions = [
-          { firstName: 'Ester', lastName: 'Pardede', buttonSelector: 'a.btn.btn-success' },
-          { firstName: 'Josep', lastName: 'Napitupulu', buttonSelector: 'a.btn.btn-danger' },
+          { firstName: 'Talenta', lastName: 'Pardede', buttonSelector: 'a.btn.btn-success' },
+          { firstName: 'rendi', lastName: 'Napitupulu', buttonSelector: 'a.btn.btn-danger' },
       ];
 
       // Lakukan aksi pada setiap elemen

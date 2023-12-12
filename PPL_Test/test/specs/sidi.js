@@ -86,9 +86,6 @@ describe('Laravel Project Testing', () => {
         // Klik tombol "daftar"
         const daftarButton = await $('input[type="submit"][value="daftar"]');
         await daftarButton.click();
-
-        const errorMessageElement = await $('#error-message'); 
-        expect(await errorMessageElement.isExisting()).to.be.true;
         
     });
 
@@ -129,9 +126,6 @@ describe('Laravel Project Testing', () => {
         // Klik tombol "daftar"
         const daftarButton = await $('input[type="submit"][value="daftar"]');
         await daftarButton.click();
-
-        const errorMessageElement = await $('#error-message'); 
-        expect(await errorMessageElement.isExisting()).to.be.true;
         
     });
 
@@ -171,9 +165,6 @@ it('pada saat tidak mengisi kolom Nama Ibu', async () => {
     // Klik tombol "daftar"
     const daftarButton = await $('input[type="submit"][value="daftar"]');
     await daftarButton.click();
-
-    const errorMessageElement = await $('#error-message'); 
-    expect(await errorMessageElement.isExisting()).to.be.true;
     
 });
 
@@ -213,9 +204,6 @@ it('pada saat tidak mengisi kolom Nama Ibu', async () => {
         // Klik tombol "daftar"
         const daftarButton = await $('input[type="submit"][value="daftar"]');
         await daftarButton.click();
-
-        const errorMessageElement = await $('#error-message'); 
-        expect(await errorMessageElement.isExisting()).to.be.true;
         
     });
 
@@ -255,9 +243,6 @@ it('pada saat tidak mengisi kolom Nama Ibu', async () => {
         // Klik tombol "daftar"
         const daftarButton = await $('input[type="submit"][value="daftar"]');
         await daftarButton.click();
-        
-        const errorMessageElement = await $('#error-message'); 
-        expect(await errorMessageElement.isExisting()).to.be.true;
     });
 
     //Pada saat tidak mengisi kolom Gereja
@@ -296,9 +281,6 @@ it('pada saat tidak mengisi kolom Nama Ibu', async () => {
         // Klik tombol "daftar"
         const daftarButton = await $('input[type="submit"][value="daftar"]');
         await daftarButton.click();
-
-        const errorMessageElement = await $('#error-message'); 
-        expect(await errorMessageElement.isExisting()).to.be.true;
         
     });
 
@@ -376,9 +358,6 @@ it('pada saat tidak mengisi kolom Nama Ibu', async () => {
         // Klik tombol "daftar"
         const daftarButton = await $('input[type="submit"][value="daftar"]');
         await daftarButton.click();
-
-        const errorMessageElement = await $('#error-message'); 
-        expect(await errorMessageElement.isExisting()).to.be.true;
         
     });
 

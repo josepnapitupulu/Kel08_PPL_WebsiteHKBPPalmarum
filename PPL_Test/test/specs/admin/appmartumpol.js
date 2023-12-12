@@ -1,5 +1,5 @@
 describe('Laravel Project Testing', () => {
-    it('should interact with Approve and Tolak buttons for uprovePindah data', async () => {
+    it('should interact with Approve and Tolak buttons for uprove Martumpol', async () => {
       // Login page
       await browser.url('http://127.0.0.1:8000/login');
   
@@ -15,7 +15,7 @@ describe('Laravel Project Testing', () => {
       await browser.url('http://127.0.0.1:8000/admin/uproveMartumpol');
   
       // Temukan baris yang berisi "Nama Gereja Mempelai Laki Laki" tertentu untuk disetujui
-      const rowToApprove = await $('//td[contains(text(), "Nama Gereja Mempelai Laki-Laki")]/parent::tr');
+      const rowToApprove = await $('//td[contains(text(), "Palamrum")]/parent::tr');
 
       const approveID = await rowToApprove.$('a.btn.btn-success').getAttribute('href');
   
@@ -25,7 +25,7 @@ describe('Laravel Project Testing', () => {
       await approveButton.click();
   
       // Baris yang berisi "Nama Gereja Mempelai Laki Laki" khusus untuk penolakan
-      const rowToReject = await $('//td[contains(text(), "GPDI")]/parent::tr');
+      const rowToReject = await $('//td[contains(text(), "sda")]/parent::tr');
 
       const rejectID = await rowToReject.$('a.btn.btn-danger').getAttribute('href');
   

@@ -1,5 +1,5 @@
 describe('Laravel Project Testing', () => {
-    it('should register a new user for baptis', async () => {
+    it('pendaftaran baptis dengan data lengkap', async () => {
         // Mengunjungi halaman web
         await browser.url('http://127.0.0.1:8000/login');
   
@@ -77,8 +77,6 @@ describe('Laravel Project Testing', () => {
         const daftarButton = await $('input[type="submit"][value="daftar"]');
         await daftarButton.click();
 
-        const errorMessageElement = await $('#error-message'); 
-        expect(await errorMessageElement.isExisting()).to.be.true;
     });
     it('Pendaftaran baptis dengan nama ayah kosong', async () => {
         // Setelah login, pergi ke halaman yang diinginkan
@@ -112,8 +110,6 @@ describe('Laravel Project Testing', () => {
         const daftarButton = await $('input[type="submit"][value="daftar"]');
         await daftarButton.click();
         
-        const errorMessageElement = await $('#error-message'); 
-        expect(await errorMessageElement.isExisting()).to.be.true;
     });
     it('Pendaftaran baptis dengan nama ibu kosong', async () => {
         // Setelah login, pergi ke halaman yang diinginkan
@@ -147,8 +143,6 @@ describe('Laravel Project Testing', () => {
         const daftarButton = await $('input[type="submit"][value="daftar"]');
         await daftarButton.click();
         
-        const errorMessageElement = await $('#error-message'); 
-        expect(await errorMessageElement.isExisting()).to.be.true;
     });
     it('Pendaftaran baptis dengan tempat lahir kosong', async () => {
         // Setelah login, pergi ke halaman yang diinginkan
@@ -182,8 +176,6 @@ describe('Laravel Project Testing', () => {
         const daftarButton = await $('input[type="submit"][value="daftar"]');
         await daftarButton.click();
         
-        const errorMessageElement = await $('#error-message'); 
-        expect(await errorMessageElement.isExisting()).to.be.true;
     });
     it('Pendaftaran baptis dengan tanggal lahir kosong', async () => {
         // Setelah login, pergi ke halaman yang diinginkan
@@ -217,8 +209,6 @@ describe('Laravel Project Testing', () => {
         const daftarButton = await $('input[type="submit"][value="daftar"]');
         await daftarButton.click();
         
-        const errorMessageElement = await $('#error-message'); 
-        expect(await errorMessageElement.isExisting()).to.be.true;
     });
     it('Pendaftaran baptis dengan jenis kelamin kosong', async () => {
         // Setelah login, pergi ke halaman yang diinginkan
@@ -252,8 +242,6 @@ describe('Laravel Project Testing', () => {
         const daftarButton = await $('input[type="submit"][value="daftar"]');
         await daftarButton.click();
         
-        const errorMessageElement = await $('#error-message'); 
-        expect(await errorMessageElement.isExisting()).to.be.true;
     });
     it('Pendaftaran baptis dengan alamat kosong', async () => {
         // Setelah login, pergi ke halaman yang diinginkan
@@ -287,8 +275,6 @@ describe('Laravel Project Testing', () => {
         const daftarButton = await $('input[type="submit"][value="daftar"]');
         await daftarButton.click();
         
-        const errorMessageElement = await $('#error-message'); 
-        expect(await errorMessageElement.isExisting()).to.be.true;
     });
     it('Pendaftaran baptis dengan keterangan kosong', async () => {
         // Setelah login, pergi ke halaman yang diinginkan

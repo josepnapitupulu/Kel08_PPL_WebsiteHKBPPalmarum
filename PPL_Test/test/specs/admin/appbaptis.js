@@ -1,5 +1,5 @@
 describe('Laravel Project Testing', () => {
-    it('should interact with Approve and Tolak buttons for Jemaat Pindah', async () => {
+    it('should interact with Approve and Tolak buttons for Baptis', async () => {
         await browser.url('http://127.0.0.1:8000/login');
         
         const emailInput = await $('#email');

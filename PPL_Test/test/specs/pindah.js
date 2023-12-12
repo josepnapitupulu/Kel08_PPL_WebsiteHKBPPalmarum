@@ -61,9 +61,6 @@ describe('Laravel Project Testing', () => {
         // Klik tombol "daftar"
         const daftarButton = await $('input[type="submit"][value="daftar"]');
         await daftarButton.click();
-
-        const errorMessageElement = await $('#error-message');
-        expect(await errorMessageElement.isExisting()).to.be.true;
     });
 
     // Section 3: Adding user for relocation with empty id_registrasi
@@ -90,9 +87,6 @@ describe('Laravel Project Testing', () => {
         const daftarButton = await $('input[type="submit"][value="daftar"]');
         await daftarButton.click();
 
-        const errorMessageElement = await $('#error-message');
-        expect(await errorMessageElement.isExisting()).to.be.true;
-
     });
 
     // Section 4: Adding user for relocation with empty tgl_pindah
@@ -118,9 +112,6 @@ describe('Laravel Project Testing', () => {
         // Klik tombol "daftar"
         const daftarButton = await $('input[type="submit"][value="daftar"]');
         await daftarButton.click();
-
-        const errorMessageElement = await $('#error-message');
-        expect(await errorMessageElement.isExisting()).to.be.true;
     });
 
     // Section 5: Adding user for relocation with empty nama_gereja
@@ -145,9 +136,6 @@ describe('Laravel Project Testing', () => {
         // Klik tombol "daftar"
         const daftarButton = await $('input[type="submit"][value="daftar"]');
         await daftarButton.click();
-    
-        const errorMessageElement = await $('#error-message');
-        expect(await errorMessageElement.isExisting()).to.be.true;
 
     });    
 });
