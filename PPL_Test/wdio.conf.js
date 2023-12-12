@@ -30,6 +30,7 @@ exports.config = {
         './test/specs/sidi.js',
         './test/specs/martumpol.js',
         './test/specs/admin/appjemaat.js',
+        './test/specs/admin/appmartumpol.js',
         './test/specs/admin/apppindah.js',
         './test/specs/admin/appnikah.js',
         './test/specs/admin/appsidi.js',

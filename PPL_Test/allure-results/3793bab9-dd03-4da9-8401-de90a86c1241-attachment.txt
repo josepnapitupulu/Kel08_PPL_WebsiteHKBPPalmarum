@@ -1,0 +1,4 @@
+{
+  "using": "xpath",
+  "value": "//td[contains(text(), \"Nama Gereja Mempelai Laki-Laki\")]/parent::tr"
+}
