@@ -22,6 +22,7 @@ exports.config = {
     // will be called from there.
     //
     specs: [
+        './test/specs/registrasi.js',
         './test/specs/login.js',
         './test/specs/jemaat.js',
         './test/specs/baptis.js',
@@ -29,6 +30,7 @@ exports.config = {
         './test/specs/sidi.js',
         './test/specs/martumpol.js',
         './test/specs/admin/appjemaat.js',
+        './test/specs/admin/appmartumpol.js',
         './test/specs/admin/apppindah.js',
         './test/specs/admin/appnikah.js',
         './test/specs/admin/appsidi.js',

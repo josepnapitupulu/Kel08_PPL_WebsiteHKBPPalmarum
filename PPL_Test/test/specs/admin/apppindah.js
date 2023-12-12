@@ -15,7 +15,7 @@ describe('Laravel Project Testing', () => {
       await browser.url('http://127.0.0.1:8000/admin/uprovePindah');
   
       // Temukan baris yang berisi "Nama Gereja Tujuan" tertentu untuk disetujui
-      const rowToApprove = await $('//td[contains(text(), "sad")]/parent::tr');
+      const rowToApprove = await $('//td[contains(text(), "Parso")]/parent::tr');
 
       const approveID = await rowToApprove.$('a.btn.btn-success').getAttribute('href');
   
@@ -25,7 +25,7 @@ describe('Laravel Project Testing', () => {
       await approveButton.click();
   
       // Baris yang berisi "Nama Gereja Tujuan" khusus untuk penolakan
-      const rowToReject = await $('//td[contains(text(), "asd")]/parent::tr');
+      const rowToReject = await $('//td[contains(text(), "dgfdg")]/parent::tr');
 
       const rejectID = await rowToReject.$('a.btn.btn-danger').getAttribute('href');
   
