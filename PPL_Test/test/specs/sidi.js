@@ -399,7 +399,48 @@ it('pada saat tidak mengisi kolom Nama Ibu', async () => {
         const daftarButton = await $('input[type="submit"][value="daftar"]');
         await daftarButton.click();
 
-        
+    });
+    
+    //Mengirim data yang sama
+    it('Mengirim data yang sama', async () => {
+        // Mengunjungi halaman web
+        await browser.url(`${apiUrl}/aksesSidiUser`);
+
+        // Mengisi formulir
+        const namaLengkapInput = await $('[name="nama_lengkap"]');
+        await namaLengkapInput.setValue('Melince Yigibalom');
+
+        const namaAyahInput = await $('[name="nama_ayah"]');
+        await namaAyahInput.setValue('Melkias');
+
+        const namaIbuInput = await $('[name="nama_ibu"]');
+        await namaIbuInput.setValue('Gerina Walimbo');
+
+        const tempatLahirInput = await $('[name="tempat_lahir"]');
+        await tempatLahirInput.setValue('Tigini');
+
+        const tanggalLahirInput = await $('[name="tanggal_lahir"]');
+        await tanggalLahirInput.setValue('02-04-2002');
+
+        const gerejaDropdown = await $('[name="id_gereja_sidi"]');
+        await gerejaDropdown.selectByAttribute('value', '1');
+
+        const alamatInput = await $('[name="nama_gereja_non_hkbp"]');
+        await alamatInput.setValue('GKPA');
+
+        const statusKeluargaDropdown = await $('[name="id_hub_keluarga"]');
+        await statusKeluargaDropdown.selectByAttribute('value', '3');
+
+        const keteranganInput = await $('[name="keterangan"]');
+        await keteranganInput.setValue('Keterangan tidak ada');
+
+        // Klik tombol "daftar"
+        const daftarButton = await $('input[type="submit"][value="daftar"]');
+        await daftarButton.click();
+
+        const errorMessageElement = await $('#error-message');
+        expect(await errorMessageElement.isExisting()).to.be.true;
+
     });
 
 });
