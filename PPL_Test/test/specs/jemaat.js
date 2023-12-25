@@ -19,7 +19,7 @@ describe('Laravel Project Testing', () => {
   });
 
   // Section 2: Registration with complete data
-  it('should register a new jemaat with complete data', async () => {
+  it('register a new jemaat with complete data', async () => {
       await browser.url(`${apiUrl}/aksesJemaatUser`);
 
       const namaDepanInput = await $('#name');
@@ -79,7 +79,7 @@ describe('Laravel Project Testing', () => {
   });
 
   // Section 3: Registration with empty first name
-  it('should add a new jemaat with empty first name', async () => {
+  it('add a new jemaat with empty first name', async () => {
       await browser.url(`${apiUrl}/aksesJemaatUser`);
 
       const namaDepanInput = await $('#name');
@@ -139,7 +139,7 @@ describe('Laravel Project Testing', () => {
   });
 
   // Section 4: Registration with empty last name
-  it('should add a new jemaat with empty nama_belakang', async () => {
+  it('add a new jemaat with empty nama_belakang', async () => {
       await browser.url(`${apiUrl}/aksesJemaatUser`);
 
       const namaDepanInput3 = await $('#name');
@@ -199,7 +199,7 @@ describe('Laravel Project Testing', () => {
   });
   
   // Section 5: Registration with empty prefix title
-    it('should add a new jemaat with empty gelar_depan', async () => {
+    it('add a new jemaat with empty gelar_depan', async () => {
         await browser.url(`${apiUrl}/aksesJemaatUser`);
   
         const namaDepanInput3 = await $('#name');
@@ -259,7 +259,7 @@ describe('Laravel Project Testing', () => {
   });
   
   // Section 6: Daftar Jemaat dengan gelar belakang kosong
-    it('should add a new jemaat with empty gelar_belakang', async () => {
+    it('add a new jemaat with empty gelar_belakang', async () => {
         await browser.url(`${apiUrl}/aksesJemaatUser`);
   
         const namaDepanInput3 = await $('#name');
@@ -319,7 +319,7 @@ describe('Laravel Project Testing', () => {
   });
   
   // Section 7: Registration with empty prefix title
-    it('should add a new jemaat with empty tempat lahir', async () => {
+    it('add a new jemaat with empty tempat lahir', async () => {
         await browser.url(`${apiUrl}/aksesJemaatUser`);
   
         const namaDepanInput3 = await $('#name');
@@ -380,7 +380,7 @@ describe('Laravel Project Testing', () => {
   });
   
   // Section 8: Registration with empty prefix title
-    it('should add a new jemaat with empty tanggal lahir', async () => {
+    it('add a new jemaat with empty tanggal lahir', async () => {
         await browser.url(`${apiUrl}/aksesJemaatUser`);
 
         const namaDepanInput3 = await $('#name');
@@ -441,7 +441,7 @@ describe('Laravel Project Testing', () => {
         
 
   // Section 9: Registration with empty golongan darah
-    it('should add a new jemaat with empty golongan darah', async () => {
+    it('add a new jemaat with empty golongan darah', async () => {
         await browser.url(`${apiUrl}/aksesJemaatUser`);
 
         const namaDepanInput4 = await $('#name');
@@ -501,7 +501,7 @@ describe('Laravel Project Testing', () => {
       });
 
   // Section 10: Registration with empty jenis kelamin
-    it('should add a new jemaat with empty jenis kelamin', async () => {
+    it('add a new jemaat with empty jenis kelamin', async () => {
         await browser.url(`${apiUrl}/aksesJemaatUser`);
 
         const namaDepanInput4 = await $('#name');
@@ -561,7 +561,7 @@ describe('Laravel Project Testing', () => {
   });
 
   // Section 11: Registration with empty No Telp
-    it('should add a new jemaat with empty No Telp', async () => {
+    it('add a new jemaat with empty No Telp', async () => {
         await browser.url(`${apiUrl}/aksesJemaatUser`);
     
         const namaDepanInput4 = await $('#name');
@@ -621,7 +621,7 @@ describe('Laravel Project Testing', () => {
       });
 
   // Section 12: Alamat
-    it('should add a new jemaat with empty alamat', async () => {
+    it('add a new jemaat with empty alamat', async () => {
         await browser.url(`${apiUrl}/aksesJemaatUser`);
     
         const namaDepanInput = await $('#name');
@@ -681,7 +681,7 @@ describe('Laravel Project Testing', () => {
       });
 
   // Section 13: Hub Keluarga
-    it('should add a new jemaat with empty hub keluarga', async () => {
+    it('add a new jemaat with empty hub keluarga', async () => {
         await browser.url(`${apiUrl}/aksesJemaatUser`);
     
         const namaDepanInput = await $('#name');
@@ -740,7 +740,7 @@ describe('Laravel Project Testing', () => {
     });
 
   // Section 14: Pendidikan
-    it('should add a new jemaat with empty Pendidikan', async () => {
+    it('add a new jemaat with empty Pendidikan', async () => {
         await browser.url(`${apiUrl}/aksesJemaatUser`);
     
         const namaDepanInput = await $('#name');
@@ -800,7 +800,7 @@ describe('Laravel Project Testing', () => {
       });
 
   // Section 15: Bidang Pendidikan
-    it('should add a new jemaat with empty Bidang Pendidikan', async () => {
+    it('add a new jemaat with empty Bidang Pendidikan', async () => {
         await browser.url(`${apiUrl}/aksesJemaatUser`);
     
         const namaDepanInput = await $('#name');
@@ -860,7 +860,7 @@ describe('Laravel Project Testing', () => {
       });
 
   // Section 16: Pekerjaan
-    it('should add a new jemaat with empty Pekerjaan', async () => {
+    it('add a new jemaat with empty Pekerjaan', async () => {
         await browser.url(`${apiUrl}/aksesJemaatUser`);
     
         const namaDepanInput = await $('#name');
@@ -917,5 +917,65 @@ describe('Laravel Project Testing', () => {
         const daftarButton = await $('[value="daftar"]');
         await daftarButton.click();
      });
+    
+  // Section 17: Data Lengkap
+    it('add a new jemaat with same data', async () => {
+        await browser.url(`${apiUrl}/aksesJemaatUser`);
+    
+        const namaDepanInput = await $('#name');
+        await namaDepanInput.setValue('Fresky');
+  
+        const namaBelakangInput = await $('[name="nama_belakang"]');
+        await namaBelakangInput.setValue('Tobing');
+  
+        const gelarDepanInput = await $('[name="gelar_depan"]');
+        await gelarDepanInput.setValue('Mayjend');
+  
+        const gelarBelakangInput = await $('[name="gelar_belakang"]');
+        await gelarBelakangInput.setValue('S.kom');
+  
+        const tempatLahirInput = await $('[name="tempat_lahir"]');
+        await tempatLahirInput.setValue('Lobupining');
+  
+        const tanggalLahirInput = await $('[name="tanggal_lahir"]');
+        await tanggalLahirInput.setValue('01-06-2000');
+  
+        const golDarahInput = await $('[name="gol_darah"]');
+        await golDarahInput.setValue('AB');
+  
+        const jenisKelaminInput = await $('[name="jenis_kelamin"]');
+        await jenisKelaminInput.setValue('Laki Laki');
+  
+        const noTeleponInput = await $('[name="no_telepon"]');
+        await noTeleponInput.setValue('081362721250');
+  
+        const alamatInput = await $('[name="alamat"]');
+        await alamatInput.setValue('Tarutung');
+  
+        const statusHubunganDropdown = await $('[name="id_hub_keluarga"]');
+        await statusHubunganDropdown.selectByVisibleText('Anak');
+  
+        const pendidikanTerakhirDropdown = await $('[name="id_pendidikan"]');
+        await pendidikanTerakhirDropdown.selectByVisibleText('SMA');
+  
+        const bidangPendidikanDropdown = await $('[name="id_bidang_pendidikan"]');
+        await bidangPendidikanDropdown.selectByVisibleText('Pendidikan Khusus');
+  
+        const pekerjaanDropdown = await $('[name="id_pekerjaan"]');
+        await pekerjaanDropdown.selectByVisibleText('Petani');
+  
+        // Input Pekerjaan Lain jika tidak terdaftar
+        const pekerjaanLainInput = await $('[name="nama_pekerjaan_lain"]');
+        await pekerjaanLainInput.setValue('');
+  
+        // Input Gelar
+        const gelarInput = await $('[name="keterangan"]');
+        await gelarInput.setValue('');
+  
+        // "Daftar" button
+        const daftarButton = await $('[value="daftar"]');
+        await daftarButton.click();
+     });
+    
 });
 
