@@ -1,7 +1,8 @@
+const apiUrl = 'http://127.0.0.1:8000';
 describe('Laravel Project Testing', () => {
     it('registrasi jemaat dengan data lengkap', async () => {
         // Mengunjungi halaman web
-        await browser.url('http://127.0.0.1:8000/login');
+        await browser.url(`${apiUrl}/login`);
   
         // Login
         const emailInput = await $('#email');
@@ -14,7 +15,7 @@ describe('Laravel Project Testing', () => {
         await loginButton.click();
         
         // Pendaftaran Jemaat
-        await browser.url('http://127.0.0.1:8000/aksesMartumpolUser');
+        await browser.url(`${apiUrl}/aksesMartumpolUser`);
 
         // Mengisi formulir untuk mempelai laki-laki
         const idJemaatLakiSelect = await $('[name="id_jemaat_laki"]');
@@ -53,7 +54,7 @@ describe('Laravel Project Testing', () => {
 
     it('registrasi jemaat dengan data lengkap nama mempelai kosong', async () => {
         // Pendaftaran Jemaat
-        await browser.url('http://127.0.0.1:8000/aksesMartumpolUser');
+        await browser.url(`${apiUrl}/aksesMartumpolUser`);
 
         // Mengisi formulir untuk mempelai laki-laki
         const idJemaatLakiSelect = await $('[name="id_jemaat_laki"]');
@@ -92,7 +93,7 @@ describe('Laravel Project Testing', () => {
 
     it('registrasi jemaat dengan nama ayah laki laki kosong', async () => {
         // Pendaftaran Jemaat
-        await browser.url('http://127.0.0.1:8000/aksesMartumpolUser');
+        await browser.url(`${apiUrl}/aksesMartumpolUser`);
 
         // Mengisi formulir untuk mempelai laki-laki
         const idJemaatLakiSelect = await $('[name="id_jemaat_laki"]');
@@ -131,7 +132,7 @@ describe('Laravel Project Testing', () => {
 
     it('registrasi jemaat dengan nama ibu laki-laki kosong', async () => {
         // Pendaftaran Jemaat
-        await browser.url('http://127.0.0.1:8000/aksesMartumpolUser');
+        await browser.url(`${apiUrl}/aksesMartumpolUser`);
 
         // Mengisi formulir untuk mempelai laki-laki
         const idJemaatLakiSelect = await $('[name="id_jemaat_laki"]');
@@ -170,7 +171,7 @@ describe('Laravel Project Testing', () => {
 
     it('registrasi jemaat dengan gereja mempelai laki-laki kosong', async () => {
         // Pendaftaran Jemaat
-        await browser.url('http://127.0.0.1:8000/aksesMartumpolUser');
+        await browser.url(`${apiUrl}/aksesMartumpolUser`);
 
         // Mengisi formulir untuk mempelai laki-laki
         const idJemaatLakiSelect = await $('[name="id_jemaat_laki"]');
@@ -209,7 +210,7 @@ describe('Laravel Project Testing', () => {
 
     it('registrasi jemaat dengan nama perempuan kosong', async () => {
         // Pendaftaran Jemaat
-        await browser.url('http://127.0.0.1:8000/aksesMartumpolUser');
+        await browser.url(`${apiUrl}/aksesMartumpolUser`);
 
         // Mengisi formulir untuk mempelai laki-laki
         const idJemaatLakiSelect = await $('[name="id_jemaat_laki"]');
@@ -248,7 +249,7 @@ describe('Laravel Project Testing', () => {
 
     it('registrasi jemaat dengan nama ayah perempuan kosong', async () => {
         // Pendaftaran Jemaat
-        await browser.url('http://127.0.0.1:8000/aksesMartumpolUser');
+        await browser.url(`${apiUrl}/aksesMartumpolUser`);
 
         // Mengisi formulir untuk mempelai laki-laki
         const idJemaatLakiSelect = await $('[name="id_jemaat_laki"]');
@@ -287,7 +288,7 @@ describe('Laravel Project Testing', () => {
 
     it('registrasi jemaat dengan nama ibu perempuan kosong', async () => {
         // Pendaftaran Jemaat
-        await browser.url('http://127.0.0.1:8000/aksesMartumpolUser');
+        await browser.url(`${apiUrl}/aksesMartumpolUser`);
 
         // Mengisi formulir untuk mempelai laki-laki
         const idJemaatLakiSelect = await $('[name="id_jemaat_laki"]');
@@ -326,7 +327,7 @@ describe('Laravel Project Testing', () => {
 
     it('registrasi jemaat dengan nama gereja perempuan kosong', async () => {
         // Pendaftaran Jemaat
-        await browser.url('http://127.0.0.1:8000/aksesMartumpolUser');
+        await browser.url(`${apiUrl}/aksesMartumpolUser`);
 
         // Mengisi formulir untuk mempelai laki-laki
         const idJemaatLakiSelect = await $('[name="id_jemaat_laki"]');

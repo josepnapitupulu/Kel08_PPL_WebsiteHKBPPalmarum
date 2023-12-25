@@ -1,7 +1,8 @@
+const apiUrl = 'http://127.0.0.1:8000';
 describe('Laravel Project Testing', () => {
   // Section 1: Login
   it('should login user', async () => {
-      await browser.url('http://127.0.0.1:8000/login');
+      await browser.url(`${apiUrl}/login`);
 
       const emailInput = await $('#email');
       const passwordInput = await $('#password');
@@ -12,14 +13,14 @@ describe('Laravel Project Testing', () => {
       const loginButton = await $('input[type="submit"].btn.btn-pill.text-white.btn-block.btn-primary');
       await loginButton.click();
 
-      await browser.url('http://127.0.0.1:8000/aksesJemaatUser');
+      await browser.url(`${apiUrl}/aksesJemaatUser`);
 
       // Assertion for successful login can be added here if needed
   });
 
   // Section 2: Registration with complete data
   it('should register a new jemaat with complete data', async () => {
-      await browser.url('http://127.0.0.1:8000/aksesJemaatUser');
+      await browser.url(`${apiUrl}/aksesJemaatUser`);
 
       const namaDepanInput = await $('#name');
       await namaDepanInput.setValue('Fresky');
@@ -79,7 +80,7 @@ describe('Laravel Project Testing', () => {
 
   // Section 3: Registration with empty first name
   it('should add a new jemaat with empty first name', async () => {
-      await browser.url('http://127.0.0.1:8000/aksesJemaatUser');
+      await browser.url(`${apiUrl}/aksesJemaatUser`);
 
       const namaDepanInput = await $('#name');
       await namaDepanInput.setValue('');
@@ -139,7 +140,7 @@ describe('Laravel Project Testing', () => {
 
   // Section 4: Registration with empty last name
   it('should add a new jemaat with empty nama_belakang', async () => {
-      await browser.url('http://127.0.0.1:8000/aksesJemaatUser');
+      await browser.url(`${apiUrl}/aksesJemaatUser`);
 
       const namaDepanInput3 = await $('#name');
       await namaDepanInput3.setValue('Fresky');
@@ -199,7 +200,7 @@ describe('Laravel Project Testing', () => {
   
   // Section 5: Registration with empty prefix title
     it('should add a new jemaat with empty gelar_depan', async () => {
-        await browser.url('http://127.0.0.1:8000/aksesJemaatUser');
+        await browser.url(`${apiUrl}/aksesJemaatUser`);
   
         const namaDepanInput3 = await $('#name');
         await namaDepanInput3.setValue('Fresky');
@@ -259,7 +260,7 @@ describe('Laravel Project Testing', () => {
   
   // Section 6: Daftar Jemaat dengan gelar belakang kosong
     it('should add a new jemaat with empty gelar_belakang', async () => {
-        await browser.url('http://127.0.0.1:8000/aksesJemaatUser');
+        await browser.url(`${apiUrl}/aksesJemaatUser`);
   
         const namaDepanInput3 = await $('#name');
         await namaDepanInput3.setValue('Fresky');
@@ -319,7 +320,7 @@ describe('Laravel Project Testing', () => {
   
   // Section 7: Registration with empty prefix title
     it('should add a new jemaat with empty tempat lahir', async () => {
-        await browser.url('http://127.0.0.1:8000/aksesJemaatUser');
+        await browser.url(`${apiUrl}/aksesJemaatUser`);
   
         const namaDepanInput3 = await $('#name');
         await namaDepanInput3.setValue('Fresky');
@@ -380,7 +381,7 @@ describe('Laravel Project Testing', () => {
   
   // Section 8: Registration with empty prefix title
     it('should add a new jemaat with empty tanggal lahir', async () => {
-        await browser.url('http://127.0.0.1:8000/aksesJemaatUser');
+        await browser.url(`${apiUrl}/aksesJemaatUser`);
 
         const namaDepanInput3 = await $('#name');
         await namaDepanInput3.setValue('Fresky');
@@ -441,7 +442,7 @@ describe('Laravel Project Testing', () => {
 
   // Section 9: Registration with empty golongan darah
     it('should add a new jemaat with empty golongan darah', async () => {
-        await browser.url('http://127.0.0.1:8000/aksesJemaatUser');
+        await browser.url(`${apiUrl}/aksesJemaatUser`);
 
         const namaDepanInput4 = await $('#name');
         await namaDepanInput4.setValue('Fresky');
@@ -501,7 +502,7 @@ describe('Laravel Project Testing', () => {
 
   // Section 10: Registration with empty jenis kelamin
     it('should add a new jemaat with empty jenis kelamin', async () => {
-        await browser.url('http://127.0.0.1:8000/aksesJemaatUser');
+        await browser.url(`${apiUrl}/aksesJemaatUser`);
 
         const namaDepanInput4 = await $('#name');
         await namaDepanInput4.setValue('Fresky');
@@ -561,7 +562,7 @@ describe('Laravel Project Testing', () => {
 
   // Section 11: Registration with empty No Telp
     it('should add a new jemaat with empty No Telp', async () => {
-        await browser.url('http://127.0.0.1:8000/aksesJemaatUser');
+        await browser.url(`${apiUrl}/aksesJemaatUser`);
     
         const namaDepanInput4 = await $('#name');
         await namaDepanInput4.setValue('Fresky');
@@ -621,7 +622,7 @@ describe('Laravel Project Testing', () => {
 
   // Section 12: Alamat
     it('should add a new jemaat with empty alamat', async () => {
-        await browser.url('http://127.0.0.1:8000/aksesJemaatUser');
+        await browser.url(`${apiUrl}/aksesJemaatUser`);
     
         const namaDepanInput = await $('#name');
         await namaDepanInput.setValue('Fresky');
@@ -681,7 +682,7 @@ describe('Laravel Project Testing', () => {
 
   // Section 13: Hub Keluarga
     it('should add a new jemaat with empty hub keluarga', async () => {
-        await browser.url('http://127.0.0.1:8000/aksesJemaatUser');
+        await browser.url(`${apiUrl}/aksesJemaatUser`);
     
         const namaDepanInput = await $('#name');
         await namaDepanInput.setValue('Fresky');
@@ -740,7 +741,7 @@ describe('Laravel Project Testing', () => {
 
   // Section 14: Pendidikan
     it('should add a new jemaat with empty Pendidikan', async () => {
-        await browser.url('http://127.0.0.1:8000/aksesJemaatUser');
+        await browser.url(`${apiUrl}/aksesJemaatUser`);
     
         const namaDepanInput = await $('#name');
         await namaDepanInput.setValue('Fresky');
@@ -800,7 +801,7 @@ describe('Laravel Project Testing', () => {
 
   // Section 15: Bidang Pendidikan
     it('should add a new jemaat with empty Bidang Pendidikan', async () => {
-        await browser.url('http://127.0.0.1:8000/aksesJemaatUser');
+        await browser.url(`${apiUrl}/aksesJemaatUser`);
     
         const namaDepanInput = await $('#name');
         await namaDepanInput.setValue('Fresky');
@@ -860,7 +861,7 @@ describe('Laravel Project Testing', () => {
 
   // Section 16: Pekerjaan
     it('should add a new jemaat with empty Pekerjaan', async () => {
-        await browser.url('http://127.0.0.1:8000/aksesJemaatUser');
+        await browser.url(`${apiUrl}/aksesJemaatUser`);
     
         const namaDepanInput = await $('#name');
         await namaDepanInput.setValue('Fresky');

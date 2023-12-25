@@ -1,7 +1,8 @@
+const apiUrl = 'http://127.0.0.1:8000';
 describe('Laravel Project Testing', () => {
     it('should register a new jemaat', async () => {
         // Mengunjungi halaman web
-        await browser.url('http://127.0.0.1:8000/login');
+        await browser.url(`${apiUrl}/login`);
   
         // Login
         const emailInput = await $('#email');
@@ -14,7 +15,7 @@ describe('Laravel Project Testing', () => {
         await loginButton.click();
 
         // Pendaftaran Pernikahan
-        await browser.url('http://127.0.0.1:8000/aksesNikahUser');
+        await browser.url(`${apiUrl}/aksesNikahUser`);
 
         // Pernikahan registration form
         const namaMempelaiLakiLakiInput = await $('[name="nama_lengkap_laki"]');
@@ -65,7 +66,7 @@ describe('Laravel Project Testing', () => {
     });
 
     it('should register a new jemaat', async () => {
-        await browser.url('http://127.0.0.1:8000/aksesNikahUser');
+        await browser.url(`${apiUrl}/aksesNikahUser`);
 
         // Pernikahan registration form dengan nama laki laki kosong
         const namaMempelaiLakiLakiinput = await $('[name="nama_lengkap_laki"]');
@@ -116,7 +117,7 @@ describe('Laravel Project Testing', () => {
     });
 
         it('should register a new jemaat', async () => {
-        await browser.url('http://127.0.0.1:8000/aksesNikahUser');
+        await browser.url(`${apiUrl}/aksesNikahUser`);
 
         // Pernikahan registration form dengan nama perempuan kosong
         const namaMempelaiLakiLakiinput = await $('[name="nama_lengkap_laki"]');
@@ -168,7 +169,7 @@ describe('Laravel Project Testing', () => {
 
 
         it('should register a new jemaat', async () => {
-        await browser.url('http://127.0.0.1:8000/aksesNikahUser');
+        await browser.url(`${apiUrl}/aksesNikahUser`);
 
         // Pernikahan registration form dengan tanggalmartumpol kosong
         const namaMempelaiLakiLakiinput = await $('[name="nama_lengkap_laki"]');
@@ -220,7 +221,7 @@ describe('Laravel Project Testing', () => {
 
 
         it('should register a new jemaat', async () => {
-        await browser.url('http://127.0.0.1:8000/aksesNikahUser');
+        await browser.url(`${apiUrl}/aksesNikahUser`);
 
         // Pernikahan registration form dengan nama gereja martumpol kosong
         const namaMempelaiLakiLakiinput = await $('[name="nama_lengkap_laki"]');
@@ -271,7 +272,7 @@ describe('Laravel Project Testing', () => {
     });
 
         it('should register a new jemaat', async () => {
-        await browser.url('http://127.0.0.1:8000/aksesNikahUser');
+        await browser.url(`${apiUrl}/aksesNikahUser`);
 
         // Pernikahan registration form dengan tanggal pemberkatan kosong
         const namaMempelaiLakiLakiinput = await $('[name="nama_lengkap_laki"]');
@@ -321,7 +322,7 @@ describe('Laravel Project Testing', () => {
         expect(await errorMessageElement.isExisting()).toBe(false);
     });
     it('should register a new jemaat', async () => {
-        await browser.url('http://127.0.0.1:8000/aksesNikahUser');
+        await browser.url(`${apiUrl}/aksesNikahUser`);
 
         // Pernikahan registration form dengan namagerejapemberkatan kosong
         const namaMempelaiLakiLakiinput = await $('[name="nama_lengkap_laki"]');
@@ -372,7 +373,7 @@ describe('Laravel Project Testing', () => {
     });
 
         it('should register a new jemaat', async () => {
-        await browser.url('http://127.0.0.1:8000/aksesNikahUser');
+        await browser.url(`${apiUrl}/aksesNikahUser`);
 
         // Pernikahan registration form dengan namagerejalakilaki kosong
         const namaMempelaiLakiLakiinput = await $('[name="nama_lengkap_laki"]');
@@ -423,7 +424,7 @@ describe('Laravel Project Testing', () => {
     });
 
     it('should register a new jemaat', async () => {
-        await browser.url('http://127.0.0.1:8000/aksesNikahUser');
+        await browser.url(`${apiUrl}/aksesNikahUser`);
 
         // Pernikahan registration form dengan nama ayah laki lakikosong
         const namaMempelaiLakiLakiinput = await $('[name="nama_lengkap_laki"]');
@@ -474,7 +475,7 @@ describe('Laravel Project Testing', () => {
     });
 
     it('should register a new jemaat', async () => {
-        await browser.url('http://127.0.0.1:8000/aksesNikahUser');
+        await browser.url(`${apiUrl}/aksesNikahUser`);
 
         // Pernikahan registration form dengan nama ibu laki lakikosong
         const namaMempelaiLakiLakiinput = await $('[name="nama_lengkap_laki"]');
@@ -525,7 +526,7 @@ describe('Laravel Project Testing', () => {
     });
 
     it('should register a new jemaat', async () => {
-        await browser.url('http://127.0.0.1:8000/aksesNikahUser');
+        await browser.url(`${apiUrl}/aksesNikahUser`);
 
         // Pernikahan registration form dengan nama ibu laki lakikosong
         const namaMempelaiLakiLakiinput = await $('[name="nama_lengkap_laki"]');
@@ -576,7 +577,7 @@ describe('Laravel Project Testing', () => {
     });
 
     it('should register a new jemaat', async () => {
-        await browser.url('http://127.0.0.1:8000/aksesNikahUser');
+        await browser.url(`${apiUrl}/aksesNikahUser`);
 
         // Pernikahan registration form dengan namagerejaperempuan kosong
         const namaMempelaiLakiLakiinput = await $('[name="nama_lengkap_laki"]');
@@ -627,7 +628,7 @@ describe('Laravel Project Testing', () => {
     });
 
     it('should register a new jemaat', async () => {
-        await browser.url('http://127.0.0.1:8000/aksesNikahUser');
+        await browser.url(`${apiUrl}/aksesNikahUser`);
 
         // Pernikahan registration form dengan nama_ayah_perempuan kosong
         const namaMempelaiLakiLakiinput = await $('[name="nama_lengkap_laki"]');
@@ -679,7 +680,7 @@ describe('Laravel Project Testing', () => {
                                         
 
     it('should register a new jemaat', async () => {
-        await browser.url('http://127.0.0.1:8000/aksesNikahUser');
+        await browser.url(`${apiUrl}/aksesNikahUser`);
 
         // Pernikahan registration form dengan nama_ibu_perempuan kosong
         const namaMempelaiLakiLakiinput = await $('[name="nama_lengkap_laki"]');
@@ -731,7 +732,7 @@ describe('Laravel Project Testing', () => {
 
 
     it('should register a new jemaat', async () => {
-        await browser.url('http://127.0.0.1:8000/aksesNikahUser');
+        await browser.url(`${apiUrl}/aksesNikahUser`);
 
         // Pernikahan registration form dengan keterangan kosong
         const namaMempelaiLakiLakiinput = await $('[name="nama_lengkap_laki"]');

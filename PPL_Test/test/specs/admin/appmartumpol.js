@@ -1,7 +1,8 @@
+const apiUrl = 'http://127.0.0.1:8000';
 describe('Laravel Project Testing', () => {
     it('should interact with Approve and Tolak buttons for uprove Martumpol', async () => {
       // Login page
-      await browser.url('http://127.0.0.1:8000/login');
+      await browser.url(`${apiUrl}/login`);
   
       // Login
       const emailInput = await $('#email');
@@ -12,7 +13,7 @@ describe('Laravel Project Testing', () => {
       await loginButton.click();
   
       // Ke halaman uproveMempelai Laki Laki
-      await browser.url('http://127.0.0.1:8000/admin/uproveMartumpol');
+      await browser.url(`${apiUrl}/admin/uproveMartumpol`);
   
       // Temukan baris yang berisi "Nama Gereja Mempelai Laki Laki" tertentu untuk disetujui
       const rowToApprove = await $('//td[contains(text(), "Palamrum")]/parent::tr');

@@ -1,7 +1,8 @@
+const apiUrl = 'http://127.0.0.1:8000/register';
 describe('Laravel Project Testing', () => {
     it('should register a new jemaat', async () => {
         // Mengunjungi halaman web
-        await browser.url('http://127.0.0.1:8000/register');
+        await browser.url(`${apiUrl}`);
   
         // Registrasi
         const nameInput = await $('#name');
@@ -18,12 +19,10 @@ describe('Laravel Project Testing', () => {
         await loginButton.click();
         
     });
-});
 
-describe('Laravel Project Testing', () => {
     it('should register a new jemaat', async () => {
         // Mengunjungi halaman web
-    await browser.url('http://127.0.0.1:8000/register');
+    await browser.url(`${apiUrl}`);
 
     // Registrasi dengan mengkosongkan nama
     const nameInput = await $('#name');
@@ -39,13 +38,11 @@ describe('Laravel Project Testing', () => {
     const loginButton = await $('input[type="submit"].btn.btn-pill.text-white.btn-block.btn-primary');
     await loginButton.click();
     
-});
-});
+    });
 
-describe('Laravel Project Testing', () => {
     it('should register a new jemaat', async () => {
         // Mengunjungi halaman web
-    await browser.url('http://127.0.0.1:8000/register');
+    await browser.url(`${apiUrl}`);
 
     // Registrasi dengan mengkosongkan nama
     const nameInput = await $('#name');
@@ -61,13 +58,11 @@ describe('Laravel Project Testing', () => {
     const loginButton = await $('input[type="submit"].btn.btn-pill.text-white.btn-block.btn-primary');
     await loginButton.click();
     
-});
-});
+    });
 
-describe('Laravel Project Testing', () => {
     it('should register a new jemaat', async () => {
         // Mengunjungi halaman web
-    await browser.url('http://127.0.0.1:8000/register');
+    await browser.url(`${apiUrl}`);
 
     // Registrasi dengan mengkosongkan nama
     const nameInput = await $('#name');
@@ -83,13 +78,11 @@ describe('Laravel Project Testing', () => {
     const loginButton = await $('input[type="submit"].btn.btn-pill.text-white.btn-block.btn-primary');
     await loginButton.click();
     
-});
-});
+    });
 
-describe('Laravel Project Testing', () => {
     it('should register a new jemaat', async () => {
         // Mengunjungi halaman web
-    await browser.url('http://127.0.0.1:8000/register');
+    await browser.url(`${apiUrl}`);
 
     // Registrasi dengan mengkosongkan nama
     const nameInput = await $('#name');
@@ -105,5 +98,5 @@ describe('Laravel Project Testing', () => {
     const loginButton = await $('input[type="submit"].btn.btn-pill.text-white.btn-block.btn-primary');
     await loginButton.click();
     
-});
+    });
 });

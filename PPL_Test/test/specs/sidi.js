@@ -1,7 +1,8 @@
+const apiUrl = 'http://127.0.0.1:8000';
 describe('Laravel Project Testing', () => {
     it('Berhasil menambahkan sidi', async () => {
         // Mengunjungi halaman web
-        await browser.url('http://127.0.0.1:8000/login');
+        await browser.url(`${apiUrl}/login`);
   
         // Login
         const emailInput = await $('#email');
@@ -14,7 +15,7 @@ describe('Laravel Project Testing', () => {
         await loginButton.click();
 
         // Setelah login, pergi ke halaman yang diinginkan
-        await browser.url('http://127.0.0.1:8000/aksesSidiUser');
+        await browser.url(`${apiUrl}/aksesSidiUser`);
 
         // Mengisi formulir
         const namaLengkapInput = await $('[name="nama_lengkap"]');
@@ -53,7 +54,7 @@ describe('Laravel Project Testing', () => {
  //Pada saat tidak mengisi kolom Nama Lengkap 
     it('pada saat tidak mengisi kolom Nama Lengkap', async () => {
         // Mengunjungi halaman web
-        await browser.url('http://127.0.0.1:8000/aksesSidiUser');
+        await browser.url(`${apiUrl}/aksesSidiUser`);
 
         // Mengisi formulir
         const namaLengkapInput = await $('[name="nama_lengkap"]');
@@ -93,7 +94,7 @@ describe('Laravel Project Testing', () => {
     //Pada saat tidak mengisi kolom Nama Ayah 
     it('pada saat tidak mengisi kolom Nama Ayah', async () => {
         // Mengunjungi halaman web
-        await browser.url('http://127.0.0.1:8000/aksesSidiUser');
+        await browser.url(`${apiUrl}/aksesSidiUser`);
 
         // Mengisi formulir
         const namaLengkapInput = await $('[name="nama_lengkap"]');
@@ -132,7 +133,7 @@ describe('Laravel Project Testing', () => {
 //Pada saat tidak mengisi kolom Nama Ibu 
 it('pada saat tidak mengisi kolom Nama Ibu', async () => {
     // Mengunjungi halaman web
-    await browser.url('http://127.0.0.1:8000/aksesSidiUser');
+    await browser.url(`${apiUrl}/aksesSidiUser`);
 
     // Mengisi formulir
     const namaLengkapInput = await $('[name="nama_lengkap"]');
@@ -171,7 +172,7 @@ it('pada saat tidak mengisi kolom Nama Ibu', async () => {
     //Pada saat tidak mengisi kolom Tempat Lahir
     it('pada saat tidak mengisi kolom Tempat Lahir', async () => {
         // Mengunjungi halaman web
-        await browser.url('http://127.0.0.1:8000/aksesSidiUser');
+        await browser.url(`${apiUrl}/aksesSidiUser`);
 
         // Mengisi formulir
         const namaLengkapInput = await $('[name="nama_lengkap"]');
@@ -210,7 +211,7 @@ it('pada saat tidak mengisi kolom Nama Ibu', async () => {
     //Pada saat tidak mengisi kolom Tanggal Lahir
     it('pada saat tidak mengisi kolom Tanggal Lahir', async () => {
         // Mengunjungi halaman web
-        await browser.url('http://127.0.0.1:8000/aksesSidiUser');
+        await browser.url(`${apiUrl}/aksesSidiUser`);
 
         // Mengisi formulir
         const namaLengkapInput = await $('[name="nama_lengkap"]');
@@ -248,7 +249,7 @@ it('pada saat tidak mengisi kolom Nama Ibu', async () => {
     //Pada saat tidak mengisi kolom Gereja
     it('pada saat tidak mengisi kolom Gereja', async () => {
         // Mengunjungi halaman web
-        await browser.url('http://127.0.0.1:8000/aksesSidiUser');
+        await browser.url(`${apiUrl}/aksesSidiUser`);
 
         // Mengisi formulir
         const namaLengkapInput = await $('[name="nama_lengkap"]');
@@ -287,7 +288,7 @@ it('pada saat tidak mengisi kolom Nama Ibu', async () => {
     //Pada saat tidak mengisi kolom Gereja Non HKBP
     it('pada saat tidak mengisi kolom Gereja Non HKBP', async () => {
         // Mengunjungi halaman web
-        await browser.url('http://127.0.0.1:8000/aksesSidiUser');
+        await browser.url(`${apiUrl}/aksesSidiUser`);
 
         // Mengisi formulir
         const namaLengkapInput = await $('[name="nama_lengkap"]');
@@ -325,7 +326,7 @@ it('pada saat tidak mengisi kolom Nama Ibu', async () => {
     //Pada saat tidak mengisi kolom Status Keluarga
     it('pada saat tidak mengisi kolom Status Keluarga', async () => {
         // Mengunjungi halaman web
-        await browser.url('http://127.0.0.1:8000/aksesSidiUser');
+        await browser.url(`${apiUrl}/aksesSidiUser`);
 
         // Mengisi formulir
         const namaLengkapInput = await $('[name="nama_lengkap"]');
@@ -364,7 +365,7 @@ it('pada saat tidak mengisi kolom Nama Ibu', async () => {
     //Pada saat tidak mengisi kolom Keterangan
     it('pada saat tidak mengisi kolom keterangan', async () => {
         // Mengunjungi halaman web
-        await browser.url('http://127.0.0.1:8000/aksesSidiUser');
+        await browser.url(`${apiUrl}/aksesSidiUser`);
 
         // Mengisi formulir
         const namaLengkapInput = await $('[name="nama_lengkap"]');

@@ -1,6 +1,7 @@
+const apiUrl = 'http://127.0.0.1:8000';
 describe('Laravel Project Testing', () => {
     it('should interact with Approve and Tolak buttons for Baptis', async () => {
-        await browser.url('http://127.0.0.1:8000/login');
+        await browser.url(`${apiUrl}/login`);
         
         const emailInput = await $('#email');
         const passwordInput = await $('#password');
@@ -11,7 +12,7 @@ describe('Laravel Project Testing', () => {
         const loginButton = await $('input[type="submit"].btn.btn-pill.text-white.btn-block.btn-primary');
         await loginButton.click();
 
-        await browser.url('http://127.0.0.1:8000/admin/uproveBaptis');
+        await browser.url(`${apiUrl}/admin/uproveBaptis`);
 
         const approveButton = await $('a.btn.btn-success');
         await approveButton.waitForClickable();

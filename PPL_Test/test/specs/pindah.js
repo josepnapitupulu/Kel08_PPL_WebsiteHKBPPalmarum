@@ -1,7 +1,8 @@
+const apiUrl = 'http://127.0.0.1:8000';
 describe('Laravel Project Testing', () => {
     it('menambahkan user untuk pindah', async () => {
         // Mengunjungi halaman web
-        await browser.url('http://127.0.0.1:8000/login');
+        await browser.url(`${apiUrl}/login`);
 
         // Login
         const emailInput = await $('#email');
@@ -14,7 +15,7 @@ describe('Laravel Project Testing', () => {
         await loginButton.click();
 
         // Setelah login, pergi ke halaman yang diinginkan
-        await browser.url('http://127.0.0.1:8000/aksesPindahUser');
+        await browser.url(`${apiUrl}/aksesPindahUser`);
 
         // Mengisi semua data pada form
         const idJemaatDropdown = await $('[name="id_jemaat"]');
@@ -40,7 +41,7 @@ describe('Laravel Project Testing', () => {
 
     // Section 2: Adding user for relocation with empty id_jemaat
     it('mengisi form dengan id_jemaat kosong', async () => {
-        await browser.url('http://127.0.0.1:8000/aksesPindahUser');
+        await browser.url(`${apiUrl}/aksesPindahUser`);
 
         // Mengisi semua data pada form
         const idJemaatDropdown = await $('[name="id_jemaat"]');
@@ -65,7 +66,7 @@ describe('Laravel Project Testing', () => {
 
     // Section 3: Adding user for relocation with empty id_registrasi
     it('mengisi form dengan id_registrasi kosong', async () => {
-        await browser.url('http://127.0.0.1:8000/aksesPindahUser');
+        await browser.url(`${apiUrl}/aksesPindahUser`);
 
         // Mengisi semua data pada form
         const idJemaatDropdown = await $('[name="id_jemaat"]');
@@ -91,7 +92,7 @@ describe('Laravel Project Testing', () => {
 
     // Section 4: Adding user for relocation with empty tgl_pindah
     it('mengisi form dengan tgl_pindah kosong', async () => {
-        await browser.url('http://127.0.0.1:8000/aksesPindahUser');
+        await browser.url(`${apiUrl}/aksesPindahUser`);
 
         // Mengisi semua data pada form
         const idJemaatDropdown = await $('[name="id_jemaat"]');
@@ -116,7 +117,7 @@ describe('Laravel Project Testing', () => {
 
     // Section 5: Adding user for relocation with empty nama_gereja
     it('mengisi form dengan nama_gereja kosong', async () => {
-        await browser.url('http://127.0.0.1:8000/aksesPindahUser');
+        await browser.url(`${apiUrl}/aksesPindahUser`);
 
         const idJemaatDropdown = await $('[name="id_jemaat"]');
         await idJemaatDropdown.selectByAttribute('value', '1'); 

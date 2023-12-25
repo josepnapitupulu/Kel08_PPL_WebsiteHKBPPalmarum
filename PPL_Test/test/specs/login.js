@@ -1,7 +1,8 @@
+const apiUrl = 'http://127.0.0.1:8000';
 describe('Laravel Project Testing', () => {
     it('Login dengan mengisi semua field', async () => {
         // Mengunjungi halaman web
-        await browser.url('http://127.0.0.1:8000/login');
+        await browser.url(`${apiUrl}/login`);
   
         // Login
         const emailInput = await $('#email');
@@ -22,7 +23,7 @@ describe('Laravel Project Testing', () => {
 
     it('Login dengan tidak mengisi field email', async () => {
         // Mengunjungi halaman login
-        await browser.url('http://127.0.0.1:8000/login');
+        await browser.url(`${apiUrl}/login`);
     
         // Mengosongkan field email dan mengisi kata sandi 
         const emailInput = await $('#email');
@@ -39,7 +40,7 @@ describe('Laravel Project Testing', () => {
 
      it('Login dengan tidak mengisi field pasaword', async () => {
         // Mengunjungi halaman login
-        await browser.url('http://127.0.0.1:8000/login');
+        await browser.url(`${apiUrl}/login`);
     
         // Mengisi field email dan mengosongkan kata sandi tertentu
         const emailInput = await $('#email');
@@ -55,7 +56,7 @@ describe('Laravel Project Testing', () => {
 
      it('Login dengan  mengisi field email yang salah', async () => {
         // Mengunjungi halaman login
-        await browser.url('http://127.0.0.1:8000/login');
+        await browser.url(`${apiUrl}/login`);
     
         // Mengisi field email dan mengosongkan kata sandi tertentu
         const emailInput = await $('#email');
@@ -74,7 +75,7 @@ describe('Laravel Project Testing', () => {
 
      it('Login dengan mengisi field password yang salah', async () => {
         // Mengunjungi halaman login
-        await browser.url('http://127.0.0.1:8000/login');
+        await browser.url(`${apiUrl}/login`);
     
         // Mengisi field email dan mengosongkan kata sandi tertentu
         const emailInput = await $('#email');
@@ -90,7 +91,7 @@ describe('Laravel Project Testing', () => {
 
      it('Login dengan mengisi email dan password yang salah', async () => {
       // Mengunjungi halaman login
-      await browser.url('http://127.0.0.1:8000/login');
+      await browser.url(`${apiUrl}/login`);
   
       // Mengisi field email dan mengosongkan kata sandi tertentu
       const emailInput = await $('#email');

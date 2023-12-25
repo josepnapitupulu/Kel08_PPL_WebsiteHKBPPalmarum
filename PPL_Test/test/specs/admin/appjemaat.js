@@ -1,7 +1,8 @@
+const apiUrl = 'http://127.0.0.1:8000';
 describe('Laravel Project Testing', () => {
   it('should interact with Approve and Tolak buttons for uprove jemaat', async () => {
       // Login page
-      await browser.url('http://127.0.0.1:8000/login');
+      await browser.url(`${apiUrl}/login`);
 
       // Login
       const emailInput = await $('#email');
@@ -12,7 +13,7 @@ describe('Laravel Project Testing', () => {
       await loginButton.click();
 
       // Ke halaman uprovePindah
-      await browser.url('http://127.0.0.1:8000/admin/uproveJemaat');
+      await browser.url(`${apiUrl}/admin/uproveJemaat`);
 
       // Data untuk approve dan reject
       const actions = [

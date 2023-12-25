@@ -1,7 +1,8 @@
+const apiUrl = 'http://127.0.0.1:8000';
 describe('Laravel Project Testing', () => {
     it('should interact with Approve and Tolak buttons for uprove  Sidi', async () => {
       // Login page
-      await browser.url('http://127.0.0.1:8000/login');
+      await browser.url(`${apiUrl}/login`);
   
       // Login
       const emailInput = await $('#email');
@@ -12,7 +13,7 @@ describe('Laravel Project Testing', () => {
       await loginButton.click();
   
       // Ke halaman uprovesidi
-      await browser.url('http://127.0.0.1:8000/admin/uproveSidi');
+      await browser.url(`${apiUrl}/admin/uproveSidi`);
   
       // Temukan baris yang berisi "Nama Jemaat Sidi" tertentu untuk disetujui
       const rowToApprove = await $('//td[contains(text(), "Sahat")]/parent::tr');
