@@ -667,7 +667,7 @@ describe('Laravel Project Testing', () => {
         await namaAyahMempelaiPerempuanInput.setValue('sudar');
         
         const namaIbuMempelaiPerempuanInput = await $('[name="nama_ibu_perempuan"]');
-        await namaIbuMempelaiPerempuanInput.setValue('Sary');
+        await namaIbuMempelaiPerempuanInput.setValue('');
         
         const keteranganInput = await $('[name="keterangan"]');
         await keteranganInput.setValue('kedjjef');
@@ -722,7 +722,7 @@ describe('Laravel Project Testing', () => {
         await namaIbuMempelaiPerempuanInput.setValue('Sary');
         
         const keteranganInput = await $('[name="keterangan"]');
-        await keteranganInput.setValue('kedjjef');
+        await keteranganInput.setValue('');
         
         // "Daftar" button
         const daftarButton = await $('[value="daftar"]');
@@ -735,7 +735,6 @@ describe('Laravel Project Testing', () => {
     it('form dengan data yang sama', async () => {
         await browser.url(`${apiUrl}/aksesNikahUser`);
 
-        // Pernikahan registration form dengan nama laki laki kosong
         const namaMempelaiLakiLakiinput = await $('[name="nama_lengkap_laki"]');
         await namaMempelaiLakiLakiinput.setValue('Irvan');
      
