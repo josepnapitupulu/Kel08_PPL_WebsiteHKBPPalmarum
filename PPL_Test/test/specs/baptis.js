@@ -309,4 +309,40 @@ describe('Laravel Project Testing', () => {
         const daftarButton = await $('input[type="submit"][value="daftar"]');
         await daftarButton.click();
     });
+
+    it('Pendaftaran baptis dengan data yang sama', async () => {
+        // Setelah login, pergi ke halaman yang diinginkan
+        await browser.url(`${apiUrl}/aksesBaptisUser`);
+
+        // Mengisi formulir
+        const namaLengkapInput = await $('[name="nama_lengkap"]');
+        await namaLengkapInput.setValue('Risna');
+
+        const namaAyahInput = await $('[name="nama_ayah"]');
+        await namaAyahInput.setValue('Sahala');
+
+        const namaIbuInput = await $('[name="nama_ibu"]');
+        await namaIbuInput.setValue('Ringgo');
+
+        const tempatLahirInput = await $('[name="tempat_lahir"]');
+        await tempatLahirInput.setValue('Parsoburan');
+
+        const tanggalLahirInput = await $('[name="tanggal_lahir"]');
+        await tanggalLahirInput.setValue('07-01-2003');
+
+        const jenisKelaminInput = await $('[name="jenis_kelamin"]');
+        await jenisKelaminInput.setValue('Perempuan');
+
+        const alamatInput = await $('[name="alamat"]');
+        await alamatInput.setValue('Parsoburan');
+
+        const keteranganInput = await $('[name="keterangan"]');
+        await keteranganInput.setValue('Halo');
+        // Klik tombol "daftar"
+        const daftarButton = await $('input[type="submit"][value="daftar"]');
+        await daftarButton.click();
+
+        const errorMessageElement = await $('#error-message'); 
+        expect(await errorMessageElement.isExisting()).to.be.true;
+    });
 });
