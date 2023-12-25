@@ -975,6 +975,9 @@ describe('Laravel Project Testing', () => {
         // "Daftar" button
         const daftarButton = await $('[value="daftar"]');
         await daftarButton.click();
+
+        const errorMessageElement = await $('#error-message');
+        expect(await errorMessageElement.isExisting()).to.be.true;
      });
     
 });
