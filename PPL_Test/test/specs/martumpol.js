@@ -52,7 +52,7 @@ describe('Laravel Project Testing', () => {
         await daftarButton.click();
     });
 
-    it('registrasi jemaat dengan data lengkap nama mempelai kosong', async () => {
+    it('registrasi jemaat dengan data nama mempelai kosong', async () => {
         // Pendaftaran Jemaat
         await browser.url(`${apiUrl}/aksesMartumpolUser`);
 
@@ -354,6 +354,45 @@ describe('Laravel Project Testing', () => {
 
         const namaGerejaPerempuanInput = await $('[name="nama_gereja_perempuan"]');
         await namaGerejaPerempuanInput.setValue('');
+
+        // Input keterangan
+        const keteranganInput = await $('[name="keterangan"]');
+        await keteranganInput.setValue('Keterangan yang terkait');
+
+        // Klik tombol "daftar"
+        const daftarButton = await $('input[type="submit"][value="daftar"]');
+        await daftarButton.click();
+    });
+
+    it('registrasi dengan data yang sama', async () => {
+        // Pendaftaran Jemaat
+        await browser.url(`${apiUrl}/aksesMartumpolUser`);
+
+        // Mengisi formulir untuk mempelai laki-laki
+        const idJemaatLakiSelect = await $('[name="id_jemaat_laki"]');
+        await idJemaatLakiSelect.selectByAttribute('value', '1');
+
+        const namaAyahLakiInput = await $('[name="nama_ayah_laki"]');
+        await namaAyahLakiInput.setValue('Budi');
+
+        const namaIbuLakiInput = await $('[name="nama_ibu_laki"]');
+        await namaIbuLakiInput.setValue('Ayu');
+
+        const namaGerejaLakiInput = await $('[name="nama_gereja_laki"]');
+        await namaGerejaLakiInput.setValue('GPDI');
+
+        // Mengisi formulir untuk mempelai perempuan
+        const idJemaatPerempuanSelect = await $('[name="id_jemaat_perempuan"]');
+        await idJemaatPerempuanSelect.selectByAttribute('value', '1');
+
+        const namaAyahPerempuanInput = await $('[name="nama_ayah_perempuan"]');
+        await namaAyahPerempuanInput.setValue('Santo');
+
+        const namaIbuPerempuanInput = await $('[name="nama_ibu_perempuan"]');
+        await namaIbuPerempuanInput.setValue('Citra');
+
+        const namaGerejaPerempuanInput = await $('[name="nama_gereja_perempuan"]');
+        await namaGerejaPerempuanInput.setValue('HKBP');
 
         // Input keterangan
         const keteranganInput = await $('[name="keterangan"]');
