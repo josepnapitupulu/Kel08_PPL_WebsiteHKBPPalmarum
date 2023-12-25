@@ -138,5 +138,31 @@ describe('Laravel Project Testing', () => {
         const daftarButton = await $('input[type="submit"][value="daftar"]');
         await daftarButton.click();
 
-    });    
+    }); 
+    // Section 6: Adding user with same data
+    it('mengisi form dengan data yang sama', async () => {
+        await browser.url(`${apiUrl}/aksesPindahUser`);
+
+        const idJemaatDropdown = await $('[name="id_jemaat"]');
+        await idJemaatDropdown.selectByAttribute('value', '1'); 
+
+        const idRegistrasiDropdown = await $('[name="id_registrasi"]');
+        await idRegistrasiDropdown.selectByAttribute('value', '1');
+
+        const tglPindahInput = await $('[name="tgl_pindah"]');
+        await tglPindahInput.setValue('01-01-2020');
+
+        const namaGerejaInput = await $('[name="nama_gereja"]');
+        await namaGerejaInput.setValue('');
+
+        const keteranganInput = await $('[name="keterangan"]');
+        await keteranganInput.setValue('Masukkan keterangan jika dibutuhkan');
+
+        // Klik tombol "daftar"
+        const daftarButton = await $('input[type="submit"][value="daftar"]');
+        await daftarButton.click();
+
+        const errorMessageElement = await $('#error-message');
+        expect(await errorMessageElement.isExisting()).to.be.true;
+    });  
 });
