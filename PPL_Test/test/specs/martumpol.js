@@ -401,6 +401,9 @@ describe('Laravel Project Testing', () => {
         // Klik tombol "daftar"
         const daftarButton = await $('input[type="submit"][value="daftar"]');
         await daftarButton.click();
+
+        const errorMessageElement = await $('#error-message');
+        expect(await errorMessageElement.isExisting()).to.be.true;
     });
 
 });
